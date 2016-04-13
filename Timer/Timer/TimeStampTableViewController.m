@@ -49,29 +49,37 @@
     NSDate *date = [NSDate date];
     [self.timeStampArray addObject: date];
     
+    // Create new index path, store our date in the table
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+    // @[indexPath] wraps indexPath with an array literal
+    // Insert row into table view
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.timeStampArray.count;  // Return count of items in array
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"timeStampCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];  // Populate text with index of cell
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
