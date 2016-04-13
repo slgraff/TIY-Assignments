@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CC16F2E01CBE86EB00FF9ED5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC16F2DF1CBE86EB00FF9ED5 /* main.m */; };
 		CC16F2E31CBE86EB00FF9ED5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC16F2E21CBE86EB00FF9ED5 /* AppDelegate.m */; };
-		CC16F2E61CBE86EB00FF9ED5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC16F2E51CBE86EB00FF9ED5 /* FirstViewController.m */; };
 		CC16F2E91CBE86EB00FF9ED5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC16F2E81CBE86EB00FF9ED5 /* SecondViewController.m */; };
 		CC16F2EC1CBE86EB00FF9ED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC16F2EA1CBE86EB00FF9ED5 /* Main.storyboard */; };
 		CC16F2EE1CBE86EB00FF9ED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC16F2ED1CBE86EB00FF9ED5 /* Assets.xcassets */; };
@@ -21,8 +20,6 @@
 		CC16F2DF1CBE86EB00FF9ED5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC16F2E11CBE86EB00FF9ED5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC16F2E21CBE86EB00FF9ED5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CC16F2E41CBE86EB00FF9ED5 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		CC16F2E51CBE86EB00FF9ED5 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		CC16F2E71CBE86EB00FF9ED5 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		CC16F2E81CBE86EB00FF9ED5 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		CC16F2EB1CBE86EB00FF9ED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,8 +60,6 @@
 			children = (
 				CC16F2E11CBE86EB00FF9ED5 /* AppDelegate.h */,
 				CC16F2E21CBE86EB00FF9ED5 /* AppDelegate.m */,
-				CC16F2E41CBE86EB00FF9ED5 /* FirstViewController.h */,
-				CC16F2E51CBE86EB00FF9ED5 /* FirstViewController.m */,
 				CC16F2E71CBE86EB00FF9ED5 /* SecondViewController.h */,
 				CC16F2E81CBE86EB00FF9ED5 /* SecondViewController.m */,
 				CC16F2EA1CBE86EB00FF9ED5 /* Main.storyboard */,
@@ -157,7 +152,6 @@
 			files = (
 				CC16F2E91CBE86EB00FF9ED5 /* SecondViewController.m in Sources */,
 				CC16F2E31CBE86EB00FF9ED5 /* AppDelegate.m in Sources */,
-				CC16F2E61CBE86EB00FF9ED5 /* FirstViewController.m in Sources */,
 				CC16F2E01CBE86EB00FF9ED5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
