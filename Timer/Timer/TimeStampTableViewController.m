@@ -42,7 +42,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-// Implementd addTimeStamp method
+// Implemented addTimeStamp method
 -(IBAction)addTimeStamp:(id)sender{
     
     // Initialize date with today's date, add to our array
@@ -50,7 +50,7 @@
     [self.timeStampArray addObject: date];
     
     // Create new index path, store our date in the table
-    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:(self.timeStampArray.count -1) inSection:0];
     
     // @[indexPath] wraps indexPath with an array literal
     // Insert row into table view
@@ -75,7 +75,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"timeStampCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];  // Populate text with index of cell
+    // Populate text with index of cell
+    // Use the indexPath.row to pull index of cell, resolves issue with all cells using count of items in array
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     
     return cell;
 }

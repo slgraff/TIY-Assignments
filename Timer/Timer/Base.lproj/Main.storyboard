@@ -103,9 +103,60 @@
                     <view key="view" contentMode="scaleToFill" id="b1o-fY-wuh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="yjF-dr-0Km">
+                                <rect key="frame" x="253" y="72" width="94" height="29"/>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60 Seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W02-AA-cN3">
+                                <rect key="frame" x="168" y="109" width="265" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCi-8H-cnW">
+                                <rect key="frame" x="284" y="190" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopTapped:" destination="kDS-eC-6B9" eventType="touchUpInside" id="vem-UB-wFa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbE-6l-78s">
+                                <rect key="frame" x="372" y="190" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetTapped:" destination="kDS-eC-6B9" eventType="touchUpInside" id="0O1-Oa-oZ4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKp-le-F2K">
+                                <rect key="frame" x="194" y="190" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startTapped:" destination="kDS-eC-6B9" eventType="touchUpInside" id="s7J-gr-flO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W02-AA-cN3" firstAttribute="centerX" secondItem="b1o-fY-wuh" secondAttribute="centerX" id="7ta-SX-K4J"/>
+                            <constraint firstItem="sbE-6l-78s" firstAttribute="leading" secondItem="gCi-8H-cnW" secondAttribute="trailing" constant="56" id="8fc-B7-JSc"/>
+                            <constraint firstItem="OKp-le-F2K" firstAttribute="top" secondItem="W02-AA-cN3" secondAttribute="bottom" constant="21" id="ASW-ww-NOx"/>
+                            <constraint firstItem="W02-AA-cN3" firstAttribute="top" secondItem="yjF-dr-0Km" secondAttribute="bottom" constant="8" id="HmG-MR-nov"/>
+                            <constraint firstItem="yjF-dr-0Km" firstAttribute="centerX" secondItem="b1o-fY-wuh" secondAttribute="centerX" id="X42-zX-XRx"/>
+                            <constraint firstItem="gCi-8H-cnW" firstAttribute="top" secondItem="W02-AA-cN3" secondAttribute="bottom" constant="21" id="dWh-uo-iCy"/>
+                            <constraint firstItem="gCi-8H-cnW" firstAttribute="centerX" secondItem="b1o-fY-wuh" secondAttribute="centerX" id="esO-OL-KTA"/>
+                            <constraint firstItem="yjF-dr-0Km" firstAttribute="top" secondItem="N8Q-6g-H3P" secondAttribute="bottom" constant="8" id="yGr-gw-7Ib"/>
+                            <constraint firstItem="sbE-6l-78s" firstAttribute="top" secondItem="W02-AA-cN3" secondAttribute="bottom" constant="21" id="ye7-ui-PRj"/>
+                            <constraint firstItem="gCi-8H-cnW" firstAttribute="leading" secondItem="OKp-le-F2K" secondAttribute="trailing" constant="56" id="z6z-kS-la5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uWg-ly-5RW"/>
+                    <connections>
+                        <outlet property="resetButton" destination="sbE-6l-78s" id="aDs-02-Wyh"/>
+                        <outlet property="startButton" destination="OKp-le-F2K" id="JYt-Kc-swY"/>
+                        <outlet property="stepper" destination="yjF-dr-0Km" id="Y4L-IZ-hFw"/>
+                        <outlet property="stopButton" destination="gCi-8H-cnW" id="Pht-0T-Mnc"/>
+                        <outlet property="timerLabel" destination="W02-AA-cN3" id="8yo-nH-bfz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWn-9C-xyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
