@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--TimeStamps-->
         <scene sceneID="aUg-M1-860">
             <objects>
                 <tableViewController id="lkK-WI-0kr" sceneMemberID="viewController">
@@ -44,17 +44,21 @@
                             <outlet property="delegate" destination="lkK-WI-0kr" id="bAe-0T-XRi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="y99-Iz-9Qx"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="TimeStamps" id="y99-Iz-9Qx">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="zKj-su-ulN"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWS-bM-Bky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1528" y="-437"/>
         </scene>
-        <!--Item-->
+        <!--TimeStamps-->
         <scene sceneID="RWg-eZ-8WP">
             <objects>
                 <navigationController id="DsJ-u1-X8E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="khT-Hn-lms"/>
+                    <tabBarItem key="tabBarItem" title="TimeStamps" image="first" id="khT-Hn-lms"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OQe-Um-cOr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -67,11 +71,11 @@
             </objects>
             <point key="canvasLocation" x="760" y="-437"/>
         </scene>
-        <!--Item-->
+        <!--Timer-->
         <scene sceneID="wF7-MU-C8Y">
             <objects>
                 <navigationController id="Ulr-Ry-pk6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Tx6-Ll-2Nu"/>
+                    <tabBarItem key="tabBarItem" title="Timer" image="second" id="Tx6-Ll-2Nu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qL2-9n-DGE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -123,4 +127,8 @@
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
 </document>
