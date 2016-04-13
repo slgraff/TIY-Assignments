@@ -13,6 +13,7 @@
 		CC16F2EC1CBE86EB00FF9ED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC16F2EA1CBE86EB00FF9ED5 /* Main.storyboard */; };
 		CC16F2EE1CBE86EB00FF9ED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC16F2ED1CBE86EB00FF9ED5 /* Assets.xcassets */; };
 		CC16F2F11CBE86EB00FF9ED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC16F2EF1CBE86EB00FF9ED5 /* LaunchScreen.storyboard */; };
+		CC16F2FA1CBE8E0100FF9ED5 /* TimeStampTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC16F2F91CBE8E0100FF9ED5 /* TimeStampTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		CC16F2ED1CBE86EB00FF9ED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC16F2F01CBE86EB00FF9ED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC16F2F21CBE86EB00FF9ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC16F2F81CBE8E0100FF9ED5 /* TimeStampTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeStampTableViewController.h; sourceTree = "<group>"; };
+		CC16F2F91CBE8E0100FF9ED5 /* TimeStampTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeStampTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 			children = (
 				CC16F2E11CBE86EB00FF9ED5 /* AppDelegate.h */,
 				CC16F2E21CBE86EB00FF9ED5 /* AppDelegate.m */,
+				CC16F2F81CBE8E0100FF9ED5 /* TimeStampTableViewController.h */,
+				CC16F2F91CBE8E0100FF9ED5 /* TimeStampTableViewController.m */,
 				CC16F2E71CBE86EB00FF9ED5 /* SecondViewController.h */,
 				CC16F2E81CBE86EB00FF9ED5 /* SecondViewController.m */,
 				CC16F2EA1CBE86EB00FF9ED5 /* Main.storyboard */,
@@ -150,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC16F2FA1CBE8E0100FF9ED5 /* TimeStampTableViewController.m in Sources */,
 				CC16F2E91CBE86EB00FF9ED5 /* SecondViewController.m in Sources */,
 				CC16F2E31CBE86EB00FF9ED5 /* AppDelegate.m in Sources */,
 				CC16F2E01CBE86EB00FF9ED5 /* main.m in Sources */,
