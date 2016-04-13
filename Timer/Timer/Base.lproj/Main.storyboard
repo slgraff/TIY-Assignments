@@ -8,7 +8,7 @@
         <!--TimeStamps-->
         <scene sceneID="aUg-M1-860">
             <objects>
-                <tableViewController id="lkK-WI-0kr" sceneMemberID="viewController">
+                <tableViewController id="lkK-WI-0kr" customClass="TimeStampTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uCx-5w-mhG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="TimeStamps" id="y99-Iz-9Qx">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zKj-su-ulN"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zKj-su-ulN">
+                            <connections>
+                                <action selector="addTimeStamp:" destination="lkK-WI-0kr" id="2JJ-aV-azS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>

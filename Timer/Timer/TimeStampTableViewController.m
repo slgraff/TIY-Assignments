@@ -10,12 +10,25 @@
 
 @interface TimeStampTableViewController ()
 
+// Declared new timeStampArray
+@property (strong, nonatomic) NSMutableArray * timeStampArray;
+
+// Declared addTimeStamp method to add time stamp
+-(IBAction)addTimeStamp:(id)sender;
+
 @end
 
 @implementation TimeStampTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Create new timeStampArray
+    self.timeStampArray = [[NSMutableArray alloc]init];
+    
+    //Alternative ways to do so
+//    [NSMutableArray.new]
+//    [NSMutableArray array]
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -27,6 +40,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Implementd addTimeStamp method
+-(IBAction)addTimeStamp:(id)sender{
+    
+    // Initialize date with today's date, add to our array
+    NSDate *date = [NSDate date];
+    [self.timeStampArray addObject: date];
+    
 }
 
 #pragma mark - Table view data source
