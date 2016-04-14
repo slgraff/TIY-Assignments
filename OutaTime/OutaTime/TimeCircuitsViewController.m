@@ -94,7 +94,7 @@
     // 7. The speedLabel should be set to "% MPH", with the % being the current speed
     //
 
-    [self.speedLabel setText:[NSString stringWithFormat:@"%ld", (long)currentSpeed]];
+    [self.speedLabel setText:[NSString stringWithFormat:@"%ld MPH", (long)currentSpeed]];
     
     
     //
@@ -183,7 +183,7 @@
         //
         
         // **** This keeps kicking a warning stating 'Unused variable 'aTimer' but used below
-        // aTimer was declared at top, removed "NSTimer *"
+        // aTimer was declared at top, removed "NSTimer *" blah blah blah
         aTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                                            target:self
                                                          selector:@selector(updateSpeed)
@@ -224,7 +224,7 @@
         // 19. Here we want to update the speed label to reflect the current speed.
         //
         
-        [self.speedLabel setText:[NSString stringWithFormat:@"%ld", currentSpeed]];
+        [self.speedLabel setText:[NSString stringWithFormat:@"%ld MPH", currentSpeed]];
         
     }
     else
@@ -254,7 +254,7 @@
         // 23. Lastly, we need to reset the current speed label to 0 here.
         //
         
-        self.speedLabel.text = @"0";
+        self.speedLabel.text = @"0 MPH";
             
             currentSpeed = 0;
             
