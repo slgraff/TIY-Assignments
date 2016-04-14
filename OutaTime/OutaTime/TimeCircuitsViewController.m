@@ -182,8 +182,9 @@
         //    will need to fire our custom method to update the speed label.
         //
         
-        // **** This keeps kicking a warning stating 'Unused variable 'aTimer' but used below
-        // aTimer was declared at top, removed "NSTimer *" blah blah blah
+        // **** This keeps kicking a warning stating 'Unused variable 'aTimer'
+        // Determined aTimer was declared at top, and declared and implemented here but used below
+        // Removed "NSTimer *", resolved warning, fixed issue with date labels update issue
         aTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                                            target:self
                                                          selector:@selector(updateSpeed)
