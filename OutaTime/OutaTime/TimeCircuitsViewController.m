@@ -183,7 +183,8 @@
         //
         
         // **** This keeps kicking a warning stating 'Unused variable 'aTimer' but used below
-        NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
+        // aTimer was declared at top, removed "NSTimer *"
+        aTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                                            target:self
                                                          selector:@selector(updateSpeed)
                                                          userInfo:nil
@@ -235,7 +236,7 @@
         if(currentSpeed >= 88){
             [self stopTimer];
             
-        }
+        
 
         //
         // 21. Then we need to update the lastTimeDepartedLabel with the value of the presentTimeLabel.
@@ -254,6 +255,10 @@
         //
         
         self.speedLabel.text = @"0";
+            
+            currentSpeed = 0;
+            
+        }
         
         
     }
