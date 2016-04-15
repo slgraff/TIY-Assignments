@@ -30,6 +30,7 @@
     //    datePicker object.
     //
     
+    // Pass the selected date back to the Time Circuits View Controller
     [self.delegate destinationDateWasChosen:self.datePicker.date];
     
     

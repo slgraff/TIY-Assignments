@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+// Declaration for our date picker delegate. Implemented in TimeCircuitsViewController.m
 @protocol TimeCircuitsDatePickerDelegate
 
 // Protorocl method declaration for destinationDateWasChosen method in TimeCircuitsDatePickerDelegate

@@ -123,6 +123,7 @@
         // 10. This view controller needs to be set as the time picker view controller's delegate object.
         //
         
+        // Set our Time Picker View Controller as the delegate for date picker
         timePickerVC.delegate = self;
     
         
@@ -146,6 +147,10 @@
     // NSString *todaysDateString = [dateFormatter stringFromDate:todaysDate];
     
     [self.destinationTimeLabel setText:[dateFormatter stringFromDate:destinationDate]];
+    
+    // Can also access property directly thusly
+    [self.destinationTimeLabel.setText = [dateFormatter stringFromDate:destinationDate]];
+
     
     
 }
