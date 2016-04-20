@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-43" y="1387"/>
+            <point key="canvasLocation" x="862" y="919"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="qHg-ba-YFk">
@@ -63,6 +63,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="jLn-Nm-G3M">
+                        <barButtonItem key="leftBarButtonItem" title="CheckWinners" id="nZB-x1-bbJ">
+                            <connections>
+                                <action selector="checkForWinningTickets:" destination="afX-az-gIM" id="Sgu-bh-Akc"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aoa-4e-Sie">
                             <connections>
                                 <action selector="createTicket:" destination="afX-az-gIM" id="w9c-Us-lIG"/>

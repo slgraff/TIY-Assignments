@@ -14,6 +14,10 @@
     // Need to declare instance variable, need to wrap in curly braces
     // pointer to NSMutableArray
     NSMutableArray *tickets;
+    
+    // Delcare counters for tracking money spent and won
+    int moneySpent;
+    int moneyWon;
 }
 
 -(IBAction)createTicket:(id)sender;
@@ -33,6 +37,13 @@
     
     // Initialize tickets array
     tickets = [[NSMutableArray alloc]init];
+    
+    // Initialize title for TableView
+    self.title = @"Won: $0  Spent: $0";
+    
+    // Intialize variables for tracking money spent and won
+    moneySpent = 0;
+    moneyWon = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +70,15 @@
     Ticket * aTicket = tickets[indexPath.row];
     cell.textLabel.text = [aTicket description]; // NSObject provides description attribute, we override in Ticket.m
     cell.detailTextLabel.text = aTicket.payout; // Set payout for ticket
+    
+    if (aTicket.winner == YES) {
+        // Set the color to red if winner
+        cell.detailTextLabel.textColor = [UIColor greenColor];
+    } else if (aTicket.winner == NO) {
+        // Set color to red if loser
+        cell.detailTextLabel.textColor = [UIColor redColor];
+    }
+        
     return cell;
 }
 
@@ -111,9 +131,40 @@
     Ticket * aTicket = [Ticket ticketUsingQuickPick];
     [tickets addObject:aTicket];
     
+    moneySpent += aTicket.ticketPrice;
+    
+    // Update the title
+    self.title = [NSString stringWithFormat:@"Won: $%d  Spent: $%d", moneyWon, moneySpent];
+    
     // Tell table view to reload table data
     [self.tableView reloadData];
 }
+
+-(IBAction)checkForWinningTickets:(id)sender{
+    // Method to check if any tickets in table match a winning ticket
+    
+    // Reset to moneyWon to 0
+    moneyWon = 0;
+    
+    // Create a winning ticket
+    Ticket * winningTicket = [Ticket ticketUsingQuickPick];
+    
+    
+    for (Ticket* theLottoTicket in tickets) {
+        // call compareWithTicket for every ticket in picks theLottoTicket
+        [theLottoTicket compareWithTicket:winningTicket];
+
+        if (theLottoTicket.winner == YES) {
+            moneyWon += [theLottoTicket.payout intValue];
+            
+            // Update the title
+            self.title = [NSString stringWithFormat:@"Won: $%d  Spent: $%d", moneyWon, moneySpent];
+        }
+    }
+    [self.tableView reloadData];
+
+}
+
 
 
 @end

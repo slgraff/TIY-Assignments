@@ -18,6 +18,9 @@
 // We should generally add nonatomic to every property declaration
 @property (copy, nonatomic) NSString * payout;
 
+// Property for ticket price
+@property (assign) int ticketPrice;
+
 // Create initializer for ticket, instancetype
 +(instancetype)ticketUsingQuickPick; // For quick pick ticket
 +(instancetype)ticketUsingArray:(NSArray *)picks; // For choosing own numbers
