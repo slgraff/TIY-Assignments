@@ -11,6 +11,7 @@
 // Declaration of functions FizzBuzz and Palindrome
 void FizzBuzz(void);
 void Palindrome(void);
+void PaliHalf(void);
 
 
 int main(int argc, const char * argv[]) {
@@ -45,7 +46,7 @@ void FizzBuzz(){
     
     // Initialize boolean for whether or print, FIZZBUZZ
     BOOL printNum = NO;
-    BOOL fizzBuzz = YES;
+    BOOL fizzBuzz = NO;
     
     // Loop through numbers, find multiples of 3 or 5, calculate sum
     for (int theNum = 1; theNum < ceilingNum; theNum += 1){
@@ -132,6 +133,8 @@ void Palindrome(){
             // Calculate product of two numbers, convert to string
             theProduct = firstFactor * secondFactor;
             theProductString = [NSMutableString stringWithFormat:@"%d", theProduct];
+            
+            // NSRange an option to work through string in reverse
             // NSLog(@"%@", theProductString);
             
             // Loop through each char of string in reverse, copy to another string
@@ -151,3 +154,57 @@ void Palindrome(){
     NSLog(@"The largest palindrome is %@", palindrome);
     
 }
+
+
+/*
+ PaliHalf
+ In case of palindrome only need to compare half of string. Compare first and last, compare second and second from last, until
+ you reach the middle (length/2)
+*/
+
+void PaliHalf(){
+    
+    // Declare variables
+    int theProduct;
+    NSMutableString * theProductString = [[NSMutableString alloc]init];
+    NSMutableString * palindrome = [[NSMutableString alloc]init];
+    
+    // Calculate product of two factors, convert to string
+    for (int firstFactor = 100; firstFactor < 1000; firstFactor += 1){
+        for (int secondFactor = 100; secondFactor < 1000; secondFactor += 1){
+            
+            // Calculate product of two numbers, convert to string
+            theProduct = firstFactor * secondFactor;
+            theProductString = [NSMutableString stringWithFormat:@"%d", theProduct];
+            // NSLog(@"%@", theProductString);
+            
+            // Loop through characters of string
+            // Compare first and last char, continue until meeting in middle
+            for(NSInteger halfWay = (([theProductString length] -1)/2); halfWay >= 0; halfWay--){
+                
+                
+                // assume is palindrome until determined to be false
+                bool isPalindrome = YES;
+                
+                
+                // compare char 0 to char count
+                // compare char + 1 to char count -1
+                // compare char + 2 to char count -2
+                
+                
+
+
+                while (isPalindrome) {
+                    
+                    
+                    if [theProductString characterAtIndex:lower] == [theProductString characterAtIndex:upper]
+                }
+
+                
+                // Compare chars, if equal continue comparison
+                // If false, set isPalindrome to NO
+                
+                
+}
+
+
