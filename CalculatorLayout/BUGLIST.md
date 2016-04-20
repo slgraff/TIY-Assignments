@@ -11,3 +11,9 @@
 
 4. Calculator is not able to perform calculation. Always get 'Invalid' after clicking on = sign.
 	* When clicking on operator button the value in display should be saved, then set userIsTypingNumber to true. When handling operand key presses, check to see if  is true.
+
+5. When pressing an operand, then immediately equals get 'Invalid' error in display
+	* Check equalTapped method, set breakpoints before and after to see what's happening. May need to check for values in operand1 and operand1 that are not nil or "". If either is empty, do nothing (behavior of iOS calculator). Handle all inappropriate presses of equals.
+
+6. When pressing operand, operator, operand then another operand, needs to insert an implied '=' operand, then grab the pressed operand.
+
