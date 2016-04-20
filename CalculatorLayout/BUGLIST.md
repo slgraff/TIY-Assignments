@@ -1,6 +1,6 @@
 ###List of bugs in Calculator app
 
-1. When pressing an operator key the disply is set to 0
+1. When pressing an operator key the display is set to 0
 	* To fix, don't set the display to 0 at this point
 
 2. Display is displaying too many trailing zeros when displaying result of calculation
