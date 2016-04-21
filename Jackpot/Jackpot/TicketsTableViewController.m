@@ -8,8 +8,9 @@
 
 #import "TicketsTableViewController.h"
 #import "Ticket.h"
+#import "WinningTicketViewController.h"
 
-@interface TicketsTableViewController () {
+@interface TicketsTableViewController () <WinningTicketViewControllerDelegate> {
 
     // Need to declare instance variable, need to wrap in curly braces
     // pointer to NSMutableArray
@@ -117,16 +118,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+
+// Setting delegate for the winning ticket view controller
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"GIVE ME SOMETHING TO LOOK FOR"]) {
+        WinningTicketViewController * wtvc = (WinningTicketViewController *) segue.destinationViewController;
+        wtvc.delegate = self;
+    }
 }
-*/
 
+ 
 -(IBAction)createTicket:(id)sender{
     Ticket * aTicket = [Ticket ticketUsingQuickPick];
     [tickets addObject:aTicket];

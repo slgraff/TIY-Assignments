@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CCCD5BB81CC9365E00D4B0F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5BB71CC9365E00D4B0F8 /* main.m */; };
+		CCCD5BBB1CC9365E00D4B0F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5BBA1CC9365E00D4B0F8 /* AppDelegate.m */; };
+		CCCD5BC11CC9365E00D4B0F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCCD5BBF1CC9365E00D4B0F8 /* Main.storyboard */; };
+		CCCD5BC31CC9365E00D4B0F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCD5BC21CC9365E00D4B0F8 /* Assets.xcassets */; };
+		CCCD5BC61CC9365E00D4B0F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCCD5BC41CC9365E00D4B0F8 /* LaunchScreen.storyboard */; };
+		CCCD5BCF1CC9502A00D4B0F8 /* HeroDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5BCE1CC9502A00D4B0F8 /* HeroDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CCCD5BB31CC9365E00D4B0F8 /* HeroTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCCD5BB71CC9365E00D4B0F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CCCD5BB91CC9365E00D4B0F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CCCD5BBA1CC9365E00D4B0F8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CCCD5BC01CC9365E00D4B0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CCCD5BC21CC9365E00D4B0F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCCD5BC51CC9365E00D4B0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CCCD5BC71CC9365E00D4B0F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCCD5BCD1CC9502A00D4B0F8 /* HeroDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroDetailViewController.h; sourceTree = "<group>"; };
+		CCCD5BCE1CC9502A00D4B0F8 /* HeroDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CCCD5BB01CC9365E00D4B0F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CCCD5BAA1CC9365E00D4B0F8 = {
+			isa = PBXGroup;
+			children = (
+				CCCD5BB51CC9365E00D4B0F8 /* HeroTracker */,
+				CCCD5BB41CC9365E00D4B0F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CCCD5BB41CC9365E00D4B0F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD5BB31CC9365E00D4B0F8 /* HeroTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCCD5BB51CC9365E00D4B0F8 /* HeroTracker */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD5BB91CC9365E00D4B0F8 /* AppDelegate.h */,
+				CCCD5BBA1CC9365E00D4B0F8 /* AppDelegate.m */,
+				CCCD5BCD1CC9502A00D4B0F8 /* HeroDetailViewController.h */,
+				CCCD5BCE1CC9502A00D4B0F8 /* HeroDetailViewController.m */,
+				CCCD5BBF1CC9365E00D4B0F8 /* Main.storyboard */,
+				CCCD5BC21CC9365E00D4B0F8 /* Assets.xcassets */,
+				CCCD5BC41CC9365E00D4B0F8 /* LaunchScreen.storyboard */,
+				CCCD5BC71CC9365E00D4B0F8 /* Info.plist */,
+				CCCD5BB61CC9365E00D4B0F8 /* Supporting Files */,
+			);
+			path = HeroTracker;
+			sourceTree = "<group>";
+		};
+		CCCD5BB61CC9365E00D4B0F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD5BB71CC9365E00D4B0F8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCCD5BB21CC9365E00D4B0F8 /* HeroTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCCD5BCA1CC9365E00D4B0F8 /* Build configuration list for PBXNativeTarget "HeroTracker" */;
+			buildPhases = (
+				CCCD5BAF1CC9365E00D4B0F8 /* Sources */,
+				CCCD5BB01CC9365E00D4B0F8 /* Frameworks */,
+				CCCD5BB11CC9365E00D4B0F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HeroTracker;
+			productName = HeroTracker;
+			productReference = CCCD5BB31CC9365E00D4B0F8 /* HeroTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCCD5BAB1CC9365E00D4B0F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Steve Graff";
+				TargetAttributes = {
+					CCCD5BB21CC9365E00D4B0F8 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = U974956332;
+					};
+				};
+			};
+			buildConfigurationList = CCCD5BAE1CC9365E00D4B0F8 /* Build configuration list for PBXProject "HeroTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CCCD5BAA1CC9365E00D4B0F8;
+			productRefGroup = CCCD5BB41CC9365E00D4B0F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCCD5BB21CC9365E00D4B0F8 /* HeroTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CCCD5BB11CC9365E00D4B0F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCCD5BC61CC9365E00D4B0F8 /* LaunchScreen.storyboard in Resources */,
+				CCCD5BC31CC9365E00D4B0F8 /* Assets.xcassets in Resources */,
+				CCCD5BC11CC9365E00D4B0F8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCCD5BAF1CC9365E00D4B0F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCCD5BCF1CC9502A00D4B0F8 /* HeroDetailViewController.m in Sources */,
+				CCCD5BBB1CC9365E00D4B0F8 /* AppDelegate.m in Sources */,
+				CCCD5BB81CC9365E00D4B0F8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CCCD5BBF1CC9365E00D4B0F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCCD5BC01CC9365E00D4B0F8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CCCD5BC41CC9365E00D4B0F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCCD5BC51CC9365E00D4B0F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CCCD5BC81CC9365E00D4B0F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CCCD5BC91CC9365E00D4B0F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CCCD5BCB1CC9365E00D4B0F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HeroTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.HeroTracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CCCD5BCC1CC9365E00D4B0F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HeroTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.HeroTracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CCCD5BAE1CC9365E00D4B0F8 /* Build configuration list for PBXProject "HeroTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCCD5BC81CC9365E00D4B0F8 /* Debug */,
+				CCCD5BC91CC9365E00D4B0F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCCD5BCA1CC9365E00D4B0F8 /* Build configuration list for PBXNativeTarget "HeroTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCCD5BCB1CC9365E00D4B0F8 /* Debug */,
+				CCCD5BCC1CC9365E00D4B0F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CCCD5BAB1CC9365E00D4B0F8 /* Project object */;
+}
