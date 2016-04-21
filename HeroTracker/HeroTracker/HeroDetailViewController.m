@@ -10,7 +10,7 @@
 
 @interface HeroDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *heroNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *heroHomeWorldLabel;
+@property (weak, nonatomic) IBOutlet UILabel *heroRealNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *heroPowers;
 
 @end

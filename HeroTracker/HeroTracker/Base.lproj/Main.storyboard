@@ -83,9 +83,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="heroHomeWorldLabel" destination="PxT-po-IFq" id="mh4-wY-jMb"/>
                         <outlet property="heroNameLabel" destination="IgO-uu-7aH" id="jIk-tx-IQs"/>
                         <outlet property="heroPowers" destination="0aq-1b-Ldf" id="KJO-uE-15H"/>
+                        <outlet property="heroRealNameLabel" destination="PxT-po-IFq" id="bEy-HS-1U2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxh-xj-257" userLabel="First Responder" sceneMemberID="firstResponder"/>
