@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC6D5CBE1CC9545D00B45788 /* HeroTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D5CBD1CC9545D00B45788 /* HeroTableTableViewController.m */; };
+		CC6D5CC11CC9548D00B45788 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D5CC01CC9548D00B45788 /* Hero.m */; };
+		CC6D5CC31CC954B400B45788 /* heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = CC6D5CC21CC954B400B45788 /* heroes.json */; };
 		CCCD5BB81CC9365E00D4B0F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5BB71CC9365E00D4B0F8 /* main.m */; };
 		CCCD5BBB1CC9365E00D4B0F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5BBA1CC9365E00D4B0F8 /* AppDelegate.m */; };
 		CCCD5BC11CC9365E00D4B0F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCCD5BBF1CC9365E00D4B0F8 /* Main.storyboard */; };
@@ -16,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC6D5CBC1CC9545D00B45788 /* HeroTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroTableTableViewController.h; sourceTree = "<group>"; };
+		CC6D5CBD1CC9545D00B45788 /* HeroTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroTableTableViewController.m; sourceTree = "<group>"; };
+		CC6D5CBF1CC9548D00B45788 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
+		CC6D5CC01CC9548D00B45788 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
+		CC6D5CC21CC954B400B45788 /* heroes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heroes.json; sourceTree = "<group>"; };
 		CCCD5BB31CC9365E00D4B0F8 /* HeroTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCD5BB71CC9365E00D4B0F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCCD5BB91CC9365E00D4B0F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,8 +68,13 @@
 			children = (
 				CCCD5BB91CC9365E00D4B0F8 /* AppDelegate.h */,
 				CCCD5BBA1CC9365E00D4B0F8 /* AppDelegate.m */,
+				CC6D5CBF1CC9548D00B45788 /* Hero.h */,
+				CC6D5CC01CC9548D00B45788 /* Hero.m */,
+				CC6D5CBC1CC9545D00B45788 /* HeroTableTableViewController.h */,
+				CC6D5CBD1CC9545D00B45788 /* HeroTableTableViewController.m */,
 				CCCD5BCD1CC9502A00D4B0F8 /* HeroDetailViewController.h */,
 				CCCD5BCE1CC9502A00D4B0F8 /* HeroDetailViewController.m */,
+				CC6D5CC21CC954B400B45788 /* heroes.json */,
 				CCCD5BBF1CC9365E00D4B0F8 /* Main.storyboard */,
 				CCCD5BC21CC9365E00D4B0F8 /* Assets.xcassets */,
 				CCCD5BC41CC9365E00D4B0F8 /* LaunchScreen.storyboard */,
@@ -138,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCCD5BC61CC9365E00D4B0F8 /* LaunchScreen.storyboard in Resources */,
+				CC6D5CC31CC954B400B45788 /* heroes.json in Resources */,
 				CCCD5BC31CC9365E00D4B0F8 /* Assets.xcassets in Resources */,
 				CCCD5BC11CC9365E00D4B0F8 /* Main.storyboard in Resources */,
 			);
@@ -150,8 +164,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC6D5CC11CC9548D00B45788 /* Hero.m in Sources */,
 				CCCD5BCF1CC9502A00D4B0F8 /* HeroDetailViewController.m in Sources */,
 				CCCD5BBB1CC9365E00D4B0F8 /* AppDelegate.m in Sources */,
+				CC6D5CBE1CC9545D00B45788 /* HeroTableTableViewController.m in Sources */,
 				CCCD5BB81CC9365E00D4B0F8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +319,7 @@
 				CCCD5BCC1CC9365E00D4B0F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

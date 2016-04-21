@@ -19,9 +19,9 @@
 #### Code Tasks
 * [x] Remove the _ViewController.swift_ file from the project
 * [x] Add a new Table View Controller subclass called _HeroTableViewController_
-* [ ] Add a new View Controller subclass called _HeroDetailViewController_
-* [ ] Add a new swift class called "Hero"
-* [ ] Add the _heroes.json_ file to the project
+* [x] Add a new View Controller subclass called _HeroDetailViewController_
+* [x] Add a new swift class called "Hero"
+* [x] Add the _heroes.json_ file to the project
 * In _HeroTableViewController_:
     * [ ] Create a property to store custom _Hero_ models
     * [ ] Set the title to "S.H.I.E.L.D. Hero Tracker"
