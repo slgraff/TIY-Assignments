@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +17,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmn-8M-9RX">
+                                <rect key="frame" x="20" y="192" width="560" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="Qcy-Ty-aH0"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cob-z7-DMz">
+                                <rect key="frame" x="251" y="416" width="98" height="30"/>
+                                <state key="normal" title="Check Tickets"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="kmn-8M-9RX" secondAttribute="trailing" id="7HN-U3-n8j"/>
+                            <constraint firstItem="Cob-z7-DMz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jt2-5J-nMp"/>
+                            <constraint firstItem="kmn-8M-9RX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NFz-LG-8X8"/>
+                            <constraint firstItem="Cob-z7-DMz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XW2-2p-YDZ"/>
+                            <constraint firstItem="kmn-8M-9RX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ara-Xy-bb7"/>
+                            <constraint firstItem="Cob-z7-DMz" firstAttribute="top" secondItem="kmn-8M-9RX" secondAttribute="bottom" constant="8" id="cmc-gv-sp1"/>
+                            <constraint firstItem="kmn-8M-9RX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="liM-vr-gPs"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -63,9 +85,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="jLn-Nm-G3M">
-                        <barButtonItem key="leftBarButtonItem" title="CheckWinners" id="nZB-x1-bbJ">
+                        <barButtonItem key="leftBarButtonItem" title="CreateWinner" id="nZB-x1-bbJ">
                             <connections>
                                 <action selector="checkForWinningTickets:" destination="afX-az-gIM" id="Sgu-bh-Akc"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="MCT-7f-bgR"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aoa-4e-Sie">
