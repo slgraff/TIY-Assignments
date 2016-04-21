@@ -10,4 +10,8 @@
 
 @interface Hero : NSObject
 
+
++ (Hero *)heroWithDictionary:(NSDictionary *)heroDict;
+
+
 @end

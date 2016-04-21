@@ -23,17 +23,17 @@
 * [x] Add a new swift class called "Hero"
 * [x] Add the _heroes.json_ file to the project
 * In _HeroTableViewController_:
-    * [ ] Create a property to store custom _Hero_ models
-    * [ ] Set the title to "S.H.I.E.L.D. Hero Tracker"
-    * [ ] Call the private method _loadHeroes()_
-    * [ ] Create a private method called _loadHeroes()_
-        * [ ] Load the JSON file into a local array
-        * [ ] Create a for loop that iterates over each dictionary in the array and creates a hero object. Add each hero to the _heroes_ array property
-        * [ ] Sort the _heroes_ array in place to alphabetize the list by hero name
+    * [x] Create a property to store custom _Hero_ models
+    * [x] Set the title to "S.H.I.E.L.D. Hero Tracker"
+    * [x] Call the private method _loadHeroes()_
+    * [x] Create a private method called _loadHeroes()_
+        * [x] Load the JSON file into a local array
+        * [x] Create a for loop that iterates over each dictionary in the array and creates a hero object. Add each hero to the _heroes_ array property
+        * [x] Sort the _heroes_ array in place to alphabetize the list by hero name
     * [ ] Implement the three tableview datasource methods to get each hero in the _heroes_ array to display in the table with the name in the cell's left label and their homeworld in the cell's right label.
     * [ ] Implement the _didSelectRowAtIndexPath_ tableview delegate method to transition to the detail view. Be sure to send the appropriate hero object to the detail view controller before you inititate the transition.
 * In _HeroDetailViewController_:
-    * [ ] Create three IBOutlet properties: _nameLabel_, _homeworldLabel_, and _powersLabel_ and wire them up to the appropriate labels in the storyboard.
+    * [x] Create three IBOutlet properties: _nameLabel_, _homeworldLabel_, and _powersLabel_ and wire them up to the appropriate labels in the storyboard.
     * [ ] Add a property called _hero_ that is a Hero optional.
     * [ ] Take the name, homeworld and powers from the hero property and set them to their appropriate label onscreen.
 

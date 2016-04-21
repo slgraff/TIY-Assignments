@@ -10,4 +10,6 @@
 
 @interface HeroTableTableViewController : UITableViewController
 
+-(void)loadHeroes;
+
 @end

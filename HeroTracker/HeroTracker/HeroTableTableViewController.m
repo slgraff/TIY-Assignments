@@ -7,8 +7,14 @@
 //
 
 #import "HeroTableTableViewController.h"
+#import "HeroDetailViewController.h"
+#import "Hero.h"
 
 @interface HeroTableTableViewController ()
+
+// heroes is a mutable array of dictionaries, contains hero name as key, hero object as value
+@property NSMutableArray *heroes;
+
 
 @end
 
@@ -22,6 +28,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self setTitle:@"S.H.I.E.L.D. Hero Tracker"];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,4 +104,22 @@
 }
 */
 
-@end
+// Load heroes.json file, create dictionary objects and put into array, sort it
+-(void)loadHeroes{
+    // Create string with filepath to the heroes.json file
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"heroes" ofType:@"json"];
+    
+    // Load json file into memory as array of dictionaries
+    NSArray *heroes = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:filePath] options:NSJSONReadingAllowFragments error:nil];
+    
+    // Iterate over the array and create Hero objects
+    for (NSDictionary* aHeroDictionary in heroes) {
+        [self.heroes addObject:[Hero heroWithDictionary:aHeroDictionary]];
+    }
+    
+    // Sort the heros array of dictionaries by the key name 'heroName'
+    [self.heroes sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"heroName" ascending:YES], nil]];
+}
+    
+    
+ @end

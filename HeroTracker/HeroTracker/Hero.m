@@ -10,4 +10,13 @@
 
 @implementation Hero
 
++ (Hero *)heroWithDictionary:(NSDictionary *)heroDict {
+//    if (heroDict) {
+//        aHero = [[Hero alloc]init];
+//        aHero.coverName = [heroDict objectForKey:@""]; // hero's cover name is the name of the dictionary object, i.e. Earthquake, Lionheart, Paladin, etc.
+    return nil;
+    
+}
+
+
 @end
