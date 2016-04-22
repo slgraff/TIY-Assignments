@@ -58,7 +58,7 @@
     
     // Configure the cell...
     Hero * aHero = [self.heroes objectAtIndex: indexPath.row];
-    cell.textLabel.text = [aHero description];
+    cell.textLabel.text = aHero.heroName;
     cell.detailTextLabel.text = aHero.heroRealName;
 
     

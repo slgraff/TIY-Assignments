@@ -26,6 +26,9 @@
             aHero.heroRealName = @"Unrevealed";
         } else {
             
+            // Need to handle empty strings for any name value
+            // If all three are empty, set to 'Unrevealed' or just ""?
+            
             aHero.heroRealName = [NSString stringWithFormat:@"%@ %@ %@", [heroDict objectForKey:@"realFirstName"], [heroDict objectForKey:@"realMiddleName"], [heroDict objectForKey:@"realLastName"]];
         }
         
