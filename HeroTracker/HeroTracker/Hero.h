@@ -10,6 +10,11 @@
 
 @interface Hero : NSObject
 
+@property (nonatomic) NSString *heroName;
+@property (nonatomic) NSString *heroRealName;
+@property (nonatomic) NSString *heroPowers;
+
+
 
 + (Hero *)heroWithDictionary:(NSDictionary *)heroDict;
 

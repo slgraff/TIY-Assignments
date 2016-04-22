@@ -1,7 +1,10 @@
 {
-"Earthquake":{
-"imageName":"earthquake.standard_xlarge"
-"realName":"Unrevealed",
+{
+"heroName": "Earthquake",
+"imageName":"earthquake.standard_xlarge",
+"realFirstName":"Unrevealed",
+"realMiddleName":"Unrevealed",
+"realMiddleName":"Unrevealed",
 "height":"6'0\"",
 "weight":"220 lbs.",
 "powers":"Earthquake is an Glossary:A#alien, alien possessed of the Glossary:P#psionic, psionic ability to create tremors in the surface of a planet by projecting waves of seismic energy. Earthquake can vary the intensity of the tremors he causes, from a minor shake to a large quake. The limit to the area that he can affect is as yet unknown, as is the maximum intensity of the quakes that he can cause.",
@@ -9,7 +12,8 @@
 "firstAppearance":"X-Men #137 (1980)"
 }
 
-"Lionheart":{
+{
+"heroName":"Lionheart",
 "realFirstName":"Kelsey",
 "readMiddleName":"",
 "realLastName":"Leigh",
@@ -18,7 +22,8 @@
 "firstAppearance":"Avengers #77 (2004)"
 }
 
-"Paladin":{
+{
+"heroName":"Paladin",
 "imageName":"paladin.standard_xlarge",
 "imageURL":"http://i.annihil.us/u/prod/marvel/i/mg/c/30/535ff3bef14c1/standard_xlarge.jpg",
 "realFirstName":"Unrevealed",
@@ -33,10 +38,12 @@
 "origin":"Unrevealed"
 }
 
-"pug":{
+{
+"heroName":"pug"
 }
 
-"Risque":{
+{
+"heroName":"Risque",
 "imageName":"risque.standard_xlarge",
 "imageURL":"http://x.annihil.us/u/prod/marvel/i/mg/5/f0/4c7c645aa1623/standard_xlarge.jpg",
 "realFirstName":"Gloria",
@@ -51,10 +58,12 @@
 "origin":"X-Force #65 (1997)"
 }
 
-"Smasher":{
+{
+"heroName":"Smasher"
 }
 
-"Scrambler":{
+{
+"heroName":"Scrambler"
 "imageName":"scrambler.standard_xlarge",
 "imageURL":"http://x.annihil.us/u/prod/marvel/i/mg/2/a0/4c002f076451c/standard_xlarge.jpg
 ",
@@ -68,10 +77,12 @@
 "firstAppearance":"(In shadows) Uncanny X-Men #210 (1986), (fully) X-Factor #10 (1986)"
 }
 
-"Strong Guy":{
+{
+"heroName":"Strong Guy"
 "imageName":"strongguy.standard_xlarge",
 "imageURL":"http://i.annihil.us/u/prod/marvel/i/mg/2/10/4c00322a3173c/standard_xlarge.jpg",
 "realFirstName":"Guido",
+"realMiddleName":"",
 "realLastName":"Carosella",
 "height":"7'",
 "weight":"750 lbs.",
@@ -82,14 +93,17 @@
 "origin":"X-Factor #87, X-Factor Annual #8"
 }
 
-"Skullbuster":{
+{
+"heroName":"Skullbuster"
 }
 
-"Tinkerer":{
+{
+"heroName":"Tinkerer"
 "imageName":"skullbuster.standard_xlarge",
 "imageURL":"http://i.annihil.us/u/prod/marvel/i/mg/b/60/4c002e3aaf52e/standard_xlarge.jpg
 ",
 "realFirstName":"Phineas",
+"realMiddleName":"",
 "realLastName":"Mason",
 "height":"5'4\"",
 "weight":"120 lbs.",
@@ -99,10 +113,12 @@
 "firstAppearance":"Amazing Spider-Man #2 (1963)"
 }
 
-"The Hood":{
+{
+"heroName":"The Hood"
 "imageName":"thehood.standard_xlarge",
 "imageURL":"http://i.annihil.us/u/prod/marvel/i/mg/6/90/539a09a2863cf/standard_xlarge.jpg",
 "realFirstName":"Parker",
+"realMiddleName":"",
 "realLastName":"Robbins",
 "height":"5'10\"",
 "weight":"165 lbs.",
@@ -112,10 +128,12 @@
 "firstAppearance":"Hood #1 (2002)"
 }
 
-"Vindicator":{
+{
+"heroName":"Vindicator"
 "imageName":"vindicator.standard_xlarge",
 "imageURL":"http://i.annihil.us/u/prod/marvel/i/mg/3/b0/4c003a7f39967/standard_xlarge.jpg",
 "realFirstName":"Heather",
+"realMiddleName":"",
 "realLastName":"McNeil-Hudson",
 "height":"5'5\"",
 "weight":"120 lbs.",

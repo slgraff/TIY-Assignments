@@ -11,10 +11,29 @@
 @implementation Hero
 
 + (Hero *)heroWithDictionary:(NSDictionary *)heroDict {
-//    if (heroDict) {
-//        aHero = [[Hero alloc]init];
-//        aHero.coverName = [heroDict objectForKey:@""]; // hero's cover name is the name of the dictionary object, i.e. Earthquake, Lionheart, Paladin, etc.
-    return nil;
+
+    Hero *aHero = nil;
+    if (heroDict) {
+        aHero = [[Hero alloc]init];
+        
+        // Set hero's name
+        aHero.heroName = [heroDict objectForKey:@"heroName"]; // hero's cover name is the name of the dictionary object, i.e. Earthquake, Lionheart, Paladin, etc.
+        
+        // Set hero's real name
+        // If any is 'Unrevealed' set full name to 'Unrevealed'
+        // Otherwise, assemble by joining realFirstName, realMiddleName, realLastName
+        if ([[heroDict objectForKey:@"realFirstName"] isEqualToString:@"Unrevealed"]) {
+            aHero.heroRealName = @"Unrevealed";
+        } else {
+            
+            aHero.heroRealName = [NSString stringWithFormat:@"%@ %@ %@", [heroDict objectForKey:@"realFirstName"], [heroDict objectForKey:@"realMiddleName"], [heroDict objectForKey:@"realLastName"]];
+        }
+        
+        // Set hero's powers
+        aHero.heroPowers = [heroDict objectForKey:@"powers"];
+        
+    }
+    return aHero;
     
 }
 
