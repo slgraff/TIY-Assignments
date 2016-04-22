@@ -6,9 +6,10 @@
 * [x] Embed the above in a Navigation Controller
 * [x] Add a second View Controller, to be used as the table's detail view
 * [x] The table view cell prototype should display two labels. One on the left of the cell and one on the right.
+	* I verified that this is referring to setting the Table View Cell Style to 'Right Detail' in attributes
     * [x] The table view cell prototype should have a disclosure indicator
     * [x] The table view cell prototype should have its reuse identifier set (hint: this should match the identifier set in "cellForRowAtIndexPath")
-    	* I set to 'lottoTicketCell'
+    	* I set to 'heroCell'
 * [x] The detail view should have a custom class name of "HeroDetailViewController". See the identity inspector in Interface Builder.
 * [x] The detail view should have 3 labels:
     * [x] A label in the upper left corner that displays the hero's name
@@ -30,7 +31,8 @@
         * [x] Load the JSON file into a local array
         * [x] Create a for loop that iterates over each dictionary in the array and creates a hero object. Add each hero to the _heroes_ array property
         * [x] Sort the _heroes_ array in place to alphabetize the list by hero name
-    * [ ] Implement the three tableview datasource methods to get each hero in the _heroes_ array to display in the table with the name in the cell's left label and their homeworld in the cell's right label.
+    * [x] Implement the three tableview datasource methods to get each hero in the _heroes_ array to display in the table with the name in the cell's left label and their homeworld in the cell's right label.
+    	* I implemented this in 'Table View Data Source' section of HeroTableViewController.m
     * [ ] Implement the _didSelectRowAtIndexPath_ tableview delegate method to transition to the detail view. Be sure to send the appropriate hero object to the detail view controller before you inititate the transition.
 * In _HeroDetailViewController_:
     * [x] Create three IBOutlet properties: _nameLabel_, _homeworldLabel_, and _powersLabel_ and wire them up to the appropriate labels in the storyboard.

@@ -30,7 +30,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [self setTitle:@"S.H.I.E.L.D. Hero Tracker"];
-
+    self.heroes = [[NSMutableArray alloc]init];
+    [self loadHeroes];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,17 +47,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    NSLog(@"Number of heroes: %ld", self.heroes.count);
     return [self.heroes count];
+    
 }
-
-
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"heroCell" forIndexPath:indexPath];
     
     // Configure the cell...
     Hero * aHero = [self.heroes objectAtIndex: indexPath.row];
+    cell.textLabel.text = [aHero description];
+    cell.detailTextLabel.text = aHero.heroRealName;
 
     
     return cell;
@@ -123,6 +126,8 @@
     
     // Sort the heros array of dictionaries by the key name 'heroName'
     [self.heroes sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"heroName" ascending:YES], nil]];
+    
+    [self.tableView reloadData];
 }
     
     

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC0E4CC51CCA6F1D004C87FE /* heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = CC0E4CC41CCA6F1D004C87FE /* heroes.json */; };
+		CC0E4CC91CCA8D6C004C87FE /* heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = CC0E4CC81CCA8D6C004C87FE /* heroes.json */; };
 		CC6D5CBE1CC9545D00B45788 /* HeroTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D5CBD1CC9545D00B45788 /* HeroTableTableViewController.m */; };
 		CC6D5CC11CC9548D00B45788 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D5CC01CC9548D00B45788 /* Hero.m */; };
 		CCCD5BB81CC9365E00D4B0F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5BB71CC9365E00D4B0F8 /* main.m */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CC0E4CC41CCA6F1D004C87FE /* heroes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heroes.json; sourceTree = "<group>"; };
+		CC0E4CC81CCA8D6C004C87FE /* heroes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heroes.json; sourceTree = "<group>"; };
 		CC6D5CBC1CC9545D00B45788 /* HeroTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroTableTableViewController.h; sourceTree = "<group>"; };
 		CC6D5CBD1CC9545D00B45788 /* HeroTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroTableTableViewController.m; sourceTree = "<group>"; };
 		CC6D5CBF1CC9548D00B45788 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 				CC6D5CBD1CC9545D00B45788 /* HeroTableTableViewController.m */,
 				CCCD5BCD1CC9502A00D4B0F8 /* HeroDetailViewController.h */,
 				CCCD5BCE1CC9502A00D4B0F8 /* HeroDetailViewController.m */,
-				CC0E4CC41CCA6F1D004C87FE /* heroes.json */,
+				CC0E4CC81CCA8D6C004C87FE /* heroes.json */,
 				CCCD5BBF1CC9365E00D4B0F8 /* Main.storyboard */,
 				CCCD5BC21CC9365E00D4B0F8 /* Assets.xcassets */,
 				CCCD5BC41CC9365E00D4B0F8 /* LaunchScreen.storyboard */,
@@ -151,7 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCCD5BC61CC9365E00D4B0F8 /* LaunchScreen.storyboard in Resources */,
-				CC0E4CC51CCA6F1D004C87FE /* heroes.json in Resources */,
+				CC0E4CC91CCA8D6C004C87FE /* heroes.json in Resources */,
 				CCCD5BC31CC9365E00D4B0F8 /* Assets.xcassets in Resources */,
 				CCCD5BC11CC9365E00D4B0F8 /* Main.storyboard in Resources */,
 			);
