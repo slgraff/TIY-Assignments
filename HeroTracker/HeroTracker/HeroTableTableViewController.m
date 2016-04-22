@@ -117,6 +117,7 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"heroes" ofType:@"json"];
     
     // Load json file into memory as array of dictionaries
+    // How to check for errors loading file?
     NSArray *heroes = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:filePath] options:NSJSONReadingAllowFragments error:nil];
     
     // Iterate over the array and create Hero objects
@@ -125,6 +126,7 @@
     }
     
     // Sort the heros array of dictionaries by the key name 'heroName'
+    // How to perform case insensitive search?
     [self.heroes sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"heroName" ascending:YES], nil]];
     
     [self.tableView reloadData];

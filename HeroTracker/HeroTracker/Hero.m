@@ -20,18 +20,26 @@
         aHero.heroName = [heroDict objectForKey:@"heroName"]; // hero's cover name is the name of the dictionary object, i.e. Earthquake, Lionheart, Paladin, etc.
         
         // Set hero's real name
-        // If any is 'Unrevealed' set full name to 'Unrevealed'
-        // Otherwise, assemble by joining realFirstName, realMiddleName, realLastName
-        if ([[heroDict objectForKey:@"realFirstName"] isEqualToString:@"Unrevealed"]) {
-            aHero.heroRealName = @"Unrevealed";
-        } else {
-            
-            // Need to handle empty strings for any name value
-            // If all three are empty, set to 'Unrevealed' or just ""?
-            
-            aHero.heroRealName = [NSString stringWithFormat:@"%@ %@ %@", [heroDict objectForKey:@"realFirstName"], [heroDict objectForKey:@"realMiddleName"], [heroDict objectForKey:@"realLastName"]];
-        }
         
+        if ([[heroDict objectForKey:@"realFirstName"] isEqualToString:@"Unrevealed"]) {
+            // If any is "Unrevealed" set full name to "Unrevealed"
+            aHero.heroRealName = @"Unrevealed";
+        } else if (!heroDict[@"realFirstName"]) {
+            // If realFirstName does not exist, set real name to "Unknown"
+            aHero.heroRealName = @"Unknown";
+        } else if ([heroDict[@"realMiddleName"]  isEqual: @""]) {
+            // If middle name is empty, set full name to just first and last
+            aHero.heroRealName = [NSString stringWithFormat:@"%@ %@",
+                                  [heroDict objectForKey:@"realFirstName"],
+                                  [heroDict objectForKey:@"realLastName"]];
+        } else {
+            // Set full name to first, middle and last
+            aHero.heroRealName = [NSString stringWithFormat:@"%@ %@ %@",
+                                  [heroDict objectForKey:@"realFirstName"],
+                                  [heroDict objectForKey:@"realMiddleName"],
+                                  [heroDict objectForKey:@"realLastName"]];
+        }
+    
         // Set hero's powers
         aHero.heroPowers = [heroDict objectForKey:@"powers"];
         
