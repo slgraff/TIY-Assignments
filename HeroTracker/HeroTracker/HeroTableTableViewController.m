@@ -29,8 +29,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    // Set title for Table View Controller
     [self setTitle:@"S.H.I.E.L.D. Hero Tracker"];
+    
+    // Initialize the heros array as NSMutableArray
     self.heroes = [[NSMutableArray alloc]init];
+    
+    // Load the heroes into the TableView
     [self loadHeroes];
 }
 
@@ -38,6 +43,37 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - Segues
+
+
+
+// Called when executing segue on our View Controller
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    // Set the segue identifier, HeroCell
+    if ([[segue identifier] isEqualToString:@"HeroDetailSegue"])
+    {
+        // Get an NSIndexPath for the selected cell
+        UITableViewCell *selectedCell = (UITableViewCell *)sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:selectedCell];
+        
+        // Use row property of IndexPath above to get associated Hero object from heroes array
+        Hero *selectedHero = self.heroes[indexPath.row];
+        
+        // Send the above Hero object to the Hero detail view controller
+        HeroDetailViewController *heroDetailView = [segue destinationViewController];
+        [heroDetailView setHero:selectedHero];
+        
+        // Reset selected hero back to nil
+        selectedHero = nil;
+        
+    }
+}
+
+
 
 #pragma mark - Table view data source
 
@@ -50,7 +86,6 @@
     
     NSLog(@"Number of heroes: %ld", self.heroes.count);
     return [self.heroes count];
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,6 +100,39 @@
     return cell;
 }
 
+
+/*
+     Thoughts on how to perform segue to detail view controller:
+ 
+     Grab current cell and store it in a property
+     Call [self performSegueWithIdentifier:@“IdentifierNameHere” sender:self];
+     
+    In prepareForSegue pass stored property for current cell to destination view controller,
+     set property back to nil
+ // Reset selected hero back to nil
+ // selectedHero = nil;
+     Hint - to create segue ctrl-drag from the view controller to the detail view
+ 
+    Agent *anAgent = [self.agents objectAtIndex: indexPath.row];
+
+*/
+ 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Store selected hero
+    Hero *selectedHero = [self.heroes objectAtIndex: indexPath.row];
+    
+    [self performSegueWithIdentifier:@"HeroCell" sender:selectedHero];
+    
+    // [tableView deselectRowAtIndexPath:selectedHero animated:NO];
+//    HeroTableTableViewController *heroesController = [[HeroTableTableViewController alloc] initWithStyle:UITableViewStylePlain];
+//    heroesController.selectedRegion = [regions objectAtIndex:indexPath.row];
+//    [[self navigationController] pushViewController:heroesController animated:YES];
+    
+    
+
+
+}
 
 
 /*
