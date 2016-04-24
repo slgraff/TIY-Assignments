@@ -8,20 +8,31 @@
 
 #import "HeroDetailViewController.h"
 
-@interface HeroTableTableViewController: UITableViewController <HeroDetailViewControllerDelegate>
+
+@interface HeroDetailViewController()
+
+// With this line getting errors for all below properties
+// @interface HeroTableTableViewController: UITableViewController <HeroDetailViewControllerDelegate *>
 
 @property (weak, nonatomic) IBOutlet UILabel *heroNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *heroRealNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *heroPowersLabel;
 
 
-// What is this? What does it do?
 - (void)configureView;
 
 
 @end
 
 @implementation HeroDetailViewController
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self configureView];
+    
+}
 
 #pragma mark - Managing the Hero Detail View
 
@@ -36,7 +47,7 @@
 
 - (void)configureView {
     if (self.hero) {
-        self.title = [NSString stringWithFormat:@"Hero %@", [self.hero.heroName componentsSeparatedByString:@" "][1]];
+        self.title = [NSString stringWithFormat:@"Hero %@", [self.hero.heroName componentsSeparatedByString:@" "][0]];
         
         // Set contents of labels in the Hero Detail View
         self.heroNameLabel.text = self.hero.heroName;
@@ -47,12 +58,7 @@
 
 
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    [self configureView];
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

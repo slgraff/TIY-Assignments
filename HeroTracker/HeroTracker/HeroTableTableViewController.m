@@ -62,8 +62,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    // Set the segue identifier, HeroDetailSegue
-    if ([[segue identifier] isEqualToString:@"HeroCell"])
+    // Set the segue identifier, heroDetailSegue
+    if ([[segue identifier] isEqualToString:@"heroDetailSegue"])
     {
         // Get an NSIndexPath for the selected cell
         UITableViewCell *selectedCell = (UITableViewCell *)sender;
@@ -116,7 +116,7 @@
     // Store selected hero
     Hero *selectedHero = [self.heroes objectAtIndex: indexPath.row];
     
-    [self performSegueWithIdentifier:@"HeroDetailSegue" sender:selectedHero];
+    [self performSegueWithIdentifier:@"heroDetailSegue" sender:selectedHero];
     
     // [tableView deselectRowAtIndexPath:selectedHero animated:NO];
 //    HeroTableTableViewController *heroesController = [[HeroTableTableViewController alloc] initWithStyle:UITableViewStylePlain];
