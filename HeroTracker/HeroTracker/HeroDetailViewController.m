@@ -11,9 +11,6 @@
 
 @interface HeroDetailViewController()
 
-// With this line getting errors for all below properties
-// @interface HeroTableTableViewController: UITableViewController <HeroDetailViewControllerDelegate *>
-
 @property (weak, nonatomic) IBOutlet UILabel *heroNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *heroRealNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *heroPowersLabel;

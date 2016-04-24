@@ -15,9 +15,6 @@
 // heroes is a mutable array of dictionaries, contains hero name as key, hero object as value
 @property NSMutableArray *heroes;
 
-// Declare property to store the selected hero - DO I NEED THIS??
-// @property Hero *selectedHero;
-
 
 @end
 
@@ -25,12 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // Set title for Table View Controller
     [self setTitle:@"S.H.I.E.L.D. Hero Tracker"];
@@ -55,9 +46,6 @@
 
 #pragma mark - Segues
 
-// In prepareForSegue I passed that store property value for the current cell over to the destination view controller and then set that property back to nil for the next selection.
-
-
 // Called when executing segue on our View Controller
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -65,40 +53,15 @@
     // Set the segue identifier, heroDetailSegue
     if ([[segue identifier] isEqualToString:@"heroDetailSegue"])
     {
-        // Get a reference to destination view controller
-        // HeroDetailViewController *heroDVC = [segue destinationViewController];
-        
         // Get an NSIndexPath to selected cell
-        // UITableViewCell *selectedCell = (UITableViewCell *)sender;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        
-        
-        
         // Use row property from indexPath to get Hero from array
-        // Hero *selectedHero = self.heroes[objectAtIndex: indexPath.row];
-        
         Hero *selectedHero = [self.heroes objectAtIndex:indexPath.row];
-        
         
         HeroDetailViewController *myDetailViewController = [segue destinationViewController];
         
         myDetailViewController.hero = selectedHero;
-        
-        
-        // [heroDVC setHero: selectedHero];
-        
-//        UITableViewCell *selectedCell = (UITableViewCell *)sender;
-//        NSIndexPath *indexPath = [self.tableView indexPathForCell:selectedCell];
-        
-        // Use row property of IndexPath above to get associated Hero object from heroes array
-//        Hero *selectedHero = self.heroes[indexPath.row];
-        
-
-//        [heroDetailView setHero:_selectedHero];
-//        
-//        // Reset selected hero back to nil
-//        _selectedHero = nil;
         
     }
 }
@@ -140,19 +103,8 @@
     // Store selected hero
     Hero *selectedHero = [self.heroes objectAtIndex: indexPath.row];
     
-    
-    // CHECK THIS CODE
-    // Selected hero is not being passed to hero detail view controller
     [self performSegueWithIdentifier:@"heroDetailSegue" sender:selectedHero];
     
-    // [tableView deselectRowAtIndexPath:selectedHero animated:NO];
-    // HeroTableTableViewController *heroesController = [[HeroTableTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    // heroesController.selectedRegion = [regions objectAtIndex:indexPath.row];
-    // [[self navigationController] pushViewController:heroesController animated:YES];
-        
-    
-
-
 }
 
 
