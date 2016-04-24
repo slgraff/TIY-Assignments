@@ -67,19 +67,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="heroNameLabel" text="Hero Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgO-uu-7aH">
-                                <rect key="frame" x="20" y="64" width="87" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="heroPowersLabel" text="Powers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aq-1b-Ldf" userLabel="Hero Powers Label">
-                                <rect key="frame" x="20" y="144" width="56" height="21"/>
+                                <rect key="frame" x="20" y="72" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="heroRealNameLabel" text="Real Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxT-po-IFq">
-                                <rect key="frame" x="20" y="115" width="83" height="21"/>
+                                <rect key="frame" x="20" y="125" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="heroPowersLabel" text="Powers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aq-1b-Ldf" userLabel="Hero Powers Label">
+                                <rect key="frame" x="20" y="154" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -89,11 +89,24 @@
                         <constraints>
                             <constraint firstItem="0aq-1b-Ldf" firstAttribute="top" secondItem="PxT-po-IFq" secondAttribute="bottom" constant="8" id="1UK-WA-D1g"/>
                             <constraint firstItem="0aq-1b-Ldf" firstAttribute="leading" secondItem="W3F-xS-P3P" secondAttribute="leadingMargin" id="9VL-wi-LMx"/>
+                            <constraint firstItem="0aq-1b-Ldf" firstAttribute="top" secondItem="PxT-po-IFq" secondAttribute="bottom" constant="8" id="AOj-mZ-8Ra"/>
                             <constraint firstItem="PxT-po-IFq" firstAttribute="top" secondItem="IgO-uu-7aH" secondAttribute="bottom" constant="30" id="HUs-5P-hMf"/>
+                            <constraint firstItem="IgO-uu-7aH" firstAttribute="top" secondItem="gYD-Iq-Sf6" secondAttribute="bottom" constant="8" id="OHj-Kx-Qvb"/>
+                            <constraint firstItem="PxT-po-IFq" firstAttribute="top" secondItem="IgO-uu-7aH" secondAttribute="bottom" constant="32" id="PZl-q1-Rrq"/>
                             <constraint firstItem="IgO-uu-7aH" firstAttribute="leading" secondItem="W3F-xS-P3P" secondAttribute="leadingMargin" id="TnA-Gc-ani"/>
                             <constraint firstItem="PxT-po-IFq" firstAttribute="leading" secondItem="W3F-xS-P3P" secondAttribute="leadingMargin" id="egf-PJ-hXV"/>
+                            <constraint firstItem="PxT-po-IFq" firstAttribute="top" secondItem="IgO-uu-7aH" secondAttribute="bottom" constant="32" id="qSi-FG-Jcs"/>
+                            <constraint firstItem="0aq-1b-Ldf" firstAttribute="trailing" secondItem="W3F-xS-P3P" secondAttribute="trailingMargin" id="sJq-hZ-r1a"/>
                             <constraint firstItem="IgO-uu-7aH" firstAttribute="top" secondItem="gYD-Iq-Sf6" secondAttribute="bottom" id="siS-7R-u5a"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="siS-7R-u5a"/>
+                                <exclude reference="HUs-5P-hMf"/>
+                                <exclude reference="qSi-FG-Jcs"/>
+                                <exclude reference="1UK-WA-D1g"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="heroNameLabel" destination="IgO-uu-7aH" id="jIk-tx-IQs"/>
