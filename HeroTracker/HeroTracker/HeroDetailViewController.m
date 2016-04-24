@@ -47,7 +47,9 @@
 
 - (void)configureView {
     if (self.hero) {
-        self.title = [NSString stringWithFormat:@"Hero %@", [self.hero.heroName componentsSeparatedByString:@" "][0]];
+        
+        // Extract Hero name and set detail view title
+        self.title = [NSString stringWithFormat:@"%@", [self.hero.heroName componentsSeparatedByString:@" "][0]];
         
         // Set contents of labels in the Hero Detail View
         self.heroNameLabel.text = self.hero.heroName;

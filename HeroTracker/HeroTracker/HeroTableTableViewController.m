@@ -98,10 +98,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"heroCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    // Get handle to the Hero object
     Hero * aHero = [self.heroes objectAtIndex: indexPath.row];
+    
+    // Set label text for chosen Hero
     cell.textLabel.text = aHero.heroName;
     cell.detailTextLabel.text = aHero.heroRealName;
 
