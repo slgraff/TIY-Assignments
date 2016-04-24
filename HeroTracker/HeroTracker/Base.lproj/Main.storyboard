@@ -47,8 +47,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Bkf-ba-MlP"/>
                     <connections>
-                        <segue destination="oPc-Ii-j8S" kind="show" identifier="HeroDetailSegue" id="Zoo-wI-vAH"/>
-                        <segue destination="oPc-Ii-j8S" kind="show" id="DFE-MB-9Yk"/>
+                        <segue destination="oPc-Ii-j8S" kind="show" id="2td-bg-owy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o18-Pd-1ay" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,7 +124,4 @@
             <point key="canvasLocation" x="279" y="249"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Zoo-wI-vAH"/>
-    </inferredMetricsTieBreakers>
 </document>

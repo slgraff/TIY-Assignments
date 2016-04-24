@@ -15,6 +15,9 @@
 // heroes is a mutable array of dictionaries, contains hero name as key, hero object as value
 @property NSMutableArray *heroes;
 
+// Declare property to store the selected hero
+@property Hero *selectedHero;
+
 
 @end
 
@@ -45,8 +48,14 @@
 }
 
 
+#pragma mark - HeroDetailsViewControllerDelegate
+
+- (void)heroDetailViewController{}
+
+
 #pragma mark - Segues
 
+// In prepareForSegue I passed that store property value for the current cell over to the destination view controller and then set that property back to nil for the next selection.
 
 
 // Called when executing segue on our View Controller
@@ -68,7 +77,7 @@
         [heroDetailView setHero:selectedHero];
         
         // Reset selected hero back to nil
-        selectedHero = nil;
+        // selectedHero = nil;
         
     }
 }
@@ -101,21 +110,6 @@
 }
 
 
-/*
-     Thoughts on how to perform segue to detail view controller:
- 
-     Grab current cell and store it in a property
-     Call [self performSegueWithIdentifier:@“IdentifierNameHere” sender:self];
-     
-    In prepareForSegue pass stored property for current cell to destination view controller,
-     set property back to nil
- // Reset selected hero back to nil
- // selectedHero = nil;
-     Hint - to create segue ctrl-drag from the view controller to the detail view
- 
-    Agent *anAgent = [self.agents objectAtIndex: indexPath.row];
-
-*/
  
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

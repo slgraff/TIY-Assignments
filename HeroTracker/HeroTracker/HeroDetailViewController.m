@@ -8,7 +8,7 @@
 
 #import "HeroDetailViewController.h"
 
-@interface HeroDetailViewController ()
+@interface HeroTableTableViewController: UITableViewController <HeroDetailViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *heroNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *heroRealNameLabel;
