@@ -33,11 +33,11 @@
         * [x] Sort the _heroes_ array in place to alphabetize the list by hero name
     * [x] Implement the three tableview datasource methods to get each hero in the _heroes_ array to display in the table with the name in the cell's left label and their homeworld in the cell's right label.
     	* I implemented this in 'Table View Data Source' section of HeroTableViewController.m
-    * [ ] Implement the _didSelectRowAtIndexPath_ tableview delegate method to transition to the detail view. Be sure to send the appropriate hero object to the detail view controller before you inititate the transition.
+    * [x] Implement the _didSelectRowAtIndexPath_ tableview delegate method to transition to the detail view. Be sure to send the appropriate hero object to the detail view controller before you inititate the transition.
 * In _HeroDetailViewController_:
     * [x] Create three IBOutlet properties: _nameLabel_, _homeworldLabel_, and _powersLabel_ and wire them up to the appropriate labels in the storyboard.
-    * [ ] Add a property called _hero_ that is a Hero optional.
-    * [ ] Take the name, homeworld and powers from the hero property and set them to their appropriate label onscreen.
+    * [x] Add a property called _hero_ that is a Hero optional.
+    * [x] Take the name, homeworld and powers from the hero property and set them to their appropriate label onscreen.
 
 ### Hard Mode
 
