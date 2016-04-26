@@ -53,14 +53,14 @@
     
     if ([textField isEqual:self.nameTextField]) { // Validate name field
         
-        if ([self.formValidator validateName: self.nameTextField.text]) {
+        if ([self.formValidator isValidName: self.nameTextField.text]) {
             [self.nameTextField resignFirstResponder];
             [self.addressTextField becomeFirstResponder];
             return YES;
         }
         
     } else if ([textField isEqual:self.addressTextField]) { // Validate address field
-        if ([self.formValidator validateAddress:self.addressTextField.text]) {
+        if ([self.formValidator isValidAddress:self.addressTextField.text]) {
             [self.addressTextField resignFirstResponder];
             [self.cityTextField becomeFirstResponder];
             return YES;
@@ -68,7 +68,7 @@
         
     } else if ([textField isEqual:self.cityTextField]) { // Validate city field
         // Call formValidator for city field
-        if ([self.formValidator validateAddress:self.cityTextField.text]) {
+        if ([self.formValidator isValidCity:self.cityTextField.text]) {
             [self.cityTextField resignFirstResponder];
             [self.stateTextField becomeFirstResponder];
             return YES;
@@ -76,22 +76,22 @@
 
     } else if ([textField isEqual:self.stateTextField]) { // Validate state field
         // Call formValidator for state field
-        if ([self.formValidator validateAddress:self.stateTextField.text]) {
+        if ([self.formValidator isValidState:self.stateTextField.text]) {
             [self.stateTextField resignFirstResponder];
             [self.zipTextField becomeFirstResponder];
             return YES;
         }
     } else if ([textField isEqual:self.zipTextField]) { // Validate zip field
         // Call formValidator for zip field
-        if ([self.formValidator validateAddress:self.zipTextField.text]) {
-            [self.cityTextField resignFirstResponder];
-            [self.stateTextField becomeFirstResponder];
+        if ([self.formValidator isValidZip:self.zipTextField.text]) {
+            [self.zipTextField resignFirstResponder];
+            [self.phoneTextField becomeFirstResponder];
             return YES;
         }
     } else if ([textField isEqual:self.phoneTextField]) { // Validate phone field
         // Call formValidator for phone field
         // As is last field, do not resign first responder status
-        return [self.formValidator validateAddress:self.phoneTextField.text];
+        return [self.formValidator isValidPhone:self.phoneTextField.text];
         return YES;
         }
     return NO;

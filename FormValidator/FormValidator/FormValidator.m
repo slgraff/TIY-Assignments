@@ -14,14 +14,14 @@
 #pragma mark - Validator Methods
 
 // Worker class to validate entered name
-- (BOOL) validateName:(NSString *)nameString {
+- (BOOL) isValidName:(NSString *)nameString {
     
     return [[nameString componentsSeparatedByString:@" "]count] > 1;
 }
 
 
 // Worker class to validate entered address
-- (BOOL) validateAddress:(NSString*)addressString{
+- (BOOL) isValidAddress:(NSString*)addressString{
     NSTextCheckingType detectorType = NSTextCheckingTypeAddress;
     
     NSError * error;
@@ -32,6 +32,9 @@
     
     [dataDetector enumerateMatchesInString:addressString options:kNilOptions range:
      NSMakeRange(0, [addressString length]) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+         
+         NSLog(@"%@", [result description]);
+         
          // For specified range, if address found in string, run block of code
          rc = YES;
      }];
@@ -39,60 +42,85 @@
 }
 
 // Worker class to validate entered city
-- (BOOL) validateCity:(NSString *)cityString {
-    NSTextCheckingType detectorType = NSTextCheckingCityKey;
+- (BOOL) isValidCity:(NSString *)cityString {
     
-    NSError * error;
+    // For checking city just make sure it's at least two characters
     
-    NSDataDetector * dataDetector = [NSDataDetector dataDetectorWithTypes:detectorType error:&error];
+//    NSTextCheckingType detectorType = NSTextCheckingCityKey; // NSTextCheckingCityKey is a type for addresses component
+//    
+//    NSError * error;
+//    
+//    NSDataDetector * dataDetector = [NSDataDetector dataDetectorWithTypes:detectorType error:&error];
     
     __block BOOL rc = NO;
     
-    [dataDetector enumerateMatchesInString:cityString options:kNilOptions range:NSMakeRange(0, [cityString length]) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-        // For specified range, if city found in string run block of code
+    if ([cityString length] >=2 ) {
         rc = YES;
-    }];
+    }
+    
+//    [dataDetector enumerateMatchesInString:cityString options:kNilOptions range:NSMakeRange(0, [cityString length]) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+//        // For specified range, if city found in string run block of code
+//        rc = YES;
+//    }];
+
     return rc; // If YES we found city, if NO we did not
 }
 
 // Worker class to validate entered state
-- (BOOL) validateState:(NSString *)stateString {
-    NSTextCheckingType detectorType = NSTextCheckingStateKey;
+- (BOOL) isValidState:(NSString *)stateString {
     
-    NSError * error;
+    // For checking state just make sure it's at least two characters
+
     
-    NSDataDetector * dataDetector = [NSDataDetector dataDetectorWithTypes:detectorType error:&error];
+//    NSTextCheckingType detectorType = NSTextCheckingStateKey;
+//    
+//    NSError * error;
+//    
+//    NSDataDetector * dataDetector = [NSDataDetector dataDetectorWithTypes:detectorType error:&error];
     
     __block BOOL rc = NO;
     
-    [dataDetector enumerateMatchesInString:stateString options:kNilOptions range:NSMakeRange(0, [stateString length]) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-        // For specified range, if state found in string run block of code
+//    [dataDetector enumerateMatchesInString:stateString options:kNilOptions range:NSMakeRange(0, [stateString length]) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+//        // For specified range, if state found in string run block of code
+//        rc = YES;
+//    }];
+    
+    if ([stateString length] >=2 ) {
         rc = YES;
-    }];
+    }
+    
     return rc; // If YES we found city, if NO we did not
 }
 
 
 // Worker class to validate entered zip code
--(BOOL) validateZip:(NSString *)zipString{
+// New solution provided by Jeff
+-(BOOL) isValidZip:(NSString *)zipString{
     BOOL rc = NO;
     NSCharacterSet * set = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
     
-    // Location of characters in this string are all found
-    rc = ([zipString length] == 5) && ([zipString rangeOfCharacterFromSet:set].location != NSNotFound);
+    // Inverted set, i.e. is every character EXCEPT for those in set
+    set = [set invertedSet];
+    
+    NSRange myRange =[zipString rangeOfCharacterFromSet:set];
+    
+    rc = (myRange.location == NSNotFound);
+    
+    rc = ([zipString length] ==5) && rc;
     
     return rc;
 }
 
 // Worker class to validate entered phone number
-- (BOOL) validatePhone:(NSString *)phoneString {
-    NSTextCheckingType detectorType = NSTextCheckingPhoneKey;
+- (BOOL) isValidPhone:(NSString *)phoneString {
+    
+    NSTextCheckingType detectorType = NSTextCheckingTypePhoneNumber;
     
     NSError * error;
     
     NSDataDetector * dataDetector = [NSDataDetector dataDetectorWithTypes:detectorType error:&error];
     
-    __block BOOL = NO;
+    __block BOOL rc = NO;
     
     [dataDetector enumerateMatchesInString:phoneString options:kNilOptions range:NSMakeRange(0, [phoneString length]) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
         // For specified range, if phone found in string run block of code
