@@ -10,11 +10,14 @@
 #import "FormValidator.h"
 
 
+
 @interface ViewController () <UITextFieldDelegate>
 
 // Declare custom properties
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (weak, nonatomic) IBOutlet UITextField *zipTextField;
+
 
 // Declare formValidator
 @property (strong, nonatomic) FormValidator * formValidator;
@@ -27,7 +30,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.addressTextField.placeholder = @"Address";
-    self.nameTextField.placeholder = @"Name";
     
     self.formValidator = [[FormValidator alloc]init];
 }
@@ -42,10 +44,19 @@
     if ([textField isEqual:self.nameTextField]) {
         // Check number of words in text field
         
-    } else if ([textfield isEqual:self.addressTextField]) {
-        return [textField.text isValidAddress];
+        if ([self.formValidator validateName: self.nameTextField.text]) {
+            [self.nameTextField resignFirstResponder];
+            [self.addressTextField becomeFirstResponder];
+            return YES;
+        }
+        
+    } else if ([textField isEqual:self.addressTextField]) {
+        return [self.formValidator validateAddress:self.addressTextField.text];
     }
     return NO;
 }
+
+
+
 
 @end

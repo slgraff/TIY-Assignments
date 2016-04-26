@@ -11,4 +11,12 @@
 
 @interface FormValidator : NSObject
 
+// Declaring method
+- (BOOL) validateName:(NSString *)nameString;
+
+- (BOOL) validateAddress:(NSString *)addressString;
+
+- (BOOL) validateZip:(NSString *)zipString;
+
+
 @end
