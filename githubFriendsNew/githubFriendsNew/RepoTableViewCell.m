@@ -28,9 +28,13 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+    if (selected) {
+        self.contentView.backgroundColor = [UIColor blueColor];
+    } else {
+        self.contentView.backgroundColor = [UIColor orangeColor];
 
-    // Configure the view for the selected state
-    self.contentView.backgroundColor = [UIColor orangeColor];
+    }
+
 
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC5B9C001CCFB1E4001B6D3C /* RepoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5B9BFF1CCFB1E4001B6D3C /* RepoTableViewCell.m */; };
+		CC5B9C021CCFB529001B6D3C /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5B9C011CCFB529001B6D3C /* RepoTableViewCell.xib */; };
 		CCB750911CCE647D008D06B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB750901CCE647D008D06B5 /* main.m */; };
 		CCB750941CCE647D008D06B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB750931CCE647D008D06B5 /* AppDelegate.m */; };
 		CCB750971CCE647D008D06B5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB750961CCE647D008D06B5 /* MasterViewController.m */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		CC5B9BFE1CCFB1E4001B6D3C /* RepoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoTableViewCell.h; sourceTree = "<group>"; };
 		CC5B9BFF1CCFB1E4001B6D3C /* RepoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoTableViewCell.m; sourceTree = "<group>"; };
+		CC5B9C011CCFB529001B6D3C /* RepoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
 		CCB7508C1CCE647D008D06B5 /* githubFriendsNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubFriendsNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCB750901CCE647D008D06B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCB750921CCE647D008D06B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				CCB750A91CCE887E008D06B5 /* Friend.h */,
 				CCB750AA1CCE887E008D06B5 /* Friend.m */,
 				CCB7509B1CCE647D008D06B5 /* Main.storyboard */,
+				CC5B9C011CCFB529001B6D3C /* RepoTableViewCell.xib */,
 				CCB7509E1CCE647D008D06B5 /* Assets.xcassets */,
 				CCB750A01CCE647D008D06B5 /* LaunchScreen.storyboard */,
 				CCB750A31CCE647D008D06B5 /* Info.plist */,
@@ -155,6 +158,7 @@
 				CCB750A21CCE647D008D06B5 /* LaunchScreen.storyboard in Resources */,
 				CCB7509F1CCE647D008D06B5 /* Assets.xcassets in Resources */,
 				CCB7509D1CCE647D008D06B5 /* Main.storyboard in Resources */,
+				CC5B9C021CCFB529001B6D3C /* RepoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
