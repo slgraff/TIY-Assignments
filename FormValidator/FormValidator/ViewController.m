@@ -40,6 +40,9 @@
     self.zipTextField.placeholder = @"Zip";
     self.phoneTextField.placeholder = @"Phone Number";
     
+    // Set name field as having focus
+    [self.nameTextField becomeFirstResponder];
+    
     self.formValidator = [[FormValidator alloc]init];
 }
 
@@ -91,8 +94,11 @@
     } else if ([textField isEqual:self.phoneTextField]) { // Validate phone field
         // Call formValidator for phone field
         // As is last field, do not resign first responder status
-        return [self.formValidator isValidPhone:self.phoneTextField.text];
-        return YES;
+        if ([self.formValidator isValidPhone:self.phoneTextField.text]) {
+            [self.phoneTextField resignFirstResponder]; // deactivates any field as being active, also hides keyboard
+            return YES;
+        }
+        
         }
     return NO;
 }
