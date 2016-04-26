@@ -17,13 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMH-vn-SWK">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qMH-vn-SWK">
                                 <rect key="frame" x="200" y="20" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="NtX-a1-G4U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="OAd-Jd-yH8"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0on-gB-We6">
                                 <rect key="frame" x="200" y="68" width="200" height="30"/>
@@ -42,6 +45,10 @@
                             <constraint firstItem="qMH-vn-SWK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uW7-7N-GQg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="0on-gB-We6" id="WJA-Ec-dtV"/>
+                        <outlet property="nameTextField" destination="qMH-vn-SWK" id="WOP-tP-cuv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
