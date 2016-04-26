@@ -10,6 +10,9 @@
 
 @implementation FormValidator
 
+
+#pragma mark - Validator Methods
+
 // Worker class to validate entered name
 - (BOOL) validateName:(NSString *)nameString {
     
@@ -35,6 +38,42 @@
     return rc;  // If YES we found address, if NO we did not
 }
 
+// Worker class to validate entered city
+- (BOOL) validateCity:(NSString *)cityString {
+    NSTextCheckingType detectorType = NSTextCheckingCityKey;
+    
+    NSError * error;
+    
+    NSDataDetector * dataDetector = [NSDataDetector dataDetectorWithTypes:detectorType error:&error];
+    
+    __block BOOL rc = NO;
+    
+    [dataDetector enumerateMatchesInString:cityString options:kNilOptions range:NSMakeRange(0, [cityString length]) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        // For specified range, if city found in string run block of code
+        rc = YES;
+    }];
+    return rc; // If YES we found city, if NO we did not
+}
+
+// Worker class to validate entered state
+- (BOOL) validateState:(NSString *)stateString {
+    NSTextCheckingType detectorType = NSTextCheckingStateKey;
+    
+    NSError * error;
+    
+    NSDataDetector * dataDetector = [NSDataDetector dataDetectorWithTypes:detectorType error:&error];
+    
+    __block BOOL rc = NO;
+    
+    [dataDetector enumerateMatchesInString:stateString options:kNilOptions range:NSMakeRange(0, [stateString length]) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        // For specified range, if state found in string run block of code
+        rc = YES;
+    }];
+    return rc; // If YES we found city, if NO we did not
+}
+
+
+// Worker class to validate entered zip code
 -(BOOL) validateZip:(NSString *)zipString{
     BOOL rc = NO;
     NSCharacterSet * set = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
@@ -43,6 +82,23 @@
     rc = ([zipString length] == 5) && ([zipString rangeOfCharacterFromSet:set].location != NSNotFound);
     
     return rc;
+}
+
+// Worker class to validate entered phone number
+- (BOOL) validatePhone:(NSString *)phoneString {
+    NSTextCheckingType detectorType = NSTextCheckingPhoneKey;
+    
+    NSError * error;
+    
+    NSDataDetector * dataDetector = [NSDataDetector dataDetectorWithTypes:detectorType error:&error];
+    
+    __block BOOL = NO;
+    
+    [dataDetector enumerateMatchesInString:phoneString options:kNilOptions range:NSMakeRange(0, [phoneString length]) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        // For specified range, if phone found in string run block of code
+        rc = YES;
+    }];
+    return rc;  // If YES we found phone number, if NO we did not
 }
 
 
