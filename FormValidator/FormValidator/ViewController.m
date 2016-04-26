@@ -44,7 +44,9 @@
     [self.nameTextField becomeFirstResponder];
     
     // Set title of view
-    self.title = @"Validator";
+    // Is not visible when running app
+    [self setTitle:@"Validator"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
