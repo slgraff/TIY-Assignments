@@ -43,8 +43,8 @@
     // Set name field as having focus
     [self.nameTextField becomeFirstResponder];
     
-    
-    self.navigationItem.title = @"Validator";
+    // Set title of view
+    self.title = @"Validator";
 }
 
 - (void)didReceiveMemoryWarning {
