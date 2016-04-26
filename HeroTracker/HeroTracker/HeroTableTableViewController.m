@@ -53,7 +53,7 @@
     // Set the segue identifier, heroDetailSegue
     if ([[segue identifier] isEqualToString:@"heroDetailSegue"])
     {
-        // Get an NSIndexPath to selected cell
+        // Get an NSIndexPath to selected row
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         // Use row property from indexPath to get Hero from array

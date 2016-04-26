@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		CCCD5B691CC7BC0E00D4B0F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5B681CC7BC0E00D4B0F8 /* main.m */; };
 		CCCD5B6C1CC7BC0E00D4B0F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5B6B1CC7BC0E00D4B0F8 /* AppDelegate.m */; };
-		CCCD5B6F1CC7BC0E00D4B0F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5B6E1CC7BC0E00D4B0F8 /* ViewController.m */; };
+		CCCD5B6F1CC7BC0E00D4B0F8 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5B6E1CC7BC0E00D4B0F8 /* PickerViewController.m */; };
 		CCCD5B721CC7BC0E00D4B0F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCCD5B701CC7BC0E00D4B0F8 /* Main.storyboard */; };
 		CCCD5B741CC7BC0E00D4B0F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCD5B731CC7BC0E00D4B0F8 /* Assets.xcassets */; };
-		CCCD5B771CC7BC0E00D4B0F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCCD5B751CC7BC0E00D4B0F8 /* LaunchScreen.storyboard */; };
 		CCCD5B801CC7C2B000D4B0F8 /* TicketsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5B7F1CC7C2B000D4B0F8 /* TicketsTableViewController.m */; };
 		CCCD5B831CC7C4BF00D4B0F8 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5B821CC7C4BF00D4B0F8 /* Ticket.m */; };
 /* End PBXBuildFile section */
@@ -22,11 +21,10 @@
 		CCCD5B681CC7BC0E00D4B0F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCCD5B6A1CC7BC0E00D4B0F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CCCD5B6B1CC7BC0E00D4B0F8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CCCD5B6D1CC7BC0E00D4B0F8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CCCD5B6E1CC7BC0E00D4B0F8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CCCD5B6D1CC7BC0E00D4B0F8 /* PickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		CCCD5B6E1CC7BC0E00D4B0F8 /* PickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 		CCCD5B711CC7BC0E00D4B0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCCD5B731CC7BC0E00D4B0F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CCCD5B761CC7BC0E00D4B0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCCD5B781CC7BC0E00D4B0F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCCD5B7E1CC7C2B000D4B0F8 /* TicketsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketsTableViewController.h; sourceTree = "<group>"; };
 		CCCD5B7F1CC7C2B000D4B0F8 /* TicketsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketsTableViewController.m; sourceTree = "<group>"; };
@@ -70,11 +68,10 @@
 				CCCD5B821CC7C4BF00D4B0F8 /* Ticket.m */,
 				CCCD5B7E1CC7C2B000D4B0F8 /* TicketsTableViewController.h */,
 				CCCD5B7F1CC7C2B000D4B0F8 /* TicketsTableViewController.m */,
-				CCCD5B6D1CC7BC0E00D4B0F8 /* ViewController.h */,
-				CCCD5B6E1CC7BC0E00D4B0F8 /* ViewController.m */,
+				CCCD5B6D1CC7BC0E00D4B0F8 /* PickerViewController.h */,
+				CCCD5B6E1CC7BC0E00D4B0F8 /* PickerViewController.m */,
 				CCCD5B701CC7BC0E00D4B0F8 /* Main.storyboard */,
 				CCCD5B731CC7BC0E00D4B0F8 /* Assets.xcassets */,
-				CCCD5B751CC7BC0E00D4B0F8 /* LaunchScreen.storyboard */,
 				CCCD5B781CC7BC0E00D4B0F8 /* Info.plist */,
 				CCCD5B671CC7BC0E00D4B0F8 /* Supporting Files */,
 			);
@@ -147,7 +144,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCCD5B771CC7BC0E00D4B0F8 /* LaunchScreen.storyboard in Resources */,
 				CCCD5B741CC7BC0E00D4B0F8 /* Assets.xcassets in Resources */,
 				CCCD5B721CC7BC0E00D4B0F8 /* Main.storyboard in Resources */,
 			);
@@ -161,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCCD5B831CC7C4BF00D4B0F8 /* Ticket.m in Sources */,
-				CCCD5B6F1CC7BC0E00D4B0F8 /* ViewController.m in Sources */,
+				CCCD5B6F1CC7BC0E00D4B0F8 /* PickerViewController.m in Sources */,
 				CCCD5B801CC7C2B000D4B0F8 /* TicketsTableViewController.m in Sources */,
 				CCCD5B6C1CC7BC0E00D4B0F8 /* AppDelegate.m in Sources */,
 				CCCD5B691CC7BC0E00D4B0F8 /* main.m in Sources */,
@@ -177,14 +173,6 @@
 				CCCD5B711CC7BC0E00D4B0F8 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CCCD5B751CC7BC0E00D4B0F8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CCCD5B761CC7BC0E00D4B0F8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -315,6 +303,7 @@
 				CCCD5B7D1CC7BC0E00D4B0F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

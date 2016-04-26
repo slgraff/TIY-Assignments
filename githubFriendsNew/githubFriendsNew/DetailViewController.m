@@ -8,19 +8,18 @@
 
 #import "DetailViewController.h"
 #import "Friend.h"
+#import "RepoTableViewCell.h"
 
 // Set to be a delegate for NSURLSession, UITableViewDelegate, UITableViewDataSource
 // sessionDidCompleteWithError
 @interface DetailViewController () <NSURLSessionDelegate, UITableViewDelegate, UITableViewDataSource>
 
 // Property for JSON data received from GitHub site
+@property UITableView * tableView;
 @property NSMutableData *receivedData;
 
-// friends is a mutable array of dictionaries
-@property NSMutableArray *friends;
+@property NSMutableArray *repoArray;
 
-
-@property (weak, nonatomic) IBOutlet UITableView *FriendDetailTableView;
 
 @end
 
@@ -46,7 +45,7 @@
         NSString * userName = [self.detailItem description];
         
         // Create URL to GitHub with username
-        NSString * urlString = [NSString stringWithFormat:@"https://api.github.com/users/%@", userName];
+        NSString * urlString = [NSString stringWithFormat:@"https://api.github.com/users/%@/repos", userName];
         
         // Create the NSURL string using the URL string from above
         NSURL * url = [NSURL URLWithString:urlString];
@@ -75,7 +74,17 @@
     // Do any additional setup after loading the view, typically from a nib.
     
 
-    [self configureView];
+    self.repoArray = [[NSMutableArray alloc]init];
+    
+    // Set up the tableView
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+    self.tableView.dataSource = self;
+    [self.tableView registerClass:[RepoTableViewCell class] forCellReuseIdentifier:@"repoCell"];
+    
+    // Add tableView to the view
+    [self.view addSubview:self.tableView];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,27 +118,21 @@ didCompleteWithError:(nullable NSError *)error {
         // NSLog(@"Download successful! %@", [self.receivedData description]);
         
         // Puts the data received into mutable arrays and dictionaries
-        NSDictionary * jsonResponse = [NSJSONSerialization JSONObjectWithData:self.receivedData options:NSJSONReadingMutableContainers error:nil];
+        NSArray * jsonResponse = [NSJSONSerialization JSONObjectWithData:self.receivedData options:NSJSONReadingMutableContainers error:nil];
         
-        // Create the Friend object here
-        // Check that jsonResponse exists
-        if (jsonResponse) {
-            
-            // Parse through jsonResponse, pull out login, name, avatar_url, repos_url
-            
-            // Create dictionary objects and put into array,
-            // Iterate over the array and create objects ??
-            for (NSDictionary* aFriendDictionary in _friends) {
-                [self.friends addObject:[Friend friendWithDictionary:aFriendDictionary]];
-            }
-            
-            [self.FriendDetailTableView reloadData];
-            
-            //[self.tableView reloadData];
+        
+        self.repoArray = jsonResponse.mutableCopy;
+        
+        [self.tableView reloadData];
+
+        
+        // Clear out received data so that it's empty for next use
+        if (self.repoArray) {
+            self.receivedData = nil;
         }
         
-    
-        NSLog(@"%@", [jsonResponse description]);
+        NSLog(@"%@",[self.repoArray description]);
+        
     }
 }
 
@@ -143,26 +146,24 @@ didCompleteWithError:(nullable NSError *)error {
 
 
 
-#pragma mark - Table View
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.repoArray.count;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FriendDetailTableView" forIndexPath:indexPath];
-    
-    // Get handle to Friend object
-    Friend *aFriend = [self.friends objectAtIndex: indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"repoCell" forIndexPath:indexPath];
     
     // Set cell text to description
-    cell.textLabel.text = aFriend.friendLogin;
-    cell.detailTextLabel.text = aFriend.friendName;
+    cell.textLabel.text = self.repoArray[indexPath.row][@"name"];
+    // cell.detailTextLabel.text = aFriend.friendName;
     
     return cell;
     
@@ -173,17 +174,7 @@ didCompleteWithError:(nullable NSError *)error {
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
-        
-        
-        [self.friends removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
+
 
 
 

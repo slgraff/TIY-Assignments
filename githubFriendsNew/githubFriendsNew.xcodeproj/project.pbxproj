@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC5B9C001CCFB1E4001B6D3C /* RepoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5B9BFF1CCFB1E4001B6D3C /* RepoTableViewCell.m */; };
 		CCB750911CCE647D008D06B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB750901CCE647D008D06B5 /* main.m */; };
 		CCB750941CCE647D008D06B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB750931CCE647D008D06B5 /* AppDelegate.m */; };
 		CCB750971CCE647D008D06B5 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB750961CCE647D008D06B5 /* MasterViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC5B9BFE1CCFB1E4001B6D3C /* RepoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoTableViewCell.h; sourceTree = "<group>"; };
+		CC5B9BFF1CCFB1E4001B6D3C /* RepoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoTableViewCell.m; sourceTree = "<group>"; };
 		CCB7508C1CCE647D008D06B5 /* githubFriendsNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubFriendsNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCB750901CCE647D008D06B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCB750921CCE647D008D06B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 				CCB750961CCE647D008D06B5 /* MasterViewController.m */,
 				CCB750981CCE647D008D06B5 /* DetailViewController.h */,
 				CCB750991CCE647D008D06B5 /* DetailViewController.m */,
+				CC5B9BFE1CCFB1E4001B6D3C /* RepoTableViewCell.h */,
+				CC5B9BFF1CCFB1E4001B6D3C /* RepoTableViewCell.m */,
 				CCB750A91CCE887E008D06B5 /* Friend.h */,
 				CCB750AA1CCE887E008D06B5 /* Friend.m */,
 				CCB7509B1CCE647D008D06B5 /* Main.storyboard */,
@@ -161,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCB750941CCE647D008D06B5 /* AppDelegate.m in Sources */,
+				CC5B9C001CCFB1E4001B6D3C /* RepoTableViewCell.m in Sources */,
 				CCB750AB1CCE887E008D06B5 /* Friend.m in Sources */,
 				CCB750971CCE647D008D06B5 /* MasterViewController.m in Sources */,
 				CCB750911CCE647D008D06B5 /* main.m in Sources */,
@@ -315,6 +321,7 @@
 				CCB750A81CCE647D008D06B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
