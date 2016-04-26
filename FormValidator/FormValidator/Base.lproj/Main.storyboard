@@ -107,7 +107,11 @@
                     </view>
                     <connections>
                         <outlet property="addressTextField" destination="0on-gB-We6" id="WJA-Ec-dtV"/>
+                        <outlet property="cityTextField" destination="iBe-aU-3vA" id="ZmP-is-3lI"/>
                         <outlet property="nameTextField" destination="qMH-vn-SWK" id="WOP-tP-cuv"/>
+                        <outlet property="phoneTextField" destination="Ibo-Pt-fpm" id="pX2-U2-fWu"/>
+                        <outlet property="stateTextField" destination="HuW-OG-NkG" id="YKZ-7H-egd"/>
+                        <outlet property="zipTextField" destination="p0i-uF-xwN" id="TvA-o9-hOz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -16,7 +16,11 @@
 // Declare custom properties
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (weak, nonatomic) IBOutlet UITextField *cityTextField;
+@property (weak, nonatomic) IBOutlet UITextField *stateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *zipTextField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+
 
 
 // Declare formValidator
@@ -52,7 +56,16 @@
         
     } else if ([textField isEqual:self.addressTextField]) {
         return [self.formValidator validateAddress:self.addressTextField.text];
+    } else if ([textField isEqual:self.addressTextField]) {
+        // Call formValidator for city field
+    } else if () {
+        // Call formValidator for state field
+    } else if () {
+        // Call formValidator for zip field
+    } else if () {
+        // Call formValidator for phone field
     }
+        
     return NO;
 }
 
