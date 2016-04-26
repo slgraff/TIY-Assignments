@@ -43,7 +43,8 @@
     // Set name field as having focus
     [self.nameTextField becomeFirstResponder];
     
-    self.formValidator = [[FormValidator alloc]init];
+    
+    self.navigationItem.title = @"Validator";
 }
 
 - (void)didReceiveMemoryWarning {

@@ -3,12 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ValidatorViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="ValidatorViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,53 +20,74 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qMH-vn-SWK">
-                                <rect key="frame" x="200" y="20" width="200" height="30"/>
+                                <rect key="frame" x="60" y="28" width="480" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="NtX-a1-G4U"/>
+                                    <constraint firstAttribute="width" constant="200" id="7IN-mA-ewV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7IN-mA-ewV"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="OkP-He-3Bq"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0on-gB-We6">
-                                <rect key="frame" x="200" y="68" width="200" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0on-gB-We6">
+                                <rect key="frame" x="60" y="66" width="480" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="5Fb-dh-xYi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5Fb-dh-xYi"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="EHs-4e-Kf3"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iBe-aU-3vA">
-                                <rect key="frame" x="200" y="106" width="200" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iBe-aU-3vA">
+                                <rect key="frame" x="60" y="104" width="480" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="2L1-Sj-4cy"/>
                                     <constraint firstAttribute="width" constant="200" id="Fr8-ft-eIm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2L1-Sj-4cy"/>
+                                        <exclude reference="Fr8-ft-eIm"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="weZ-n0-m3P"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HuW-OG-NkG">
-                                <rect key="frame" x="200" y="144" width="200" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HuW-OG-NkG">
+                                <rect key="frame" x="60" y="145" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="XsF-AR-CcK"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="gOB-5Z-p4r"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gOB-5Z-p4r"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="K7c-Ut-ec3"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p0i-uF-xwN">
-                                <rect key="frame" x="200" y="182" width="200" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p0i-uF-xwN">
+                                <rect key="frame" x="340" y="142" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="9TM-gB-XJZ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Ufh-Vc-AD0"/>
@@ -75,14 +98,19 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="RwN-k3-0HU"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibo-Pt-fpm">
-                                <rect key="frame" x="200" y="220" width="200" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibo-Pt-fpm">
+                                <rect key="frame" x="60" y="180" width="480" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="2XP-sr-LqJ"/>
                                     <constraint firstAttribute="width" constant="200" id="adR-o4-rnU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2XP-sr-LqJ"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7VL-Z5-GA0"/>
                                 </connections>
@@ -92,18 +120,42 @@
                         <constraints>
                             <constraint firstItem="p0i-uF-xwN" firstAttribute="top" secondItem="HuW-OG-NkG" secondAttribute="bottom" constant="8" id="0Oq-Ah-QSW"/>
                             <constraint firstItem="Ibo-Pt-fpm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0bp-Fw-dcw"/>
-                            <constraint firstItem="0on-gB-We6" firstAttribute="top" secondItem="qMH-vn-SWK" secondAttribute="bottom" constant="18" id="0mX-Im-6Gb"/>
                             <constraint firstItem="Ibo-Pt-fpm" firstAttribute="top" secondItem="p0i-uF-xwN" secondAttribute="bottom" constant="8" id="2gi-R7-TtD"/>
                             <constraint firstItem="HuW-OG-NkG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="30x-mt-SH1"/>
                             <constraint firstItem="iBe-aU-3vA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6GM-y7-XCb"/>
+                            <constraint firstItem="qMH-vn-SWK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AA7-IY-McA"/>
+                            <constraint firstItem="iBe-aU-3vA" firstAttribute="top" secondItem="0on-gB-We6" secondAttribute="bottom" constant="8" id="CYx-Un-plC"/>
+                            <constraint firstItem="qMH-vn-SWK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="I14-OY-t5D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qMH-vn-SWK" secondAttribute="trailing" id="KJM-Hu-j9Q"/>
+                            <constraint firstItem="Ibo-Pt-fpm" firstAttribute="width" secondItem="qMH-vn-SWK" secondAttribute="width" id="Kox-Ak-sE4"/>
+                            <constraint firstItem="iBe-aU-3vA" firstAttribute="width" secondItem="qMH-vn-SWK" secondAttribute="width" id="PPI-4w-8SE"/>
+                            <constraint firstItem="iBe-aU-3vA" firstAttribute="width" secondItem="qMH-vn-SWK" secondAttribute="width" id="QWj-fr-qav"/>
                             <constraint firstItem="p0i-uF-xwN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TYf-Pw-EcV"/>
-                            <constraint firstItem="qMH-vn-SWK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bKi-iA-gmI"/>
+                            <constraint firstItem="0on-gB-We6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="8" id="VAt-Cv-n6Y"/>
+                            <constraint firstItem="p0i-uF-xwN" firstAttribute="width" secondItem="HuW-OG-NkG" secondAttribute="width" id="WAz-Kw-avb"/>
+                            <constraint firstItem="0on-gB-We6" firstAttribute="width" secondItem="qMH-vn-SWK" secondAttribute="width" id="Zdc-EG-3rO"/>
+                            <constraint firstItem="0on-gB-We6" firstAttribute="width" secondItem="qMH-vn-SWK" secondAttribute="width" id="bU7-YF-2wG"/>
                             <constraint firstItem="HuW-OG-NkG" firstAttribute="top" secondItem="iBe-aU-3vA" secondAttribute="bottom" constant="8" id="hA2-ep-rcL"/>
+                            <constraint firstItem="qMH-vn-SWK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="hon-gI-9Ca"/>
+                            <constraint firstItem="qMH-vn-SWK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="k7q-fC-JSe"/>
                             <constraint firstItem="0on-gB-We6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l8T-XP-6tQ"/>
                             <constraint firstItem="0on-gB-We6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q2k-Ru-RtA"/>
-                            <constraint firstItem="qMH-vn-SWK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uW7-7N-GQg"/>
+                            <constraint firstItem="HuW-OG-NkG" firstAttribute="width" secondItem="p0i-uF-xwN" secondAttribute="width" id="qcS-fz-udn"/>
+                            <constraint firstItem="HuW-OG-NkG" firstAttribute="top" secondItem="p0i-uF-xwN" secondAttribute="top" id="vM3-ay-Dx0"/>
                             <constraint firstItem="iBe-aU-3vA" firstAttribute="top" secondItem="0on-gB-We6" secondAttribute="bottom" constant="8" id="xCY-1g-UUW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="I14-OY-t5D"/>
+                                <exclude reference="KJM-Hu-j9Q"/>
+                                <exclude reference="Zdc-EG-3rO"/>
+                                <exclude reference="q2k-Ru-RtA"/>
+                                <exclude reference="QWj-fr-qav"/>
+                                <exclude reference="xCY-1g-UUW"/>
+                                <exclude reference="0Oq-Ah-QSW"/>
+                                <exclude reference="WAz-Kw-avb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="addressTextField" destination="0on-gB-We6" id="WJA-Ec-dtV"/>
@@ -116,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="373" y="349"/>
+            <point key="canvasLocation" x="256" y="322"/>
         </scene>
     </scenes>
 </document>
