@@ -33,7 +33,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.nameTextField.placeholder = @"Your Name";
     self.addressTextField.placeholder = @"Address";
+    self.cityTextField.placeholder = @"City";
+    self.stateTextField.placeholder = @"State";
+    self.zipTextField.placeholder = @"Zip";
+    self.phoneTextField.placeholder = @"Phone Number";
     
     self.formValidator = [[FormValidator alloc]init];
 }
