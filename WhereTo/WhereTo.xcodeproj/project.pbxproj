@@ -13,6 +13,7 @@
 		CC5B9C431CD0F4EA001B6D3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5B9C411CD0F4EA001B6D3C /* Main.storyboard */; };
 		CC5B9C451CD0F4EA001B6D3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5B9C441CD0F4EA001B6D3C /* Assets.xcassets */; };
 		CC5B9C481CD0F4EA001B6D3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5B9C461CD0F4EA001B6D3C /* LaunchScreen.storyboard */; };
+		CC5B9C511CD10313001B6D3C /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5B9C501CD10313001B6D3C /* Landmark.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		CC5B9C441CD0F4EA001B6D3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC5B9C471CD0F4EA001B6D3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC5B9C491CD0F4EA001B6D3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC5B9C4F1CD10313001B6D3C /* Landmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Landmark.h; sourceTree = "<group>"; };
+		CC5B9C501CD10313001B6D3C /* Landmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Landmark.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				CC5B9C3C1CD0F4EA001B6D3C /* AppDelegate.m */,
 				CC5B9C3E1CD0F4EA001B6D3C /* ViewController.h */,
 				CC5B9C3F1CD0F4EA001B6D3C /* ViewController.m */,
+				CC5B9C4F1CD10313001B6D3C /* Landmark.h */,
+				CC5B9C501CD10313001B6D3C /* Landmark.m */,
 				CC5B9C411CD0F4EA001B6D3C /* Main.storyboard */,
 				CC5B9C441CD0F4EA001B6D3C /* Assets.xcassets */,
 				CC5B9C461CD0F4EA001B6D3C /* LaunchScreen.storyboard */,
@@ -153,6 +158,7 @@
 				CC5B9C401CD0F4EA001B6D3C /* ViewController.m in Sources */,
 				CC5B9C3D1CD0F4EA001B6D3C /* AppDelegate.m in Sources */,
 				CC5B9C3A1CD0F4EA001B6D3C /* main.m in Sources */,
+				CC5B9C511CD10313001B6D3C /* Landmark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,6 +36,8 @@
     // put mapView onto the ViewController
     [self.view addSubview:self.mapView];
     
+    // Create a landmark
+    
 }
 
 - (void)didReceiveMemoryWarning {
