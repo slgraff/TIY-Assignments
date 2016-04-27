@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import <MapKit/MapKit.h>  // Use brackets <> when importing frameworks
 
 @interface ViewController ()
+
+// Set property for our map kit view
+@property (strong, nonatomic) MKMapView * mapView;
 
 @end
 
@@ -17,6 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    // CGRect is a struct, a container object with values in it
+    // rects are measured & expressed in points, not pixels
+    // rect of a ViewController is read-only, cannot be changed
+    CGRect theFrame = self.view.frame;
+    theFrame.origin.x = 20;
+    theFrame.origin.y = 94;
+    theFrame.size.width -= 40;
+    theFrame.size.height -= 114;
+    
+    self.mapView = [[MKMapView alloc]initWithFrame:theFrame];
+    
+    // put mapView onto the ViewController
+    [self.view addSubview:self.mapView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
