@@ -10,9 +10,12 @@
 
 @interface PrimeBrain : NSObject
 
+// Declare methods
 - (BOOL)isPrimeNumber:(NSUInteger)primeCandidate;
 - (NSArray *)primeFactors:(NSUInteger)theNumber;
 - (NSUInteger)largestPrimeInCommon:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber;
 
+// Declare properties
+@property (strong, nonatomic) NSMutableArray* primeFactors;
 
 @end
