@@ -43,15 +43,26 @@
 
 // primeFactors - given an NSUInteger, determine all prime factors for that number
 - (NSArray *)primeFactors:(NSUInteger)theNumber {
-    return nil;
+    
+    // loop through number. If number mod counter is 0 then check to see if prime.
+    // If result is YES, add to an array of prime numbers
+    
+    
+    
+    return nil; // Placeholder, edit when ready to return array of results
 }
 
 
 
 
-// largestPrimeInCommon - given two NSArrays of numbers, find the largest prime number in both arrays
+
 - (NSUInteger)largestPrimeInCommon:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber {
-    return 1;
+    
+    // largestPrimeInCommon - given two numbers, calculate array of prime factors for each
+    // Find the largest prime number found in both arrays
+    
+    
+    return 1;  // Placeholder, edit when ready to return resulting number
 }
 
 
