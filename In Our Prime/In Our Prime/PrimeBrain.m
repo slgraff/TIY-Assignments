@@ -56,7 +56,7 @@
     // Loop through array of numbers. If number mod counter is 0 then check to see if prime.
     // If result is YES, add to array primeFactors
 
-    for (NSUInteger i = 1; i < (theNumber / 2); i += 1) {
+    for (int i = 1; i < (theNumber / 2); i += 1) {
         if ((theNumber % i) == 0) {
             if ([self isPrimeNumber:i]) {
                 // Add number to array primeFactors
@@ -75,11 +75,23 @@
 
 - (NSUInteger)largestPrimeInCommon:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber {
     
-    // largestPrimeInCommon - given two numbers, calculate array of prime factors for each
-    // Find the largest prime number found in both arrays
+    // largestPrimeInCommon - given two numbers, calculate array of prime factors for each number
+    // For resulting arrays, calculate the largest prime number found in common to both arrays
     
+    // Get prime factors for each number
+    // Compare both arrays, put numbers in common to new array
+    // Return the largest number in the new array
     
-    return 1;  // Placeholder, edit when ready to return resulting number
+    NSMutableSet *set1 = [NSMutableSet setWithArray:[self primeFactors: firstNumber]];
+    NSMutableSet *set2 = [NSMutableSet setWithArray:[self primeFactors: secondNumber]];
+    
+    // Create an array to hold objects in common to both arrays
+    [set1 intersectSet:set2];
+    NSArray* commonFactors = [set1 allObjects];
+
+    // Return the largest number in the array
+    
+    return [[commonFactors valueForKeyPath:@"@max.intValue"]floatValue];
 }
 
 
