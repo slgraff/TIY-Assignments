@@ -7,12 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "Landmark.h"
 #import <MapKit/MapKit.h>  // Use brackets <> when importing frameworks
 
-@interface ViewController ()
+@interface ViewController () <CLLocationManagerDelegate>
 
 // Set property for our map kit view
 @property (strong, nonatomic) MKMapView * mapView;
+@property (strong, nonatomic) CLLocationManager *manager;  // declare to be strong so it sticks around
+
 
 @end
 
@@ -31,14 +34,116 @@
     theFrame.size.width -= 40;
     theFrame.size.height -= 114;
     
+    // Create instance of CLLocationManager
+    // Need to add NSLocationAlwaysUsageDescription to Info.plist
+    CLLocationManager *manager = [[CLLocationManager alloc]init];
+    
+    self.manager = manager;  // save the local variable manager to class variable
+
+    
+    // Request to use location manager
+    [manager requestAlwaysAuthorization];
+    
     self.mapView = [[MKMapView alloc]initWithFrame:theFrame];
+    
+    // Enable show user location
+    self.mapView.showsUserLocation = YES;
+    
+    // Must access for permission to get current location
+    // When in use, or always on
+//    -[CLLocationManager requestWhenInUseAuthorization]
+//    -[CLLocationManager requestAlwaysAuthorization]
     
     // put mapView onto the ViewController
     [self.view addSubview:self.mapView];
     
-    // Create a landmark
+    // Create a landmark object for the capital building
+    // Structs from ObjC have initialization function for coordinates, contains 'make'
+    Landmark * capitalBuilding = [[Landmark alloc]initWithCoord:CLLocationCoordinate2DMake(35.7804, -78.6391) title:@"Capital Building" subtitle:@"The place where the capital is"];
+    
+    // Add capital building to the map
+    [self.mapView addAnnotation:capitalBuilding];
+    
+    self.manager.delegate = self;
+    [self.manager startUpdatingLocation];
+    
+    
+    // Create a locaiton object for the locaiton of the state capital
+    CLLocation * capitalLocation = [[CLLocation alloc]initWithLatitude:capitalBuilding.coordinate.latitude longitude:capitalBuilding.coordinate.longitude];
+    
+    // Create a location object for current location
+    // Can take a while to get current location
+    CLLocation * currentLocation = self.mapView.userLocation.location;
+    
+    // Call our function zoomMapToRegionToRegionEncapsulatingLocation
+    if (capitalLocation && currentLocation) {
+        [self zoomMapToRegionToRegionEncapsulatingLocation:capitalLocation andLocation:currentLocation];
+
+    }
     
 }
+
+
+#pragma mark - Example mapping methods
+
+// Example methods to manipulate points on a map
+// (Would generally want to perform this businesss logic in its own class file)
+
+-(void)centerMapOnLocation:(CLLocationCoordinate2D)location{
+    
+}
+
+-(void)zoomMapToRegionToRegionEncapsulatingLocation:(CLLocation *)firstLoc andLocation:(CLLocation *)secondLoc {
+    
+    
+    float latitude = (firstLoc.coordinate.latitude + secondLoc.coordinate.latitude) /2;
+    float longitude = (firstLoc.coordinate.longitude + secondLoc.coordinate.longitude) /2;
+    
+    // Determined distance between two locations
+    CLLocationDistance distance = [firstLoc distanceFromLocation:secondLoc] / 111.0f;
+    
+    
+    CLLocation *centerLocation = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+    
+    MKCoordinateSpan span = MKCoordinateSpanMake(2000, 2000);
+    
+    if (CLLocationCoordinate2DIsValid(centerLocation.coordinate)) {
+        
+        MKCoordinateRegion region = MKCoordinateRegionMake(centerLocation.coordinate, span);
+
+        // Zoom to our region with zoom with animation
+        [self.mapView setRegion:region animated:YES];
+    }
+    
+    
+
+    
+}
+
+#pragma mark CLLocationManagerDelegate
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    
+    CLLocation * firstLocation = [locations firstObject];
+    CLLocation * lastLocation = [locations lastObject];
+    
+    if ( [firstLocation isEqual:lastLocation]) {
+        NSLog(@"same place!");
+    } else {
+        NSLog(@"who knows?");
+    }
+    
+    // Create a landmark object for the capital building
+    // Structs from ObjC have initialization function for coordinates, contains 'make'
+    Landmark * capitalBuilding = [[Landmark alloc]initWithCoord:CLLocationCoordinate2DMake(35.7804, -78.6391) title:@"Capital Building" subtitle:@"The place where the capital is"];
+    
+    CLLocation * capitalLocation = [[CLLocation alloc]initWithLatitude:capitalBuilding.coordinate.latitude longitude:capitalBuilding.coordinate.longitude];
+    
+    
+    [manager stopUpdatingLocation];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
