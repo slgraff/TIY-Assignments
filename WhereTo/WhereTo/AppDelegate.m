@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,25 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // App delegate has a window property
+    // Frame is a read-only property
+    // [UIScreen mainScreen].bounds gives you size of screen of device running on
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    // Create a view controller object
+    // Must import ViewController.h
+    ViewController * viewController = [[ViewController alloc]init];
+    
+    // Create a navigation controller object, initialize with above view controller
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    
+    // Put the navigation controller in our window we created above
+    self.window.rootViewController = navController;
+    
+    // Make the wndow visible and gives focus
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
 }
