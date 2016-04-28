@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
+
+@property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
+@property (weak, nonatomic) IBOutlet UITextField *numberField;
+@property (weak, nonatomic) IBOutlet UIButton *calculateButton;
+@property (weak, nonatomic) IBOutlet UIPickerView *methodPicker;
 
 @end
 
