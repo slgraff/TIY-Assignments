@@ -13,7 +13,11 @@
     NSArray * _pickerData;
 }
 
+@property (strong, atomic) NSArray * pickerData;
+@property (strong, nonatomic) NSString * pickerSelection;
 @property (strong, nonatomic) PrimeBrain * brain;
+
+@property NSUInteger *primeCandidate;
 
 @end
 
@@ -24,7 +28,10 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // Initialize picker data
-    _pickerData = @[@"Prime number", @"Prime factors", @"Largest Prime Factor"];
+    self.pickerData = @[@"Prime number", @"Prime factors", @"Largest Prime Factor"];
+    
+    // Initialize picker selection
+    self.pickerSelection = @"";
     
     // Connect data
     self.methodPicker.dataSource = self;
@@ -32,6 +39,10 @@
     
     // Initialize second text field state
     _numberField2.enabled = NO;
+    _numberField2.placeholder = @"";
+    
+    // Initialize the primeCandidate
+    _primeCandidate = 0;
     
     // Initialize the PrimeBrain object
     _brain = [[PrimeBrain alloc]init];
@@ -69,40 +80,64 @@
 // Capture the picker view selection
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSLog(@"Selected value: %@", [_pickerData objectAtIndex:row]);
+    
+    // Store current value of picker row
+    self.pickerSelection = [_pickerData objectAtIndex:row];
+
     // Check selected row in picker, set numberField placeholder
-    if ([[_pickerData objectAtIndex:row] isEqualToString: @"Largest Prime Factor"]) {
+    if ([self.pickerSelection isEqualToString: @"Largest Prime Factor"]) {
             [_numberField2 setEnabled: YES];
+            _numberField2.placeholder = @"Enter a second number";
+
             NSLog(@"Setting numberField2 to ENABLED");
     } else {
         [_numberField2 setEnabled: NO];
+        _numberField2.placeholder = @"";
+
         NSLog(@"Setting numberField2 to DISABLED");
 
     }
-    
-    // NSInteger indexSelected = [pickerView selectedRowInComponent:0];
-    
-//    // Check selected row in picker, set numberField placeholder
-//    if ([[_pickerData objectAtIndex:row]  isEqual: @"Prime number"]) {
-//        self.numberField.placeholder = @"Enter a number";
-//    } else if ([[_pickerData objectAtIndex:row]  isEqual: @"Prime factors"]) {
-//        self.numberField.placeholder = @"Enter a number";
-//    } else if ([[_pickerData objectAtIndex:row]  isEqual: @"Largest Prime factor"]) {
-//        self.numberField.placeholder = @"Enter two numbers";
-//    }
-    
-    
 }
 
 - (IBAction)calculateButtonTapped:(UIButton *)sender {
-    NSLog(@"Calculate button tapped");
+    NSLog(@"Calculate button was tapped");
+
+    NSLog(@"Picker selection: %@", _pickerSelection);
     
-    // Call isPrimeNumber when tapped
-    NSString *enteredNumber = [_numberField text];
+    // Grab values for number fields
+    NSUInteger enteredNumber = [_numberField.text integerValue];
+    NSUInteger enteredNumber2 = [_numberField2.text integerValue];
     
     
-    // [brain isPrimeNumber enteredNumber]  // how can I call isPrimeNumber function in PrimeBrain and pass in number entered in interface???
     
-    // Will need to check for selection in picker, call appropriate method
+    
+    // Execute appropriate primality method based on value of picker
+    if ([_pickerSelection  isEqual: @"Prime number"]) {
+        [self.brain isPrimeNumber:enteredNumber];
+    } else if ([_pickerSelection  isEqual: @"Price factors"]) {
+        [self.brain primeFactors:enteredNumber];
+    } else if ([_pickerSelection  isEqual: @"Largest Prime Factor"]) {
+        [self.brain largestPrimeInCommon:enteredNumber secondNumber:enteredNumber2];
+    } else {
+        NSLog(@"Error! No primality method called!");
+    }
+    
+    
+    
+//    switch self.pickerSelection {
+//        case @"Prime number":
+//            [self.brain isPrimeNumber:enteredNumber];
+//            break;
+//        case @"Prime factors":
+//            [self.brain primeFactors:enteredNumber];
+//            break;
+//        case @"Largest Prime factor":
+//            [self.brain largestPrimeFactor:enteredNumber, enteredNumber2];
+//            break;
+//        default:
+//            break;
+//    }
+    
 }
 
 
