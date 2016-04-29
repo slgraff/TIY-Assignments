@@ -108,12 +108,13 @@
     NSUInteger enteredNumber = [_numberField.text integerValue];
     NSUInteger enteredNumber2 = [_numberField2.text integerValue];
     
-    
-    
-    
     // Execute appropriate primality method based on value of picker
     if ([_pickerSelection  isEqual: @"Prime number"]) {
-        [self.brain isPrimeNumber:enteredNumber];
+        if ([self.brain isPrimeNumber:enteredNumber]) {
+            [self.resultsLabel setText:@"The number is prime!"];
+        } else {
+            [self.resultsLabel setText:@"The number is NOT prime!"];
+        }
     } else if ([_pickerSelection  isEqual: @"Prime factors"]) {
         [self.brain primeFactors:enteredNumber];
     } else if ([_pickerSelection  isEqual: @"Largest Prime Factor"]) {
@@ -121,23 +122,6 @@
     } else {
         NSLog(@"Error! No primality method called!");
     }
-    
-    
-    
-//    switch self.pickerSelection {
-//        case @"Prime number":
-//            [self.brain isPrimeNumber:enteredNumber];
-//            break;
-//        case @"Prime factors":
-//            [self.brain primeFactors:enteredNumber];
-//            break;
-//        case @"Largest Prime factor":
-//            [self.brain largestPrimeFactor:enteredNumber, enteredNumber2];
-//            break;
-//        default:
-//            break;
-//    }
-    
 }
 
 
