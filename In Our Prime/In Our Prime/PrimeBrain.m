@@ -63,7 +63,7 @@
     NSLog(@"Inside primeFactors");
 
     
-    // Loop through array of numbers. If number mod counter is 0 then check to see if prime.
+    // Loop through array of numbers. If number mod counter = 0 then check to see if prime.
     // If result is YES, add to array primeFactors
 
     for (int i = 1; i < (theNumber / 2); i += 1) {

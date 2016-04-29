@@ -114,7 +114,7 @@
     // Execute appropriate primality method based on value of picker
     if ([_pickerSelection  isEqual: @"Prime number"]) {
         [self.brain isPrimeNumber:enteredNumber];
-    } else if ([_pickerSelection  isEqual: @"Price factors"]) {
+    } else if ([_pickerSelection  isEqual: @"Prime factors"]) {
         [self.brain primeFactors:enteredNumber];
     } else if ([_pickerSelection  isEqual: @"Largest Prime Factor"]) {
         [self.brain largestPrimeInCommon:enteredNumber secondNumber:enteredNumber2];
