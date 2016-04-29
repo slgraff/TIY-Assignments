@@ -11,10 +11,16 @@
 @interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 
+
 @property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
 @property (weak, nonatomic) IBOutlet UITextField *numberField;
+@property (weak, nonatomic) IBOutlet UITextField *numberField2;
+
 @property (weak, nonatomic) IBOutlet UIButton *calculateButton;
 @property (weak, nonatomic) IBOutlet UIPickerView *methodPicker;
+
+// Declare method to handle button tap
+- (IBAction)calculateButtonTapped:(UIButton *)sender;
 
 @end
 

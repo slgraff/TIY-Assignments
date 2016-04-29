@@ -20,8 +20,8 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2X-m8-bGE">
                                 <rect key="frame" x="0.0" y="192" width="600" height="216"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="8bC-Xf-vdC" id="Fx1-MG-bCV"/>
-                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="mVd-oT-RMT"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Kfx-Gw-Po5"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hlc-VO-e1T"/>
                                 </connections>
                             </pickerView>
                         </subviews>
@@ -30,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="746"/>
+            <point key="canvasLocation" x="916" y="919"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="qHg-ba-YFk">
@@ -75,6 +75,7 @@
                         <barButtonItem key="leftBarButtonItem" title="CheckWinners" id="nZB-x1-bbJ">
                             <connections>
                                 <action selector="checkForWinningTickets:" destination="afX-az-gIM" id="Sgu-bh-Akc"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="J7r-0f-563"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aoa-4e-Sie">

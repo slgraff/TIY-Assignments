@@ -18,7 +18,7 @@
 {
     self = [super init];
     if (self) {
-        self.primeFactors = [[NSMutableArray alloc]init]; // initialize array
+        self.thePrimeFactors = [[NSMutableArray alloc]init]; // initialize array
     }
     return self;
 }
@@ -60,13 +60,13 @@
         if ((theNumber % i) == 0) {
             if ([self isPrimeNumber:i]) {
                 // Add number to array primeFactors
-                [self.primeFactors addObject:[NSNumber numberWithInteger:i]]; // convert NSUInteger (type) to NSNumber (object)
+                [self.thePrimeFactors addObject:[NSNumber numberWithInteger:i]]; // convert NSUInteger (type) to NSNumber (object)
             }
             
         }
     }
     
-    return _primeFactors; // Placeholder, edit when ready to return array of results
+    return _thePrimeFactors; // Placeholder, edit when ready to return array of results
 }
 
 
