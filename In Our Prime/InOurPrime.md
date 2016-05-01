@@ -11,3 +11,8 @@ A prime number is a number that can be evenly divided by 1 and itself. Primes ar
 * [x] Create a method in PrimeBrain that takes an NSUInteger and returns YES if prime, and NO if not prime.
 * [x] Create a method in PrimeBrain that takes an NSUInteger and returns an array containing all of the prime factors of that number.
 * [x] Create a method in PrimeBrain that takes two numbers, gets the prime factors of each of those, then takes the two NSArrays and finds the largest common number contained in them.
+
+
+## BUGS LIST
+
+* [ ] isPrimeNumber is saying that 25 is prime

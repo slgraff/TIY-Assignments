@@ -12,11 +12,13 @@
 
 // Declare methods
 - (BOOL)isPrimeNumber:(NSUInteger)primeCandidate;
-- (NSArray *)primeFactors:(NSUInteger)theNumber;
+- (NSMutableArray *)primeFactors:(NSUInteger)theNumber;
 - (NSUInteger)largestPrimeInCommon:(NSUInteger)firstNumber
                       secondNumber:(NSUInteger)secondNumber;
 
 // Declare properties
+@property BOOL isItPrime;
 @property (strong, nonatomic) NSMutableArray* thePrimeFactors;
+@property NSUInteger largestPrimeFactor;
 
 @end

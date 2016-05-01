@@ -17,6 +17,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *calculateButton;
 @property (strong, nonatomic) IBOutlet UIPickerView *methodPicker;
 
+// Declare properties
+@property (strong, nonatomic) NSMutableArray* thePrimeFactors;
+
+
 // Declare method to handle button tap
 - (IBAction)calculateButtonTapped:(UIButton *)sender;
 

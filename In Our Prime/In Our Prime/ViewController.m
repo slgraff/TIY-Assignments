@@ -19,6 +19,8 @@
 
 @property NSUInteger *primeCandidate;
 
+
+
 @end
 
 @implementation ViewController
@@ -109,16 +111,43 @@
     NSUInteger enteredNumber2 = [_numberField2.text integerValue];
     
     // Execute appropriate primality method based on value of picker
+    // ** isPrimeNumber **
     if ([_pickerSelection  isEqual: @"Prime number"]) {
+        
         if ([self.brain isPrimeNumber:enteredNumber]) {
             [self.resultsLabel setText:@"The number is prime!"];
         } else {
             [self.resultsLabel setText:@"The number is NOT prime!"];
         }
+        
+        
+    // ** primeFactors **
     } else if ([_pickerSelection  isEqual: @"Prime factors"]) {
-        [self.brain primeFactors:enteredNumber];
+        
+        self.thePrimeFactors = [self.brain primeFactors:enteredNumber];
+        
+        NSLog(@"%@", _thePrimeFactors);
+        
+//        // Loop through thePrimeFactors, set text to display in resultsLabel
+//        NSString *primeFactorsString = @"";
+//        
+//        for (int i = 0; i < self.thePrimeFactors.count; i += 1) {
+//            [primeFactorsString stringByAppendingString:(@", %@",self.thePrimeFactors[i])];
+//        }
+//        NSLog(@"%@", primeFactorsString);
+//        
+//        [self.resultsLabel setText:(@"The prime factors are %@", primeFactorsString)];
+        
+        
+        
+    // ** largestPrimeInCommon **
     } else if ([_pickerSelection  isEqual: @"Largest Prime Factor"]) {
         [self.brain largestPrimeInCommon:enteredNumber secondNumber:enteredNumber2];
+        
+        // set resultsLabel to largest common prime factor
+        // [self.resultsLabel setText:@"Largest prime factor is %@", foo];
+
+        
     } else {
         NSLog(@"Error! No primality method called!");
     }
