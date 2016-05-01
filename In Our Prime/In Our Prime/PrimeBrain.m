@@ -102,9 +102,9 @@
 
     // Return the largest number in the array
     
-    NSLog(@"The largest prime factor of %ld and %ld is %f",firstNumber, secondNumber,  ([[commonFactors valueForKeyPath:@"@max.intValue"]floatValue]));
+    NSLog(@"The largest prime factor of %ld and %ld is %.0f",firstNumber, secondNumber,  ([[commonFactors valueForKeyPath:@"@max.intValue"]floatValue]));
     
-    return [[commonFactors valueForKeyPath:@"@max.intValue"]floatValue];
+    return [[commonFactors valueForKeyPath:@"@max.intValue"]integerValue];
 }
 
 

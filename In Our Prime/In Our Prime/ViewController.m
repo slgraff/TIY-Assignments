@@ -18,7 +18,8 @@
 @property (strong, nonatomic) PrimeBrain * brain;
 
 @property NSUInteger *primeCandidate;
-@property (strong, nonatomic) NSString * primeFactorsString;
+@property (strong, nonatomic) NSMutableString * primeFactorsString;
+@property (strong, nonatomic) NSMutableString * largestPrimeFactor;
 
 @end
 
@@ -137,7 +138,7 @@
 
         // Loop through primeFactors, build string of prime factors
         for (int i = 0; i < primeFactors.count; i += 1) {
-            NSString *numString = [primeFactors[i] stringValue];
+            NSMutableString *numString = [primeFactors[i] stringValue];
             self.primeFactorsString = [self.primeFactorsString stringByAppendingString:numString];
             if (i < primeFactors.count - 1) {
                 self.primeFactorsString = [self.primeFactorsString stringByAppendingString:@", "];
@@ -145,21 +146,32 @@
         }
         
         
-//        [self.primeFactorsString stringByAppendingString:numString];
-        
         NSLog(@"primeFactorsString: %@", self.primeFactorsString);
-        
-        // [self.resultsLabel setText:(_primeFactorsString)];
-        
         [self.resultsLabel setText:self.primeFactorsString];
         
         
     // ** largestPrimeInCommon **
     } else if ([_pickerSelection  isEqual: @"Largest Prime Factor"]) {
-        [self.brain largestPrimeInCommon:enteredNumber secondNumber:enteredNumber2];
+        // Initilize largestPrimeFactor string
+        
+        // Getting crash when running largestPrimeInCommon:
+        //  'Attempt to mutate immutable object with appendString:'
+        // This line was converting NSMutableString to NSString:
+        // self.largestPrimeFactor = @"Largest prime factor is ";
+        [self.largestPrimeFactor appendString:@"Largest prime factor is "];
+        
+        NSUInteger lrgFctr = [self.brain largestPrimeInCommon:enteredNumber secondNumber:enteredNumber2];
+        
+        NSLog(@"%lu", (unsigned long)lrgFctr);
+        
+        // Append largest prime factor in common to end of string
+
+        
+        NSString *lrgFctrStr = [NSString stringWithFormat:@"%ld", lrgFctr];
+        [self.largestPrimeFactor appendString:lrgFctrStr];
         
         // set resultsLabel to largest common prime factor
-        // [self.resultsLabel setText:@"Largest prime factor is %@", foo];
+        [self.resultsLabel setText: self.largestPrimeFactor];
 
         
     } else {
