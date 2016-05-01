@@ -63,7 +63,7 @@
     // Loop through array of numbers. If theNumber % counter = 0 then check to see if prime.
     // If result is YES, add to array primeFactors
 
-    for (int i = 1; i < (theNumber / 2); i += 1) {
+    for (int i = 1; i <= (theNumber / 2); i += 1) {
         if ((theNumber % i) == 0) {
             if ([self isPrimeNumber:i]) {
                 // Add number to array primeFactors
@@ -95,6 +95,10 @@
     
     NSMutableSet *set1 = [NSMutableSet setWithArray:[self primeFactors: firstNumber]];
     NSMutableSet *set2 = [NSMutableSet setWithArray:[self primeFactors: secondNumber]];
+    
+    NSLog(@"set1: %@", set1);
+    NSLog(@"set2: %@", set2);
+
     
     // Create an array to hold objects in common to both arrays
     [set1 intersectSet:set2];

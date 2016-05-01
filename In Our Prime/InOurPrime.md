@@ -21,3 +21,5 @@ A prime number is a number that can be evenly divided by 1 and itself. Primes ar
 	* FIXED: Initialized variable _pickerSelection = @"Prime number";
 * [x] The value of primeFactors array is getting returned as null.
 * [ ] The Largest Prime Factors is not working. Accepts input but returns 0.00 as largest prime factor for 10 and 25.
+* [x] primeFactors returns only 2 as factor of 10.
+	* FIXED: While loop inside primeFactors was checking for i < (theNumber / 2), changed to i <= (theNumber / 2)
