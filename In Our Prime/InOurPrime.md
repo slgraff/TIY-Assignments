@@ -19,3 +19,5 @@ A prime number is a number that can be evenly divided by 1 and itself. Primes ar
 	* FIXED: While loop inside isPrimeNumber was checking for ((counter * counter) < primeCandidate), changed to <= which fixed bug.
 * [x] On first run, if user does not change picker from initial value the picker selection is not being detected
 	* FIXED: Initialized variable _pickerSelection = @"Prime number";
+* [x] The value of primeFactors array is getting returned as null.
+* [ ] The Largest Prime Factors is not working. Accepts input but returns 0.00 as largest prime factor for 10 and 25.

@@ -18,21 +18,19 @@
 @property (strong, nonatomic) PrimeBrain * brain;
 
 @property NSUInteger *primeCandidate;
-
-
+@property (strong, nonatomic) NSString * primeFactorsString;
 
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // Initialize picker data
+    // Initialize picker
     self.pickerData = @[@"Prime number", @"Prime factors", @"Largest Prime Factor"];
-    
-    // Initialize picker selection to 'Prime number'
     [_methodPicker selectRow:0 inComponent:0 animated:YES];
     
     // Initialize value of pickerSelection to 'Prime number'
@@ -52,7 +50,6 @@
     
     // Initialize the PrimeBrain object
     _brain = [[PrimeBrain alloc]init];
-
 
 }
 
@@ -118,6 +115,7 @@
     NSUInteger enteredNumber2 = [_numberField2.text integerValue];
     
     // Execute appropriate primality method based on value of picker
+    
     // ** isPrimeNumber **
     if ([_pickerSelection  isEqual: @"Prime number"]) {
         
@@ -131,20 +129,29 @@
     // ** primeFactors **
     } else if ([_pickerSelection  isEqual: @"Prime factors"]) {
         
-        self.thePrimeFactors = [self.brain primeFactors:enteredNumber];
+        // Pass entered number to primeFactors method
+        NSArray *primeFactors = [self.brain primeFactors:enteredNumber];
         
-        NSLog(@"%@", _thePrimeFactors);
+        // Initialize primeFactorsString
+        self.primeFactorsString = @"The prime factors are ";
+
+        // Loop through primeFactors, build string of prime factors
+        for (int i = 0; i < primeFactors.count; i += 1) {
+            NSString *numString = [primeFactors[i] stringValue];
+            self.primeFactorsString = [self.primeFactorsString stringByAppendingString:numString];
+            if (i < primeFactors.count - 1) {
+                self.primeFactorsString = [self.primeFactorsString stringByAppendingString:@", "];
+            }
+        }
         
-//        // Loop through thePrimeFactors, set text to display in resultsLabel
-//        NSString *primeFactorsString = @"";
-//        
-//        for (int i = 0; i < self.thePrimeFactors.count; i += 1) {
-//            [primeFactorsString stringByAppendingString:(@", %@",self.thePrimeFactors[i])];
-//        }
-//        NSLog(@"%@", primeFactorsString);
-//        
-//        [self.resultsLabel setText:(@"The prime factors are %@", primeFactorsString)];
         
+//        [self.primeFactorsString stringByAppendingString:numString];
+        
+        NSLog(@"primeFactorsString: %@", self.primeFactorsString);
+        
+        // [self.resultsLabel setText:(_primeFactorsString)];
+        
+        [self.resultsLabel setText:self.primeFactorsString];
         
         
     // ** largestPrimeInCommon **

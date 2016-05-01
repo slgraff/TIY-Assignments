@@ -18,7 +18,7 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *methodPicker;
 
 // Declare properties
-@property (strong, nonatomic) NSMutableArray* thePrimeFactors;
+// @property (strong, nonatomic) NSMutableArray* thePrimeFactors;
 
 
 // Declare method to handle button tap

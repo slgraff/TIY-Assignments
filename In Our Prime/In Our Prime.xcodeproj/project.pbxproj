@@ -65,9 +65,9 @@
 				CC5B9C621CD134F9001B6D3C /* AppDelegate.m */,
 				CC5B9C641CD134F9001B6D3C /* ViewController.h */,
 				CC5B9C651CD134F9001B6D3C /* ViewController.m */,
-				CC5B9C671CD134F9001B6D3C /* Main.storyboard */,
 				CC5B9C751CD135DA001B6D3C /* PrimeBrain.h */,
 				CC5B9C761CD135DA001B6D3C /* PrimeBrain.m */,
+				CC5B9C671CD134F9001B6D3C /* Main.storyboard */,
 				CC5B9C6A1CD134F9001B6D3C /* Assets.xcassets */,
 				CC5B9C6C1CD134F9001B6D3C /* LaunchScreen.storyboard */,
 				CC5B9C6F1CD134F9001B6D3C /* Info.plist */,
@@ -309,6 +309,7 @@
 				CC5B9C741CD134F9001B6D3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

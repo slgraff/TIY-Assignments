@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ViewController.h"
 
 @interface PrimeBrain : NSObject
 
@@ -18,7 +19,8 @@
 
 // Declare properties
 @property BOOL isItPrime;
-@property (strong, nonatomic) NSMutableArray* thePrimeFactors;
 @property NSUInteger largestPrimeFactor;
+@property (strong, nonatomic) NSMutableArray* thePrimeFactors;
+
 
 @end

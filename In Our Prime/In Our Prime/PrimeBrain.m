@@ -15,7 +15,8 @@
 @implementation PrimeBrain
 
 
-
+// Initialize thePrimeFactors array
+// NSMutableArray *thePrimeFactors = [[NSMutableArray alloc]init];
 
 // isPrimeNumber - given an NSUInteger, test to see if it is a prime number
 // Return YES if prime, NO if not
@@ -55,12 +56,9 @@
 // primeFactors - given an NSUInteger, determine all prime factors for that number
 - (NSMutableArray *)primeFactors:(NSUInteger)theNumber {
     
-    // Do I need to initialize thePrimeFactors? Do I do it here inside this method? At the top of this class file?
-    // Inside the .h file? I'm confused...
     
-    
-    NSLog(@"Inside primeFactors");
-
+    self.thePrimeFactors = [[NSMutableArray alloc]init];
+    NSLog(@"Inside primeFactors, value of thePrimeFactors %@", self.thePrimeFactors);
     
     // Loop through array of numbers. If theNumber % counter = 0 then check to see if prime.
     // If result is YES, add to array primeFactors
@@ -70,13 +68,14 @@
             if ([self isPrimeNumber:i]) {
                 // Add number to array primeFactors
                 NSLog(@"isPrimeNumber says %i is prime", i);
-                // [self.thePrimeFactors addObject:[NSNumber numberWithInteger:i]]; // convert NSUInteger (type) to NSNumber (object)
-                // NSLog(@"thePrimeFactors %@", _thePrimeFactors);
+                
+                
+                [self.thePrimeFactors addObject:[NSNumber numberWithInteger:i]]; // convert NSUInteger (type) to NSNumber (object)
             }
         }
     }
     NSLog(@"Prime factors of %ld are %@", theNumber, _thePrimeFactors);
-    return _thePrimeFactors; // Placeholder, edit when ready to return array of results
+    return self.thePrimeFactors;
 }
 
 
