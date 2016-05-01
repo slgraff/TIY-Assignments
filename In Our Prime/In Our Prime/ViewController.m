@@ -161,22 +161,22 @@
         
         NSUInteger lrgFctr = [self.brain largestPrimeInCommon:enteredNumber secondNumber:enteredNumber2];
         
-        NSLog(@"lrgFctr: %lu", (unsigned long)lrgFctr);
-        
-        // Append largest prime factor in common to end of string
-        
-        NSMutableString *largestPrimeFactor= [[NSMutableString alloc]init];
-        [largestPrimeFactor stringByAppendingString:@"Largest prime factor is "];
-
-        NSLog(@"largestPrimeFactor %@", largestPrimeFactor);
-
-        // NSMutableString *lrgFctrStr = [NSMutableString stringWithFormat:@"%ld", lrgFctr];
-        [self.largestPrimeFactor stringByAppendingString:[NSMutableString stringWithFormat:@"%ld", lrgFctr]];
-        
-        NSLog(@"largestPrimeFactor %@", largestPrimeFactor);
+//        NSLog(@"lrgFctr: %lu", (unsigned long)lrgFctr);
+//        
+//        // Append largest prime factor in common to end of string
+//        
+//        NSMutableString *largestPrimeFactor= [[NSMutableString alloc]init];
+//        [largestPrimeFactor stringByAppendingString:@"Largest prime factor is "];
+//
+//        NSLog(@"largestPrimeFactor %@", largestPrimeFactor);
+//
+//        // NSMutableString *lrgFctrStr = [NSMutableString stringWithFormat:@"%ld", lrgFctr];
+//        [self.largestPrimeFactor stringByAppendingString:[NSMutableString stringWithFormat:@"%ld", lrgFctr]];
+//        
+//        NSLog(@"largestPrimeFactor %@", largestPrimeFactor);
         
         // set resultsLabel to largest common prime factor
-        [self.resultsLabel setText: [NSString stringWithFormat:@"%lu", (unsigned long)lrgFctr]];
+        [self.resultsLabel setText: [NSString stringWithFormat:@"Largest prime factor is %lu", (unsigned long)lrgFctr]];
 
         
     } else {
