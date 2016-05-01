@@ -32,8 +32,12 @@
     // Initialize picker data
     self.pickerData = @[@"Prime number", @"Prime factors", @"Largest Prime Factor"];
     
-    // Initialize picker selection
-    self.pickerSelection = @"";
+    // Initialize picker selection to 'Prime number'
+    [_methodPicker selectRow:0 inComponent:0 animated:YES];
+    
+    // Initialize value of pickerSelection to 'Prime number'
+    _pickerSelection = @"Prime number";
+
     
     // Connect data
     self.methodPicker.dataSource = self;
@@ -48,6 +52,8 @@
     
     // Initialize the PrimeBrain object
     _brain = [[PrimeBrain alloc]init];
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,6 +86,7 @@
 }
 
 // Capture the picker view selection
+// NOTE: ONLY called when value of picker when picker changes from initial value
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSLog(@"Selected value: %@", [_pickerData objectAtIndex:row]);
     
@@ -103,7 +110,7 @@
 
 - (IBAction)calculateButtonTapped:(UIButton *)sender {
     NSLog(@"Calculate button was tapped");
-
+    
     NSLog(@"Picker selection: %@", _pickerSelection);
     
     // Grab values for number fields

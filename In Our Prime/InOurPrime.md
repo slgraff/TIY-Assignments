@@ -13,6 +13,9 @@ A prime number is a number that can be evenly divided by 1 and itself. Primes ar
 * [x] Create a method in PrimeBrain that takes two numbers, gets the prime factors of each of those, then takes the two NSArrays and finds the largest common number contained in them.
 
 
-## BUGS LIST
+## BUG LIST
 
-* [ ] isPrimeNumber is saying that 25 is prime
+* [x] isPrimeNumber is saying that 25 is prime
+	* FIXED: While loop inside isPrimeNumber was checking for ((counter * counter) < primeCandidate), changed to <= which fixed bug.
+* [x] On first run, if user does not change picker from initial value the picker selection is not being detected
+	* FIXED: Initialized variable _pickerSelection = @"Prime number";
