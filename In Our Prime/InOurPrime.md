@@ -3,8 +3,10 @@
 A prime number is a number that can be evenly divided by 1 and itself. Primes are useful for all sorts of things, but how do we check if a number is prime?
 
 ### Storyboard Tasks
-* [ ] Create an intuitive layout for a textfield, a button and a label.
-* [ ] Create an intuitive way to select which of the PrimeBrain functions you want the button to perform.
+* [x] Create an intuitive layout for a textfield, a button and a label.
+	* I used a UIPicker, two UITextFields, a UIButton, and two UILabels
+* [x] Create an intuitive way to select which of the PrimeBrain functions you want the button to perform.
+	* Used a UIPicker for this
 
 ### Code Challenge
 * [x] Create a class called PrimeBrain
@@ -20,6 +22,8 @@ A prime number is a number that can be evenly divided by 1 and itself. Primes ar
 * [x] On first run, if user does not change picker from initial value the picker selection is not being detected
 	* FIXED: Initialized variable _pickerSelection = @"Prime number";
 * [x] The value of primeFactors array is getting returned as null.
-* [ ] The Largest Prime Factors is not working. Accepts input but returns 0.00 as largest prime factor for 10 and 25.
+* [x] The Largest Prime Factors is not working. Accepts input but returns 0.00 as largest prime factor for 10 and 25.
 * [x] primeFactors returns only 2 as factor of 10.
 	* FIXED: While loop inside primeFactors was checking for i < (theNumber / 2), changed to i <= (theNumber / 2)
+* [ ] Need to clear numberField2 when setting picker to prime number or prime factors
+* [ ] UI is non-functional in landscape mode

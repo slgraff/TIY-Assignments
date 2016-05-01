@@ -100,6 +100,8 @@
     } else {
         [_numberField2 setEnabled: NO];
         _numberField2.placeholder = @"";
+        _numberField2.text = @"";
+
 
         NSLog(@"Setting numberField2 to DISABLED");
 
