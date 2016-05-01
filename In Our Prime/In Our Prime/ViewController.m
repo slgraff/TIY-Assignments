@@ -158,20 +158,25 @@
         //  'Attempt to mutate immutable object with appendString:'
         // This line was converting NSMutableString to NSString:
         // self.largestPrimeFactor = @"Largest prime factor is ";
-        [self.largestPrimeFactor appendString:@"Largest prime factor is "];
         
         NSUInteger lrgFctr = [self.brain largestPrimeInCommon:enteredNumber secondNumber:enteredNumber2];
         
-        NSLog(@"%lu", (unsigned long)lrgFctr);
+        NSLog(@"lrgFctr: %lu", (unsigned long)lrgFctr);
         
         // Append largest prime factor in common to end of string
-
         
-        NSString *lrgFctrStr = [NSString stringWithFormat:@"%ld", lrgFctr];
-        [self.largestPrimeFactor appendString:lrgFctrStr];
+        NSMutableString *largestPrimeFactor= [[NSMutableString alloc]init];
+        [largestPrimeFactor stringByAppendingString:@"Largest prime factor is "];
+
+        NSLog(@"largestPrimeFactor %@", largestPrimeFactor);
+
+        // NSMutableString *lrgFctrStr = [NSMutableString stringWithFormat:@"%ld", lrgFctr];
+        [self.largestPrimeFactor stringByAppendingString:[NSMutableString stringWithFormat:@"%ld", lrgFctr]];
+        
+        NSLog(@"largestPrimeFactor %@", largestPrimeFactor);
         
         // set resultsLabel to largest common prime factor
-        [self.resultsLabel setText: self.largestPrimeFactor];
+        [self.resultsLabel setText: [NSString stringWithFormat:@"%lu", (unsigned long)lrgFctr]];
 
         
     } else {

@@ -108,7 +108,7 @@
     
     NSLog(@"The largest prime factor of %ld and %ld is %.0f",firstNumber, secondNumber,  ([[commonFactors valueForKeyPath:@"@max.intValue"]floatValue]));
     
-    return [[commonFactors valueForKeyPath:@"@max.intValue"]integerValue];
+    return [[commonFactors valueForKeyPath:@"@max.intValue"]floatValue];
 }
 
 
