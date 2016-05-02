@@ -15,6 +15,7 @@
 		CC5B9C481CD0F4EA001B6D3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5B9C461CD0F4EA001B6D3C /* LaunchScreen.storyboard */; };
 		CC5B9C511CD10313001B6D3C /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5B9C501CD10313001B6D3C /* Landmark.m */; };
 		CC5B9C9C1CD1A117001B6D3C /* ironYardRaleigh.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CC5B9C9B1CD1A116001B6D3C /* ironYardRaleigh.gpx */; };
+		CCFB05911CD7A64C005D94A0 /* LocationPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFB05901CD7A64C005D94A0 /* LocationPopoverController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		CC5B9C4F1CD10313001B6D3C /* Landmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Landmark.h; sourceTree = "<group>"; };
 		CC5B9C501CD10313001B6D3C /* Landmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Landmark.m; sourceTree = "<group>"; };
 		CC5B9C9B1CD1A116001B6D3C /* ironYardRaleigh.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ironYardRaleigh.gpx; sourceTree = "<group>"; };
+		CCFB058F1CD7A64C005D94A0 /* LocationPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPopoverController.h; sourceTree = "<group>"; };
+		CCFB05901CD7A64C005D94A0 /* LocationPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPopoverController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				CC5B9C3C1CD0F4EA001B6D3C /* AppDelegate.m */,
 				CC5B9C3E1CD0F4EA001B6D3C /* ViewController.h */,
 				CC5B9C3F1CD0F4EA001B6D3C /* ViewController.m */,
+				CCFB058F1CD7A64C005D94A0 /* LocationPopoverController.h */,
+				CCFB05901CD7A64C005D94A0 /* LocationPopoverController.m */,
 				CC5B9C4F1CD10313001B6D3C /* Landmark.h */,
 				CC5B9C501CD10313001B6D3C /* Landmark.m */,
 				CC5B9C411CD0F4EA001B6D3C /* Main.storyboard */,
@@ -159,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFB05911CD7A64C005D94A0 /* LocationPopoverController.m in Sources */,
 				CC5B9C401CD0F4EA001B6D3C /* ViewController.m in Sources */,
 				CC5B9C3D1CD0F4EA001B6D3C /* AppDelegate.m in Sources */,
 				CC5B9C3A1CD0F4EA001B6D3C /* main.m in Sources */,
@@ -313,6 +319,7 @@
 				CC5B9C4E1CD0F4EA001B6D3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

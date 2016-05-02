@@ -47,6 +47,11 @@
     // Is not visible when running app
     [self setTitle:@"Validator"];
     
+    
+    // Always remember to alloc init!!
+    
+    self.formValidator = [[FormValidator alloc]init];
+    
 }
 
 - (void)didReceiveMemoryWarning {

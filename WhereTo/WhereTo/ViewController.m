@@ -9,12 +9,18 @@
 #import "ViewController.h"
 #import "Landmark.h"
 #import <MapKit/MapKit.h>  // Use brackets <> when importing frameworks
+#import "locationPopoverController.h"
 
-@interface ViewController () <CLLocationManagerDelegate>
+@interface ViewController () <CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate>
 
 // Set property for our map kit view
 @property (strong, nonatomic) MKMapView * mapView;
 @property (strong, nonatomic) CLLocationManager *manager;  // declare to be strong so it sticks around
+
+// popover view controller
+- (IBAction)addLocationsButtonTapped:(id)sender;
+- (IBAction)dismissMe:(id)sender;
+
 
 
 @end
@@ -38,8 +44,10 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
                                 initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                 target:self
-                                action:@selector(addAction)];
+                                  action:@selector(addLocationsButtonTapped:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    
 
     
     // Create instance of CLLocationManager
@@ -149,6 +157,40 @@
     
     
     [manager stopUpdatingLocation];
+}
+
+
+// Implementation for popover controller
+-(IBAction) addLocationsButtonTapped:(id)sender {
+    LocationPopoverController *controller = [[LocationPopoverController alloc]init];
+    controller.modalPresentationStyle = UIModalPresentationPopover;
+    
+    // Create instance of UIPopoverPresentationController
+    UIPopoverPresentationController *popoverController = [controller popoverPresentationController];
+    popoverController.permittedArrowDirections = UIPopoverArrowDirectionAny; // Sets where the 'arrow' is attached to
+    popoverController.barButtonItem = sender;
+    popoverController.delegate = self; // This class controls the delegation for the popover
+    
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+// Add a new view controller
+- (UIViewController *)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style {
+    
+    // Create navigation controller
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:controller.presentedViewController];
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                  target:self
+                                  action:@selector(dismissMe:)];
+    navController.navigationBar.topItem.rightBarButtonItem = doneButton;
+    return navController;
+}
+
+// DismissMe method
+- (IBAction)dismissMe:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

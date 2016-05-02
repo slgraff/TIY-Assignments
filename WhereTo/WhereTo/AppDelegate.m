@@ -30,6 +30,13 @@
     // Create a navigation controller object, initialize with above view controller
     UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:viewController];
     
+//    // ** Create a popover controller
+    // ** UIPopoverController id deprecated in iOS 8
+//    UIPopoverController *popover = [[UIPopoverController alloc]initWithContentViewController:navController];
+//    popover.delegate = self;
+//    popover.popoverContentSize = CGSizeMake(500, 300);
+//    [popover presentPopoverFromRect:button.frame inView:self.view permittedArrowDirections:<#(UIPopoverArrowDirection)#> animated:<#(BOOL)#>]
+    
     // Put the navigation controller in our window we created above
     self.window.rootViewController = navController;
     
