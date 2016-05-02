@@ -9,17 +9,18 @@
 #import "ViewController.h"
 #import "Landmark.h"
 #import <MapKit/MapKit.h>  // Use brackets <> when importing frameworks
-#import "locationPopoverController.h"
+#import "LocationPopoverController.h"
 
 @interface ViewController () <CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate>
 
 // Set property for our map kit view
 @property (strong, nonatomic) MKMapView * mapView;
 @property (strong, nonatomic) CLLocationManager *manager;  // declare to be strong so it sticks around
+@property (strong, nonatomic) UIViewController * insideViewController;
 
 // popover view controller
-- (IBAction)addLocationsButtonTapped:(id)sender;
-- (IBAction)dismissMe:(id)sender;
+- (IBAction)addLocationsButtonTapped:(id)sender;  // declare method for pressing '+' button
+- (IBAction)dismissMe:(id)sender; // declare method for dismiss button in controller
 
 
 
@@ -44,11 +45,8 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
                                 initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                 target:self
-                                  action:@selector(addLocationsButtonTapped:)];
+                                  action:@selector(addLocationsButtonTapped:)]; //
     self.navigationItem.rightBarButtonItem = addButton;
-    
-    
-
     
     // Create instance of CLLocationManager
     // Need to add NSLocationAlwaysUsageDescription to Info.plist
@@ -160,7 +158,7 @@
 }
 
 
-// Implementation for popover controller
+// Implementation for action tapping addLocationsButtonTapped
 -(IBAction) addLocationsButtonTapped:(id)sender {
     LocationPopoverController *controller = [[LocationPopoverController alloc]init];
     controller.modalPresentationStyle = UIModalPresentationPopover;
@@ -174,18 +172,95 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 
+
+// Added during 5/2 lecture
+// Need to declare controller at top of file??
+-(UIViewController *)controllerForInsidePopover {
+    UIViewController * createMeNow = [[UIViewController alloc]init];
+    
+    createMeNow.view.backgroundColor = UIColor.whiteColor;
+    
+    // Add first text field
+    UITextField * firstText = [[UITextField alloc]initWithFrame:CGRectMake(10, 40, 460, 30)];
+    firstText.borderStyle = UITextBorderStyleLine;
+    firstText.tag = 5;
+    [createMeNow.view addSubview: firstText];
+    
+    // Add second text field
+    UITextField * secondText = [[UITextField alloc]initWithFrame:CGRectMake(10, 80, 400, 30)];
+    secondText.borderStyle = UITextBorderStyleLine;
+    secondText.tag = 6;
+
+    [createMeNow.view addSubview: secondText];
+    
+    // Add button
+    UIButton * closeMeButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 120, 200, 35)];
+    [closeMeButton setTitle:@"CloseMe" forState:UIControlStateNormal];
+    [closeMeButton setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
+    [closeMeButton addTarget: createMeNow action:@selector(closePopoverView) forControlEvents: UIControlEventTouchUpInside];
+    [createMeNow.view addSubview:closeMeButton]; // add the button to the view
+    
+    // Need to implement createMeNow
+    return createMeNow;
+}
+
+// Added during 5/2 lecture
+// Need to update for my button and view controller names
+-(IBAction)addButtonPressed:(UIBarButtonItem*)sender {
+    
+    UIViewController* insideViewController = [self controllerForInsidePopover];
+    insideViewController.modalPresentationStyle = UIModalPresentationPopover;
+    
+    UIPopoverPresentationController * popPresController = [self.insideViewController popoverPresentationController];
+    
+    // Replaced by above line
+    // UIPopoverPresentationController * popPresController = [[UIPopoverPresentationController alloc]initWithPresentedViewController:insideViewController presentedViewController:self];
+    
+    popPresController.delegate = self;
+    popPresController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popPresController.barButtonItem = sender;
+    
+    [self presentViewController:self.insideViewController animated:YES completion:nil];
+    
+}
+
+-(void)closePopoverView {
+    
+    UITextField* firstText = [self.insideViewController.view viewWithTag: 5];
+    UITextField* secondText = [self.insideViewController.view viewWithTag: 6];
+    
+    [self lookupCities:@[firstText.text, secondText.text]];
+    
+    [self.insideViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    return UIModalPresentationNone;
+}
+
+// Implement following:
+// adaptivePresentationStyleForPresentationController
+// presentationController
+// popoverPresentationControllerShouldDismissPopover
+
+
 // Add a new view controller
-- (UIViewController *)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style {
+//- (UIViewController *)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:insdieViewController.modalPresentationStyle = (UIModal
+//    
+//    
+//    // Create navigation controller
+//    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:controller.presentedViewController];
+//    
+//    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+//                                  initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+//                                  target:self
+//                                  action:@selector(dismissMe:)];
+//    navController.navigationBar.topItem.rightBarButtonItem = doneButton;
+//    return navController;
+//}
+
+-(void)lookupCities: (NSArray*)cityArray {
     
-    // Create navigation controller
-    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:controller.presentedViewController];
-    
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
-                                  initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                  target:self
-                                  action:@selector(dismissMe:)];
-    navController.navigationBar.topItem.rightBarButtonItem = doneButton;
-    return navController;
 }
 
 // DismissMe method
