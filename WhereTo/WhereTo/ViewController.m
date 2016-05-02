@@ -26,13 +26,21 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // CGRect is a struct, a container object with values in it
-    // rects are measured & expressed in points, not pixels
-    // rect of a ViewController is read-only, cannot be changed
+    // Rects are measured & expressed in points, not pixels
+    // Rect of a ViewController is read-only, cannot be changed
     CGRect theFrame = self.view.frame;
     theFrame.origin.x = 20;
     theFrame.origin.y = 94;
     theFrame.size.width -= 40;
     theFrame.size.height -= 114;
+    
+    // Add '+' bar button item to nav controller
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                target:self
+                                action:@selector(addAction)];
+    self.navigationItem.rightBarButtonItem = addButton;
+
     
     // Create instance of CLLocationManager
     // Need to add NSLocationAlwaysUsageDescription to Info.plist

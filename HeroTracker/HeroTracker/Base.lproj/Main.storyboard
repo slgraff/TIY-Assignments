@@ -11,7 +11,7 @@
             <objects>
                 <tableViewController id="jWA-7p-6cI" customClass="HeroTableTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7qE-9d-McA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -63,7 +63,7 @@
                         <viewControllerLayoutGuide type="bottom" id="S06-cj-fYi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="W3F-xS-P3P">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="heroNameLabel" text="Hero Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgO-uu-7aH">
@@ -121,7 +121,7 @@
         <!--Navigation Controller-->
         <scene sceneID="bVd-M4-Fes">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="70H-yS-erS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="70H-yS-erS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EEX-T0-3gO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
