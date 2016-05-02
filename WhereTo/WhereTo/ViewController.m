@@ -260,6 +260,50 @@
 //}
 
 -(void)lookupCities: (NSArray*)cityArray {
+    NSAssert2(@"both strings", @"are present", cityArray[0], cityArray[1]); // NSAssert2 checks if objects are not nil
+
+    CLGeocoder * geocoder = [[CLGeocoder alloc]init];
+    
+    // declare local variables for both locations, used inside our blocks
+    __block CLLocationCoordinate2D firstPlace;
+    __block CLLocationCoordinate2D secondPlace;
+    
+    // Create variable for weakSelf, __block makes it a block type
+    // Can be used to call a method, need to make sure when using that it is still around
+    __block ViewController * weakSelf = self;
+    
+    [geocoder geocodeAddressString:cityArray[0] completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        // Completion handler returns array of CLPlacemarks and an error
+        CLPlacemark * placemark = [placemarks lastObject];
+        
+        firstPlace = placemark.location.coordinate;
+    }];
+    
+    
+    // Putting second geocoder request inside dispatch_after block, 2 second wait
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [geocoder geocodeAddressString:cityArray[1] completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+            // Completion handler returns array of CLPlacemarks and an error
+            CLPlacemark * placemark = [placemarks lastObject];
+            
+            secondPlace = placemark.location.coordinate;
+        }];
+        
+    });
+    
+    
+    // adding 5 second delay before attempting to get locations and add annotations to map
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        Landmark *theFirst = [[Landmark alloc]initWithCoord:firstPlace title:cityArray[0] subtitle:@"The first location"];
+        Landmark *theSecond = [[Landmark alloc]initWithCoord:secondPlace title:cityArray[1] subtitle:@"The second location"];
+    
+        [self.mapView addAnnotations:@[theFirst, theSecond]];
+
+    });
+    
+
     
 }
 
