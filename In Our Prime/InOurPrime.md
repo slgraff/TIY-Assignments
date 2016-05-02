@@ -25,5 +25,6 @@ A prime number is a number that can be evenly divided by 1 and itself. Primes ar
 * [x] The Largest Prime Factors is not working. Accepts input but returns 0.00 as largest prime factor for 10 and 25.
 * [x] primeFactors returns only 2 as factor of 10.
 	* FIXED: While loop inside primeFactors was checking for i < (theNumber / 2), changed to i <= (theNumber / 2)
-* [ ] Need to clear numberField2 when setting picker to prime number or prime factors
-* [ ] UI is non-functional in landscape mode
+* [x] Need to clear numberField2 when setting picker to prime number or prime factors
+	* Add this to conditional in didSelectRow _numberField2.text = @"";
+* [ ] UI is non-functional in landscape mode. Currently set to portrait only in deployment settings.
