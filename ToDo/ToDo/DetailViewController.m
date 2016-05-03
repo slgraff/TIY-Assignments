@@ -10,6 +10,9 @@
 
 @interface DetailViewController ()
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField;
+- (void)textFieldDidEndEditing:(UITextField *)textField;
+
 @end
 
 @implementation DetailViewController
@@ -29,7 +32,6 @@
     // Update the user interface for the detail item.
     if (self.detailItem) {
         self.detailTextField.text = [self.detailItem valueForKey:@"title"]; // set text of detailTextField to our timestamp
-    
     }
 }
 
@@ -37,6 +39,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    
+    // Set delegate for detailTextField
+    self.detailTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,8 +75,29 @@
     self.saveButton.enabled = NO;
     self.cancelButton.enabled = NO;
     
+    // Resign first resonder, aka focus, for text field
+    [self.detailTextField resignFirstResponder];
+    
     // Send a message to MasterViewController object that the object has changed
     [self.masterVC detailChangedObject];
+}
+
+// TextField delegate - captures when textfield gains focus, i.e. begins editing
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    NSLog(@"textFieldDidBeginEditing");
+
+    // Enable Save and Cancel buttons when user begins editing
+    self.saveButton.enabled = YES;
+    self.cancelButton.enabled = YES;
+}
+
+// TextField delegate - captures when user done editing
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSLog(@"textFieldDidEndEditing");
+
+    
+    // Is this useful to me in this program?
+    
 }
 
 @end
