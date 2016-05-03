@@ -28,7 +28,7 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.detailTextField.text = [[self.detailItem valueForKey:@"timeStamp"] description]; // set text of detailTextField to our timeStamp
+        self.detailTextField.text = [self.detailItem valueForKey:@"title"]; // set text of detailTextField to our timestamp
     
     }
 }
@@ -46,20 +46,20 @@
 
 -(IBAction)cancelButtonTapped:(UIButton*)sender {
     // When cancelling, reload text field from our data model
-    self.detailTextField.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+    self.detailTextField.text = [self.detailItem valueForKey:@"title"];
 }
 
 -(IBAction)saveButtonTapped:(UIButton*)sender {
     // When saving, update our context with edited object
     
-    // Convert string in textfield to an NSDate object
-    NSString * dateString = self.detailTextField.text;
-    NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss +0000"]; // Set formatter string format (NSDate was returning nil)
-    NSDate * newDate = [formatter dateFromString:dateString];
+//    // Convert string in textfield to an NSDate object
+//    NSString * dateString = self.detailTextField.text;
+//    NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
+//    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss +0000"]; // Set formatter string format (NSDate was returning nil)
+//    NSDate * newDate = [formatter dateFromString:dateString];
     
     // Store the NSDate
-    [self.detailItem setValue:newDate forKey:@"timeStamp"];
+    [self.detailItem setValue:self.detailTextField.text forKey:@"title"];
     
     self.saveButton.enabled = NO;
     self.cancelButton.enabled = NO;

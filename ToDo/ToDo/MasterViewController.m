@@ -45,8 +45,11 @@
         
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];  // Using key-value pairs to manage attributes
-        
+    [newManagedObject setValue:@"Temporary Title" forKey:@"title"]; // Using key-value pairs to manage attributes
+    [newManagedObject setValue:[NSDate date] forKey:@"timestamp"];
+    [newManagedObject setValue:@NO forKey:@"done"]; // @NO wraps 'NO' into an object, allows us to pass it as argument
+    
+    
     // Save the context.
     // Context is the memory representation of the objects we've created. This writes it to disk
     NSError *error = nil;
@@ -121,7 +124,10 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell withObject:(NSManagedObject *)object {
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    cell.textLabel.text = [object valueForKey:@"title"];   // configure our cell label and detail label
+    cell.detailTextLabel.text = [[object valueForKey:@"timestamp"]description];
+    
+    
 }
 
 #pragma mark - Fetched results controller
