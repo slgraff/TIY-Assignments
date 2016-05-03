@@ -43,7 +43,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1MA-Pi-fNs">
                                 <rect key="frame" x="401" y="72" width="51" height="31"/>
                             </switch>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rxf-Ct-3Xz">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rxf-Ct-3Xz" userLabel="Todo Detail Text View">
                                 <rect key="frame" x="150" y="149" width="300" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -58,6 +58,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="svH-Pt-448" id="iC9-5v-mSk"/>
+                                </connections>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="csy-WQ-omh">
                                 <rect key="frame" x="150" y="111" width="300" height="30"/>
@@ -131,6 +134,7 @@
                         <outlet property="doneSwitch" destination="1MA-Pi-fNs" id="AQt-al-Zgs"/>
                         <outlet property="saveButton" destination="aCv-kZ-oHc" id="YcP-mi-qCC"/>
                         <outlet property="todoDetailTextField" destination="Rxf-Ct-3Xz" id="w5N-ou-ZuZ"/>
+                        <outlet property="todoDetailTextView" destination="Rxf-Ct-3Xz" id="Uxp-4D-rwA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>

@@ -18,7 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *doneSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *detailTextField;
-@property (weak, nonatomic) IBOutlet UITextView *todoDetailTextField;
+@property (weak, nonatomic) IBOutlet UITextView *todoDetailTextView;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 

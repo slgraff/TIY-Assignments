@@ -82,7 +82,7 @@
     [self.masterVC detailChangedObject];
 }
 
-// TextField delegate - captures when textfield gains focus, i.e. begins editing
+// TextField delegate - captures when textfield gains focus, i.e. user begins editing
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     NSLog(@"textFieldDidBeginEditing");
 
@@ -91,12 +91,11 @@
     self.cancelButton.enabled = YES;
 }
 
-// TextField delegate - captures when user done editing
+// TextField delegate - captures when field loses focus, i.e. user done editing
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSLog(@"textFieldDidEndEditing");
-
     
-    // Is this useful to me in this program?
+    // Is this useful to me in this program? I dunno...
     
 }
 
