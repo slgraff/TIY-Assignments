@@ -28,8 +28,8 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
         self.detailTextField.text = [[self.detailItem valueForKey:@"timeStamp"] description]; // set text of detailTextField to our timeStamp
+    
     }
 }
 
@@ -42,6 +42,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)cancelButtonTapped:(UIButton*)sender {
+    
+}
+
+-(IBAction)saveButtonTapped:(UIButton*)sender {
+    
 }
 
 @end
