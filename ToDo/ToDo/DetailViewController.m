@@ -60,6 +60,12 @@
     
     // Store the NSDate
     [self.detailItem setValue:self.detailTextField.text forKey:@"title"];
+    NSError *error;
+    
+    if (![self.detailItem.managedObjectContext save:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
     
     self.saveButton.enabled = NO;
     self.cancelButton.enabled = NO;
