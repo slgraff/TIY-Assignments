@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="DueDate">
+        <attribute name="timeStamp" optional="YES" attributeType="Date">
+            <userInfo/>
+        </attribute>
+        <userInfo/>
+    </entity>
+    <entity name="ToDo" syncable="YES">
+        <attribute name="done" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="due" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DueDate" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DueDate" positionX="261" positionY="23" width="128" height="58"/>
+        <element name="ToDo" positionX="477" positionY="-81" width="128" height="88"/>
+    </elements>
+</model>

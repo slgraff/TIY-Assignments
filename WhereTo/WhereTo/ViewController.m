@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "Landmark.h"
 #import <MapKit/MapKit.h>  // Use brackets <> when importing frameworks
-#import "LocationPopoverController.h"
 
 @interface ViewController () <CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate>
 
@@ -160,6 +159,8 @@
 
 // Implementation for action tapping addLocationsButtonTapped
 -(IBAction) addLocationsButtonTapped:(id)sender {
+    
+    // BUG These two lines need to be changed to use the existing view controller
     LocationPopoverController *controller = [[LocationPopoverController alloc]init];
     controller.modalPresentationStyle = UIModalPresentationPopover;
     
@@ -277,6 +278,11 @@
         CLPlacemark * placemark = [placemarks lastObject];
         
         firstPlace = placemark.location.coordinate;
+        Landmark *theFirst = [[Landmark alloc]initWithCoord:firstPlace title:cityArray[0] subtitle:@"The first location"];
+
+        [weakSelf.mapView addAnnotation:theFirst];
+        [geocoder cancelGeocode];
+
     }];
     
     
@@ -288,20 +294,43 @@
             CLPlacemark * placemark = [placemarks lastObject];
             
             secondPlace = placemark.location.coordinate;
+            Landmark *theSecond = [[Landmark alloc]initWithCoord:secondPlace title:cityArray[1] subtitle:@"The second location"];
+
+            [weakSelf.mapView addAnnotation:theSecond];
+            [geocoder cancelGeocode];
         }];
         
     });
     
-    
-    // adding 5 second delay before attempting to get locations and add annotations to map
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        Landmark *theFirst = [[Landmark alloc]initWithCoord:firstPlace title:cityArray[0] subtitle:@"The first location"];
-        Landmark *theSecond = [[Landmark alloc]initWithCoord:secondPlace title:cityArray[1] subtitle:@"The second location"];
-    
-        [self.mapView addAnnotations:@[theFirst, theSecond]];
+    // As alternative, could call second completion handler from within first completion handler
+    // Used in UIViewAnimation
+    // Can chain completion handlers together
+    /*
+     [geocoder geocodeAddressString:cityArray[0] completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+     // Completion handler returns array of CLPlacemarks and an error
+     CLPlacemark * placemark = [placemarks lastObject];
+     
+     firstPlace = placemark.location.coordinate;
+     Landmark *theFirst = [[Landmark alloc]initWithCoord:firstPlace title:cityArray[0] subtitle:@"The first location"];
+     
+     [weakSelf.mapView addAnnotation:theFirst];
+     [geocoder cancelGeocode];
+     
+         [geocoder geocodeAddressString:cityArray[1] completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+         // Completion handler returns array of CLPlacemarks and an error
+         CLPlacemark * placemark = [placemarks lastObject];
+         
+         secondPlace = placemark.location.coordinate;
+         Landmark *theSecond = [[Landmark alloc]initWithCoord:secondPlace title:cityArray[1] subtitle:@"The second location"];
+         
+         [weakSelf.mapView addAnnotation:theSecond];
+         [geocoder cancelGeocode];
+         }];
 
-    });
+     }];
+     
+    */
+
     
 
     
