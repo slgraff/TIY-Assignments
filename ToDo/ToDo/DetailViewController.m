@@ -36,7 +36,15 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.detailTextField.text = [self.detailItem valueForKey:@"title"]; // set text of detailTextField to our timestamp
+        
+        // Set the text for the title and to do detail
+        self.detailTextField.text = [self.detailItem valueForKey:@"title"];
+        self.todoDetailTextView.text = [self.detailItem valueForKey:@"detail"];
+        
+        // Grab that state of 'done', set doneSwitch
+        [self.doneSwitch setOn:[[self.detailItem valueForKey:@"done"]boolValue] animated:YES];
+        
+        
     }
 }
 
@@ -47,6 +55,11 @@
     
     // Set delegate for detailTextField
     self.detailTextField.delegate = self;
+    
+    // Set delegate for todoDetailTextView
+    self.todoDetailTextView.delegate = self;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,6 +100,25 @@
     [self.masterVC detailChangedObject];
 }
 
+
+// Method for handling toggling of the Done switch
+-(IBAction)doneSwitchToggled:(UISwitch *)sender {
+    
+    // Get and store the state of the doneSwitch
+    if (self.doneSwitch.isOn) {
+        // [self.doneSwitch setOn:NO animated:YES];
+        [self.detailItem setValue:@YES forKey:@"done"];
+
+    } else {
+        // [self.doneSwitch setOn:YES animated:YES];
+        [self.detailItem setValue:@NO forKey:@"done"];
+    }
+    
+    // [self.detailItem setValue:@([self.doneSwitch isOn]) forKey:@"done"];
+}
+
+
+#pragma mark TextField Delegates
 // TextField delegate - captures when textfield gains focus, i.e. user begins editing
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     NSLog(@"textFieldDidBeginEditing");
@@ -102,6 +134,9 @@
     
     // Is this useful to me in this program? I dunno...
 }
+
+
+#pragma mark TextView Delegates
 
 // TextView delegate for when field gains focus
 - (void)textViewDidBeginEditing:(UITextView *)textView {

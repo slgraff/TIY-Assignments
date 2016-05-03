@@ -42,6 +42,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1MA-Pi-fNs">
                                 <rect key="frame" x="401" y="72" width="51" height="31"/>
+                                <connections>
+                                    <action selector="doneSwitchToggled:" destination="JEX-9P-axG" eventType="valueChanged" id="rL8-3I-Xm0"/>
+                                </connections>
                             </switch>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rxf-Ct-3Xz" userLabel="Todo Detail Text View">
                                 <rect key="frame" x="150" y="149" width="300" height="350"/>
@@ -57,7 +60,6 @@
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="svH-Pt-448" id="iC9-5v-mSk"/>
                                 </connections>
@@ -133,7 +135,6 @@
                         <outlet property="detailTextField" destination="csy-WQ-omh" id="Gjr-RM-g2a"/>
                         <outlet property="doneSwitch" destination="1MA-Pi-fNs" id="AQt-al-Zgs"/>
                         <outlet property="saveButton" destination="aCv-kZ-oHc" id="YcP-mi-qCC"/>
-                        <outlet property="todoDetailTextField" destination="Rxf-Ct-3Xz" id="w5N-ou-ZuZ"/>
                         <outlet property="todoDetailTextView" destination="Rxf-Ct-3Xz" id="Uxp-4D-rwA"/>
                     </connections>
                 </viewController>
