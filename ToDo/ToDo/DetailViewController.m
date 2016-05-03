@@ -55,6 +55,7 @@
     // Convert string in textfield to an NSDate object
     NSString * dateString = self.detailTextField.text;
     NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss +0000"]; // Set formatter string format (NSDate was returning nil)
     NSDate * newDate = [formatter dateFromString:dateString];
     
     // Store the NSDate
