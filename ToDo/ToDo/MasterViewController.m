@@ -65,7 +65,10 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
+        
+        controller.masterVC = self; // Added this
+        
+        [controller setDetailItem:object];  // This is the object that is passed to detailViewController and displayed there
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -213,8 +216,25 @@
     [self.tableView endUpdates];
 }
 
+// Implementation of detailChangedObject
+-(void)detailChangedObject {
+    // [self.tableView reloadData];
+    
+    // Copied following from committedEditingStyle
+    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];  // 'context' is our memory
+
+    NSError *error = nil;
+    if (![context save:&error]) {  // Save our object to disk
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+
+}
+
 /*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
+// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
  
  - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {

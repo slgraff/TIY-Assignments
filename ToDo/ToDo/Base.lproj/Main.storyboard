@@ -48,6 +48,9 @@
                                     <constraint firstAttribute="width" constant="34" id="iVl-dy-oE5"/>
                                 </constraints>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="Uke-PA-zjC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ML6-hC-j24">
                                 <rect key="frame" x="360" y="323" width="48" height="30"/>
@@ -58,6 +61,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="Lkr-Dd-uve"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

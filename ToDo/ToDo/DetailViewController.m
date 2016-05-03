@@ -45,11 +45,26 @@
 }
 
 -(IBAction)cancelButtonTapped:(UIButton*)sender {
-    
+    // When cancelling, reload text field from our data model
+    self.detailTextField.text = [[self.detailItem valueForKey:@"timeStamp"] description];
 }
 
 -(IBAction)saveButtonTapped:(UIButton*)sender {
+    // When saving, update our context with edited object
     
+    // Convert string in textfield to an NSDate object
+    NSString * dateString = self.detailTextField.text;
+    NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
+    NSDate * newDate = [formatter dateFromString:dateString];
+    
+    // Store the NSDate
+    [self.detailItem setValue:newDate forKey:@"timeStamp"];
+    
+    self.saveButton.enabled = NO;
+    self.cancelButton.enabled = NO;
+    
+    // Send a message to MasterViewController object that the object has changed
+    [self.masterVC detailChangedObject];
 }
 
 @end

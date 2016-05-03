@@ -18,6 +18,8 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+// Creating instance method for MasterViewController to get notified when context of an object has changed in the DetailViewController
+-(void)detailChangedObject;
 
 @end
 

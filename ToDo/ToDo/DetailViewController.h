@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterViewController.h"
+
 
 @interface DetailViewController : UIViewController
+
+@property (weak, nonatomic) MasterViewController * masterVC; // Created property to refer to our MasterViewController
 
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UITextField *detailTextField;
