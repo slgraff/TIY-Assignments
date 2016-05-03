@@ -38,6 +38,7 @@
     if (self.detailItem) {
         
         // Set the text for the title and to do detail
+        self.dueDateField.text = [[self.detailItem valueForKey:@"timestamp"]description];
         self.detailTextField.text = [self.detailItem valueForKey:@"title"];
         self.todoDetailTextView.text = [self.detailItem valueForKey:@"detail"];
         
@@ -81,8 +82,10 @@
 //    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss +0000"]; // Set formatter string format (NSDate was returning nil)
 //    NSDate * newDate = [formatter dateFromString:dateString];
     
-    // Store the NSDate
+    // Save the contents of text field (title) and text view (detail)
     [self.detailItem setValue:self.detailTextField.text forKey:@"title"];
+    [self.detailItem setValue:self.todoDetailTextView.text forKey:@"detail"];
+    
     NSError *error;
     
     if (![self.detailItem.managedObjectContext save:&error]) {
@@ -93,8 +96,9 @@
     self.saveButton.enabled = NO;
     self.cancelButton.enabled = NO;
     
-    // Resign first resonder, aka focus, for text field
+    // Resign first resonder, aka focus, for text field, text view
     [self.detailTextField resignFirstResponder];
+    [self.todoDetailTextView resignFirstResponder];
     
     // Send a message to MasterViewController object that the object has changed
     [self.masterVC detailChangedObject];
@@ -142,6 +146,9 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     NSLog(@"textViewDidBeginEditing");
 
+    // Enable Save and Cancel buttons when user begins editing
+    self.saveButton.enabled = YES;
+    self.cancelButton.enabled = YES;
 }
 
 

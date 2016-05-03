@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) NSManagedObject * detailItem; // changed from id to NSManagedObject, allows saving from MasterViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *dueDateField;
 @property (weak, nonatomic) IBOutlet UISwitch *doneSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *detailTextField;
 @property (weak, nonatomic) IBOutlet UITextView *todoDetailTextView;

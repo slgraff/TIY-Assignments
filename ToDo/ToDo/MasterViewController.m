@@ -47,7 +47,11 @@
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [newManagedObject setValue:@"To Do Title" forKey:@"title"]; // Using key-value pairs to manage attributes
     [newManagedObject setValue:@"To Do Detail" forKey:@"detail"];
+    
+    // Create a new date
     [newManagedObject setValue:[NSDate date] forKey:@"timestamp"];
+    
+    // Set default value for 'done'
     [newManagedObject setValue:@NO forKey:@"done"]; // @NO wraps 'NO' into an object, allows us to pass it as argument
     
     
@@ -125,7 +129,21 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell withObject:(NSManagedObject *)object {
-    cell.textLabel.text = [object valueForKey:@"title"];   // configure our cell label and detail label
+    
+    // configure our cell label and detail label
+    cell.textLabel.text = [object valueForKey:@"title"];
+    
+//    // Format the date before passing to the cell
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+//    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+//    
+//    // NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:162000];
+//    
+//    NSString *formattedDateString = [dateFormatter stringFromDate:date];
+//    NSLog(@"formattedDateString: %@", formattedDateString);
+//    // Output for locale en_US: "formattedDateString: Jan 2, 2001".
+    
     cell.detailTextLabel.text = [[object valueForKey:@"timestamp"]description];
     
     
