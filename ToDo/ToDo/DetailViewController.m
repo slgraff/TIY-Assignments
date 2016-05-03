@@ -10,8 +10,13 @@
 
 @interface DetailViewController ()
 
+// Declaring UITextField delegates
 - (void)textFieldDidBeginEditing:(UITextField *)textField;
 - (void)textFieldDidEndEditing:(UITextField *)textField;
+
+// Declaring UITextView delegates
+- (void)textViewDidBeginEditing:(UITextView *)textView;
+- (void)textViewDidEndEditing:(UITextView *)textView;
 
 @end
 
@@ -96,7 +101,19 @@
     NSLog(@"textFieldDidEndEditing");
     
     // Is this useful to me in this program? I dunno...
-    
+}
+
+// TextView delegate for when field gains focus
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    NSLog(@"textViewDidBeginEditing");
+
+}
+
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    NSLog(@"textViewDidEndEditing");
+
+    // There I go again, implementing a delegate I don't think I'm gonna use
 }
 
 @end

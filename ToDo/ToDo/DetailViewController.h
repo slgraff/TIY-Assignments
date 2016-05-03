@@ -10,7 +10,7 @@
 #import "MasterViewController.h"
 
 
-@interface DetailViewController : UIViewController <UITextFieldDelegate>
+@interface DetailViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) MasterViewController * masterVC; // Created property to refer to our MasterViewController
 
