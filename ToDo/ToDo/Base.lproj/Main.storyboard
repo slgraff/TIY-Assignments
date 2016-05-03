@@ -128,7 +128,9 @@
                     <connections>
                         <outlet property="cancelButton" destination="ML6-hC-j24" id="rhR-cr-VoS"/>
                         <outlet property="detailTextField" destination="csy-WQ-omh" id="Gjr-RM-g2a"/>
+                        <outlet property="doneSwitch" destination="1MA-Pi-fNs" id="AQt-al-Zgs"/>
                         <outlet property="saveButton" destination="aCv-kZ-oHc" id="YcP-mi-qCC"/>
+                        <outlet property="todoDetailTextField" destination="Rxf-Ct-3Xz" id="w5N-ou-ZuZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
