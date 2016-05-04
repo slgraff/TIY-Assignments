@@ -10,6 +10,7 @@
 		CC0E4CCB1CCA967F004C87FE /* heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = CC0E4CCA1CCA967F004C87FE /* heroes.json */; };
 		CC6D5CBE1CC9545D00B45788 /* HeroTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D5CBD1CC9545D00B45788 /* HeroTableTableViewController.m */; };
 		CC6D5CC11CC9548D00B45788 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D5CC01CC9548D00B45788 /* Hero.m */; };
+		CC7594991CDA7D2700BD5225 /* ForceAwakensImages in Resources */ = {isa = PBXBuildFile; fileRef = CC7594981CDA7D2700BD5225 /* ForceAwakensImages */; };
 		CCCD5BB81CC9365E00D4B0F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5BB71CC9365E00D4B0F8 /* main.m */; };
 		CCCD5BBB1CC9365E00D4B0F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD5BBA1CC9365E00D4B0F8 /* AppDelegate.m */; };
 		CCCD5BC11CC9365E00D4B0F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCCD5BBF1CC9365E00D4B0F8 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		CC6D5CBD1CC9545D00B45788 /* HeroTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroTableTableViewController.m; sourceTree = "<group>"; };
 		CC6D5CBF1CC9548D00B45788 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
 		CC6D5CC01CC9548D00B45788 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
+		CC7594981CDA7D2700BD5225 /* ForceAwakensImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ForceAwakensImages; sourceTree = "<group>"; };
 		CCCD5BB31CC9365E00D4B0F8 /* HeroTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCD5BB71CC9365E00D4B0F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCCD5BB91CC9365E00D4B0F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				CCCD5BC21CC9365E00D4B0F8 /* Assets.xcassets */,
 				CCCD5BC41CC9365E00D4B0F8 /* LaunchScreen.storyboard */,
 				CCCD5BC71CC9365E00D4B0F8 /* Info.plist */,
+				CC7594981CDA7D2700BD5225 /* ForceAwakensImages */,
 				CCCD5BB61CC9365E00D4B0F8 /* Supporting Files */,
 			);
 			path = HeroTracker;
@@ -153,6 +156,7 @@
 				CCCD5BC61CC9365E00D4B0F8 /* LaunchScreen.storyboard in Resources */,
 				CC0E4CCB1CCA967F004C87FE /* heroes.json in Resources */,
 				CCCD5BC31CC9365E00D4B0F8 /* Assets.xcassets in Resources */,
+				CC7594991CDA7D2700BD5225 /* ForceAwakensImages in Resources */,
 				CCCD5BC11CC9365E00D4B0F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

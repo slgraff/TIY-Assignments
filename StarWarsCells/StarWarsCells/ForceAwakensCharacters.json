@@ -1,0 +1,73 @@
+[
+{
+"characterName": "Finn",
+"characterDescription":"FN-2187 was trained since birth to serve the First Order as a stormtrooper, but a skirmish on Jakku awakened his conscience and drove him down a different path, one that proved both heroic and dangerous. He helped Poe Dameron escape the First Order – picking up the nickname Finn in doing so – and then sought his own freedom alongside Rey and BB-8.",
+"characterImageName":"finn_450f054b.jpg"
+},
+
+{
+"characterName": "Poe Dameron",
+"characterDescription":"Poe Dameron is a commander in the Resistance’s Starfighter Corps and one of Leia Organa’s most-trusted operatives. The son of a rebel fighter pilot and a rebel commando, Poe grew up on stories of Alliance campaigns. A decorated X-wing pilot, he can fly anything – which is fortunate given how often his headstrong nature leads him into trouble.",
+"characterImageName":"poe-dameron_70f5aee2.jpg"
+},
+
+{
+"characterName": "Rey",
+"characterDescription":"Rey is a Jakku scavenger, a survivor toughened by life on a harsh desert planet. When the fugitive droid BB-8 appeals to her for help, Rey finds herself drawn into a galaxy-spanning conflict. Despite dismissing herself as “no one,” she learns that her life is being shaped by the mysterious power of the Force.",
+"characterImageName":"rey_bddd0f27.jpg"
+},
+
+{
+"characterName": "BB-8",
+"characterDescription":"A skittish but loyal astromech, BB-8 accompanied Poe Dameron on many missions for the Resistance, helping keep his X-wing in working order. When Poe’s mission to Jakku ended with his capture by the First Order, BB-8 fled into the desert with a vital clue to the location of Jedi Master Luke Skywalker.",
+"characterImageName":"bb-8_14e2ad77.jpg"
+},
+
+{
+"characterName": "Han Solo",
+"characterDescription":"Smuggler. Scoundrel. Hero. Han Solo, captain of the Millennium Falcon, was one of the great leaders of the Rebel Alliance. He and his co-pilot Chewbacca came to believe in the cause of galactic freedom, joining Luke Skywalker and Princess Leia Organa in the fight against the Empire. But after the Battle of Endor, Han would face difficult times in a galaxy plagued by chaos and uncertainty.",
+"characterImageName":"Han-Solo_1d08eb2e.jpg"
+},
+
+{
+"characterName": "Leia Organa",
+"characterDescription":"Princess Leia Organa was one of the Rebel Alliance’s greatest leaders, fearless on the battlefield and dedicated to ending the tyranny of the Empire. Daughter of Padmé Amidala and Anakin Skywalker, sister of Luke Skywalker, and with a soft spot for scoundrels, Leia ranks among the galaxy’s great heroes. But life under the New Republic has not been easy for Leia. Sidelined by a new generation of political leaders, and struck out on her own to oppose the First Order as founder of the Resistance. These setbacks in her political career have been accompanied by more personal losses.",
+"characterImageName":"Princess-Leia-Organa_d7761ff5"
+},
+
+{
+"characterName": "Kylo Ren",
+"characterDescription":"A dark warrior strong with the Force, Kylo Ren commands First Order missions with a temper as fiery as his unconventional lightsaber. As a leader of the First Order and a student of Supreme Leader Snoke, he seeks to destroy the New Republic, the Resistance and the legacy of the Jedi.",
+"characterImageName":"kylo-ren_fa163069.jpg"
+},
+
+{
+"characterName": "Captain Phasma",
+"characterDescription":"Clad in distinctive armor of salvaged chromium, Captain Phasma commands the First Order’s legions of stormtroopers. A tough veteran commander, she has no use for fancy titles or complex war rooms, preferring to lead her troops in battle against the First Order’s enemies.",
+"characterImageName":"captain-phasma_8f4ea1d7.jpg"
+},
+
+{
+"characterName": "General Hux",
+"characterDescription":"A young, ruthless officer in the First Order, General Hux has complete confidence in his troops, training methods and weapons. A rival of Kylo Ren’s, Hux eagerly awaits the day when the First Order will bring down the hated New Republic, and considers it his destiny to rule the galaxy.",
+"characterImageName":"general-hux_078a3f89.jpg"
+},
+
+{
+"characterName": "Chewbacca",
+"characterDescription":"A legendary Wookiee warrior and Han Solo’s co-pilot aboard the Millennium Falcon, Chewbacca was part of a core group of Rebels who restored freedom to the galaxy. Known for his short temper and accuracy with a bowcaster, Chewie also has a big heart -- and is unwavering in his loyalty to his friends. He has stuck with Han through years of turmoil that have changed both the galaxy and their lives.",
+"characterImageName":"chewie-db_2c0efea2.jpg"
+},
+
+{
+"characterName": "C-3PO (SEE-THREEPIO)",
+"characterDescription":"C-3PO is a droid programmed for etiquette and protocol, built by the heroic Jedi Anakin Skywalker, and a constant companion to astromech R2-D2. Over the years, he was involved in some of the galaxy’s most defining moments and thrilling battles -- and is fluent in more than seven million forms of communication.",
+"characterImageName":"C-3PO-See-Threepio_68fe125c.jpg"
+},
+
+{
+"characterName": "R2-D2",
+"characterDescription":"A resourceful astromech droid, R2-D2 served Padmé Amidala, Anakin Skywalker and Luke Skywalker in turn, showing great bravery in rescuing his masters and their friends from many perils. A skilled starship mechanic and fighter pilot's assistant, he formed an unlikely but enduring friendship with the fussy protocol droid C-3PO.",
+"characterImageName":"R2-D2_41dacaa9.jpg"
+}
+]
