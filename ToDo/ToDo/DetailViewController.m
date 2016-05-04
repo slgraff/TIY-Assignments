@@ -22,6 +22,9 @@
 
 @implementation DetailViewController
 
+
+
+
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem {
@@ -157,5 +160,19 @@
 
     // There I go again, implementing a delegate I don't think I'm gonna use
 }
+
+
+//// Only enable Save and Cancel buttons once user has made change to textField
+//- (BOOL)textField:(UITextField *)detailTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+//{
+//    text = [detailTextField.text stringByReplacingCharactersInRange:range withString:string];
+//    if (detailTextfield == refToTextFieldYouWantToCheck) {
+//        if ( ! [textToCheck isEqualToString:text] ) {
+//            [theButtonRef setEnabled:YES];
+//        }
+//    }
+//    return YES; //If you don't your textfield won't get any text in it
+//}
+
 
 @end

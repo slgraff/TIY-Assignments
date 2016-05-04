@@ -9,7 +9,11 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 
-@interface MasterViewController ()
+@interface MasterViewController () {
+    
+    NSDateFormatter * dateFormatter;
+
+}
 
 @end
 
@@ -48,8 +52,19 @@
     [newManagedObject setValue:@"To Do Title" forKey:@"title"]; // Using key-value pairs to manage attributes
     [newManagedObject setValue:@"To Do Detail" forKey:@"detail"];
     
-    // Create a new date
-    [newManagedObject setValue:[NSDate date] forKey:@"timestamp"];
+    // Create a new date, format it
+    dateFormatter = [[NSDateFormatter alloc]init];
+    NSString *formatString = [NSDateFormatter dateFormatFromTemplate:@"MM-dd-yyyy"
+                                                             options:0
+                                                              locale:[NSLocale currentLocale]];
+    [dateFormatter setDateFormat:formatString];
+    NSDate *todaysDate = [NSDate date];
+    
+    NSString *todaysDateString = [dateFormatter stringFromDate:todaysDate];
+    
+    // Set value of 'timestamp' to todayDateString
+    [newManagedObject setValue:[dateFormatter dateFromString:todaysDateString]forKey:@"timestamp"];
+    
     
     // Set default value for 'done'
     [newManagedObject setValue:@NO forKey:@"done"]; // @NO wraps 'NO' into an object, allows us to pass it as argument
@@ -132,18 +147,6 @@
     
     // configure our cell label and detail label
     cell.textLabel.text = [object valueForKey:@"title"];
-    
-//    // Format the date before passing to the cell
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-//    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-//    
-//    // NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:162000];
-//    
-//    NSString *formattedDateString = [dateFormatter stringFromDate:date];
-//    NSLog(@"formattedDateString: %@", formattedDateString);
-//    // Output for locale en_US: "formattedDateString: Jan 2, 2001".
-    
     cell.detailTextLabel.text = [[object valueForKey:@"timestamp"]description];
     
     

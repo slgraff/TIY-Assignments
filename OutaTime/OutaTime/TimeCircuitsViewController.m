@@ -149,7 +149,7 @@
     [self.destinationTimeLabel setText:[dateFormatter stringFromDate:destinationDate]];
     
     // Can also access property directly thusly
-    [self.destinationTimeLabel.setText = [dateFormatter stringFromDate:destinationDate]];
+    // [self.destinationTimeLabel.setText = [dateFormatter stringFromDate:destinationDate]];
 
     
     
