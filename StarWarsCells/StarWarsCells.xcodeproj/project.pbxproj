@@ -13,9 +13,9 @@
 		CC75948C1CDA7BE700BD5225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC75948B1CDA7BE700BD5225 /* Assets.xcassets */; };
 		CC75948F1CDA7BE700BD5225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC75948D1CDA7BE700BD5225 /* LaunchScreen.storyboard */; };
 		CC7594971CDA7C6E00BD5225 /* ForceAwakensCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = CC7594961CDA7C6E00BD5225 /* ForceAwakensCharacters.json */; };
-		CC75949C1CDA7E8500BD5225 /* CharacterTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC75949B1CDA7E8500BD5225 /* CharacterTableTableViewController.m */; };
 		CC75949F1CDA7EB300BD5225 /* CharacterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC75949E1CDA7EB300BD5225 /* CharacterDetailViewController.m */; };
 		CC7594A21CDA7F2F00BD5225 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7594A11CDA7F2F00BD5225 /* Character.m */; };
+		CC7594A51CDA80FC00BD5225 /* CharacterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7594A41CDA80FC00BD5225 /* CharacterTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +28,12 @@
 		CC75948E1CDA7BE700BD5225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC7594901CDA7BE700BD5225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC7594961CDA7C6E00BD5225 /* ForceAwakensCharacters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ForceAwakensCharacters.json; sourceTree = "<group>"; };
-		CC75949A1CDA7E8500BD5225 /* CharacterTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterTableTableViewController.h; sourceTree = "<group>"; };
-		CC75949B1CDA7E8500BD5225 /* CharacterTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterTableTableViewController.m; sourceTree = "<group>"; };
 		CC75949D1CDA7EB300BD5225 /* CharacterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterDetailViewController.h; sourceTree = "<group>"; };
 		CC75949E1CDA7EB300BD5225 /* CharacterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterDetailViewController.m; sourceTree = "<group>"; };
 		CC7594A01CDA7F2F00BD5225 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
 		CC7594A11CDA7F2F00BD5225 /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
+		CC7594A31CDA80FC00BD5225 /* CharacterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterTableViewController.h; sourceTree = "<group>"; };
+		CC7594A41CDA80FC00BD5225 /* CharacterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +68,8 @@
 			children = (
 				CC7594821CDA7BE700BD5225 /* AppDelegate.h */,
 				CC7594831CDA7BE700BD5225 /* AppDelegate.m */,
-				CC75949A1CDA7E8500BD5225 /* CharacterTableTableViewController.h */,
-				CC75949B1CDA7E8500BD5225 /* CharacterTableTableViewController.m */,
+				CC7594A31CDA80FC00BD5225 /* CharacterTableViewController.h */,
+				CC7594A41CDA80FC00BD5225 /* CharacterTableViewController.m */,
 				CC75949D1CDA7EB300BD5225 /* CharacterDetailViewController.h */,
 				CC75949E1CDA7EB300BD5225 /* CharacterDetailViewController.m */,
 				CC7594A01CDA7F2F00BD5225 /* Character.h */,
@@ -167,7 +167,7 @@
 				CC7594841CDA7BE700BD5225 /* AppDelegate.m in Sources */,
 				CC7594A21CDA7F2F00BD5225 /* Character.m in Sources */,
 				CC75949F1CDA7EB300BD5225 /* CharacterDetailViewController.m in Sources */,
-				CC75949C1CDA7E8500BD5225 /* CharacterTableTableViewController.m in Sources */,
+				CC7594A51CDA80FC00BD5225 /* CharacterTableViewController.m in Sources */,
 				CC7594811CDA7BE700BD5225 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

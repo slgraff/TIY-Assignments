@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Character.h"
 
 @interface CharacterDetailViewController : UIViewController
+
+@property (nonatomic) Character *character;
 
 @end

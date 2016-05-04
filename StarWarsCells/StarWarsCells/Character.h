@@ -10,4 +10,10 @@
 
 @interface Character : NSObject
 
+@property (nonatomic) NSString *characterName;
+@property (nonatomic) NSString *characterDescription;
+
++(Character *)characterWithDictionary:(NSDictionary *)charDict;
+
+
 @end

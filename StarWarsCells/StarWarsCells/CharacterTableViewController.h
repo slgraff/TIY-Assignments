@@ -1,5 +1,5 @@
 //
-//  CharacterTableTableViewController.h
+//  CharacterTableViewController.h
 //  StarWarsCells
 //
 //  Created by Steve Graff on 5/4/16.
@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CharacterTableTableViewController : UITableViewController
+@interface CharacterTableViewController : UITableViewController
+
+-(void)loadCharacters;
+
 
 @end

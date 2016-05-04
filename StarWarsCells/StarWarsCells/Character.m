@@ -10,4 +10,20 @@
 
 @implementation Character
 
++(Character *)characterWithDictionary:(NSDictionary *)charDict {
+    
+    Character *aCharacter = nil;
+    if (charDict) {
+        aCharacter = [[Character alloc]init];
+        
+        // Set characters name
+        aCharacter.characterName = [charDict objectForKey:@"characterName"];
+        
+        // Set characters description
+        aCharacter.characterDescription = [charDict objectForKey:@"characterDescription"];
+    }
+    return aCharacter;
+    
+}
+
 @end

@@ -10,6 +10,11 @@
 
 @interface CharacterDetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *characterNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *characterDescriptionLabel;
+
+-(void)configureView;
+
 @end
 
 @implementation CharacterDetailViewController
@@ -17,11 +22,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self configureView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Managing the Character Detail View
+
+-(void)setCharacter:(Character *)newCharacter {
+    
+    if(_character != newCharacter) {  // _character is equiv to self.character
+        _character = newCharacter;  // Use _character here. Using self.character causes problems
+        
+        // Update the view
+        [self configureView];
+        
+    }
+}
+
+-(void)configureView {
+    if (self.character) {
+        
+        // Extract Character name and set detail view title
+        self.title = [NSString stringWithFormat:@"%@", [self.character.characterName componentsSeparatedByString:@" "][0]];
+        
+        // Set the contents of labels in the Character Detail View
+        self.characterNameLabel.text = self.character.characterName;
+        self.characterDescriptionLabel.text  = self.character.characterDescription;
+    }
 }
 
 /*
