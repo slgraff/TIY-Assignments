@@ -94,7 +94,7 @@
     cell.imageView.layer.cornerRadius = 10;
     cell.imageView.clipsToBounds = YES;
     
-    cell.imageView.layer.borderWidth=4;
+    cell.imageView.layer.borderWidth=2;
     cell.imageView.layer.borderColor=[[UIColor blackColor]CGColor];
     
     cell.imageView.image = [UIImage imageNamed:aCharacter.characterImageName];

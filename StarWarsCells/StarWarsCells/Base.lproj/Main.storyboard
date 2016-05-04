@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="4jy-vG-7WH" detailTextLabel="u8s-1M-IIh" style="IBUITableViewCellStyleValue1" id="X0a-YH-Ap2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DroidCell" textLabel="4jy-vG-7WH" detailTextLabel="u8s-1M-IIh" style="IBUITableViewCellStyleValue1" id="X0a-YH-Ap2">
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X0a-YH-Ap2" id="OJa-lF-jgT">

@@ -2,72 +2,119 @@
 {
 "characterName": "Finn",
 "characterDescription":"FN-2187 was trained since birth to serve the First Order as a stormtrooper, but a skirmish on Jakku awakened his conscience and drove him down a different path, one that proved both heroic and dangerous. He helped Poe Dameron escape the First Order – picking up the nickname Finn in doing so – and then sought his own freedom alongside Rey and BB-8.",
-"characterImageName":"finn_450f054b"
+"characterImageName":"finn_450f054b",
+"characterType":"Dark Side"
 },
 
 {
 "characterName": "Poe Dameron",
 "characterDescription":"Poe Dameron is a commander in the Resistance’s Starfighter Corps and one of Leia Organa’s most-trusted operatives. The son of a rebel fighter pilot and a rebel commando, Poe grew up on stories of Alliance campaigns. A decorated X-wing pilot, he can fly anything – which is fortunate given how often his headstrong nature leads him into trouble.",
-"characterImageName":"poe-dameron_70f5aee2"
+"characterImageName":"poe-dameron_70f5aee2",
+"characterType":"Light Side"
 },
 
 {
 "characterName": "Rey",
 "characterDescription":"Rey is a Jakku scavenger, a survivor toughened by life on a harsh desert planet. When the fugitive droid BB-8 appeals to her for help, Rey finds herself drawn into a galaxy-spanning conflict. Despite dismissing herself as “no one,” she learns that her life is being shaped by the mysterious power of the Force.",
-"characterImageName":"rey_bddd0f27"
+"characterImageName":"rey_bddd0f27",
+"characterType":"Light Side"
 },
 
 {
 "characterName": "BB-8",
 "characterDescription":"A skittish but loyal astromech, BB-8 accompanied Poe Dameron on many missions for the Resistance, helping keep his X-wing in working order. When Poe’s mission to Jakku ended with his capture by the First Order, BB-8 fled into the desert with a vital clue to the location of Jedi Master Luke Skywalker.",
-"characterImageName":"bb-8_14e2ad77"
+"characterImageName":"bb-8_14e2ad77",
+"characterType":"Light Side"
 },
 
 {
 "characterName": "Han Solo",
 "characterDescription":"Smuggler. Scoundrel. Hero. Han Solo, captain of the Millennium Falcon, was one of the great leaders of the Rebel Alliance. He and his co-pilot Chewbacca came to believe in the cause of galactic freedom, joining Luke Skywalker and Princess Leia Organa in the fight against the Empire. But after the Battle of Endor, Han would face difficult times in a galaxy plagued by chaos and uncertainty.",
-"characterImageName":"Han-Solo_1d08eb2e"
+"characterImageName":"Han-Solo_1d08eb2e",
+"characterType":"Light Side"
 },
 
 {
 "characterName": "Leia Organa",
 "characterDescription":"Princess Leia Organa was one of the Rebel Alliance’s greatest leaders, fearless on the battlefield and dedicated to ending the tyranny of the Empire. Daughter of Padmé Amidala and Anakin Skywalker, sister of Luke Skywalker, and with a soft spot for scoundrels, Leia ranks among the galaxy’s great heroes. But life under the New Republic has not been easy for Leia. Sidelined by a new generation of political leaders, and struck out on her own to oppose the First Order as founder of the Resistance. These setbacks in her political career have been accompanied by more personal losses.",
-"characterImageName":"Princess-Leia-Organa_d7761ff5"
+"characterImageName":"Princess-Leia-Organa_d7761ff5",
+"characterType":"Light Side"
 },
 
 {
 "characterName": "Kylo Ren",
 "characterDescription":"A dark warrior strong with the Force, Kylo Ren commands First Order missions with a temper as fiery as his unconventional lightsaber. As a leader of the First Order and a student of Supreme Leader Snoke, he seeks to destroy the New Republic, the Resistance and the legacy of the Jedi.",
-"characterImageName":"kylo-ren_fa163069"
+"characterImageName":"kylo-ren_fa163069",
+"characterType":"Dark Side"
 },
 
 {
 "characterName": "Captain Phasma",
 "characterDescription":"Clad in distinctive armor of salvaged chromium, Captain Phasma commands the First Order’s legions of stormtroopers. A tough veteran commander, she has no use for fancy titles or complex war rooms, preferring to lead her troops in battle against the First Order’s enemies.",
-"characterImageName":"captain-phasma_8f4ea1d7"
+"characterImageName":"captain-phasma_8f4ea1d7",
+"characterType":"Dark Side"
 },
 
 {
 "characterName": "General Hux",
 "characterDescription":"A young, ruthless officer in the First Order, General Hux has complete confidence in his troops, training methods and weapons. A rival of Kylo Ren’s, Hux eagerly awaits the day when the First Order will bring down the hated New Republic, and considers it his destiny to rule the galaxy.",
-"characterImageName":"general-hux_078a3f89"
+"characterImageName":"general-hux_078a3f89",
+"characterType":"Dark Side"
 },
 
 {
 "characterName": "Chewbacca",
 "characterDescription":"A legendary Wookiee warrior and Han Solo’s co-pilot aboard the Millennium Falcon, Chewbacca was part of a core group of Rebels who restored freedom to the galaxy. Known for his short temper and accuracy with a bowcaster, Chewie also has a big heart -- and is unwavering in his loyalty to his friends. He has stuck with Han through years of turmoil that have changed both the galaxy and their lives.",
-"characterImageName":"chewie-db_2c0efea2"
+"characterImageName":"chewie-db_2c0efea2",
+"characterType":"Light Side"
 },
 
 {
 "characterName": "C-3PO (SEE-THREEPIO)",
 "characterDescription":"C-3PO is a droid programmed for etiquette and protocol, built by the heroic Jedi Anakin Skywalker, and a constant companion to astromech R2-D2. Over the years, he was involved in some of the galaxy’s most defining moments and thrilling battles -- and is fluent in more than seven million forms of communication.",
-"characterImageName":"C-3PO-See-Threepio_68fe125c"
+"characterImageName":"C-3PO-See-Threepio_68fe125c",
+"characterType":"Light Side"
 },
 
 {
 "characterName": "R2-D2",
 "characterDescription":"A resourceful astromech droid, R2-D2 served Padmé Amidala, Anakin Skywalker and Luke Skywalker in turn, showing great bravery in rescuing his masters and their friends from many perils. A skilled starship mechanic and fighter pilot's assistant, he formed an unlikely but enduring friendship with the fussy protocol droid C-3PO.",
-"characterImageName":"R2-D2_41dacaa9"
+"characterImageName":"R2-D2_41dacaa9",
+"characterType":"Light Side"
+},
+
+{
+"characterName": "First Order Tie Fighter",
+"characterDescription":"The latest starfighter in the storied TIE line looks similar to its predecessors, but the TIE/FO boasts improved solar cells and higher-capacity converters, making these ships deadlier than the TIEs that saw service in the Imperial era. Unlike the Empire, the First Order values its pilots as key military assets, protecting them with onboard deflector shields.",
+"characterImageName":"first-order-tie-fighter_a795ceaf",
+"characterType":"Other"
+},
+
+{
+"characterName": "Resistance X-Wing",
+"characterDescription":"The Incom T-70 X-wing is the latest incarnation of a classic design, and the signature combat craft of the Resistance’s Starfighter Corps. Faster than the Alliance-era T-65s, Resistance X-wings are maneuverable enough to engage TIE fighters in dogfights, but powerful enough to take down capital ships. The credit-strapped Resistance relies on X-wings donated or lent by sympathetic New Republic senators and local security forces. During the assault on Starkiller Base, Poe Dameron flies a customized, dark-hulled X-wing under the call sign Black Leader.",
+"characterImageName":"resistance-x-wing_9433981f",
+"characterType":"Other"
+},
+
+{
+"characterName": "Jakku",
+"characterDescription":"A harsh desert world, Jakku is a lawless place that’s home to thieves, outlaws and refugees. During the final years of the Galactic Civil War, Jakku was the site of a secret Imperial research base and served as a jumping-off point for warships heading into the Unknown Regions. The Empire made a last stand above the frontier planet, leading to a pitched battle between rebel and Imperial fleets. Jakku’s sandy wastes are littered with old wrecks, picked over by desperate scavengers searching for parts that can be salvaged and sold.",
+"characterImageName":"mr0170_a69c0abe",
+"characterType":"Other"
+},
+
+{
+"characterName": "Millennium Falcon",
+"characterDescription":"Despite her humble origins and shabby exterior, the Millennium Falcon has played a role in some of the greatest victories of the Rebel Alliance and the New Republic. The Falcon looks like a worn-out junker, but beneath her hull she’s full of surprises. A succession of owners, from Lando Calrissian and Han Solo to Gannis Ducain, have made special modifications that boosted the freighter’s speed, shielding and firepower to impressive – and downright illegal – levels. The price of such tinkering? The Falcon can be unpredictable, with her hyperdrive particularly balky. Despite her flaws, she’s beloved by her owners – Han Solo and Chewbacca have spent years searching the galaxy for the ship they once called home.",
+"characterImageName":"Millennium-Falcon_018ea796",
+"characterType":"Other"
+},
+
+{
+"characterName": "Kylo Ren's Command Shuttle",
+"characterDescription":"The First Order’s top officers travel in Upsilon-class command shuttles that look like grim birds of prey. These ships’ massive wings are packed with defensive systems to protect their valuable passengers. The upper wings contain advanced sensor suites that scan for enemies, while the lower wings house efficient shield projectors and powerful jammers. Upon landing, the wings rise from flight mode and then retract, encasing the upper wings’ sensor arrays in thick armor.",
+"characterImageName":"kylo-ren_s-command-shuttle_0b43b874",
+"characterType":"Other"
 }
 ]
