@@ -91,10 +91,15 @@
     cell.detailTextLabel.text = aCharacter.characterDescription;
     
     // Set image for the character
+    cell.imageView.layer.cornerRadius = 10;
+    cell.imageView.clipsToBounds = YES;
+    
+    cell.imageView.layer.borderWidth=4;
+    cell.imageView.layer.borderColor=[[UIColor blackColor]CGColor];
+    
     cell.imageView.image = [UIImage imageNamed:aCharacter.characterImageName];
     
-    // self.characterImage.image = [UIImage imageNamed:self.character.characterImageName];
-
+    
     
     return cell;
 }
