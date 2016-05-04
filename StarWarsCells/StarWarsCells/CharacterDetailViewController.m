@@ -48,7 +48,7 @@
     if (self.character) {
         
         // Extract Character name and set detail view title
-        self.title = [NSString stringWithFormat:@"%@", [self.character.characterName componentsSeparatedByString:@" "][0]];
+        self.title = self.character.characterName;
         
         // Set the contents of labels in the Character Detail View
         self.characterNameLabel.text = self.character.characterName;
