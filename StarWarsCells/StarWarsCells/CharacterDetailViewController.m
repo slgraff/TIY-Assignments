@@ -11,7 +11,7 @@
 @interface CharacterDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *characterNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *characterDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UITextView *characterDescriptionTextView;
 
 -(void)configureView;
 
@@ -52,7 +52,7 @@
         
         // Set the contents of labels in the Character Detail View
         self.characterNameLabel.text = self.character.characterName;
-        self.characterDescriptionLabel.text  = self.character.characterDescription;
+        self.characterDescriptionTextView.text  = self.character.characterDescription;
     }
 }
 

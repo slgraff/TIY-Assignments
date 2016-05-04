@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Character Table View Controller-->
         <scene sceneID="zFE-qj-O4u">
             <objects>
-                <tableViewController id="Ip7-SH-qAI" sceneMemberID="viewController">
+                <tableViewController id="Ip7-SH-qAI" customClass="CharacterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="490-mm-Pfk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +31,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="lYf-ze-FJG"/>
                     <connections>
-                        <segue destination="mSt-Lm-LZr" kind="show" id="22t-QR-PtA"/>
+                        <segue destination="mSt-Lm-LZr" kind="show" identifier="characterDetailSegue" id="22t-QR-PtA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHv-fA-bS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -68,7 +68,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-nJ-FUx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-nJ-FUx" userLabel="Character Description TextView">
                                 <rect key="frame" x="116" y="101" width="464" height="479"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -83,14 +83,22 @@
                             <constraint firstItem="c39-sv-Zor" firstAttribute="top" secondItem="H34-De-Cco" secondAttribute="bottom" constant="8" id="GRq-TT-QLa"/>
                             <constraint firstItem="uVk-pk-n2t" firstAttribute="leading" secondItem="3y1-KY-fDH" secondAttribute="leadingMargin" id="HNT-Np-4zx"/>
                             <constraint firstItem="c39-sv-Zor" firstAttribute="leading" secondItem="2Lm-c8-0bh" secondAttribute="trailing" constant="8" id="K4c-W2-G3R"/>
+                            <constraint firstItem="ljv-nJ-FUx" firstAttribute="leading" secondItem="uVk-pk-n2t" secondAttribute="trailing" constant="8" id="Mev-VA-o12"/>
                             <constraint firstItem="c39-sv-Zor" firstAttribute="leading" secondItem="2Lm-c8-0bh" secondAttribute="trailing" constant="8" id="YLU-Pc-fGJ"/>
                             <constraint firstItem="2Lm-c8-0bh" firstAttribute="top" secondItem="H34-De-Cco" secondAttribute="bottom" constant="8" id="bmm-AW-eBe"/>
                             <constraint firstItem="ljv-nJ-FUx" firstAttribute="top" secondItem="c39-sv-Zor" secondAttribute="bottom" constant="8" id="f8g-S3-ncx"/>
+                            <constraint firstItem="ljv-nJ-FUx" firstAttribute="top" secondItem="c39-sv-Zor" secondAttribute="bottom" constant="8" id="fwC-N5-XdG"/>
                             <constraint firstItem="2Lm-c8-0bh" firstAttribute="leading" secondItem="3y1-KY-fDH" secondAttribute="leadingMargin" constant="12" id="htb-Rs-jWS"/>
+                            <constraint firstItem="RoD-VH-w9c" firstAttribute="top" secondItem="ljv-nJ-FUx" secondAttribute="bottom" constant="20" id="iV3-YK-FvH"/>
                             <constraint firstItem="ljv-nJ-FUx" firstAttribute="leading" secondItem="uVk-pk-n2t" secondAttribute="trailing" constant="8" id="jFZ-2B-RLs"/>
+                            <constraint firstItem="ljv-nJ-FUx" firstAttribute="trailing" secondItem="3y1-KY-fDH" secondAttribute="trailingMargin" id="jqm-HX-0nG"/>
                             <constraint firstItem="uVk-pk-n2t" firstAttribute="top" secondItem="2Lm-c8-0bh" secondAttribute="bottom" constant="8" id="kX1-9D-zz6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="characterDescriptionTextView" destination="ljv-nJ-FUx" id="RIu-Ay-2jk"/>
+                        <outlet property="characterNameLabel" destination="c39-sv-Zor" id="piQ-g0-lKR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1b-jT-aty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
