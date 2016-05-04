@@ -90,6 +90,12 @@
     cell.textLabel.text = aCharacter.characterName;
     cell.detailTextLabel.text = aCharacter.characterDescription;
     
+    // Set image for the character
+    cell.imageView.image = [UIImage imageNamed:aCharacter.characterImageName];
+    
+    // self.characterImage.image = [UIImage imageNamed:self.character.characterImageName];
+
+    
     return cell;
 }
 
