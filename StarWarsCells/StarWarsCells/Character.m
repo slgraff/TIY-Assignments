@@ -21,6 +21,9 @@
         
         // Set characters description
         aCharacter.characterDescription = [charDict objectForKey:@"characterDescription"];
+        
+        // Set characters image name
+        aCharacter.characterImageName = [charDict objectForKey:@"characterImageName"];
     }
     return aCharacter;
     

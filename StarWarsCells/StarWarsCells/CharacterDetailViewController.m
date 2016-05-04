@@ -6,12 +6,17 @@
 //  Copyright © 2016 Steve Graff. All rights reserved.
 //
 
+/*
+ NOTES: Set inputString to an NSString. May be much easier to use NSArray instead.
+*/
+
 #import "CharacterDetailViewController.h"
 
 @interface CharacterDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *characterNameLabel;
 @property (weak, nonatomic) IBOutlet UITextView *characterDescriptionTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *characterImage;
 
 -(void)configureView;
 
@@ -53,6 +58,9 @@
         // Set the contents of labels in the Character Detail View
         self.characterNameLabel.text = self.character.characterName;
         self.characterDescriptionTextView.text  = self.character.characterDescription;
+        
+        // Set the contents of the image in Character Detail View
+        self.characterImage.image = [UIImage imageNamed:self.character.characterImageName];
     }
 }
 
