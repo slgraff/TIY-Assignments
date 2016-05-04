@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
         NSString *cipherString = @"ZYXWUTSRQPONMLKJIHGFEDCBA";
         
         // Initialize string to hold our encoded string
-        NSMutableString *atbashGreeting = [[NSMutableString alloc]init];
+        NSMutableString *atbashGreeting = [NSMutableString stringWithFormat:@""];
         
         // Initialize string to hold current character
         NSMutableString *currentChar = [[NSMutableString alloc]init];
@@ -47,21 +47,46 @@ int main(int argc, const char * argv[]) {
             // NSLog(@"Character at index %d: %C", charIndex, [helloGreeting characterAtIndex:charIndex]);
             // NSString *theChar = [helloGreeting characterAtIndex:charIndex];
             
-            // Find index of that char in plainString
+            // Get the current character from inputString
             currentChar = [NSMutableString stringWithFormat:@"%C", [helloGreeting characterAtIndex:charIndex]];
             NSLog(@"Current char: %@", currentChar);
             
             // Get the index of currentChar in plainString
-            // Currently returning a YUGE number. Why? Because "H" is not found in plainString beause it's upper case
+            
             theIndex = [plainString rangeOfString:currentChar].location;
+            
+            if (theIndex != NSNotFound) {
+                
+                // If found, look up character at same index in cipherString, add it to outputString
+                [atbashGreeting stringByAppendingString:[NSMutableString stringWithFormat:@"%C", [cipherString characterAtIndex:theIndex]]];
+                NSLog(@"%@", atbashGreeting);
+            } else {
+                // If error, keep same character, add to outputString
+                [atbashGreeting stringByAppendingString:currentChar];
+                NSLog(@"%@", atbashGreeting);
+            }
+
+            // theIndex = [plainString rangeOfString:currentChar].location;
+            
+            // Check to make sure that character is found in plainString
+//            if(theIndex != NSNotFound) {
+//                // If found, look up character at same index in cipherString, add it to outputString
+//                [atbashGreeting stringByAppendingString:[NSMutableString stringWithFormat:@"%C", [cipherString characterAtIndex:theIndex]]];
+//                NSLog(@"%@", atbashGreeting);
+//
+//            } else {
+//                // If error, keep same character, add to outputString
+//                [atbashGreeting stringByAppendingString:currentChar];
+//                NSLog(@"%@", atbashGreeting);
+//            }
 
             // Lookup that index in cipherString
             
             // [cipherString characterAtIndex:theIndex];
-            
-            newChar = [NSMutableString stringWithFormat:@"%C", [cipherString characterAtIndex:theIndex]];
-            
-            NSLog(@"plainString char: %@", newChar);
+//            
+//            newChar = [NSMutableString stringWithFormat:@"%C", [cipherString characterAtIndex:theIndex]];
+//            
+//            NSLog(@"plainString char: %@", newChar);
             
             
             //NSLog(@"Character at index 0 of plainString: %C", [plainString characterAtIndex:0]);
@@ -80,7 +105,7 @@ int main(int argc, const char * argv[]) {
             
         }
         
-        NSLog(@"%C", [helloGreeting characterAtIndex:0]);
+        // NSLog(@"%C", [helloGreeting characterAtIndex:0]);
         
         
 
