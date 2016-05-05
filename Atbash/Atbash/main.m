@@ -25,20 +25,48 @@ int main(int argc, const char * argv[]) {
         NSMutableString *stringToEncode = [NSMutableString stringWithFormat:@"footer"];
         
         // Initialize 'encodedString' to hold our encoded string
-        NSMutableString *encodedString = [NSMutableString stringWithFormat:@""];
+        NSMutableString *encodedString = [@"" mutableCopy];
         
         // Declare arrays for chars a-z, also for ciper chars
-        NSArray *azArray = @[@"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h", @"i", @"j", @"k", @"l", @"m", @"n", @"o", @"p",
-                             @"q", @"r", @"s", @"t", @"u", @"v", @"w", @"x", @"y", @"z"];
+        NSArray *azArray = @[@"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h", @"i", @"j", @"k",
+                             @"l", @"m", @"n", @"o", @"p", @"q", @"r", @"s", @"t", @"u", @"v",
+                             @"w", @"x", @"y", @"z"];
         
         NSArray *cipherArray = @[@"Z", @"Y", @"X", @"W", @"V", @"U", @"T", @"S", @"R", @"Q",
                                 @"P", @"O", @"N", @"M", @"L", @"K", @"J", @"I", @"H", @"G",
                                 @"F", @"E", @"D", @"C", @"B", @"A"];
         
         NSLog(@"Beginning encoding. Encoding string '%@'.", stringToEncode);
-        NSLog(@"encodedString starting value: %@", encodedString);
         NSLog(@"azArray is '%@'", azArray);
         NSLog(@"cipherArray is %@", cipherArray);
+        
+        
+        
+        // Loop through each character of stringToEncode
+        NSUInteger charIndex;
+                                 
+        for (charIndex = 0; charIndex < [stringToEncode length]; charIndex += 1) {
+            
+            // Get character at index charIndex of stringToEncode
+            // Check for 'NSNotFound' returned from characterAtIndex, returns unichar
+            if ([stringToEncode characterAtIndex:charIndex] != NSNotFound) {
+                NSString *theChar = [NSString stringWithFormat:@"%C",[stringToEncode characterAtIndex:charIndex]];
+                
+                // Get index of theChar in azArray, use that to get char at same index in cipherArray
+                // Check for 'NSNotFound' returned from indexOfObject, returns NSUInteger
+                if ([azArray indexOfObject:theChar] != NSNotFound) {
+                    
+                    // BUG encodedString is getting appended with an address, not a char
+                    [encodedString appendString:[cipherArray objectAtIndex:[azArray indexOfObject:theChar]]];
+                } else {
+                    [encodedString stringByAppendingString:theChar];
+                }
+            } else {
+                
+            }
+        }
+        
+        NSLog(@"Encoded version of %@ is %@", stringToEncode, encodedString);
         
         
 
