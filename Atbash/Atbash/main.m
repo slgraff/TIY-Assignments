@@ -21,50 +21,63 @@ int main(int argc, const char * argv[]) {
         // insert code here...
         NSLog(@"Hello, Atbash!");
         
-        NSMutableString *helloGreeting = [NSMutableString stringWithFormat:@"Hello, Atbash"];
+        // Initializing 'stringToEncode' to 'footer', one of the test case words
+        NSMutableString *stringToEncode = [NSMutableString stringWithFormat:@"footer"];
         
-        // Declare strings for characters a - z, cipher
-        NSString *plainString = @"abcdefghijklmnopqrstuvwxyz";
-        NSString *cipherString = @"ZYXWUTSRQPONMLKJIHGFEDCBA";
+        // Initialize 'encodedString' to hold our encoded string
+        NSMutableString *encodedString = [NSMutableString stringWithFormat:@""];
         
-        // Initialize string to hold our encoded string
-        NSMutableString *atbashGreeting = [NSMutableString stringWithFormat:@""];
+        // Declare arrays for chars a-z, also for ciper chars
+        NSArray *azArray = @[@"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h", @"i", @"j", @"k", @"l", @"m", @"n", @"o", @"p",
+                             @"q", @"r", @"s", @"t", @"u", @"v", @"w", @"x", @"y", @"z"];
         
-        // Initialize string to hold current character
-        NSMutableString *currentChar = [[NSMutableString alloc]init];
-        NSMutableString *newChar = [[NSMutableString alloc]init];
+        NSArray *cipherArray = @[@"Z", @"Y", @"X", @"W", @"V", @"U", @"T", @"S", @"R", @"Q",
+                                @"P", @"O", @"N", @"M", @"L", @"K", @"J", @"I", @"H", @"G",
+                                @"F", @"E", @"D", @"C", @"B", @"A"];
+        
+        NSLog(@"Beginning encoding. Encoding string '%@'.", stringToEncode);
+        NSLog(@"encodedString starting value: %@", encodedString);
+        NSLog(@"azArray is '%@'", azArray);
+        NSLog(@"cipherArray is %@", cipherArray);
+        
+        
 
-        // Initialize variable theIndex
-        NSInteger theIndex = 0;
         
-        // Convert helloGreeting to all lower case
-        [helloGreeting setString:[helloGreeting lowercaseString]];
-        
-        
-        for (int charIndex = 0; charIndex < helloGreeting.length; charIndex += 1) {
-            
-            // Get current char in helloGreeting string
-            // NSLog(@"Character at index %d: %C", charIndex, [helloGreeting characterAtIndex:charIndex]);
-            // NSString *theChar = [helloGreeting characterAtIndex:charIndex];
-            
-            // Get the current character from inputString
-            currentChar = [NSMutableString stringWithFormat:@"%C", [helloGreeting characterAtIndex:charIndex]];
-            NSLog(@"Current char: %@", currentChar);
-            
-            // Get the index of currentChar in plainString
-            
-            theIndex = [plainString rangeOfString:currentChar].location;
-            
-            if (theIndex != NSNotFound) {
-                
-                // If found, look up character at same index in cipherString, add it to outputString
-                [atbashGreeting stringByAppendingString:[NSMutableString stringWithFormat:@"%C", [cipherString characterAtIndex:theIndex]]];
-                NSLog(@"%@", atbashGreeting);
-            } else {
-                // If error, keep same character, add to outputString
-                [atbashGreeting stringByAppendingString:currentChar];
-                NSLog(@"%@", atbashGreeting);
-            }
+//        // Initialize string to hold current character
+//        NSMutableString *currentChar = [[NSMutableString alloc]init];
+//        NSMutableString *newChar = [[NSMutableString alloc]init];
+//
+//        // Initialize variable theIndex
+//        NSInteger theIndex = 0;
+//        
+//        // Convert helloGreeting to all lower case
+//        [helloGreeting setString:[helloGreeting lowercaseString]];
+//        
+//        
+//        for (int charIndex = 0; charIndex < helloGreeting.length; charIndex += 1) {
+//            
+//            // Get current char in helloGreeting string
+//            // NSLog(@"Character at index %d: %C", charIndex, [helloGreeting characterAtIndex:charIndex]);
+//            // NSString *theChar = [helloGreeting characterAtIndex:charIndex];
+//            
+//            // Get the current character from inputString
+//            currentChar = [NSMutableString stringWithFormat:@"%C", [helloGreeting characterAtIndex:charIndex]];
+//            NSLog(@"Current char: %@", currentChar);
+//            
+//            // Get the index of currentChar in plainString
+//            
+//            theIndex = [plainString rangeOfString:currentChar].location;
+//            
+//            if (theIndex != NSNotFound) {
+//                
+//                // If found, look up character at same index in cipherString, add it to outputString
+//                [atbashGreeting stringByAppendingString:[NSMutableString stringWithFormat:@"%C", [cipherString characterAtIndex:theIndex]]];
+//                NSLog(@"%@", atbashGreeting);
+//            } else {
+//                // If error, keep same character, add to outputString
+//                [atbashGreeting stringByAppendingString:currentChar];
+//                NSLog(@"%@", atbashGreeting);
+//            }
 
             // theIndex = [plainString rangeOfString:currentChar].location;
             
@@ -103,7 +116,7 @@ int main(int argc, const char * argv[]) {
             
             // atbashGreeting = [helloGreeting characterAtIndex:charIndex];
             
-        }
+//        }
         
         // NSLog(@"%C", [helloGreeting characterAtIndex:0]);
         
