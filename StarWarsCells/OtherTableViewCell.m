@@ -13,6 +13,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    // Set custom border color to blue
+    // cell.imageView.layer.borderColor=[[UIColor darkGrayColor]CGColor];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
