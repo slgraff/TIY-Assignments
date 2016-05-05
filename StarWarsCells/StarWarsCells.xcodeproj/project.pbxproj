@@ -16,6 +16,8 @@
 		CC7594A21CDA7F2F00BD5225 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7594A11CDA7F2F00BD5225 /* Character.m */; };
 		CC7594A51CDA80FC00BD5225 /* CharacterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7594A41CDA80FC00BD5225 /* CharacterTableViewController.m */; };
 		CC7594A71CDAAE6600BD5225 /* ForceAwakensCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = CC7594A61CDAAE6600BD5225 /* ForceAwakensCharacters.json */; };
+		CC7594B31CDAD88F00BD5225 /* DarkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7594B21CDAD88F00BD5225 /* DarkTableViewCell.m */; };
+		CC7594B61CDADE5200BD5225 /* OtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7594B51CDADE5200BD5225 /* OtherTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,10 @@
 		CC7594A31CDA80FC00BD5225 /* CharacterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterTableViewController.h; sourceTree = "<group>"; };
 		CC7594A41CDA80FC00BD5225 /* CharacterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterTableViewController.m; sourceTree = "<group>"; };
 		CC7594A61CDAAE6600BD5225 /* ForceAwakensCharacters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ForceAwakensCharacters.json; sourceTree = "<group>"; };
+		CC7594B11CDAD88F00BD5225 /* DarkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkTableViewCell.h; sourceTree = "<group>"; };
+		CC7594B21CDAD88F00BD5225 /* DarkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkTableViewCell.m; sourceTree = "<group>"; };
+		CC7594B41CDADE5200BD5225 /* OtherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherTableViewCell.h; path = ../OtherTableViewCell.h; sourceTree = "<group>"; };
+		CC7594B51CDADE5200BD5225 /* OtherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherTableViewCell.m; path = ../OtherTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,10 @@
 				CC7594A41CDA80FC00BD5225 /* CharacterTableViewController.m */,
 				CC75949D1CDA7EB300BD5225 /* CharacterDetailViewController.h */,
 				CC75949E1CDA7EB300BD5225 /* CharacterDetailViewController.m */,
+				CC7594B11CDAD88F00BD5225 /* DarkTableViewCell.h */,
+				CC7594B21CDAD88F00BD5225 /* DarkTableViewCell.m */,
+				CC7594B41CDADE5200BD5225 /* OtherTableViewCell.h */,
+				CC7594B51CDADE5200BD5225 /* OtherTableViewCell.m */,
 				CC7594A01CDA7F2F00BD5225 /* Character.h */,
 				CC7594A11CDA7F2F00BD5225 /* Character.m */,
 				CC7594881CDA7BE700BD5225 /* Main.storyboard */,
@@ -169,6 +179,8 @@
 				CC75949F1CDA7EB300BD5225 /* CharacterDetailViewController.m in Sources */,
 				CC7594A51CDA80FC00BD5225 /* CharacterTableViewController.m in Sources */,
 				CC7594811CDA7BE700BD5225 /* main.m in Sources */,
+				CC7594B61CDADE5200BD5225 /* OtherTableViewCell.m in Sources */,
+				CC7594B31CDAD88F00BD5225 /* DarkTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

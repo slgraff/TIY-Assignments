@@ -80,11 +80,33 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CharacterCell" forIndexPath:indexPath];
-    
+ 
+
     // Create a Character object
     Character *aCharacter = [self.characters objectAtIndex:indexPath.row];
+    
+    // NOTE Add code here to direct to correct TableViewCell based on value of
+    // 'CharacterType' attribute
+    
+    NSMutableString *cellType = [[NSMutableString alloc]init];
+    
+    if ([aCharacter.characterType  isEqual: @"Light Side"]) {
+        
+        [cellType setString:@"CharacterCell"];
+        
+    } else if ([aCharacter.characterType  isEqual: @"Dark Side"]) {
+        
+        [cellType setString:@"DarkCell"];
+
+    } else if ([aCharacter.characterType  isEqual: @"Other"]) {
+        
+        [cellType setString:@"OtherCell"];
+
+    }
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellType forIndexPath:indexPath];
+    
+
     
     // Set label text for the character
     cell.textLabel.text = aCharacter.characterName;

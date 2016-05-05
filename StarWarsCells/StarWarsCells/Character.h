@@ -12,7 +12,8 @@
 
 @property (nonatomic) NSString *characterName;
 @property (nonatomic) NSString *characterDescription;
-@property (nonatomic) NSString * characterImageName;
+@property (nonatomic) NSString *characterImageName;
+@property (nonatomic) NSString *characterType;
 
 +(Character *)characterWithDictionary:(NSDictionary *)charDict;
 
