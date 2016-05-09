@@ -8,13 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "MasterViewController.h"
+#import "ToDo.h"
 
 
-@interface DetailViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
+@interface DetailViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, NSFetchedResultsControllerDelegate>
+
+// 5/5 add delegate of NSFetchedResultsControllerDelegate above, added two below properties (fetchedResultsController, managedObjectContext)
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @property (weak, nonatomic) MasterViewController * masterVC; // Created property to refer to our MasterViewController
 
-@property (strong, nonatomic) NSManagedObject * detailItem; // changed from id to NSManagedObject, allows saving from MasterViewController
+// 5/5 changed this to a ToDo object
+@property (strong, nonatomic) ToDo * detailItem; // changed from id to NSManagedObject, allows saving from MasterViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *dueDateField;
 @property (weak, nonatomic) IBOutlet UISwitch *doneSwitch;

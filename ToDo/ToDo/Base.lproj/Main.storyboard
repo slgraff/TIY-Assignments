@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -34,8 +35,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDL-uH-6yg">
-                                <rect key="frame" x="352" y="82" width="41" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDL-uH-6yg">
+                                <rect key="frame" x="32" y="82" width="41" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7sf-2w-fMt"/>
                                 </constraints>
@@ -53,8 +54,8 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1MA-Pi-fNs">
-                                <rect key="frame" x="401" y="72" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1MA-Pi-fNs">
+                                <rect key="frame" x="81" y="72" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="pPj-0s-Hxh"/>
                                 </constraints>
@@ -154,6 +155,17 @@
                                     <outlet property="delegate" destination="svH-Pt-448" id="iC9-5v-mSk"/>
                                 </connections>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRW-2o-zGY">
+                                <rect key="frame" x="226" y="72" width="148" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cyB-jB-fT2"/>
+                                    <constraint firstAttribute="width" constant="148" id="iPT-e9-rr4"/>
+                                </constraints>
+                                <state key="normal" title="Do some people stuff"/>
+                                <connections>
+                                    <action selector="ImAPeoplePerson:" destination="JEX-9P-axG" eventType="touchUpInside" id="3vv-5G-e8S"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1W-1I-gEV">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="31" id="e5R-vN-xAP"/>
@@ -175,6 +187,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="csy-WQ-omh" firstAttribute="top" secondItem="LRW-2o-zGY" secondAttribute="bottom" constant="9" id="1kP-Kp-Kdf"/>
                             <constraint firstItem="Rxf-Ct-3Xz" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="20" id="4mw-n3-qCD"/>
                             <constraint firstItem="csy-WQ-omh" firstAttribute="top" secondItem="BDL-uH-6yg" secondAttribute="bottom" constant="8" id="552-oG-JFH">
                                 <variation key="widthClass=compact" constant="-75"/>
@@ -186,6 +199,7 @@
                             <constraint firstItem="csy-WQ-omh" firstAttribute="leading" secondItem="ML6-hC-j24" secondAttribute="leading" id="84t-9n-Gvg"/>
                             <constraint firstItem="csy-WQ-omh" firstAttribute="top" secondItem="BDL-uH-6yg" secondAttribute="bottom" constant="14" id="9L5-kK-h1l"/>
                             <constraint firstItem="tdX-it-5Ph" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="9" id="CTd-XV-F6D"/>
+                            <constraint firstItem="LRW-2o-zGY" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="8" id="EPt-BC-cPR"/>
                             <constraint firstItem="BDL-uH-6yg" firstAttribute="leading" secondItem="tdX-it-5Ph" secondAttribute="trailing" constant="20" id="Ei8-Fm-ewO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="csy-WQ-omh" secondAttribute="trailing" constant="20" id="FT3-t9-4is"/>
                             <constraint firstItem="1MA-Pi-fNs" firstAttribute="trailing" secondItem="csy-WQ-omh" secondAttribute="trailing" id="I3U-XI-Rgn">
@@ -228,6 +242,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Rxf-Ct-3Xz" secondAttribute="trailing" constant="20" id="jbe-Ec-Cn5"/>
                             <constraint firstItem="Rxf-Ct-3Xz" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="rD3-J4-I7Y"/>
                             <constraint firstItem="1MA-Pi-fNs" firstAttribute="leading" secondItem="BDL-uH-6yg" secondAttribute="trailing" constant="8" id="sGz-KY-T2a"/>
+                            <constraint firstItem="LRW-2o-zGY" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="tL9-t3-rUd"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="aCv-kZ-oHc" secondAttribute="bottom" constant="20" id="xJo-X2-qV5"/>
                         </constraints>
                         <variation key="default">

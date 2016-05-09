@@ -21,8 +21,12 @@ int main(int argc, const char * argv[]) {
         // insert code here...
         NSLog(@"Hello, Atbash!");
         
-        // Initializing 'stringToEncode' to 'footer', one of the test case words
-        NSMutableString *stringToEncode = [NSMutableString stringWithFormat:@"footer"];
+        // Initializing 'stringToEncode' to one of the test case words
+//        NSMutableString *stringToEncode = [NSMutableString stringWithFormat:@"footer"];
+//        NSMutableString *stringToEncode = [NSMutableString stringWithFormat:@"wizard"];
+//        NSMutableString *stringToEncode = [NSMutableString stringWithFormat:@"/r/dailyprogrammer"];
+        NSMutableString *stringToEncode = [NSMutableString stringWithFormat:@"gsrh rh zm vcznkov lu gsv zgyzhs xrksvi"];
+        
         
         // Initialize 'encodedString' to hold our encoded string
         NSMutableString *encodedString = [NSMutableString stringWithCapacity:100];

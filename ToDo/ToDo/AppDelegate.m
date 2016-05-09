@@ -26,7 +26,8 @@
 
     UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
     MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    controller.managedObjectContext = self.managedObjectContext; // 5/5 First time that self.managedObjectContent is referenced, goes to that method, if no context then creates an managedObjectContext, sets storage coordinator, returns back here
+        // Is created here, not in the MasterViewController. 
     return YES;
 }
 
@@ -117,7 +118,7 @@
 
 - (NSManagedObjectContext *)managedObjectContext {
     // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
-    if (_managedObjectContext != nil) {
+    if (_managedObjectContext != nil) { // If a context does not exist then create one
         return _managedObjectContext;
     }
     

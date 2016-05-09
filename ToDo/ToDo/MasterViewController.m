@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "ToDo.h"
 
 @interface MasterViewController () {
     
@@ -42,10 +43,18 @@
 
 // Inserts a new object into the data model
 // This is the 'C' in CRUD
+
+// There are different patterns for the life cycle of objects. Can choose to create the object, or user can cancel and we discard it.
+
 - (void)insertNewObject:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];  // Pull entity from the data model
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context]; // Create new object to store the entity
+    
+    // Create new ToDo
+    ToDo *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    
+    // 5/5 above line replaces below commented out line
+    // NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context]; // Create new object to store the entity
         
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
@@ -92,6 +101,9 @@
         controller.masterVC = self; // Added this
         
         [controller setDetailItem:object];  // This is the object that is passed to detailViewController and displayed there
+        
+        controller.managedObjectContext = self.managedObjectContext; // 5/5 added this line, points to already existing managed object context
+        
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -156,16 +168,32 @@
 
 
 // fetchedResultsController is our worker for retrieving data
-- (NSFetchedResultsController *)fetchedResultsController
+// As a property, has a getter and a setter
+- (NSFetchedResultsController *)fetchedResultsController // This is the getter
 {
     if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
+        return _fetchedResultsController;  // If we got one, return it
     }
     
+    // Otherwise create a new fetchRequest
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"ToDo" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
+    
+    // 5/5 adding NSPredicate
+    // Way to search, returns BOOL if found
+    NSPredicate *fetchPredicate = [NSPredicate predicateWithFormat:@"%K CONTAINS%@", @"title", @"To Do"]; // Searches for 'Temporary' contained in 'title' field
+    
+    // Can also use CONTAINS LIKE MATCHES BEGINSWITH ENDSWITH AND OR NOT
+    // OR is an 'inclusive' OR, one or both can be true
+    
+    // Does Core Data does NOT support 'exlusive' OR (XOR), but there are
+    // ways to do it
+    
+    // Set our fetch predicate
+    [fetchRequest setPredicate:fetchPredicate];
+    
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
@@ -177,11 +205,14 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
-    aFetchedResultsController.delegate = self;
+    // managedObjectContext is where our objects are stored in memory
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil]; // 5/5 Changed cache name to nil
+    aFetchedResultsController.delegate = self; // Set our delegate
     self.fetchedResultsController = aFetchedResultsController;
     
 	NSError *error = nil;
+
+    
 	if (![self.fetchedResultsController performFetch:&error]) {
 	     // Replace this implementation with code to handle the error appropriately.
 	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 

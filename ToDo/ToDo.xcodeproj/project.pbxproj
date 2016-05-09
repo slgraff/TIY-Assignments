@@ -15,6 +15,10 @@
 		CCA10D281CD8DC1F00F2D086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA10D261CD8DC1F00F2D086 /* Main.storyboard */; };
 		CCA10D2A1CD8DC1F00F2D086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA10D291CD8DC1F00F2D086 /* Assets.xcassets */; };
 		CCA10D2D1CD8DC1F00F2D086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA10D2B1CD8DC1F00F2D086 /* LaunchScreen.storyboard */; };
+		CCCABD131CDBA01600C770D9 /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCABD0C1CDBA01600C770D9 /* Person+CoreDataProperties.m */; };
+		CCCABD141CDBA01600C770D9 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCABD0E1CDBA01600C770D9 /* Person.m */; };
+		CCCABD151CDBA01600C770D9 /* ToDo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCABD101CDBA01600C770D9 /* ToDo+CoreDataProperties.m */; };
+		CCCABD161CDBA01600C770D9 /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCABD121CDBA01600C770D9 /* ToDo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,15 @@
 		CCA10D291CD8DC1F00F2D086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCA10D2C1CD8DC1F00F2D086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCA10D2E1CD8DC1F00F2D086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCCABD0A1CDB90A300C770D9 /* ToDo 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo 2.xcdatamodel"; sourceTree = "<group>"; };
+		CCCABD0B1CDBA01600C770D9 /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Person+CoreDataProperties.h"; path = "ToDo/Person+CoreDataProperties.h"; sourceTree = "<group>"; };
+		CCCABD0C1CDBA01600C770D9 /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Person+CoreDataProperties.m"; path = "ToDo/Person+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CCCABD0D1CDBA01600C770D9 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = ToDo/Person.h; sourceTree = "<group>"; };
+		CCCABD0E1CDBA01600C770D9 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = ToDo/Person.m; sourceTree = "<group>"; };
+		CCCABD0F1CDBA01600C770D9 /* ToDo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ToDo+CoreDataProperties.h"; path = "ToDo/ToDo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		CCCABD101CDBA01600C770D9 /* ToDo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ToDo+CoreDataProperties.m"; path = "ToDo/ToDo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CCCABD111CDBA01600C770D9 /* ToDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToDo.h; path = ToDo/ToDo.h; sourceTree = "<group>"; };
+		CCCABD121CDBA01600C770D9 /* ToDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToDo.m; path = ToDo/ToDo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +60,14 @@
 		CCA10D0B1CD8DC1F00F2D086 = {
 			isa = PBXGroup;
 			children = (
+				CCCABD0B1CDBA01600C770D9 /* Person+CoreDataProperties.h */,
+				CCCABD0C1CDBA01600C770D9 /* Person+CoreDataProperties.m */,
+				CCCABD0D1CDBA01600C770D9 /* Person.h */,
+				CCCABD0E1CDBA01600C770D9 /* Person.m */,
+				CCCABD0F1CDBA01600C770D9 /* ToDo+CoreDataProperties.h */,
+				CCCABD101CDBA01600C770D9 /* ToDo+CoreDataProperties.m */,
+				CCCABD111CDBA01600C770D9 /* ToDo.h */,
+				CCCABD121CDBA01600C770D9 /* ToDo.m */,
 				CCA10D161CD8DC1F00F2D086 /* ToDo */,
 				CCA10D151CD8DC1F00F2D086 /* Products */,
 			);
@@ -160,9 +181,13 @@
 			files = (
 				CCA10D251CD8DC1F00F2D086 /* DetailViewController.m in Sources */,
 				CCA10D221CD8DC1F00F2D086 /* MasterViewController.m in Sources */,
+				CCCABD141CDBA01600C770D9 /* Person.m in Sources */,
 				CCA10D1C1CD8DC1F00F2D086 /* AppDelegate.m in Sources */,
 				CCA10D1F1CD8DC1F00F2D086 /* ToDo.xcdatamodeld in Sources */,
+				CCCABD151CDBA01600C770D9 /* ToDo+CoreDataProperties.m in Sources */,
+				CCCABD131CDBA01600C770D9 /* Person+CoreDataProperties.m in Sources */,
 				CCA10D191CD8DC1F00F2D086 /* main.m in Sources */,
+				CCCABD161CDBA01600C770D9 /* ToDo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +336,7 @@
 				CCA10D331CD8DC1F00F2D086 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -318,6 +344,7 @@
 		CCA10D1D1CD8DC1F00F2D086 /* ToDo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				CCCABD0A1CDB90A300C770D9 /* ToDo 2.xcdatamodel */,
 				CCA10D1E1CD8DC1F00F2D086 /* ToDo.xcdatamodel */,
 			);
 			currentVersion = CCA10D1E1CD8DC1F00F2D086 /* ToDo.xcdatamodel */;
