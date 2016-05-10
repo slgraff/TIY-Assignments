@@ -15,17 +15,17 @@
 * [x] 3. The mission briefing should display the information from MissionBriefing.txt (copy-paste, you don't have to read from the file). It also contains a placeholder for the agent's last name.
 
 ### Hard Mode
-* [ ] Modify the constraints on the imageview (and possibly other views) to cause the logo to shrink when switching to landscape orientation (the current constraints cause it to float off the bottom of the viewable screen). 
+* [x] Modify the constraints on the imageview (and possibly other views) to cause the logo to shrink when switching to landscape orientation (the current constraints cause it to float off the bottom of the viewable screen). 
 
 ### Sugar on Top
 * [x] Set Agent Name Field to be first responder
 * [x] Enabled 'Secure Text Entry' for the agent password field
-* [x] Allow single 'word' names
-* [ ]
-* [ ]
-* [ ]
-* [ ]
-* [ ]
+* [x] Allow single 'word' agent name
+* [x] Clear Greeting, Mission Briefing if failed authentication
+* [x] Set default state of Authenticate button to disabled
+* [x] Use NSNotificationCenter to enable button when both text fields have contents
+* [x] Handle setting/resigning first responder for text fields
+* [x] Hide keyboard when tapping outside text field
 * [ ]
 * [ ]
 * [ ]

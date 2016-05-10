@@ -12,12 +12,21 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var agentNameTextField: UITextField!
     @IBOutlet weak var agentPasswordTextField: UITextField!
+    @IBOutlet weak var authenticateButtonOutlet: UIButton!
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var missionGreetingTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Setup nofication for when text changes in text fields
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.textChanged(_:)), name: UITextFieldTextDidChangeNotification, object: nil)
+        authenticateButtonOutlet.enabled = false
+        
+        // Hide keyboard when tapping outside text field
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
         // Initialize Agent Name, Agent Password and Greeting Label and Greeting Text to be empty
         agentNameTextField.text = ""
@@ -35,6 +44,23 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Text Changed
+    func textChanged(sender: NSNotification) {
+        if agentNameTextField.hasText() && agentPasswordTextField.hasText() {
+            authenticateButtonOutlet.enabled = true
+        }
+        else {
+            authenticateButtonOutlet.enabled = false
+        }
+    }
+    
+    // MARK: Dismiss Keyboard
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
 
 // MARK: Authenticate Agent
     @IBAction func authenticateButton(sender: AnyObject) {
@@ -44,6 +70,8 @@ class ViewController: UIViewController {
         // Dismiss keyboard when authenticate button tapped
         if (agentNameTextField.isFirstResponder()) {
             agentNameTextField.resignFirstResponder()
+        } else if (agentPasswordTextField.isFirstResponder()) {
+            agentPasswordTextField.resignFirstResponder()
         }
         
         // Ensure both text fields have contents
