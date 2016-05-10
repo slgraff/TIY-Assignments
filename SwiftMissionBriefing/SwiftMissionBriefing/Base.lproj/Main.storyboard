@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftMissionBriefing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sXu-8K-VC8">
+                                <rect key="frame" x="60" y="20" width="481" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1H-Ws-MwM">
+                                <rect key="frame" x="60" y="58" width="481" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-Jg-boV" userLabel="authenticateButton">
+                                <rect key="frame" x="256" y="96" width="88" height="30"/>
+                                <state key="normal" title="Authenticate"/>
+                                <connections>
+                                    <action selector="authenticateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aXs-Z1-EXf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greeting Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZc-kC-JI7" userLabel="greetingLabel">
+                                <rect key="frame" x="60" y="134" width="480" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TIYLogo" translatesAutoresizingMaskIntoConstraints="NO" id="GRH-gw-3af">
+                                <rect key="frame" x="180" y="368" width="240" height="212"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Eql-XL-rCp">
+                                <rect key="frame" x="60" y="163" width="481" height="197"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dRI-Jg-boV" firstAttribute="top" secondItem="h1H-Ws-MwM" secondAttribute="bottom" constant="8" id="3OP-uW-g2a"/>
+                            <constraint firstItem="sXu-8K-VC8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4bJ-9z-5Me"/>
+                            <constraint firstItem="rZc-kC-JI7" firstAttribute="top" secondItem="dRI-Jg-boV" secondAttribute="bottom" constant="8" id="5RZ-Mn-VbB"/>
+                            <constraint firstItem="dRI-Jg-boV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Do-Tc-yNU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GRH-gw-3af" secondAttribute="trailing" constant="160" id="7Tk-JB-DA4"/>
+                            <constraint firstItem="GRH-gw-3af" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7WW-Q2-WxP"/>
+                            <constraint firstItem="GRH-gw-3af" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="160" id="9ql-Z5-plP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GRH-gw-3af" secondAttribute="bottom" constant="20" id="AKf-iL-gsn"/>
+                            <constraint firstItem="rZc-kC-JI7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="CxG-xa-hGK"/>
+                            <constraint firstItem="sXu-8K-VC8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="God-YW-eOO"/>
+                            <constraint firstItem="Eql-XL-rCp" firstAttribute="top" secondItem="rZc-kC-JI7" secondAttribute="bottom" constant="8" id="IGs-is-MIW"/>
+                            <constraint firstItem="rZc-kC-JI7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="WwQ-Hc-xpc"/>
+                            <constraint firstItem="rZc-kC-JI7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="abw-GE-OQB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rZc-kC-JI7" secondAttribute="trailing" constant="40" id="e1S-fW-uOI"/>
+                            <constraint firstItem="h1H-Ws-MwM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="krl-tg-ITr"/>
+                            <constraint firstItem="h1H-Ws-MwM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" constant="1" id="lYs-6S-0kf"/>
+                            <constraint firstItem="h1H-Ws-MwM" firstAttribute="top" secondItem="sXu-8K-VC8" secondAttribute="bottom" constant="8" id="lkN-bF-Itu"/>
+                            <constraint firstItem="Eql-XL-rCp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="ps6-FU-hhb"/>
+                            <constraint firstItem="Eql-XL-rCp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="viE-So-yq7"/>
+                            <constraint firstItem="GRH-gw-3af" firstAttribute="top" secondItem="Eql-XL-rCp" secondAttribute="bottom" constant="8" id="xSa-GO-rcL"/>
+                            <constraint firstItem="sXu-8K-VC8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" constant="1" id="z5J-fm-t6N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eql-XL-rCp" secondAttribute="trailing" constant="39" id="z8Q-5B-lFM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="agentNameTextField" destination="sXu-8K-VC8" id="Ee5-XG-RlH"/>
+                        <outlet property="agentPasswordTextField" destination="h1H-Ws-MwM" id="GFK-jP-F72"/>
+                        <outlet property="greetingLabel" destination="rZc-kC-JI7" id="CdG-0u-u0Q"/>
+                        <outlet property="missionGreetingTextView" destination="Eql-XL-rCp" id="mr0-Em-MMg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="337"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="TIYLogo" width="240" height="212"/>
+    </resources>
+</document>
