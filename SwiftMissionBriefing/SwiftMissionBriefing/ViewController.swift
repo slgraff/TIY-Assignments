@@ -39,21 +39,29 @@ class ViewController: UIViewController {
 // MARK: Authenticate Agent
     @IBAction func authenticateButton(sender: AnyObject) {
         
+        var lastName: String
+        
         // Dismiss keyboard when authenticate button tapped
         if (agentNameTextField.isFirstResponder()) {
             agentNameTextField.resignFirstResponder()
         }
         
         // Ensure both text fields have contents
-        if (agentNameTextField != "" && agentPasswordTextField != "") {
+        if (agentNameTextField.text != "" && agentPasswordTextField.text != "") {
             
             // Grab the agent name, parse out the last name
             let agentName = agentNameTextField.text
-            let lastName = agentName!.componentsSeparatedByString(" ")[1]
+            
+            // Check for number of 'words' in agent name
+            if (agentName!.componentsSeparatedByString(" ").count > 1) {
+                lastName = (agentName!.componentsSeparatedByString(" ")[1])
+            } else {
+                lastName = agentName!
+            }
+            
            
             // Create the agnet greeting using last name, display in label
-            let agentGreeting = "Good Evening, Agent" + " " + lastName
-            greetingLabel.text = agentGreeting
+            greetingLabel.text = "Good Evening, Agent \(lastName)"
             
             // Use string interpolation to insert agentName into mission greeting text
             missionGreetingTextView.text = "This mission will be an arduous one, fraught with peril. You will cover much strange and unfamiliar territory. Should you choose to accept this mission, Agent \(lastName), you will certainly be disavowed, but you will be doing your country a great service. This message will self destruct in 5 seconds."

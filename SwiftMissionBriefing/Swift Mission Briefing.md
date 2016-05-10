@@ -20,7 +20,7 @@
 ### Sugar on Top
 * [x] Set Agent Name Field to be first responder
 * [x] Enabled 'Secure Text Entry' for the agent password field
-* [ ]
+* [x] Allow single 'word' names
 * [ ]
 * [ ]
 * [ ]

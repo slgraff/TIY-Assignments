@@ -63,12 +63,10 @@
                             <constraint firstItem="GRH-gw-3af" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7WW-Q2-WxP"/>
                             <constraint firstItem="GRH-gw-3af" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="160" id="9ql-Z5-plP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GRH-gw-3af" secondAttribute="bottom" constant="20" id="AKf-iL-gsn"/>
-                            <constraint firstItem="rZc-kC-JI7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="CxG-xa-hGK"/>
                             <constraint firstItem="sXu-8K-VC8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="God-YW-eOO"/>
                             <constraint firstItem="Eql-XL-rCp" firstAttribute="top" secondItem="rZc-kC-JI7" secondAttribute="bottom" constant="8" id="IGs-is-MIW"/>
                             <constraint firstItem="rZc-kC-JI7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="WwQ-Hc-xpc"/>
                             <constraint firstItem="rZc-kC-JI7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="abw-GE-OQB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rZc-kC-JI7" secondAttribute="trailing" constant="40" id="e1S-fW-uOI"/>
                             <constraint firstItem="h1H-Ws-MwM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="krl-tg-ITr"/>
                             <constraint firstItem="h1H-Ws-MwM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" constant="1" id="lYs-6S-0kf"/>
                             <constraint firstItem="h1H-Ws-MwM" firstAttribute="top" secondItem="sXu-8K-VC8" secondAttribute="bottom" constant="8" id="lkN-bF-Itu"/>
