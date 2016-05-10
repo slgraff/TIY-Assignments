@@ -48,34 +48,90 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Eql-XL-rCp">
                                 <rect key="frame" x="60" y="163" width="481" height="197"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7sn-Sb-IF7">
+                                        <variation key="heightClass=compact" constant="143"/>
+                                    </constraint>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7sn-Sb-IF7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="7sn-Sb-IF7"/>
+                                    </mask>
+                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="sXu-8K-VC8" firstAttribute="top" secondItem="GRH-gw-3af" secondAttribute="top" id="1Cv-2b-Lyf"/>
                             <constraint firstItem="dRI-Jg-boV" firstAttribute="top" secondItem="h1H-Ws-MwM" secondAttribute="bottom" constant="8" id="3OP-uW-g2a"/>
                             <constraint firstItem="sXu-8K-VC8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4bJ-9z-5Me"/>
                             <constraint firstItem="rZc-kC-JI7" firstAttribute="top" secondItem="dRI-Jg-boV" secondAttribute="bottom" constant="8" id="5RZ-Mn-VbB"/>
-                            <constraint firstItem="dRI-Jg-boV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Do-Tc-yNU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GRH-gw-3af" secondAttribute="trailing" constant="160" id="7Tk-JB-DA4"/>
-                            <constraint firstItem="GRH-gw-3af" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7WW-Q2-WxP"/>
-                            <constraint firstItem="GRH-gw-3af" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="160" id="9ql-Z5-plP"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GRH-gw-3af" secondAttribute="bottom" constant="20" id="AKf-iL-gsn"/>
-                            <constraint firstItem="sXu-8K-VC8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="God-YW-eOO"/>
-                            <constraint firstItem="Eql-XL-rCp" firstAttribute="top" secondItem="rZc-kC-JI7" secondAttribute="bottom" constant="8" id="IGs-is-MIW"/>
-                            <constraint firstItem="rZc-kC-JI7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="WwQ-Hc-xpc"/>
-                            <constraint firstItem="rZc-kC-JI7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="abw-GE-OQB"/>
-                            <constraint firstItem="h1H-Ws-MwM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="krl-tg-ITr"/>
-                            <constraint firstItem="h1H-Ws-MwM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" constant="1" id="lYs-6S-0kf"/>
+                            <constraint firstItem="dRI-Jg-boV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Do-Tc-yNU">
+                                <variation key="heightClass=compact" constant="-124"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="GRH-gw-3af" secondAttribute="trailing" constant="160" id="7Tk-JB-DA4">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="GRH-gw-3af" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7WW-Q2-WxP">
+                                <variation key="heightClass=compact" constant="160"/>
+                            </constraint>
+                            <constraint firstItem="GRH-gw-3af" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="160" id="9ql-Z5-plP">
+                                <variation key="heightClass=compact" constant="320"/>
+                            </constraint>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GRH-gw-3af" secondAttribute="bottom" constant="20" id="AKf-iL-gsn">
+                                <variation key="heightClass=compact" constant="171"/>
+                            </constraint>
+                            <constraint firstItem="sXu-8K-VC8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="God-YW-eOO">
+                                <variation key="heightClass=compact" constant="-124"/>
+                            </constraint>
+                            <constraint firstItem="Eql-XL-rCp" firstAttribute="top" secondItem="rZc-kC-JI7" secondAttribute="bottom" constant="8" id="IGs-is-MIW">
+                                <variation key="heightClass=compact" constant="82"/>
+                            </constraint>
+                            <constraint firstItem="rZc-kC-JI7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="WwQ-Hc-xpc">
+                                <variation key="heightClass=compact" constant="-168"/>
+                            </constraint>
+                            <constraint firstItem="rZc-kC-JI7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="abw-GE-OQB">
+                                <variation key="heightClass=compact" constant="-124"/>
+                            </constraint>
+                            <constraint firstItem="h1H-Ws-MwM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="krl-tg-ITr">
+                                <variation key="heightClass=compact" constant="-124"/>
+                            </constraint>
+                            <constraint firstItem="h1H-Ws-MwM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" constant="1" id="lYs-6S-0kf">
+                                <variation key="heightClass=compact" constant="-168"/>
+                            </constraint>
                             <constraint firstItem="h1H-Ws-MwM" firstAttribute="top" secondItem="sXu-8K-VC8" secondAttribute="bottom" constant="8" id="lkN-bF-Itu"/>
-                            <constraint firstItem="Eql-XL-rCp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="ps6-FU-hhb"/>
+                            <constraint firstItem="Eql-XL-rCp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="ps6-FU-hhb">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="Eql-XL-rCp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="viE-So-yq7"/>
-                            <constraint firstItem="GRH-gw-3af" firstAttribute="top" secondItem="Eql-XL-rCp" secondAttribute="bottom" constant="8" id="xSa-GO-rcL"/>
-                            <constraint firstItem="sXu-8K-VC8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" constant="1" id="z5J-fm-t6N"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Eql-XL-rCp" secondAttribute="trailing" constant="39" id="z8Q-5B-lFM"/>
+                            <constraint firstItem="GRH-gw-3af" firstAttribute="top" secondItem="Eql-XL-rCp" secondAttribute="bottom" constant="8" id="xSa-GO-rcL">
+                                <variation key="heightClass=compact" constant="-360"/>
+                            </constraint>
+                            <constraint firstItem="sXu-8K-VC8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" constant="1" id="z5J-fm-t6N">
+                                <variation key="heightClass=compact" constant="-168"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eql-XL-rCp" secondAttribute="trailing" constant="39" id="z8Q-5B-lFM">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1Cv-2b-Lyf"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="1Cv-2b-Lyf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="agentNameTextField" destination="sXu-8K-VC8" id="Ee5-XG-RlH"/>
@@ -86,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="337"/>
+            <point key="canvasLocation" x="245" y="336"/>
         </scene>
     </scenes>
     <resources>
