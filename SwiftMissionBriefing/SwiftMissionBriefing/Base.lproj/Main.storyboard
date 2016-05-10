@@ -158,6 +158,7 @@
                     <connections>
                         <outlet property="agentNameTextField" destination="sXu-8K-VC8" id="Ee5-XG-RlH"/>
                         <outlet property="agentPasswordTextField" destination="h1H-Ws-MwM" id="GFK-jP-F72"/>
+                        <outlet property="authenticateButtonOutlet" destination="dRI-Jg-boV" id="i6q-jI-xoR"/>
                         <outlet property="greetingLabel" destination="rZc-kC-JI7" id="CdG-0u-u0Q"/>
                         <outlet property="missionGreetingTextView" destination="Eql-XL-rCp" id="mr0-Em-MMg"/>
                     </connections>
