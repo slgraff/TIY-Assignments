@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		CC39B5C21CE0C60E00E6AB40 /* ManyRandomStrings */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ManyRandomStrings; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC39B5C51CE0C60E00E6AB40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CC39B5CC1CE0D51D00E6AB40 /* dictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dictionary.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				CC39B5C51CE0C60E00E6AB40 /* main.m */,
+				CC39B5CC1CE0D51D00E6AB40 /* dictionary.json */,
 			);
 			path = ManyRandomStrings;
 			sourceTree = "<group>";

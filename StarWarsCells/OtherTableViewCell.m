@@ -15,7 +15,9 @@
     // Initialization code
     
     // Set custom border color to blue
-    // cell.imageView.layer.borderColor=[[UIColor darkGrayColor]CGColor];
+    self.imageView.layer.borderColor=[[UIColor blueColor]CGColor];
+    
+    
 
 }
 

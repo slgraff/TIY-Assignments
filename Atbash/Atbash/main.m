@@ -27,6 +27,8 @@ int main(int argc, const char * argv[]) {
 //        NSMutableString *stringToEncode = [NSMutableString stringWithFormat:@"/r/dailyprogrammer"];
         NSMutableString *stringToEncode = [NSMutableString stringWithFormat:@"gsrh rh zm vcznkov lu gsv zgyzhs xrksvi"];
         
+        // Loop through array of test strings, create their Atbash cipher
+        
         
         // Initialize 'encodedString' to hold our encoded string
         NSMutableString *encodedString = [NSMutableString stringWithCapacity:100];
@@ -34,11 +36,11 @@ int main(int argc, const char * argv[]) {
         // Declare arrays for chars a-z, also for ciper chars
         NSArray *azArray = @[@"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h", @"i", @"j", @"k",
                              @"l", @"m", @"n", @"o", @"p", @"q", @"r", @"s", @"t", @"u", @"v",
-                             @"w", @"x", @"y", @"z"];
+                             @"w", @"x", @"y", @"z", @" "];
         
         NSArray *cipherArray = @[@"Z", @"Y", @"X", @"W", @"V", @"U", @"T", @"S", @"R", @"Q",
                                 @"P", @"O", @"N", @"M", @"L", @"K", @"J", @"I", @"H", @"G",
-                                @"F", @"E", @"D", @"C", @"B", @"A"];
+                                @"F", @"E", @"D", @"C", @"B", @"A", @" "];
         
         NSLog(@"Beginning encoding. Encoding string '%@'.", stringToEncode);
         NSLog(@"azArray is '%@'", azArray);
@@ -65,6 +67,7 @@ int main(int argc, const char * argv[]) {
                 } else {
                     // If char not found in azArray, append char to encodedString
                     [encodedString stringByAppendingString:theChar];
+                    
                 }
             } else {
                 
