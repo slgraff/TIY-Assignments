@@ -25,10 +25,10 @@ class ViewController: UIViewController {
         authenticateButtonOutlet.enabled = false
         
         // Hide keyboard when tapping outside text field
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+//        view.addGestureRecognizer(tap)
         
-        // Initialize Agent Name, Agent Password and Greeting Label and Greeting Text to be empty
+        // Initialize Agent Name, Agent Password, Greeting Label and Greeting Text to be empty
         agentNameTextField.text = ""
         agentPasswordTextField.text = ""
         greetingLabel.text = ""
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Text Changed
+    // MARK: Text Changed Notification
     func textChanged(sender: NSNotification) {
         if agentNameTextField.hasText() && agentPasswordTextField.hasText() {
             authenticateButtonOutlet.enabled = true
@@ -56,10 +56,16 @@ class ViewController: UIViewController {
     }
     
     // MARK: Dismiss Keyboard
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
         view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
     }
+    
+    
+//    func dismissKeyboard() {
+//        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+//        view.endEditing(true)
+//    }
     
 
 // MARK: Authenticate Agent

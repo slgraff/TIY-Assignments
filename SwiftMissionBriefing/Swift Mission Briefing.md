@@ -26,7 +26,3 @@
 * [x] Use NSNotificationCenter to enable button when both text fields have contents
 * [x] Handle setting/resigning first responder for text fields
 * [x] Hide keyboard when tapping outside text field
-* [ ]
-* [ ]
-* [ ]
-* [ ]
