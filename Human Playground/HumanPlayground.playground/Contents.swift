@@ -25,6 +25,12 @@ import UIKit
 
 class BodyPart {
     // class for body parts
+    
+    var numOfParts: Int
+    
+    init(numOfParts: Int) {
+        self.numOfParts = numOfParts
+    }
 
 }
 
@@ -38,6 +44,7 @@ class Head: BodyPart {
     init(hasHair:Bool, headShape:String) {
         self.hasHair = true
         self.headShape = "Oval"
+        super.init(numOfParts:numOfParts)
     }
     
     func shakeHead() -> String {

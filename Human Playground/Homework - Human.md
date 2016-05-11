@@ -21,8 +21,8 @@ Read [Swift Classes](https://developer.apple.com/library/ios/documentation/Swift
 * [x] Create a Playground named Human.
 * [x] Make a class named BodyPart.
 * [x] Create 10 classes that are subclasses of BodyPart.
-* [ ] Each class should have 2 methods that are specific to that part. Please don't implement the methods. Hint: Functions are the same as Methods
-* [ ] Each class should have 2 properties that are specific to that part. Hint: variables or constants.
+* [x] Each class should have 2 methods that are specific to that part. Please don't implement the methods. Hint: Functions are the same as Methods
+* [x] Each class should have 2 properties that are specific to that part. Hint: variables or constants.
 
 ### Hard Mode
 
