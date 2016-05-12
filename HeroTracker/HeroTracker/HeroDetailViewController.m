@@ -8,6 +8,14 @@
 
 #import "HeroDetailViewController.h"
 
+#import "CBPDefines.h"  // Contains Marvel API keys
+#import "MDAMarvelAPIClient.h" // Allows us to set API keys
+
+#import "NSURLSessionDataTask+MarvelDeveloperAPI.h" // Provides new methods to get Marvel data
+
+#import "MDASearchParameters.h"  //
+#import "MDACharacterDataContainer.h"  // Container for returned Marvel character
+
 
 @interface HeroDetailViewController()
 
@@ -15,11 +23,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *heroRealNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *heroPowersLabel;
 
+@property MDAComic *comic;
+@property MDADataContainer *dataContainer;
 
 - (void)configureView;
 
 
 @end
+
+
 
 @implementation HeroDetailViewController
 
@@ -31,6 +43,8 @@
     
 }
 
+
+
 #pragma mark - Managing the Hero Detail View
 
 - (void)setHero:(Hero *)newHero {
@@ -38,7 +52,7 @@
         _hero = newHero;  // Use _hero. Using self.hero will cause infinite loop
         
         // Update the view
-        [self configureView];
+        // [self configureView];
     }
 }
 
@@ -52,10 +66,45 @@
         self.heroNameLabel.text = self.hero.heroName;
         self.heroRealNameLabel.text = self.hero.heroRealName;
         self.heroPowersLabel.text = self.hero.heroPowers;
+        
+        
+        // New code from 5/11 using Marvel API
+        // This should go into configureView
+        
+        if (self.hero) {
+            self.heroPowersLabel.text = [self.hero description];
+            
+            if (!self.dataContainer) {
+                [self lookUpHero];
+            } else {
+                self.heroPowersLabel.text = [self.dataContainer.results description];
+            }
+        }
     }
 }
 
 
+- (void)lookUpHero {
+    __block typeof(self) blockSelf = self;
+    
+    NSInteger comicID = 48564;
+    
+    [[MDAMarvelAPIClient sharedClient] publicKey:CBPMarvelAPIPublicKey privateKey:CBPMarvelAPIPrivateKey];
+    
+    MDASearchParameters *search = [[MDASearchParameters alloc]init];
+    search.nameStartsWith = @"black";
+    
+    [NSURLSessionDataTask fetchCharactersWithSearch:search withBlock:^(MDACharacterDataContainer *data, NSError *error) {
+        
+        blockSelf.dataContainer = data; // save the returned data
+        
+        NSLog(@"%@", [data.results description]);  // prints the returned data
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [blockSelf configureView];
+        });
+    }];
+}
 
 
 
