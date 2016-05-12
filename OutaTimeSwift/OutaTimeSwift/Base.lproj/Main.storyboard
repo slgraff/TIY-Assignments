@@ -62,6 +62,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K6-rb-EPg" userLabel="Travel Back Button">
                                 <rect key="frame" x="250" y="453" width="98" height="30"/>
                                 <state key="normal" title="TRAVEL BACK"/>
+                                <connections>
+                                    <action selector="travelBackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l1Y-lG-t3W"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="JAN 01 2000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b25-3L-k2h" userLabel="Present Time">
                                 <rect key="frame" x="210" y="185" width="180" height="36"/>
@@ -110,7 +113,10 @@
                     <navigationItem key="navigationItem" id="u01-XO-C5z"/>
                     <connections>
                         <outlet property="destinationTimeDatePicker" destination="fNc-cG-rCc" id="ies-jA-Pzo"/>
-                        <outlet property="destinationTimeLabel" destination="45K-CU-Cx9" id="pLV-eD-YXM"/>
+                        <outlet property="destinationTimeLabel" destination="vLl-a0-SKf" id="e81-BA-MhR"/>
+                        <outlet property="lastTimeDepartedLabel" destination="0VV-vI-iFe" id="DNM-24-7lq"/>
+                        <outlet property="presentTimeLabel" destination="b25-3L-k2h" id="K5N-yr-5Yr"/>
+                        <outlet property="speedLabel" destination="cxf-nS-2Wx" id="yGk-ut-waQ"/>
                         <segue destination="3qS-MQ-K6p" kind="show" identifier="destinationTimeSegue" id="Ba7-Oo-1zY"/>
                     </connections>
                 </viewController>

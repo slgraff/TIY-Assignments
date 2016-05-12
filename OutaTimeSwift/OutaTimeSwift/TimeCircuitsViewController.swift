@@ -11,14 +11,29 @@ import UIKit
 class TimeCircuitsViewController: UIViewController {
     
     @IBOutlet weak var destinationTimeDatePicker: UIDatePicker!
+    
     @IBOutlet weak var destinationTimeLabel: UILabel!
+    @IBOutlet weak var presentTimeLabel: UILabel!
+    @IBOutlet weak var lastTimeDepartedLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Set title for view controller
         self.title = "Time Circuits"
+        
+        // Initialize the date formatter
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MMMM dd yyyy"
+        
+        // Set Present Time label to today's date
+        let todaysDate = NSDate()
+        let todaysDateString = dateFormatter.stringFromDate(todaysDate)
+        self.presentTimeLabel.text = todaysDateString
+
         
     }
 
@@ -39,5 +54,9 @@ class TimeCircuitsViewController: UIViewController {
  
     }
 
+    @IBAction func travelBackButton(sender: AnyObject) {
+        
+        
+    }
 }
 
