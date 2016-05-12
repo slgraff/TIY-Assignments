@@ -10,6 +10,7 @@
 		CC1FAD1F1CE3670100DCF9E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1FAD1E1CE3670100DCF9E0 /* main.m */; };
 		CC1FAD271CE36B4500DCF9E0 /* NumberStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1FAD261CE36B4500DCF9E0 /* NumberStuff.m */; };
 		CC1FAD2A1CE36D8800DCF9E0 /* NumberStuffWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1FAD291CE36D8800DCF9E0 /* NumberStuffWrapper.swift */; };
+		CC600C071CE4DC3800520B74 /* NumberWrapper+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CC600C061CE4DC3800520B74 /* NumberWrapper+Helper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		CC1FAD261CE36B4500DCF9E0 /* NumberStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberStuff.m; sourceTree = "<group>"; };
 		CC1FAD281CE36D8700DCF9E0 /* NumberStuff-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NumberStuff-Bridging-Header.h"; sourceTree = "<group>"; };
 		CC1FAD291CE36D8800DCF9E0 /* NumberStuffWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberStuffWrapper.swift; sourceTree = "<group>"; };
+		CC600C051CE4DC3800520B74 /* NumberWrapper+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NumberWrapper+Helper.h"; sourceTree = "<group>"; };
+		CC600C061CE4DC3800520B74 /* NumberWrapper+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NumberWrapper+Helper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				CC1FAD251CE36B4500DCF9E0 /* NumberStuff.h */,
 				CC1FAD261CE36B4500DCF9E0 /* NumberStuff.m */,
 				CC1FAD291CE36D8800DCF9E0 /* NumberStuffWrapper.swift */,
+				CC600C051CE4DC3800520B74 /* NumberWrapper+Helper.h */,
+				CC600C061CE4DC3800520B74 /* NumberWrapper+Helper.m */,
 				CC1FAD281CE36D8700DCF9E0 /* NumberStuff-Bridging-Header.h */,
 			);
 			path = NumberStuff;
@@ -130,6 +135,7 @@
 			files = (
 				CC1FAD2A1CE36D8800DCF9E0 /* NumberStuffWrapper.swift in Sources */,
 				CC1FAD1F1CE3670100DCF9E0 /* main.m in Sources */,
+				CC600C071CE4DC3800520B74 /* NumberWrapper+Helper.m in Sources */,
 				CC1FAD271CE36B4500DCF9E0 /* NumberStuff.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +264,7 @@
 				CC1FAD241CE3670100DCF9E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

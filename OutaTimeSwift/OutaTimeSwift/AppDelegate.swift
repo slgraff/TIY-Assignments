@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  NSCodingPartDeux
+//  OutaTimeSwift
 //
 //  Created by Steve Graff on 5/12/16.
 //  Copyright © 2016 Steve Graff. All rights reserved.
@@ -16,55 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        
-        let jeffUser: UserProfile = UserProfile(name: "Jeff",
-                                                 userID: "jtligon",
-                                                 password: "nongonnashowyou",
-                                                 profile: NSURL(string: "https://www.google.com")!)
-        
-        let dougUser = UserProfile(name: "Doug",
-                                   userID: "doug",
-                                   password: "javapassword",
-                                   profile: NSURL(string: "https://www.oracle.com")!)
-        
-        
-        // Create array of users
-        let userArray = [jeffUser, dougUser]
-        
-        // Create new user defaults
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        // Grab last user stored in userDefaults
-        if let lastUserData = defaults.objectForKey("lastUser") as? NSData {
-            let lastUser = NSKeyedUnarchiver.unarchiveObjectWithData(lastUserData)  // lastUser only exists inside here
-            
-            if lastUser?.name == "Jeff" {
-                print("We got Jeff!")
-            } else {
-                print("We got \(lastUser!.name!)")
-            }
-        }
-        
-        // Pick a random user
-        let randomPick = arc4random() % 2
-        
-        let thisUser = userArray[Int(randomPick)]
-        
-        let data:NSData = NSKeyedArchiver.archivedDataWithRootObject(thisUser)
-        
-        // Set defaults to be random user
-        defaults.setObject(data, forKey: "lastUser")
-        
-        
-        // Archive the file to a local file, need to specify valid path
-        let pathArray = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        let pathString = pathArray.last
-        let filePathString = pathString! + "/localStorage.plist"
-        
-        NSKeyedArchiver.archiveRootObject(thisUser, toFile: filePathString)
-        
-        
         return true
     }
 

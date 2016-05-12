@@ -17,6 +17,7 @@ int main(int argc, const char * argv[]) {
         NumberWrapper *wrapper = NumberWrapper.new;
         [wrapper passThroughArray];
         
+        [NumberWrapper justTheValues];
         
     }
     
