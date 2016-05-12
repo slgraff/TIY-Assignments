@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC3D8B801CE50CBB000EA68D /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC600C2A1CE50B3E00520B74 /* digital-7.ttf */; };
 		CC600C151CE4EF0300520B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC600C141CE4EF0300520B74 /* AppDelegate.swift */; };
 		CC600C171CE4EF0300520B74 /* TimeCircuitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC600C161CE4EF0300520B74 /* TimeCircuitsViewController.swift */; };
 		CC600C1A1CE4EF0300520B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC600C181CE4EF0300520B74 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		CC600C1E1CE4EF0300520B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC600C201CE4EF0300520B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC600C281CE5040900520B74 /* DestinationTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationTimeViewController.swift; sourceTree = "<group>"; };
+		CC600C2A1CE50B3E00520B74 /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CC600C1B1CE4EF0300520B74 /* Assets.xcassets */,
 				CC600C1D1CE4EF0300520B74 /* LaunchScreen.storyboard */,
 				CC600C201CE4EF0300520B74 /* Info.plist */,
+				CC600C2A1CE50B3E00520B74 /* digital-7.ttf */,
 			);
 			path = OutaTimeSwift;
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 				CC600C1F1CE4EF0300520B74 /* LaunchScreen.storyboard in Resources */,
 				CC600C1C1CE4EF0300520B74 /* Assets.xcassets in Resources */,
 				CC600C1A1CE4EF0300520B74 /* Main.storyboard in Resources */,
+				CC3D8B801CE50CBB000EA68D /* digital-7.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +297,7 @@
 				CC600C251CE4EF0300520B74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
