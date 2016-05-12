@@ -17,19 +17,26 @@ class TimeCircuitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.title = "Time Circuits"
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     @IBAction func destinationTimeDatePickerAction(sender: AnyObject) {
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        var strDate = dateFormatter.stringFromDate(destinationTimeDatePicker.date)
-        self.destinationTimeLabel.text = strDate
+        destinationTimeDatePicker.datePickerMode = UIDatePickerMode.Date
         
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let selectedDestinationDate = dateFormatter.stringFromDate(destinationTimeDatePicker.date)
+        
+        self.destinationTimeLabel.text = selectedDestinationDate
+ 
     }
 
 }

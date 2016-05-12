@@ -12,6 +12,7 @@
 		CC600C1A1CE4EF0300520B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC600C181CE4EF0300520B74 /* Main.storyboard */; };
 		CC600C1C1CE4EF0300520B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC600C1B1CE4EF0300520B74 /* Assets.xcassets */; };
 		CC600C1F1CE4EF0300520B74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC600C1D1CE4EF0300520B74 /* LaunchScreen.storyboard */; };
+		CC600C291CE5040900520B74 /* DestinationTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC600C281CE5040900520B74 /* DestinationTimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CC600C1B1CE4EF0300520B74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC600C1E1CE4EF0300520B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC600C201CE4EF0300520B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC600C281CE5040900520B74 /* DestinationTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationTimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				CC600C141CE4EF0300520B74 /* AppDelegate.swift */,
 				CC600C161CE4EF0300520B74 /* TimeCircuitsViewController.swift */,
+				CC600C281CE5040900520B74 /* DestinationTimeViewController.swift */,
 				CC600C181CE4EF0300520B74 /* Main.storyboard */,
 				CC600C1B1CE4EF0300520B74 /* Assets.xcassets */,
 				CC600C1D1CE4EF0300520B74 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC600C291CE5040900520B74 /* DestinationTimeViewController.swift in Sources */,
 				CC600C171CE4EF0300520B74 /* TimeCircuitsViewController.swift in Sources */,
 				CC600C151CE4EF0300520B74 /* AppDelegate.swift in Sources */,
 			);
