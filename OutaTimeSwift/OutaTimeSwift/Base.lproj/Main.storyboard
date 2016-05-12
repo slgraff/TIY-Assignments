@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Outa Time View Controller-->
+        <!--Time Circuits View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Outa Time View Controller" customClass="ViewController" customModule="OutaTimeSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Time Circuits View Controller" customClass="TimeCircuitsViewController" customModule="OutaTimeSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,39 +17,43 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fNc-cG-rCc">
+                                <rect key="frame" x="0.0" y="149" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="484766136.17124802">
+                                    <!--2016-05-12 17:15:36 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="destinationTimeDatePickerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="crH-Nh-xRs"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45K-CU-Cx9">
+                                <rect key="frame" x="231" y="64" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="45K-CU-Cx9" secondAttribute="trailing" constant="210" id="9Q3-sH-odM"/>
+                            <constraint firstItem="fNc-cG-rCc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A61-Si-pha"/>
+                            <constraint firstItem="45K-CU-Cx9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ADn-6y-BP7"/>
+                            <constraint firstItem="fNc-cG-rCc" firstAttribute="top" secondItem="45K-CU-Cx9" secondAttribute="bottom" constant="64" id="dMZ-CM-q78"/>
+                            <constraint firstItem="45K-CU-Cx9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="211" id="e2W-Z1-g9K"/>
+                            <constraint firstAttribute="trailing" secondItem="fNc-cG-rCc" secondAttribute="trailing" id="tiT-RW-mhG"/>
+                            <constraint firstItem="45K-CU-Cx9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="y7j-Hn-VGW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="u01-XO-C5z"/>
+                    <connections>
+                        <outlet property="destinationTimeDatePicker" destination="fNc-cG-rCc" id="ies-jA-Pzo"/>
+                        <outlet property="destinationTimeLabel" destination="45K-CU-Cx9" id="pLV-eD-YXM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="832" y="997"/>
-        </scene>
-        <!--Date Picker View Controller-->
-        <scene sceneID="Ota-cG-729">
-            <objects>
-                <viewController id="fvz-9I-j1j" userLabel="Date Picker View Controller" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2Jg-Oj-y6K"/>
-                        <viewControllerLayoutGuide type="bottom" id="FPB-1E-GBs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qgN-z4-wvP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kNU-pO-kPK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="484765646.79499602">
-                                    <!--2016-05-12 17:07:26 +0000-->
-                                </date>
-                            </datePicker>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sVP-ef-Mp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1526" y="997"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JKT-7G-JgD">
