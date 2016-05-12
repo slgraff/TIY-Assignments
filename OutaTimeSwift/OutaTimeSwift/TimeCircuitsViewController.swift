@@ -34,7 +34,15 @@ class TimeCircuitsViewController: UIViewController {
         let todaysDateString = dateFormatter.stringFromDate(todaysDate)
         self.presentTimeLabel.text = todaysDateString
 
+        // Initialize Current Speed, set Speed label
+        var currentSpeed = 0
+        speedLabel.text = "\(currentSpeed) MPH"
         
+        // Initialize Last Departed Time
+        self.lastTimeDepartedLabel.text = "--- -- ----"
+
+
+
     }
 
     override func didReceiveMemoryWarning() {
