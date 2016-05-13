@@ -94,7 +94,7 @@ class TimeCircuitsViewController: UIViewController, DestinationViewControllerDel
         // Check if there is already a timer
         if (!aTimer.valid) {
             // If no timer, create one
-            aTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateSpeed", userInfo: nil, repeats: true)
+            aTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(TimeCircuitsViewController.updateSpeed), userInfo: nil, repeats: true)
         }
     }
     
