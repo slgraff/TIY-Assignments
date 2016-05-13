@@ -13,18 +13,26 @@ import UIKit
 // Somewhere in this file I need to declare a @property for the delegate method that will receive the picked date
 // didPickDestinationDate ??
 
-// Definition of optional delegate property
-weak var delegate:DestinationViewControllerDelegate?
+
 
 // Definition of delegate protocol
 protocol DestinationViewControllerDelegate: class {
-    func didPickDestinationDate(sender: DestinationViewController)
+    func didPickDestinationDate(pickedDate: NSDate)
+
 }
 
 
 class DestinationViewController:UIViewController {
     
-    @IBAction func destinationTimeDatePickerAction(sender: AnyObject) {
+    // Definition of optional delegate property
+    weak var delegate:DestinationViewControllerDelegate?
+    
+    @IBOutlet var destinationDatePicker: UIDatePicker!
+    
+    override func viewWillDisappear(animated: Bool) {
+        // Tell our delegate to perform it's function
+        delegate?.didPickDestinationDate(destinationDatePicker.date)
     }
+
 }
 

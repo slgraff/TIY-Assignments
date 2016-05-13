@@ -35,7 +35,7 @@
                                 <rect key="frame" x="217" y="418" width="167" height="30"/>
                                 <state key="normal" title="SET DESTINATION TIME"/>
                                 <connections>
-                                    <segue destination="3qS-MQ-K6p" kind="show" id="fUH-X3-ecu"/>
+                                    <segue destination="3qS-MQ-K6p" kind="show" identifier="destinationTimeSegue" id="43O-Lc-5rx"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESTINATION TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBJ-GC-muz">
@@ -115,12 +115,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="u01-XO-C5z"/>
                     <connections>
-                        <outlet property="destinationTimeDatePicker" destination="fNc-cG-rCc" id="ies-jA-Pzo"/>
                         <outlet property="destinationTimeLabel" destination="vLl-a0-SKf" id="e81-BA-MhR"/>
                         <outlet property="lastTimeDepartedLabel" destination="0VV-vI-iFe" id="DNM-24-7lq"/>
                         <outlet property="presentTimeLabel" destination="b25-3L-k2h" id="K5N-yr-5Yr"/>
                         <outlet property="speedLabel" destination="cxf-nS-2Wx" id="yGk-ut-waQ"/>
-                        <segue destination="3qS-MQ-K6p" kind="show" identifier="destinationTimeSegue" id="Ba7-Oo-1zY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -144,10 +142,6 @@
                                 <date key="date" timeIntervalSinceReferenceDate="484766136.17124802">
                                     <!--2016-05-12 17:15:36 +0000-->
                                 </date>
-                                <connections>
-                                    <action selector="destinationTimeDatePickerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="crH-Nh-xRs"/>
-                                    <action selector="destinationTimeDatePickerAction:" destination="3qS-MQ-K6p" eventType="valueChanged" id="eIA-l0-UgU"/>
-                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45K-CU-Cx9">
                                 <rect key="frame" x="231" y="28" width="139" height="21"/>
@@ -163,7 +157,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="destinationTimeDatePicker" destination="fNc-cG-rCc" id="UC4-mN-75I"/>
+                        <outlet property="destinationDatePicker" destination="fNc-cG-rCc" id="1pS-r7-Jhw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Rw-lh-JgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,7 +183,4 @@
             <point key="canvasLocation" x="156" y="997"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="fUH-X3-ecu"/>
-    </inferredMetricsTieBreakers>
 </document>

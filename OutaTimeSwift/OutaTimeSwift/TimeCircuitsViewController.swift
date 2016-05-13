@@ -19,7 +19,7 @@ import UIKit
 //    }
 //}
 
-class TimeCircuitsViewController: UIViewController {
+class TimeCircuitsViewController: UIViewController, DestinationViewControllerDelegate {
     
     @IBOutlet weak var destinationTimeDatePicker: UIDatePicker!
     
@@ -27,6 +27,8 @@ class TimeCircuitsViewController: UIViewController {
     @IBOutlet weak var presentTimeLabel: UILabel!
     @IBOutlet weak var lastTimeDepartedLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
+    
+    let dateFormatter = NSDateFormatter()
     
     // delegate property
     weak var delegate:DestinationViewController?
@@ -39,7 +41,6 @@ class TimeCircuitsViewController: UIViewController {
         self.title = "Time Circuits"
         
         // Initialize the date formatter
-        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMMM dd yyyy"
         
         // Set Present Time label to today's date
@@ -53,9 +54,6 @@ class TimeCircuitsViewController: UIViewController {
         
         // Initialize Last Departed Time
         self.lastTimeDepartedLabel.text = "--- -- ----"
-
-
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,21 +62,31 @@ class TimeCircuitsViewController: UIViewController {
     }
     
 
-
     @IBAction func destinationTimeDatePickerAction(sender: AnyObject) {
         destinationTimeDatePicker.datePickerMode = UIDatePickerMode.Date
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
+        
         let selectedDestinationDate = dateFormatter.stringFromDate(destinationTimeDatePicker.date)
         
         self.destinationTimeLabel.text = selectedDestinationDate
- 
     }
 
     @IBAction func travelBackButton(sender: AnyObject) {
-        
-        
+    
     }
+    
+    func didPickDestinationDate(pickedDate: NSDate) {
+        self.destinationTimeLabel.text = dateFormatter.stringFromDate(pickedDate)
+    }
+    
+    // MARK: Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "destinationTimeSegue" {
+            let destinationVC = segue.destinationViewController as! DestinationViewController
+            
+            destinationVC.delegate = self
+        }
+    }
+
 }
 
