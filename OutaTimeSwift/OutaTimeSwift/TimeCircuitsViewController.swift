@@ -11,14 +11,6 @@ import UIKit
 // Somewhere in this file I need to adopt the protocol and implement the delegate to retrieve the date and dismiss the DestinationViewController 
 // didPickDestinationDate
 
-//extension ViewController: DestinationViewControllerDelegate {
-//    func didDismissDestinationVC(sender: DestinationViewController) {
-//        status = sender.status
-//        dismissViewControllerAnimated(true, completion: nil)
-//        configureView()
-//    }
-//}
-
 class TimeCircuitsViewController: UIViewController, DestinationViewControllerDelegate {
     
     @IBOutlet weak var destinationTimeDatePicker: UIDatePicker!
@@ -29,6 +21,12 @@ class TimeCircuitsViewController: UIViewController, DestinationViewControllerDel
     @IBOutlet weak var speedLabel: UILabel!
     
     let dateFormatter = NSDateFormatter()
+    
+    // Declare timer
+    var aTimer = NSTimer()
+    
+    // Declare currentSpeed
+    var currentSpeed = 0
     
     // delegate property
     weak var delegate:DestinationViewController?
@@ -48,8 +46,7 @@ class TimeCircuitsViewController: UIViewController, DestinationViewControllerDel
         let todaysDateString = dateFormatter.stringFromDate(todaysDate)
         self.presentTimeLabel.text = todaysDateString
 
-        // Initialize Current Speed, set Speed label
-        var currentSpeed = 0
+        // Set Speed label
         speedLabel.text = "\(currentSpeed) MPH"
         
         // Initialize Last Departed Time
@@ -71,9 +68,7 @@ class TimeCircuitsViewController: UIViewController, DestinationViewControllerDel
         self.destinationTimeLabel.text = selectedDestinationDate
     }
 
-    @IBAction func travelBackButton(sender: AnyObject) {
-    
-    }
+
     
     func didPickDestinationDate(pickedDate: NSDate) {
         self.destinationTimeLabel.text = dateFormatter.stringFromDate(pickedDate)
@@ -87,6 +82,41 @@ class TimeCircuitsViewController: UIViewController, DestinationViewControllerDel
             destinationVC.delegate = self
         }
     }
+    
+    // MARK: Action handlers
+    
+    @IBAction func travelBackButton(sender: AnyObject) {
+        // When clicking Travel Back button call the startTimer function
+        startTimer()
+    }
+    
+    func startTimer() {
+        // Check if there is already a timer
+        if (!aTimer.valid) {
+            // If no timer, create one
+            aTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateSpeed", userInfo: nil, repeats: true)
+        }
+    }
+    
+    func stopTimer() {
+        // Invalidate (stop) the timer
+        aTimer.invalidate()
+        
+    }
+    
+    func updateSpeed() {
+        if (currentSpeed < 88) {
+            currentSpeed += 1
+            self.speedLabel.text = "\(currentSpeed) MPH"
+        } else if (currentSpeed >= 88) {
+            stopTimer()
+            lastTimeDepartedLabel.text = presentTimeLabel.text
+            presentTimeLabel.text = destinationTimeLabel.text
+            speedLabel.text = "0 MPH"
+            currentSpeed = 0
+        }
+    }
+    
 
 }
 
