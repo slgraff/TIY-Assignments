@@ -8,7 +8,16 @@
 
 import UIKit
 
-// Somewhere in this file I need to implement the function didPickDestinationDate
+// Somewhere in this file I need to adopt the protocol and implement the delegate to retrieve the date and dismiss the DestinationViewController 
+// didPickDestinationDate
+
+//extension ViewController: DestinationViewControllerDelegate {
+//    func didDismissDestinationVC(sender: DestinationViewController) {
+//        status = sender.status
+//        dismissViewControllerAnimated(true, completion: nil)
+//        configureView()
+//    }
+//}
 
 class TimeCircuitsViewController: UIViewController {
     

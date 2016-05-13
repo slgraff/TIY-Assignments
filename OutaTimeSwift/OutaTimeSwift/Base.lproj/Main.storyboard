@@ -34,6 +34,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx8-nj-QQl" userLabel="Set Destination Time Button">
                                 <rect key="frame" x="217" y="418" width="167" height="30"/>
                                 <state key="normal" title="SET DESTINATION TIME"/>
+                                <connections>
+                                    <segue destination="3qS-MQ-K6p" kind="show" id="fUH-X3-ecu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESTINATION TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBJ-GC-muz">
                                 <rect key="frame" x="224" y="72" width="152" height="21"/>
@@ -186,4 +189,7 @@
             <point key="canvasLocation" x="156" y="997"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fUH-X3-ecu"/>
+    </inferredMetricsTieBreakers>
 </document>
