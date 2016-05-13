@@ -43,5 +43,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseDescription</key>
+	<string>This app lets your track where you parked your car. It needs access to the GPS coordinates for your location.</string>
 </dict>
 </plist>
