@@ -1,5 +1,5 @@
 //
-//  TimePickerViewController.h
+//  DatePickerViewController.h
 //  OutaTime
 //
 //  Created by Ben Gohlke on 2/12/15.

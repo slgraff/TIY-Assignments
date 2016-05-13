@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Somewhere in this file I need to implement the function didPickDestinationDate
+
 class TimeCircuitsViewController: UIViewController {
     
     @IBOutlet weak var destinationTimeDatePicker: UIDatePicker!
@@ -17,6 +19,8 @@ class TimeCircuitsViewController: UIViewController {
     @IBOutlet weak var lastTimeDepartedLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
     
+    // delegate property
+    weak var delegate:DestinationViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +54,7 @@ class TimeCircuitsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
 
     @IBAction func destinationTimeDatePickerAction(sender: AnyObject) {
         destinationTimeDatePicker.datePickerMode = UIDatePickerMode.Date

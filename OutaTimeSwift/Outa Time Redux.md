@@ -22,9 +22,9 @@ Re-create the Outa Time app using Swift instead of Objective-C.
 	* [x] These buttons should be wired to their appropriate IBActions or segues
 		* [x] The segue for SET DESTINATION TIME should have an identifier of "destinationTimeSegue"
 
-* [ ] The the date picker view contains a date picker. This UI object should be centered both horizontally and vertically in the view. Its leading and trailing space should also hug the left and right edges of its superview.
+* [x] The date picker view contains a date picker. This UI object should be centered both horizontally and vertically in the view. Its leading and trailing space should also hug the left and right edges of its superview.
 * [x] The the date picker view should be have a custom class of "DestinationTimeViewController"
-* [ ] The date picker should be wired up to its associated property
+* [x] The date picker should be wired up to its associated property
 
 #### Code Tasks
 
