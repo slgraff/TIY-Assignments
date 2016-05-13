@@ -41,7 +41,7 @@ class TimeCircuitsViewController: UIViewController, DestinationViewControllerDel
         self.title = "Time Circuits"
         
         // Initialize the date formatter
-        dateFormatter.dateFormat = "MMMM dd yyyy"
+        dateFormatter.dateFormat = "MMM dd yyyy"  // MMM tells it to use 3-char month
         
         // Set Present Time label to today's date
         let todaysDate = NSDate()
