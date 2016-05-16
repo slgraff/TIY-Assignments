@@ -60,7 +60,33 @@
                     <view key="view" contentMode="scaleToFill" id="MXc-Mg-Ukn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name this location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9By-UH-85J">
+                                <rect key="frame" x="227" y="289" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KpU-hV-Oif">
+                                <rect key="frame" x="227" y="318" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4V-mi-7cq">
+                                <rect key="frame" x="252" y="356" width="96" height="30"/>
+                                <state key="normal" title="Save Location"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A4V-mi-7cq" firstAttribute="centerX" secondItem="KpU-hV-Oif" secondAttribute="centerX" id="B7i-5b-PMp"/>
+                            <constraint firstItem="9By-UH-85J" firstAttribute="leading" secondItem="KpU-hV-Oif" secondAttribute="leading" id="Dju-QW-tTI"/>
+                            <constraint firstItem="A4V-mi-7cq" firstAttribute="top" secondItem="KpU-hV-Oif" secondAttribute="bottom" constant="8" symbolic="YES" id="FIT-bT-uug"/>
+                            <constraint firstItem="9By-UH-85J" firstAttribute="centerY" secondItem="MXc-Mg-Ukn" secondAttribute="centerY" id="Gfo-bk-Lea"/>
+                            <constraint firstItem="KpU-hV-Oif" firstAttribute="top" secondItem="9By-UH-85J" secondAttribute="bottom" constant="8" symbolic="YES" id="HVD-KB-Ile"/>
+                            <constraint firstItem="9By-UH-85J" firstAttribute="centerX" secondItem="MXc-Mg-Ukn" secondAttribute="centerX" id="XAR-E4-l44"/>
+                            <constraint firstItem="9By-UH-85J" firstAttribute="trailing" secondItem="KpU-hV-Oif" secondAttribute="trailing" id="b5Z-6q-oNm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dd7-sK-jPm" userLabel="First Responder" sceneMemberID="firstResponder"/>

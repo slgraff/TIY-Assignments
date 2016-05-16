@@ -52,13 +52,23 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         
         self.performSegueWithIdentifier("showPopover", sender: self)
         
+        // Collect name from user for this location
+        
         
         // Drop pin on map at current location
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = CLLocationCoordinate2D(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude)
-//        self.mapView.addAnnotation(annotation)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude)
+        self.mapView.addAnnotation(annotation)
         
-       
+        // Save this location to NSUserDefaults
+        
+        // We have our coordinates stored in annotation.coordinate
+        let carLat = NSNumber(double: annotation.coordinate.latitude)
+        let carLon = NSNumber(double: annotation.coordinate.longitude)
+        
+        let locationDict = ["lat": carLat, "long": carLon]
+        NSUserDefaults.standardUserDefaults().setObject(locationDict, forKey: "Location")
+        
     }
     
     
