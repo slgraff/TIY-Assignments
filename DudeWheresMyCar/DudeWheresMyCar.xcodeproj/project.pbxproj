@@ -13,6 +13,7 @@
 		CC678A781CE647DC00163F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC678A771CE647DC00163F6F /* Assets.xcassets */; };
 		CC678A7B1CE647DC00163F6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC678A791CE647DC00163F6F /* LaunchScreen.storyboard */; };
 		CC7B05E91CE9F1E7007BE230 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7B05E81CE9F1E7007BE230 /* MapKit.framework */; };
+		CC9886F51CEA240C006A3DD9 /* PopoverLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9886F41CEA240C006A3DD9 /* PopoverLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CC678A7A1CE647DC00163F6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC678A7C1CE647DC00163F6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC7B05E81CE9F1E7007BE230 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CC9886F41CEA240C006A3DD9 /* PopoverLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				CC678A701CE647DC00163F6F /* AppDelegate.swift */,
 				CC678A721CE647DC00163F6F /* CarLocationViewController.swift */,
+				CC9886F41CEA240C006A3DD9 /* PopoverLocationViewController.swift */,
 				CC678A741CE647DC00163F6F /* Main.storyboard */,
 				CC678A771CE647DC00163F6F /* Assets.xcassets */,
 				CC678A791CE647DC00163F6F /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9886F51CEA240C006A3DD9 /* PopoverLocationViewController.swift in Sources */,
 				CC678A731CE647DC00163F6F /* CarLocationViewController.swift in Sources */,
 				CC678A711CE647DC00163F6F /* AppDelegate.swift in Sources */,
 			);
