@@ -12,6 +12,7 @@
 		CC678A761CE647DC00163F6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC678A741CE647DC00163F6F /* Main.storyboard */; };
 		CC678A781CE647DC00163F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC678A771CE647DC00163F6F /* Assets.xcassets */; };
 		CC678A7B1CE647DC00163F6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC678A791CE647DC00163F6F /* LaunchScreen.storyboard */; };
+		CC7B05E91CE9F1E7007BE230 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7B05E81CE9F1E7007BE230 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CC678A771CE647DC00163F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC678A7A1CE647DC00163F6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC678A7C1CE647DC00163F6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC7B05E81CE9F1E7007BE230 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7B05E91CE9F1E7007BE230 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +41,7 @@
 		CC678A641CE647DB00163F6F = {
 			isa = PBXGroup;
 			children = (
+				CC7B05E81CE9F1E7007BE230 /* MapKit.framework */,
 				CC678A6F1CE647DC00163F6F /* DudeWheresMyCar */,
 				CC678A6E1CE647DB00163F6F /* Products */,
 			);
@@ -97,6 +101,11 @@
 					CC678A6C1CE647DB00163F6F = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = U974956332;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -289,6 +298,7 @@
 				CC678A811CE647DC00163F6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
