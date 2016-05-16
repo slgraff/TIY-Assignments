@@ -40,7 +40,7 @@
                     <connections>
                         <outlet property="dropPinButton" destination="vgL-lj-idh" id="gNK-gR-zlh"/>
                         <outlet property="mapView" destination="jxa-sH-g3w" id="oNx-CX-TTe"/>
-                        <segue destination="XiU-qO-jIC" kind="popover" identifier="showPopover" id="duG-zg-egA">
+                        <segue destination="XiU-qO-jIC" kind="popoverPresentation" identifier="showPopover" popoverAnchorBarButtonItem="vgL-lj-idh" id="duG-zg-egA">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
