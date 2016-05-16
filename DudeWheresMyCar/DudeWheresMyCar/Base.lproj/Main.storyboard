@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="1302" y="337"/>
         </scene>
-        <!--View Controller-->
+        <!--Popover Location View Controller-->
         <scene sceneID="JNE-CF-lgv">
             <objects>
-                <viewController id="XiU-qO-jIC" sceneMemberID="viewController">
+                <viewController id="XiU-qO-jIC" customClass="PopoverLocationViewController" customModule="DudeWheresMyCar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="62Z-fF-E6R"/>
                         <viewControllerLayoutGuide type="bottom" id="m6l-a7-A6d"/>
@@ -64,7 +64,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name this location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9By-UH-85J">
                                 <rect key="frame" x="227" y="289" width="147" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KpU-hV-Oif">
@@ -75,6 +75,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4V-mi-7cq">
                                 <rect key="frame" x="252" y="356" width="96" height="30"/>
                                 <state key="normal" title="Save Location"/>
+                                <connections>
+                                    <action selector="carLocationSaveButton:" destination="XiU-qO-jIC" eventType="touchUpInside" id="EmY-5j-qcm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,6 +91,9 @@
                             <constraint firstItem="9By-UH-85J" firstAttribute="trailing" secondItem="KpU-hV-Oif" secondAttribute="trailing" id="b5Z-6q-oNm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carLocationTextField" destination="KpU-hV-Oif" id="VLf-fq-tlt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dd7-sK-jPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

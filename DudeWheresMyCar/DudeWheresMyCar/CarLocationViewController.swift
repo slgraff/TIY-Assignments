@@ -12,10 +12,12 @@ import MapKit // Added to allow use of MapKit in app
 
 
 
-class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIPopoverPresentationControllerDelegate {  // Make VC conform to delegates for CoreLocation, MapView, UIPopoverPresentationControllerDelegate
+class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate,UIPopoverPresentationControllerDelegate, PopoverLocationViewControllerDelegate {  // Make VC conform to delegates for CoreLocation, MapView, UIPopoverPresentationControllerDelegate
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var dropPinButton: UIBarButtonItem!
+    
+    var locationName: String = ""
     
     let locationManager = CLLocationManager()
     
@@ -38,7 +40,6 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         
         self.mapView.delegate = self
         
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,22 +53,7 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         
         self.performSegueWithIdentifier("showPopover", sender: self)
         
-        // Collect name from user for this location
-        
-        
-        // Drop pin on map at current location
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude)
-        self.mapView.addAnnotation(annotation)
-        
-        // Save this location to NSUserDefaults
-        
-        // We have our coordinates stored in annotation.coordinate
-        let carLat = NSNumber(double: annotation.coordinate.latitude)
-        let carLon = NSNumber(double: annotation.coordinate.longitude)
-        
-        let locationDict = ["lat": carLat, "long": carLon]
-        NSUserDefaults.standardUserDefaults().setObject(locationDict, forKey: "Location")
+
         
     }
     
@@ -79,17 +65,21 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         // Perform specific stuff for our popover
         if segue.identifier == "showPopover" {
             
-            let vc = segue.destinationViewController as! UIViewController
-            
-            let controller = vc.popoverPresentationController
-            
-            if controller != nil {
-                controller?.delegate = self
-            }
+            let vc = segue.destinationViewController as? PopoverLocationViewController
+            vc?.delegate = self
+//            
+//            let controller = vc.popoverPresentationController
+//            
+//            if controller != nil {
+//                controller!.delegate = self
+//            }
         }
     }
     
     
+//    func popoverPresentationControllerDidDismissPopover(popoverPresentationController: UIPopoverPresentationController) {
+//        print("Returned from popover")
+//    }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         
@@ -137,6 +127,31 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         let center = CLLocationCoordinate2D(latitude: newLocation.coordinate.latitude, longitude: newLocation.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
         self.mapView.setRegion(region, animated: true)
+    }
+    
+    
+    func setCarLocationName(carLocationName: String) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        // self.navigationController?.popViewControllerAnimated(true)
+
+        locationName = carLocationName
+        
+        // Drop pin on map at current location
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude)
+        self.mapView.addAnnotation(annotation)
+        
+        // Save this location to NSUserDefaults
+        
+        // We have our coordinates stored in annotation.coordinate
+        let carLat = NSNumber(double: annotation.coordinate.latitude)
+        let carLon = NSNumber(double: annotation.coordinate.longitude)
+        
+        // Need to add a 'name' key/value pair to hold data passed back from popup view controller
+        let locationDict = ["name": locationName, "lat": carLat, "long": carLon]
+        // let locationDict = ["lat": carLat, "long": carLon]
+        NSUserDefaults.standardUserDefaults().setObject(locationDict, forKey: "Location")
     }
     
     
