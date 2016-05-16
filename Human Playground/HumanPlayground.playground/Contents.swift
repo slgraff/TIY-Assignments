@@ -44,7 +44,8 @@ class Head: BodyPart {
     init(hasHair:Bool, headShape:String) {
         self.hasHair = true
         self.headShape = "Oval"
-        super.init(numOfParts:numOfParts)
+        
+        super.init(numOfParts:1)
     }
     
     func shakeHead() -> String {
@@ -70,6 +71,8 @@ class Eyes: BodyPart {
     init(eyeColor:String, eyeShape:String) {
         self.eyeColor = "Blue"
         self.eyeShape = "Almond"
+        
+        super.init(numOfParts: 2)
     }
     
     func closeEyes() {
@@ -93,6 +96,8 @@ class Ears: BodyPart {
     init(earSize: String, earShape: String) {
         self.earSize = "Medium"
         self.earShape = "Elvin"
+        
+        super.init(numOfParts: 2)
     }
     
     func moveEars() {
@@ -116,6 +121,7 @@ class Nose: BodyPart {
     init(noseSize: String, noseShape: String) {
         self.noseSize = "Medium"
         self.noseShape = "Hook"
+        super.init(numOfParts: 1)
     }
     
     func wiggleNose() {
@@ -137,6 +143,7 @@ class Mouth: BodyPart {
     init(mouthSize: String, mouthShape: String) {
         self.mouthSize = "Large"
         self.mouthShape = "Round"
+        super.init(numOfParts: 1)
     }
     
     func talk() {
@@ -159,6 +166,7 @@ class Neck: BodyPart {
     init(neckLength: Float, neckCircumference: Float) {
         self.neckLength = 4.5
         self.neckCircumference = 18
+        super.init(numOfParts: 1)
     }
     
     func bendNeck() {
@@ -203,6 +211,7 @@ class Arm: BodyPart {
     init(armLength: Float, armHair:Bool) {
         self.armLength = 36.5
         self.armHair = true
+        super.init(numOfParts: 2)
     }
 }
 
@@ -217,6 +226,7 @@ class Hand: BodyPart {
     init(handSize: String, numberFingers: Int) {
         self.handSize = "Large"
         self.numberFingers = 5
+        super.init(numOfParts: 2)
     }
     
     func clapHands() {
@@ -239,6 +249,7 @@ class Leg: BodyPart {
     init(numLegs: Int, legLength: Float) {
         self.numLegs = 2
         self.legLength = 34
+        super.init(numOfParts: 2)
     }
 }
 
@@ -253,5 +264,6 @@ class Foot: BodyPart {
     init(numFeet:Int, footSize:Float) {
         self.numFeet = 2
         self.footSize = 11.0
+        super.init(numOfParts: 2)
     }
 }
