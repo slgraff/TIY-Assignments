@@ -17,9 +17,9 @@ class PopoverLocationViewController: UIViewController {
     @IBOutlet weak var carLocationTextField: UITextField!
     
     var delegate: PopoverLocationViewControllerDelegate?
+
     var carLocationName: String = ""
-    
-    
+        
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if (segue.identifier == "showPopover") {
 //            let destination = segue.destinationViewController as! PopoverLocationViewController

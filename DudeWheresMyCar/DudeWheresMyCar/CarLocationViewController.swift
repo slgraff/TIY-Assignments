@@ -140,6 +140,7 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         // Drop pin on map at current location
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: self.mapView.userLocation.coordinate.latitude, longitude: self.mapView.userLocation.coordinate.longitude)
+        annotation.title = carLocationName
         self.mapView.addAnnotation(annotation)
         
         // Save this location to NSUserDefaults
