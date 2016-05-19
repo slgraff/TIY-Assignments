@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC2C07DC1CEE532300EA70DC /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2C07DB1CEE532300EA70DC /* Car.swift */; };
 		CC678A711CE647DC00163F6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC678A701CE647DC00163F6F /* AppDelegate.swift */; };
 		CC678A731CE647DC00163F6F /* CarLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC678A721CE647DC00163F6F /* CarLocationViewController.swift */; };
 		CC678A761CE647DC00163F6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC678A741CE647DC00163F6F /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC2C07DB1CEE532300EA70DC /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		CC678A6D1CE647DB00163F6F /* DudeWheresMyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DudeWheresMyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC678A701CE647DC00163F6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC678A721CE647DC00163F6F /* CarLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarLocationViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				CC678A701CE647DC00163F6F /* AppDelegate.swift */,
 				CC678A721CE647DC00163F6F /* CarLocationViewController.swift */,
 				CC9886F41CEA240C006A3DD9 /* PopoverLocationViewController.swift */,
+				CC2C07DB1CEE532300EA70DC /* Car.swift */,
 				CC678A741CE647DC00163F6F /* Main.storyboard */,
 				CC678A771CE647DC00163F6F /* Assets.xcassets */,
 				CC678A791CE647DC00163F6F /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 			files = (
 				CC9886F51CEA240C006A3DD9 /* PopoverLocationViewController.swift in Sources */,
 				CC678A731CE647DC00163F6F /* CarLocationViewController.swift in Sources */,
+				CC2C07DC1CEE532300EA70DC /* Car.swift in Sources */,
 				CC678A711CE647DC00163F6F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

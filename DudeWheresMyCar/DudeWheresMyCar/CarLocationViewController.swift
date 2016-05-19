@@ -156,6 +156,13 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
     }
     
     
+    // MARK: NSCoding
+    
+    func saveCar() {
+        
+        // This is where to save the car to NSUserDefaults
+    }
+    
     // MARK: MKMapView Delegates
     
 //    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
