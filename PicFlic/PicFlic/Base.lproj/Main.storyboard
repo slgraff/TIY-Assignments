@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PicFlic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxS-mC-Luw">
+                                <rect key="frame" x="178" y="501" width="126" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="3AM-We-H27"/>
+                                    <constraint firstAttribute="height" constant="26" id="niH-IT-IPg"/>
+                                </constraints>
+                                <state key="normal" title="Take Picture"/>
+                                <connections>
+                                    <action selector="takeButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="kyh-Id-tfd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxo-L1-bec">
+                                <rect key="frame" x="16" y="502" width="117" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="4Lz-eZ-XGy"/>
+                                    <constraint firstAttribute="width" constant="117" id="fr3-RH-eg6"/>
+                                </constraints>
+                                <state key="normal" title="Choose Picture"/>
+                                <connections>
+                                    <action selector="chooseButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="FPQ-qS-iGl"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puppy_2" translatesAutoresizingMaskIntoConstraints="NO" id="Qom-YT-Xua">
+                                <rect key="frame" x="28" y="96" width="247" height="173"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="lxS-mC-Luw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="A8f-es-elw"/>
+                            <constraint firstItem="zxo-L1-bec" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Cw6-vU-Jj0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lxS-mC-Luw" secondAttribute="bottom" constant="41" id="J4i-9q-63O"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zxo-L1-bec" secondAttribute="bottom" constant="41" id="TIm-EF-8Bz"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eiR-HC-4lE" appends="YES" id="yDK-Yf-WFb"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="choosePictureButton" destination="zxo-L1-bec" id="dKJ-VN-u4h"/>
+                        <outlet property="imageView" destination="Qom-YT-Xua" id="pRd-3c-gyt"/>
+                        <outlet property="takePictureButton" destination="lxS-mC-Luw" id="adH-Kw-roZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="eiR-HC-4lE">
+                    <connections>
+                        <action selector="handleAttachmentGesture:" destination="BYZ-38-t0r" id="CHo-7j-8mM"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="130" y="319"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="puppy_2" width="845" height="450"/>
+    </resources>
+</document>
