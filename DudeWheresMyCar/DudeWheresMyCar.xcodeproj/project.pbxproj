@@ -15,6 +15,8 @@
 		CC678A7B1CE647DC00163F6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC678A791CE647DC00163F6F /* LaunchScreen.storyboard */; };
 		CC7B05E91CE9F1E7007BE230 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7B05E81CE9F1E7007BE230 /* MapKit.framework */; };
 		CC9886F51CEA240C006A3DD9 /* PopoverLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9886F41CEA240C006A3DD9 /* PopoverLocationViewController.swift */; };
+		CC996FF31CF272ED00D6A265 /* Home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CC996FF21CF272ED00D6A265 /* Home.gpx */; };
+		CC996FF51CF2730100D6A265 /* The Iron Yard - Raleigh.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CC996FF41CF2730100D6A265 /* The Iron Yard - Raleigh.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		CC678A7C1CE647DC00163F6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC7B05E81CE9F1E7007BE230 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CC9886F41CEA240C006A3DD9 /* PopoverLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverLocationViewController.swift; sourceTree = "<group>"; };
+		CC996FF21CF272ED00D6A265 /* Home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Home.gpx; sourceTree = "<group>"; };
+		CC996FF41CF2730100D6A265 /* The Iron Yard - Raleigh.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "The Iron Yard - Raleigh.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,8 @@
 		CC678A641CE647DB00163F6F = {
 			isa = PBXGroup;
 			children = (
+				CC996FF41CF2730100D6A265 /* The Iron Yard - Raleigh.gpx */,
+				CC996FF21CF272ED00D6A265 /* Home.gpx */,
 				CC7B05E81CE9F1E7007BE230 /* MapKit.framework */,
 				CC678A6F1CE647DC00163F6F /* DudeWheresMyCar */,
 				CC678A6E1CE647DB00163F6F /* Products */,
@@ -140,6 +146,8 @@
 			files = (
 				CC678A7B1CE647DC00163F6F /* LaunchScreen.storyboard in Resources */,
 				CC678A781CE647DC00163F6F /* Assets.xcassets in Resources */,
+				CC996FF31CF272ED00D6A265 /* Home.gpx in Resources */,
+				CC996FF51CF2730100D6A265 /* The Iron Yard - Raleigh.gpx in Resources */,
 				CC678A761CE647DC00163F6F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

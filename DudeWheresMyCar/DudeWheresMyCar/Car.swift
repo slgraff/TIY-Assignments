@@ -13,29 +13,49 @@ class Car: NSObject, NSCoding {
     
     // MARK: Properties
     internal var title: String?
-    internal var subtitle:String?
+    internal var lat: Double?
+    internal var lon: Double?
+    // internal var subtitle:String?
     
-    init(title: String,
-         subtitle: String) {
+    // MARK: Archiving paths
+    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("car")
+    
+    // MARK: Initializaton
+    init?(title: String,
+         lat: Double, lon: Double) {
         
         self.title = title
-        self.subtitle = subtitle
+        self.lat = lat
+        self.lon = lon
+        
+        super.init()
+        // self.subtitle = subtitle
+        
+        if title.isEmpty {
+            return nil
+        }
     }
     
     required convenience init?(coder aDecoder:NSCoder) {  // aDecoder is an NSCoder object that has values and keys
         
         guard let title = aDecoder.decodeObjectForKey("title") as? String,
-                subtitle = aDecoder.decodeObjectForKey("subtitle") as? String
+                lat = aDecoder.decodeObjectForKey("lat") as? Double,
+                lon = aDecoder.decodeObjectForKey("long") as? Double
+                // subtitle = aDecoder.decodeObjectForKey("subtitle") as? String
             else {
                 return nil
             }
         
-        self.init(title:title, subtitle:subtitle)
+        self.init(title:title, lat:lat, lon:lon)
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeDouble(lat!, forKey: "lat")
+        aCoder.encodeDouble(lon!, forKey: "lon")
         aCoder.encodeObject(title, forKey: "title")
-        aCoder.encodeObject(subtitle, forKey: "subtitle")
+        // aCoder.encodeObject(subtitle, forKey: "subtitle")
+        
     }
     
 }

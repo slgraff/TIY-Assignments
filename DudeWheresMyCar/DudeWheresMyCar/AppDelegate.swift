@@ -15,8 +15,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // let defaults = NSUserDefaults.standardUserDefaults()
+        
+//        let lastCarName = defaults.stringForKey("name")
+//        let lastCarLat = defaults.doubleForKey("lat")
+//        let lastCarLon = defaults.doubleForKey("long")
+        
+        
+        //TODO: This code isn't running and I have no idea why not
+        // Grab last saved car location from NSUserDefaults
+        if let lastCarData = NSUserDefaults.standardUserDefaults().objectForKey("CarLocation") as? NSData {
+            let lastCarLocation = NSKeyedUnarchiver.unarchiveObjectWithData(lastCarData)
+            
+            if lastCarLocation!.name != "" {
+                print("I know where you parked!")
+            } else {
+                print("I have no idea what I'm doing!")
+            }
+        }
+        
         return true
+        
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

@@ -14,10 +14,12 @@ import MapKit // Added to allow use of MapKit in app
 
 class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate,UIPopoverPresentationControllerDelegate, PopoverLocationViewControllerDelegate {  // Make VC conform to delegates for CoreLocation, MapView, UIPopoverPresentationControllerDelegate
 
+    // MARK: Properties
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var dropPinButton: UIBarButtonItem!
     
     var locationName: String = ""
+    var locationDict = Dictionary<String, AnyObject>()
     
     let locationManager = CLLocationManager()
     
@@ -152,15 +154,20 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         // Need to add a 'name' key/value pair to hold data passed back from popup view controller
         let locationDict = ["name": locationName, "lat": carLat, "long": carLon]
         // let locationDict = ["lat": carLat, "long": carLon]
-        NSUserDefaults.standardUserDefaults().setObject(locationDict, forKey: "Location")
+        NSUserDefaults.standardUserDefaults().setObject(locationDict, forKey: "CarLocation")
     }
     
     
     // MARK: NSCoding
     
     func saveCar() {
+    
+        // This is where to save the car to file system
         
-        // This is where to save the car to NSUserDefaults
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(locationDict, toFile: Car.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save car...")
+        }
     }
     
     // MARK: MKMapView Delegates
