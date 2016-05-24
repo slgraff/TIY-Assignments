@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Dice Collection View Controller-->
         <scene sceneID="Khs-lv-cK1">
             <objects>
-                <collectionViewController id="kaW-vT-y29" sceneMemberID="viewController">
+                <collectionViewController id="kaW-vT-y29" customClass="DiceCollectionViewController" customModule="DieBag" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="LzJ-Zb-RtL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
