@@ -9,12 +9,20 @@
 import UIKit
 
 class DiceChoiceViewController: UIViewController {
+    
+    
+    // Dice label outlets
+    @IBOutlet weak var dieD4Label: UILabel!
+    @IBOutlet weak var dicD6Label: UILabel!
+    @IBOutlet weak var dieD10Label: UILabel!
+    @IBOutlet weak var dieD20Label: UILabel!
 
     // Dice slider outlets
     @IBOutlet weak var dieD4Slider: UISlider!
     @IBOutlet weak var dieD6Slider: UISlider!
     @IBOutlet weak var dieD10Slider: UISlider!
     @IBOutlet weak var dieD20Slider: UISlider!
+
     
     
     override func viewDidLoad() {
