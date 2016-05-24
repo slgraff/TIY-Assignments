@@ -13,7 +13,7 @@ class DiceChoiceViewController: UIViewController {
     
     // Dice label outlets
     @IBOutlet weak var dieD4Label: UILabel!
-    @IBOutlet weak var dicD6Label: UILabel!
+    @IBOutlet weak var dieD6Label: UILabel!
     @IBOutlet weak var dieD10Label: UILabel!
     @IBOutlet weak var dieD20Label: UILabel!
 
@@ -76,6 +76,18 @@ class DiceChoiceViewController: UIViewController {
         dieChoiceDict.updateValue(Int(dieD10Slider.value), forKey: "d10")
         dieChoiceDict.updateValue(Int(dieD20Slider.value), forKey: "d20")
 
+    }
+    
+    
+    @IBAction func dieSliderValueChanged(sender: AnyObject) {
+        
+        // When any slider is changed, update values for all slider labels
+        dieD4Label.text = String(Int(dieD4Slider.value))
+        dieD6Label.text = String(Int(dieD6Slider.value))
+        dieD10Label.text = String(Int(dieD10Slider.value))
+        dieD20Label.text = String(Int(dieD20Slider.value))
+
+        
     }
     
     

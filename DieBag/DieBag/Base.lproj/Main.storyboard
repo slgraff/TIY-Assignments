@@ -70,9 +70,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="A5f-YM-Zoj">
+                            <slider opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="A5f-YM-Zoj">
                                 <rect key="frame" x="229" y="224" width="118" height="31"/>
                                 <color key="thumbTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="dieSliderValueChanged:" destination="Ta8-BR-MPK" eventType="valueChanged" id="fIE-rQ-eXf"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6e-TL-7tN">
                                 <rect key="frame" x="212" y="227" width="11" height="21"/>
@@ -86,8 +89,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="SGy-km-3hh">
+                            <slider opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="SGy-km-3hh">
                                 <rect key="frame" x="229" y="332" width="118" height="31"/>
+                                <connections>
+                                    <action selector="dieSliderValueChanged:" destination="Ta8-BR-MPK" eventType="valueChanged" id="QtB-Gm-Oa3"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQ2-eQ-3JO">
                                 <rect key="frame" x="212" y="335" width="11" height="21"/>
@@ -101,9 +107,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Z41-sQ-Agt">
+                            <slider opaque="NO" tag="20" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Z41-sQ-Agt">
                                 <rect key="frame" x="228" y="440" width="118" height="31"/>
                                 <color key="thumbTintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="dieSliderValueChanged:" destination="Ta8-BR-MPK" eventType="valueChanged" id="9ic-Qc-ccG"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCv-xa-lyy">
                                 <rect key="frame" x="211" y="443" width="11" height="21"/>
@@ -154,9 +163,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="3ml-mP-zlx">
+                            <slider opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="3ml-mP-zlx">
                                 <rect key="frame" x="228" y="112" width="118" height="31"/>
                                 <color key="thumbTintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="dieSliderValueChanged:" destination="Ta8-BR-MPK" eventType="valueChanged" id="fHT-u5-qoy"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Buu-UE-pax">
                                 <rect key="frame" x="211" y="116" width="11" height="21"/>
@@ -175,14 +187,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="SaG-BQ-Gly"/>
                     <connections>
-                        <outlet property="dicD6Label" destination="suc-w6-ATP" id="6E0-hc-z8y"/>
-                        <outlet property="diceD6Label" destination="suc-w6-ATP" id="gTr-Oo-MW4"/>
                         <outlet property="dieD10Label" destination="eQG-mg-gv1" id="CQ2-73-GjE"/>
                         <outlet property="dieD10Slider" destination="SGy-km-3hh" id="TQj-Ew-hgO"/>
                         <outlet property="dieD20Label" destination="da1-QW-0jh" id="WCo-4J-Y2V"/>
                         <outlet property="dieD20Slider" destination="Z41-sQ-Agt" id="W7X-fg-idN"/>
                         <outlet property="dieD4Label" destination="fhF-xg-rdp" id="fCL-Di-FvR"/>
                         <outlet property="dieD4Slider" destination="3ml-mP-zlx" id="iTA-3U-YQd"/>
+                        <outlet property="dieD6Label" destination="suc-w6-ATP" id="TA9-Gb-0TQ"/>
                         <outlet property="dieD6Slider" destination="A5f-YM-Zoj" id="1Fp-Qv-rjJ"/>
                     </connections>
                 </viewController>
