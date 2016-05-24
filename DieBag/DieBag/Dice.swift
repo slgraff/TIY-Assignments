@@ -1,6 +1,6 @@
 //
 //  Dice.swift
-//  DiceRoller
+//  DieBag
 //
 //  Created by Steve Graff on 5/24/16.
 //  Copyright © 2016 Steve Graff. All rights reserved.
@@ -24,8 +24,9 @@ extension Range : ArrayRepresentable {
 // Dice faces, counts
 // 5d4 6d6 3d10 5d20
 
+// Die class
 class Die:AnyObject {
-    var faces:Int = 20
+    var numFaces:Int = 0
     var faceValues:Array<Int> { return (1...faces).toArray() }
     var currentValue = 0
     var name: String?
@@ -37,5 +38,9 @@ class Die:AnyObject {
     func rollIt() {
         currentValue = faceValues[Int (arc4random_uniform(UInt32(faces)))]
     }
-    
 }
+
+
+
+
+

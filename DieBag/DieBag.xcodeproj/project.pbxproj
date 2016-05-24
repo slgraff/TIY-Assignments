@@ -13,6 +13,8 @@
 		CC1F10541CF4B45B0001E64E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1F10521CF4B45B0001E64E /* LaunchScreen.storyboard */; };
 		CC1F105C1CF4B5020001E64E /* DiceCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F105B1CF4B5020001E64E /* DiceCollectionViewController.swift */; };
 		CC1F105E1CF4B5380001E64E /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F105D1CF4B5380001E64E /* Dice.swift */; };
+		CC1F10601CF4B8210001E64E /* DCVC+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F105F1CF4B8210001E64E /* DCVC+delegate.swift */; };
+		CC1F10621CF4B8430001E64E /* DCVC+datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F10611CF4B8430001E64E /* DCVC+datasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CC1F10551CF4B45B0001E64E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC1F105B1CF4B5020001E64E /* DiceCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceCollectionViewController.swift; sourceTree = "<group>"; };
 		CC1F105D1CF4B5380001E64E /* Dice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
+		CC1F105F1CF4B8210001E64E /* DCVC+delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DCVC+delegate.swift"; sourceTree = "<group>"; };
+		CC1F10611CF4B8430001E64E /* DCVC+datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DCVC+datasource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				CC1F104D1CF4B45B0001E64E /* Main.storyboard */,
 				CC1F105B1CF4B5020001E64E /* DiceCollectionViewController.swift */,
 				CC1F105D1CF4B5380001E64E /* Dice.swift */,
+				CC1F105F1CF4B8210001E64E /* DCVC+delegate.swift */,
+				CC1F10611CF4B8430001E64E /* DCVC+datasource.swift */,
 				CC1F10501CF4B45B0001E64E /* Assets.xcassets */,
 				CC1F10521CF4B45B0001E64E /* LaunchScreen.storyboard */,
 				CC1F10551CF4B45B0001E64E /* Info.plist */,
@@ -139,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1F10601CF4B8210001E64E /* DCVC+delegate.swift in Sources */,
+				CC1F10621CF4B8430001E64E /* DCVC+datasource.swift in Sources */,
 				CC1F105C1CF4B5020001E64E /* DiceCollectionViewController.swift in Sources */,
 				CC1F105E1CF4B5380001E64E /* Dice.swift in Sources */,
 				CC1F104A1CF4B45B0001E64E /* AppDelegate.swift in Sources */,
