@@ -26,7 +26,7 @@ extension Range : ArrayRepresentable {
 
 // Die class
 class Die:AnyObject {
-    var numFaces:Int = 0
+    var faces:Int = 6  // faces can be 4, 6, 10, 20
     var faceValues:Array<Int> { return (1...faces).toArray() }
     var currentValue = 0
     var name: String?
