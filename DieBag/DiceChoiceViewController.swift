@@ -10,6 +10,13 @@ import UIKit
 
 class DiceChoiceViewController: UIViewController {
 
+    // Dice slider outlets
+    @IBOutlet weak var dieD4Slider: UISlider!
+    @IBOutlet weak var dieD6Slider: UISlider!
+    @IBOutlet weak var dieD10Slider: UISlider!
+    @IBOutlet weak var dieD20Slider: UISlider!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,8 +38,7 @@ class DiceChoiceViewController: UIViewController {
         if motion == .MotionShake {
             print("I'm shaking in my boots!")
             
-            
-            shakeDiceButton()
+            getDiceChoices()
         }
     }
     
@@ -52,8 +58,20 @@ class DiceChoiceViewController: UIViewController {
     }
     */
     
+    // MARK: Get Dice Choices
+    func getDiceChoices() {
+        
+        var dieChoiceDict: [String:Int] = [:]
+        
+        dieChoiceDict.updateValue(Int(dieD4Slider.value), forKey: "d4")
+        dieChoiceDict.updateValue(Int(dieD6Slider.value), forKey: "d6")
+        dieChoiceDict.updateValue(Int(dieD10Slider.value), forKey: "d10")
+        dieChoiceDict.updateValue(Int(dieD20Slider.value), forKey: "d20")
+
+    }
     
-    @IBAction func shakeDiceButton() {
+    
+    @IBAction func shakeDiceButton(sender: UIButton) {
         let alert = UIAlertController(title: "Shaking Dice",
                                       message: "I'm shaking your dice",
                                       preferredStyle: UIAlertControllerStyle.Alert)
@@ -61,6 +79,8 @@ class DiceChoiceViewController: UIViewController {
             style: UIAlertActionStyle.Default,
             handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
+        
+        getDiceChoices()
     }
     
 
