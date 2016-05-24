@@ -8,11 +8,12 @@
 
 import UIKit
 
+// diceHolder contains a name for the die, and the die itself
+var diceHolder:Dictionary<String,Die> = Dictionary()
+
+
 class DiceCollectionViewController: UICollectionViewController {
         
-    // diceHolder contains a name for the die, and the die itself
-    var diceHolder:Dictionary<String,Die> = Dictionary()
-    
     var oldLayout: UICollectionViewLayout?
     var newLayout: UICollectionViewLayout?
     
@@ -43,7 +44,7 @@ class DiceCollectionViewController: UICollectionViewController {
     func plusButtonTapped() {
         
         let newDie = Die()
-        newDie.name = "Die\(self.diceHolder.count)"
+        // newDie.name = "Die\(self.diceHolder.count)"
         newDie.rollIt()
         diceHolder[newDie.name!] = newDie
         self.collectionView?.reloadData()

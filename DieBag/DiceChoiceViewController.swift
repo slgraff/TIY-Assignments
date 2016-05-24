@@ -75,9 +75,47 @@ class DiceChoiceViewController: UIViewController {
         dieChoiceDict.updateValue(Int(dieD6Slider.value), forKey: "d6")
         dieChoiceDict.updateValue(Int(dieD10Slider.value), forKey: "d10")
         dieChoiceDict.updateValue(Int(dieD20Slider.value), forKey: "d20")
+        
+        
+        // Create appropriate number of dice of each type
+        // Loop through dieChoiceDict
+        
+        for (dieTypes, dieNums) in dieChoiceDict {
+            
+//            print("Key: \(dieTypes), Value: \(dieNums)")
+            
+            for dieNum in 1...dieNums {
+//                print("\(dieTypes): \(dieNum) of \(dieNums)")
+                
+                // Create a new die
+                let newDie = Die()
 
+                // Set appropriate number of faces
+                switch dieTypes {
+                case "d4":
+                    newDie.faces = 4
+                    newDie.name = "\(dieTypes) \(dieNum)"
+                case "d6":
+                    newDie.faces = 6
+                    newDie.name = "\(dieTypes) \(dieNum)"
+                case "d10":
+                    newDie.faces = 10
+                    newDie.name = "\(dieTypes) \(dieNum)"
+                case "d20":
+                    newDie.faces = 20
+                    newDie.name = "\(dieTypes) \(dieNum)"
+                default:
+                    newDie.faces = 0
+                }
+                newDie.rollIt()
+                
+                // add the die to the dice holder
+                diceHolder[newDie.name!] = newDie
+                
+                print("Created die \(dieTypes) \(dieNum)")
+            }
+        }
     }
-    
     
     @IBAction func dieSliderValueChanged(sender: AnyObject) {
         
