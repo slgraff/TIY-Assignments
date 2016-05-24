@@ -36,7 +36,12 @@ class DiceCollectionViewController: UICollectionViewController {
         self.navigationItem.rightBarButtonItem = swapButton
     }
     
+    
+    // Do we even need this in our collection view? It will display the rolled dice only
+    // Dice are not created here
+    // Should instead have button to go back to DiceChoiceViewController
     func plusButtonTapped() {
+        
         let newDie = Die()
         newDie.name = "Die\(self.diceHolder.count)"
         newDie.rollIt()

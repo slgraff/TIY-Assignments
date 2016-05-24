@@ -15,6 +15,7 @@
 		CC1F105E1CF4B5380001E64E /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F105D1CF4B5380001E64E /* Dice.swift */; };
 		CC1F10601CF4B8210001E64E /* DCVC+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F105F1CF4B8210001E64E /* DCVC+delegate.swift */; };
 		CC1F10621CF4B8430001E64E /* DCVC+datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F10611CF4B8430001E64E /* DCVC+datasource.swift */; };
+		CC1F106E1CF4DE6F0001E64E /* DiceChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F106D1CF4DE6F0001E64E /* DiceChoiceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CC1F105D1CF4B5380001E64E /* Dice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		CC1F105F1CF4B8210001E64E /* DCVC+delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DCVC+delegate.swift"; sourceTree = "<group>"; };
 		CC1F10611CF4B8430001E64E /* DCVC+datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DCVC+datasource.swift"; sourceTree = "<group>"; };
+		CC1F106D1CF4DE6F0001E64E /* DiceChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiceChoiceViewController.swift; path = ../DiceChoiceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				CC1F10491CF4B45B0001E64E /* AppDelegate.swift */,
+				CC1F106D1CF4DE6F0001E64E /* DiceChoiceViewController.swift */,
 				CC1F105B1CF4B5020001E64E /* DiceCollectionViewController.swift */,
 				CC1F105D1CF4B5380001E64E /* Dice.swift */,
 				CC1F105F1CF4B8210001E64E /* DCVC+delegate.swift */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1F106E1CF4DE6F0001E64E /* DiceChoiceViewController.swift in Sources */,
 				CC1F10601CF4B8210001E64E /* DCVC+delegate.swift in Sources */,
 				CC1F10621CF4B8430001E64E /* DCVC+datasource.swift in Sources */,
 				CC1F105C1CF4B5020001E64E /* DiceCollectionViewController.swift in Sources */,

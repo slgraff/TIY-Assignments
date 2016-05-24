@@ -38,12 +38,12 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZC1-rM-T33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1493" y="430"/>
+            <point key="canvasLocation" x="2128" y="430"/>
         </scene>
-        <!--View Controller-->
+        <!--Dice Choice View Controller-->
         <scene sceneID="yDe-6e-IgL">
             <objects>
-                <viewController id="Ta8-BR-MPK" sceneMemberID="viewController">
+                <viewController id="Ta8-BR-MPK" customClass="DiceChoiceViewController" customModule="DieBag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g5z-aB-2T7"/>
                         <viewControllerLayoutGuide type="bottom" id="YZU-Sq-w46"/>
@@ -133,6 +133,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsq-VQ-RqZ">
+                                <rect key="frame" x="231" y="539" width="139" height="30"/>
+                                <state key="normal" title="Or Click Here to Roll"/>
+                                <connections>
+                                    <action selector="shakeDiceButton:" destination="Ta8-BR-MPK" eventType="touchUpInside" id="pjl-jQ-Tf9"/>
+                                    <segue destination="kaW-vT-y29" kind="show" identifier="diceCollectionSegue" id="AzC-Qr-ZCw"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select quantity of each die to roll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x06-cd-Nmx">
                                 <rect key="frame" x="182" y="28" width="252" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -142,10 +150,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="SaG-BQ-Gly"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0y2-9L-3H4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2155" y="430"/>
+            <point key="canvasLocation" x="1390" y="430"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lfd-Ss-JJy">
@@ -158,7 +167,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="kaW-vT-y29" kind="relationship" relationship="rootViewController" id="bbg-1w-dj7"/>
+                        <segue destination="Ta8-BR-MPK" kind="relationship" relationship="rootViewController" id="1eE-xz-JAC"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7DG-PI-4RQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
