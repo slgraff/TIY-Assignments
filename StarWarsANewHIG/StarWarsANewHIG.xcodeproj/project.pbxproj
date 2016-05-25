@@ -70,6 +70,8 @@
 				CC0BECA81CF61F3F0020FD8A /* CollectionViewController.swift */,
 				CC0BECB21CF620530020FD8A /* DetailViewController.swift */,
 				CC0BECB41CF6208E0020FD8A /* Models */,
+				CC0BECB51CF62C000020FD8A /* Views */,
+				CC0BECB61CF62C160020FD8A /* Controllers */,
 				CC0BEC971CF61AFB0020FD8A /* Main.storyboard */,
 				CC0BEC9D1CF61AFB0020FD8A /* Assets.xcassets */,
 				CC0BEC9F1CF61AFB0020FD8A /* LaunchScreen.storyboard */,
@@ -88,6 +90,20 @@
 				CC0BECB01CF61F840020FD8A /* Vehicles.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		CC0BECB51CF62C000020FD8A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CC0BECB61CF62C160020FD8A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

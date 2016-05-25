@@ -20,7 +20,7 @@ class Person:AnyObject {
     var gender: String
     var url: String
     
-    override init(){
+    init(){
         
         
         // Somewhere I need to format the date received
