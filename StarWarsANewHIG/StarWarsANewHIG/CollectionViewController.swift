@@ -15,6 +15,39 @@ class CollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // MARK: NSURLSession
+        let requestURL: NSURL = NSURL(string: "https://swapi.co/api/films/")!
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(urlRequest) {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! NSHTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                print("All systems go! File downloaded successfully!")
+                
+                do {
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                    if let results = json["results"] as? [[String:AnyObject]] {
+                        for result in results {
+                            if let title = result["title"] as? String {
+                                if let episode = result["episode_id"] as? Int {
+                                    print("\(title) \(episode)")
+                                }
+                            }
+                        }
+                    }
+                } catch {
+                    print("Error with JSON: \(error)")
+                }
+            }
+        }
+        
+        task.resume()
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,6 +56,8 @@ class CollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    // TODO: We need to do something with this results object, use it to populate the CollectionView
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

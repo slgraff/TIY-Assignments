@@ -16,6 +16,14 @@ class Planets:AnyObject {
     var population: UInt64
     var surface_water: Int
     
-    
+    init(name: String, climate: String, population: UInt64,
+         surface_water: Int) {
+        
+        self.name = name
+        self.climate = climate
+        self.population = population
+        self.surface_water = surface_water
+        
+    }
     
 }

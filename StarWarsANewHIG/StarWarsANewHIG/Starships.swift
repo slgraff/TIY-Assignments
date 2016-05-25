@@ -18,5 +18,15 @@ class Starships:AnyObject {
     var passengers: Int
     var cargo_capacity: Double
     
-    
+    init(name: String, model: String, manufacturer: String,
+         length: Float, crew: Int, passengers: Int, cargo_capacity: Double) {
+        
+        self.name = name
+        self.model = model
+        self.manufacturer = manufacturer
+        self.length = length
+        self.crew = crew
+        self.passengers = passengers
+        self.cargo_capacity = cargo_capacity
+    }
 }

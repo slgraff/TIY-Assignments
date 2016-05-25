@@ -18,6 +18,7 @@
 		CC0BECAF1CF61F750020FD8A /* Starships.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0BECAE1CF61F750020FD8A /* Starships.swift */; };
 		CC0BECB11CF61F840020FD8A /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0BECB01CF61F840020FD8A /* Vehicles.swift */; };
 		CC0BECB31CF620530020FD8A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0BECB21CF620530020FD8A /* DetailViewController.swift */; };
+		CC0BECB81CF6423D0020FD8A /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0BECB71CF6423D0020FD8A /* Films.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		CC0BECAE1CF61F750020FD8A /* Starships.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Starships.swift; sourceTree = "<group>"; };
 		CC0BECB01CF61F840020FD8A /* Vehicles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
 		CC0BECB21CF620530020FD8A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CC0BECB71CF6423D0020FD8A /* Films.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		CC0BECB41CF6208E0020FD8A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CC0BECB71CF6423D0020FD8A /* Films.swift */,
 				CC0BECAA1CF61F490020FD8A /* People.swift */,
 				CC0BECAC1CF61F620020FD8A /* Planets.swift */,
 				CC0BECAE1CF61F750020FD8A /* Starships.swift */,
@@ -182,6 +185,7 @@
 				CC0BECAD1CF61F620020FD8A /* Planets.swift in Sources */,
 				CC0BECA91CF61F3F0020FD8A /* CollectionViewController.swift in Sources */,
 				CC0BEC9C1CF61AFB0020FD8A /* StarWarsANewHIG.xcdatamodeld in Sources */,
+				CC0BECB81CF6423D0020FD8A /* Films.swift in Sources */,
 				CC0BEC941CF61AFB0020FD8A /* AppDelegate.swift in Sources */,
 				CC0BECB11CF61F840020FD8A /* Vehicles.swift in Sources */,
 				CC0BECAF1CF61F750020FD8A /* Starships.swift in Sources */,
