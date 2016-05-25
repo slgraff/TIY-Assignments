@@ -44,7 +44,7 @@ extension DiceCollectionViewController {
         
         cell.contentView.addSubview(label)
         
-        cell.backgroundColor = UIColor.blueColor()
+        cell.backgroundColor = UIColor.yellowColor()
         
         return cell
     }

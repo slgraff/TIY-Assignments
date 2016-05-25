@@ -19,7 +19,7 @@ class DiceCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         
-        let plusButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(DiceCollectionViewController.plusButtonTapped))
+//        let plusButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(DiceCollectionViewController.plusButtonTapped))
         
         let swapButton = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: #selector(swapButtonTapped))
         
@@ -33,7 +33,7 @@ class DiceCollectionViewController: UICollectionViewController {
         
         self.collectionView?.collectionViewLayout = newFlowLayout
         
-        self.navigationItem.leftBarButtonItem = plusButton
+        // self.navigationItem.leftBarButtonItem = plusButton
         self.navigationItem.rightBarButtonItem = swapButton
     }
     
