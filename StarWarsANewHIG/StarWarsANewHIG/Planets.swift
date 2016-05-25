@@ -6,4 +6,16 @@
 //  Copyright © 2016 Steve Graff. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+class Planets:AnyObject {
+    
+    var name: String
+    var climate: String
+    var population: UInt64
+    var surface_water: Int
+    
+    
+    
+}

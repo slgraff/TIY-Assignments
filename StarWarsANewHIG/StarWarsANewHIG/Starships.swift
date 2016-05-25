@@ -6,4 +6,17 @@
 //  Copyright © 2016 Steve Graff. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class Starships:AnyObject {
+    
+    var name: String
+    var model: String
+    var manufacturer: String
+    var length: Float
+    var crew: Int
+    var passengers: Int
+    var cargo_capacity: Double
+    
+    
+}

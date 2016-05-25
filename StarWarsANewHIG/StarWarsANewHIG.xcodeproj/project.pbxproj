@@ -17,6 +17,7 @@
 		CC0BECAD1CF61F620020FD8A /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0BECAC1CF61F620020FD8A /* Planets.swift */; };
 		CC0BECAF1CF61F750020FD8A /* Starships.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0BECAE1CF61F750020FD8A /* Starships.swift */; };
 		CC0BECB11CF61F840020FD8A /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0BECB01CF61F840020FD8A /* Vehicles.swift */; };
+		CC0BECB31CF620530020FD8A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0BECB21CF620530020FD8A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CC0BECAC1CF61F620020FD8A /* Planets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		CC0BECAE1CF61F750020FD8A /* Starships.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Starships.swift; sourceTree = "<group>"; };
 		CC0BECB01CF61F840020FD8A /* Vehicles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
+		CC0BECB21CF620530020FD8A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +68,8 @@
 			children = (
 				CC0BEC931CF61AFB0020FD8A /* AppDelegate.swift */,
 				CC0BECA81CF61F3F0020FD8A /* CollectionViewController.swift */,
-				CC0BECAA1CF61F490020FD8A /* People.swift */,
-				CC0BECAC1CF61F620020FD8A /* Planets.swift */,
-				CC0BECAE1CF61F750020FD8A /* Starships.swift */,
-				CC0BECB01CF61F840020FD8A /* Vehicles.swift */,
+				CC0BECB21CF620530020FD8A /* DetailViewController.swift */,
+				CC0BECB41CF6208E0020FD8A /* Models */,
 				CC0BEC971CF61AFB0020FD8A /* Main.storyboard */,
 				CC0BEC9D1CF61AFB0020FD8A /* Assets.xcassets */,
 				CC0BEC9F1CF61AFB0020FD8A /* LaunchScreen.storyboard */,
@@ -77,6 +77,17 @@
 				CC0BEC9A1CF61AFB0020FD8A /* StarWarsANewHIG.xcdatamodeld */,
 			);
 			path = StarWarsANewHIG;
+			sourceTree = "<group>";
+		};
+		CC0BECB41CF6208E0020FD8A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC0BECAA1CF61F490020FD8A /* People.swift */,
+				CC0BECAC1CF61F620020FD8A /* Planets.swift */,
+				CC0BECAE1CF61F750020FD8A /* Starships.swift */,
+				CC0BECB01CF61F840020FD8A /* Vehicles.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 				CC0BEC941CF61AFB0020FD8A /* AppDelegate.swift in Sources */,
 				CC0BECB11CF61F840020FD8A /* Vehicles.swift in Sources */,
 				CC0BECAF1CF61F750020FD8A /* Starships.swift in Sources */,
+				CC0BECB31CF620530020FD8A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
