@@ -8,7 +8,7 @@
         <!--Collection View Controller-->
         <scene sceneID="0yn-kX-zCs">
             <objects>
-                <collectionViewController id="Mow-Ld-uPT" sceneMemberID="viewController">
+                <collectionViewController id="Mow-Ld-uPT" customClass="CollectionViewController" customModule="StarWarsANewHIG" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tKI-Ys-C0p">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="1272" y="775"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="suY-Eu-VU5">
             <objects>
-                <viewController id="WDY-9c-lcv" sceneMemberID="viewController">
+                <viewController id="WDY-9c-lcv" customClass="DetailViewController" customModule="StarWarsANewHIG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vGj-he-dpM"/>
                         <viewControllerLayoutGuide type="bottom" id="XP9-Cy-UFk"/>
