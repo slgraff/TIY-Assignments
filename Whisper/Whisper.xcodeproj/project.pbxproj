@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97ADB7EB80D32A225A96FD22 /* Pods_Whisper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B33DC9F58D510B1EA9BE816 /* Pods_Whisper.framework */; };
+		CC4065E61CF7379500F1B9CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4065E51CF7379500F1B9CA /* AppDelegate.swift */; };
+		CC4065E91CF7379500F1B9CA /* Whisper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC4065E71CF7379500F1B9CA /* Whisper.xcdatamodeld */; };
+		CC4065EB1CF7379500F1B9CA /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4065EA1CF7379500F1B9CA /* MasterViewController.swift */; };
+		CC4065ED1CF7379500F1B9CA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4065EC1CF7379500F1B9CA /* DetailViewController.swift */; };
+		CC4065F01CF7379500F1B9CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4065EE1CF7379500F1B9CA /* Main.storyboard */; };
+		CC4065F21CF7379500F1B9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC4065F11CF7379500F1B9CA /* Assets.xcassets */; };
+		CC4065F51CF7379500F1B9CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4065F31CF7379500F1B9CA /* LaunchScreen.storyboard */; };
+		CC4065FF1CF7380A00F1B9CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC4065FE1CF7380A00F1B9CA /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B33DC9F58D510B1EA9BE816 /* Pods_Whisper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whisper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1563042E55E50C0F0C63923 /* Pods-Whisper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whisper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Whisper/Pods-Whisper.debug.xcconfig"; sourceTree = "<group>"; };
+		CC4065E21CF7379500F1B9CA /* Whisper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whisper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC4065E51CF7379500F1B9CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CC4065E81CF7379500F1B9CA /* Whisper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Whisper.xcdatamodel; sourceTree = "<group>"; };
+		CC4065EA1CF7379500F1B9CA /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		CC4065EC1CF7379500F1B9CA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CC4065EF1CF7379500F1B9CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CC4065F11CF7379500F1B9CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC4065F41CF7379500F1B9CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CC4065F61CF7379500F1B9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC4065FE1CF7380A00F1B9CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D4A6BB7192BBACFA18A7E15B /* Pods-Whisper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whisper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Whisper/Pods-Whisper.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC4065DF1CF7379500F1B9CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97ADB7EB80D32A225A96FD22 /* Pods_Whisper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B586E0BC0E0BDA04F3C204B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1563042E55E50C0F0C63923 /* Pods-Whisper.debug.xcconfig */,
+				D4A6BB7192BBACFA18A7E15B /* Pods-Whisper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC4065D91CF7379500F1B9CA = {
+			isa = PBXGroup;
+			children = (
+				CC4065E41CF7379500F1B9CA /* Whisper */,
+				CC4065E31CF7379500F1B9CA /* Products */,
+				CC4065FE1CF7380A00F1B9CA /* GoogleService-Info.plist */,
+				9B586E0BC0E0BDA04F3C204B /* Pods */,
+				E7A3B3709994BE8C06B6A9B1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CC4065E31CF7379500F1B9CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC4065E21CF7379500F1B9CA /* Whisper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC4065E41CF7379500F1B9CA /* Whisper */ = {
+			isa = PBXGroup;
+			children = (
+				CC4065E51CF7379500F1B9CA /* AppDelegate.swift */,
+				CC4065EA1CF7379500F1B9CA /* MasterViewController.swift */,
+				CC4065EC1CF7379500F1B9CA /* DetailViewController.swift */,
+				CC4065EE1CF7379500F1B9CA /* Main.storyboard */,
+				CC4065F11CF7379500F1B9CA /* Assets.xcassets */,
+				CC4065F31CF7379500F1B9CA /* LaunchScreen.storyboard */,
+				CC4065F61CF7379500F1B9CA /* Info.plist */,
+				CC4065E71CF7379500F1B9CA /* Whisper.xcdatamodeld */,
+			);
+			path = Whisper;
+			sourceTree = "<group>";
+		};
+		E7A3B3709994BE8C06B6A9B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B33DC9F58D510B1EA9BE816 /* Pods_Whisper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC4065E11CF7379500F1B9CA /* Whisper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC4065F91CF7379500F1B9CA /* Build configuration list for PBXNativeTarget "Whisper" */;
+			buildPhases = (
+				AA3DEF24B4627961E45FF0C3 /* 📦 Check Pods Manifest.lock */,
+				CC4065DE1CF7379500F1B9CA /* Sources */,
+				CC4065DF1CF7379500F1B9CA /* Frameworks */,
+				CC4065E01CF7379500F1B9CA /* Resources */,
+				68D5EB230197E3483B100304 /* 📦 Embed Pods Frameworks */,
+				954650BF29AA820FA9132B9A /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Whisper;
+			productName = Whisper;
+			productReference = CC4065E21CF7379500F1B9CA /* Whisper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC4065DA1CF7379500F1B9CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Steve Graff";
+				TargetAttributes = {
+					CC4065E11CF7379500F1B9CA = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = U974956332;
+					};
+				};
+			};
+			buildConfigurationList = CC4065DD1CF7379500F1B9CA /* Build configuration list for PBXProject "Whisper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CC4065D91CF7379500F1B9CA;
+			productRefGroup = CC4065E31CF7379500F1B9CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC4065E11CF7379500F1B9CA /* Whisper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC4065E01CF7379500F1B9CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC4065F51CF7379500F1B9CA /* LaunchScreen.storyboard in Resources */,
+				CC4065FF1CF7380A00F1B9CA /* GoogleService-Info.plist in Resources */,
+				CC4065F21CF7379500F1B9CA /* Assets.xcassets in Resources */,
+				CC4065F01CF7379500F1B9CA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68D5EB230197E3483B100304 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Whisper/Pods-Whisper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		954650BF29AA820FA9132B9A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Whisper/Pods-Whisper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA3DEF24B4627961E45FF0C3 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC4065DE1CF7379500F1B9CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC4065E91CF7379500F1B9CA /* Whisper.xcdatamodeld in Sources */,
+				CC4065E61CF7379500F1B9CA /* AppDelegate.swift in Sources */,
+				CC4065EB1CF7379500F1B9CA /* MasterViewController.swift in Sources */,
+				CC4065ED1CF7379500F1B9CA /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CC4065EE1CF7379500F1B9CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC4065EF1CF7379500F1B9CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CC4065F31CF7379500F1B9CA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC4065F41CF7379500F1B9CA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CC4065F71CF7379500F1B9CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC4065F81CF7379500F1B9CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CC4065FA1CF7379500F1B9CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1563042E55E50C0F0C63923 /* Pods-Whisper.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Whisper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.Whisper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CC4065FB1CF7379500F1B9CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4A6BB7192BBACFA18A7E15B /* Pods-Whisper.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Whisper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.Whisper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC4065DD1CF7379500F1B9CA /* Build configuration list for PBXProject "Whisper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC4065F71CF7379500F1B9CA /* Debug */,
+				CC4065F81CF7379500F1B9CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC4065F91CF7379500F1B9CA /* Build configuration list for PBXNativeTarget "Whisper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC4065FA1CF7379500F1B9CA /* Debug */,
+				CC4065FB1CF7379500F1B9CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CC4065E71CF7379500F1B9CA /* Whisper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CC4065E81CF7379500F1B9CA /* Whisper.xcdatamodel */,
+			);
+			currentVersion = CC4065E81CF7379500F1B9CA /* Whisper.xcdatamodel */;
+			path = Whisper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CC4065DA1CF7379500F1B9CA /* Project object */;
+}
