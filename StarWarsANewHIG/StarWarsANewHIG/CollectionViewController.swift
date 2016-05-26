@@ -105,15 +105,17 @@ class CollectionViewController: UICollectionViewController {
         cell.contentView.backgroundColor = UIColor.cyanColor()
         
         let titleLabel: UILabel = UILabel()
-        titleLabel.frame = CGRect( x: 10,y: 10, width: (cell.contentView.frame.width - 20), height: ((cell.contentView.frame.height - 30) / 3))
-        titleLabel.backgroundColor = UIColor.whiteColor()
+        titleLabel.frame = CGRect( x: 10,y: 10, width: (cell.contentView.frame.width - 20), height: ((cell.contentView.frame.height - 30) / 4))
+        titleLabel.backgroundColor = UIColor.darkGrayColor()
         titleLabel.textColor = UIColor.blueColor()
         titleLabel.text = "Foo!!"
         
         let episodeLabel: UILabel = UILabel()
-        
-        episodeLabel.frame = CGRect(x: 10, y: (titleLabel.frame.height + 20), width: (cell.contentView.frame.width - 20), height: ((self.view.frame.height - 30) / 3) * 2)
-        episodeLabel.text = "Shit went down..."
+        // episodeLabel.frame = CGRect(x: 10, y: (titleLabel.frame.height + 20), width: (cell.contentView.frame.width - 20), height: ((self.view.frame.height - 30) / 3) * 2)
+        episodeLabel.frame = CGRect(x: 10, y: 50, width: titleLabel.frame.width, height: titleLabel.frame.height)
+        episodeLabel.backgroundColor = UIColor.darkGrayColor()
+        episodeLabel.textColor = UIColor.blueColor()
+        episodeLabel.text = "Bar??"
         
         cell.addSubview(titleLabel)
         cell.addSubview(episodeLabel)
