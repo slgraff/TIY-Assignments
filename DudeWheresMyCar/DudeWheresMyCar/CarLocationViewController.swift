@@ -18,6 +18,9 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var dropPinButton: UIBarButtonItem!
     
+    let regionRadius: CLLocationDistance = 1000
+    
+    
     var locationName: String = ""
     var locationDict = Dictionary<String, AnyObject>()
     
@@ -41,6 +44,8 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         self.mapView.showsUserLocation = true
         
         self.mapView.delegate = self
+        
+        // centerMapOnLocation(CLLocation(coder: mapView.userLocation.location))
         
     }
 
@@ -129,6 +134,8 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         let center = CLLocationCoordinate2D(latitude: newLocation.coordinate.latitude, longitude: newLocation.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
         self.mapView.setRegion(region, animated: true)
+        
+        locationManager.stopUpdatingLocation()
     }
     
     
@@ -157,6 +164,11 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         NSUserDefaults.standardUserDefaults().setObject(locationDict, forKey: "CarLocation")
     }
     
+    
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
     
     // MARK: NSCoding
     

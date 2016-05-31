@@ -12,10 +12,12 @@ class Film:AnyObject {
     
     var title: String
     var episode: Int
+    var description: String
 
-    init(title: String, episode: Int) {
+    init(title: String, episode: Int, description: String) {
         self.title = title
         self.episode = episode
+        self.description = description
     }
     
 }

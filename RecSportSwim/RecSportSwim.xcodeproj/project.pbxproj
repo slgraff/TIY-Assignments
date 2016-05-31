@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65F3819849881A7618C226A8 /* Pods_RecSportSwim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7FD0EDC69247B9FD64BD4 /* Pods_RecSportSwim.framework */; };
+		CC35D9DF1CFE0A1000FAD85E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC35D9DE1CFE0A1000FAD85E /* AppDelegate.swift */; };
+		CC35D9E11CFE0A1000FAD85E /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC35D9E01CFE0A1000FAD85E /* MasterViewController.swift */; };
+		CC35D9E31CFE0A1000FAD85E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC35D9E21CFE0A1000FAD85E /* DetailViewController.swift */; };
+		CC35D9E61CFE0A1000FAD85E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC35D9E41CFE0A1000FAD85E /* Main.storyboard */; };
+		CC35D9E81CFE0A1000FAD85E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC35D9E71CFE0A1000FAD85E /* Assets.xcassets */; };
+		CC35D9EB1CFE0A1000FAD85E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC35D9E91CFE0A1000FAD85E /* LaunchScreen.storyboard */; };
+		CC35D9F31CFE0A7300FAD85E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC35D9F21CFE0A7300FAD85E /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A17254D0575A633DFBD23C74 /* Pods-RecSportSwim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecSportSwim.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecSportSwim/Pods-RecSportSwim.release.xcconfig"; sourceTree = "<group>"; };
+		ADB5C248D32B2C036CAF9593 /* Pods-RecSportSwim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecSportSwim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecSportSwim/Pods-RecSportSwim.debug.xcconfig"; sourceTree = "<group>"; };
+		CC35D9DB1CFE0A1000FAD85E /* RecSportSwim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecSportSwim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC35D9DE1CFE0A1000FAD85E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CC35D9E01CFE0A1000FAD85E /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		CC35D9E21CFE0A1000FAD85E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CC35D9E51CFE0A1000FAD85E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CC35D9E71CFE0A1000FAD85E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC35D9EA1CFE0A1000FAD85E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CC35D9EC1CFE0A1000FAD85E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC35D9F21CFE0A7300FAD85E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAD7FD0EDC69247B9FD64BD4 /* Pods_RecSportSwim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecSportSwim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC35D9D81CFE0A1000FAD85E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65F3819849881A7618C226A8 /* Pods_RecSportSwim.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0702776B93413B213F5EAF0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7FD0EDC69247B9FD64BD4 /* Pods_RecSportSwim.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9218B02242D2EB361AB47477 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADB5C248D32B2C036CAF9593 /* Pods-RecSportSwim.debug.xcconfig */,
+				A17254D0575A633DFBD23C74 /* Pods-RecSportSwim.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC35D9D21CFE0A1000FAD85E = {
+			isa = PBXGroup;
+			children = (
+				CC35D9DD1CFE0A1000FAD85E /* RecSportSwim */,
+				CC35D9DC1CFE0A1000FAD85E /* Products */,
+				9218B02242D2EB361AB47477 /* Pods */,
+				0702776B93413B213F5EAF0E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CC35D9DC1CFE0A1000FAD85E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC35D9DB1CFE0A1000FAD85E /* RecSportSwim.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC35D9DD1CFE0A1000FAD85E /* RecSportSwim */ = {
+			isa = PBXGroup;
+			children = (
+				CC35D9DE1CFE0A1000FAD85E /* AppDelegate.swift */,
+				CC35D9E01CFE0A1000FAD85E /* MasterViewController.swift */,
+				CC35D9E21CFE0A1000FAD85E /* DetailViewController.swift */,
+				CC35D9E41CFE0A1000FAD85E /* Main.storyboard */,
+				CC35D9E71CFE0A1000FAD85E /* Assets.xcassets */,
+				CC35D9E91CFE0A1000FAD85E /* LaunchScreen.storyboard */,
+				CC35D9EC1CFE0A1000FAD85E /* Info.plist */,
+				CC35D9F21CFE0A7300FAD85E /* GoogleService-Info.plist */,
+			);
+			path = RecSportSwim;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC35D9DA1CFE0A1000FAD85E /* RecSportSwim */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC35D9EF1CFE0A1000FAD85E /* Build configuration list for PBXNativeTarget "RecSportSwim" */;
+			buildPhases = (
+				0B498A104097E937AAFAA6DC /* 📦 Check Pods Manifest.lock */,
+				CC35D9D71CFE0A1000FAD85E /* Sources */,
+				CC35D9D81CFE0A1000FAD85E /* Frameworks */,
+				CC35D9D91CFE0A1000FAD85E /* Resources */,
+				E88846A2591823B9977C8E79 /* 📦 Embed Pods Frameworks */,
+				49E844709718C03772E92E6C /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecSportSwim;
+			productName = RecSportSwim;
+			productReference = CC35D9DB1CFE0A1000FAD85E /* RecSportSwim.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC35D9D31CFE0A1000FAD85E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Steve Graff";
+				TargetAttributes = {
+					CC35D9DA1CFE0A1000FAD85E = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = U974956332;
+					};
+				};
+			};
+			buildConfigurationList = CC35D9D61CFE0A1000FAD85E /* Build configuration list for PBXProject "RecSportSwim" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CC35D9D21CFE0A1000FAD85E;
+			productRefGroup = CC35D9DC1CFE0A1000FAD85E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC35D9DA1CFE0A1000FAD85E /* RecSportSwim */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC35D9D91CFE0A1000FAD85E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC35D9EB1CFE0A1000FAD85E /* LaunchScreen.storyboard in Resources */,
+				CC35D9F31CFE0A7300FAD85E /* GoogleService-Info.plist in Resources */,
+				CC35D9E81CFE0A1000FAD85E /* Assets.xcassets in Resources */,
+				CC35D9E61CFE0A1000FAD85E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B498A104097E937AAFAA6DC /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		49E844709718C03772E92E6C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecSportSwim/Pods-RecSportSwim-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E88846A2591823B9977C8E79 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecSportSwim/Pods-RecSportSwim-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC35D9D71CFE0A1000FAD85E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC35D9E31CFE0A1000FAD85E /* DetailViewController.swift in Sources */,
+				CC35D9E11CFE0A1000FAD85E /* MasterViewController.swift in Sources */,
+				CC35D9DF1CFE0A1000FAD85E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CC35D9E41CFE0A1000FAD85E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC35D9E51CFE0A1000FAD85E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CC35D9E91CFE0A1000FAD85E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC35D9EA1CFE0A1000FAD85E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CC35D9ED1CFE0A1000FAD85E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC35D9EE1CFE0A1000FAD85E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CC35D9F01CFE0A1000FAD85E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADB5C248D32B2C036CAF9593 /* Pods-RecSportSwim.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RecSportSwim/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.RecSportSwim";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CC35D9F11CFE0A1000FAD85E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A17254D0575A633DFBD23C74 /* Pods-RecSportSwim.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RecSportSwim/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.RecSportSwim";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC35D9D61CFE0A1000FAD85E /* Build configuration list for PBXProject "RecSportSwim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC35D9ED1CFE0A1000FAD85E /* Debug */,
+				CC35D9EE1CFE0A1000FAD85E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC35D9EF1CFE0A1000FAD85E /* Build configuration list for PBXNativeTarget "RecSportSwim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC35D9F01CFE0A1000FAD85E /* Debug */,
+				CC35D9F11CFE0A1000FAD85E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CC35D9D31CFE0A1000FAD85E /* Project object */;
+}

@@ -39,12 +39,20 @@ class CollectionViewController: UICollectionViewController {
                         for result in results {
                             if let title = result["title"] as? String {
                                 if let episode = result["episode_id"] as? Int {
-                                    self.results = results
-                                    print("\(title) \(episode)")
+                                    if let description = result["opening_crawl"] as? String {
+                                        
                                     
-                                    dispatch_async(dispatch_get_main_queue(), {
-                                        self.collectionView?.reloadData()
-                                    })
+                                        self.results = results
+                                        
+                                        // Create a new Film object
+                                        let swFilm = Film(title:title, episode: episode, description: description)
+                                        
+                                        print("\(title) \(episode)")
+                                        
+                                        dispatch_async(dispatch_get_main_queue(), {
+                                            self.collectionView?.reloadData()
+                                        })
+                                    }
                                     
                                 }
                             }
@@ -55,6 +63,7 @@ class CollectionViewController: UICollectionViewController {
                 }
             }
         }
+        
         
         task.resume()
         
@@ -102,7 +111,7 @@ class CollectionViewController: UICollectionViewController {
         
     
         // Configure the cell
-        cell.contentView.backgroundColor = UIColor.cyanColor()
+        cell.contentView.backgroundColor = UIColor.lightGrayColor()
         
         let titleLabel: UILabel = UILabel()
         titleLabel.frame = CGRect( x: 10,y: 10, width: (cell.contentView.frame.width - 20), height: ((cell.contentView.frame.height - 30) / 4))
