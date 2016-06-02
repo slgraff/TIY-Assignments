@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC0BEC681CF5E4370020FD8A /* DiceyCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0BEC671CF5E4370020FD8A /* DiceyCollectionVC.m */; };
 		CC1F104A1CF4B45B0001E64E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F10491CF4B45B0001E64E /* AppDelegate.swift */; };
 		CC1F104F1CF4B45B0001E64E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1F104D1CF4B45B0001E64E /* Main.storyboard */; };
 		CC1F10511CF4B45B0001E64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1F10501CF4B45B0001E64E /* Assets.xcassets */; };
@@ -16,9 +17,13 @@
 		CC1F10601CF4B8210001E64E /* DCVC+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F105F1CF4B8210001E64E /* DCVC+delegate.swift */; };
 		CC1F10621CF4B8430001E64E /* DCVC+datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F10611CF4B8430001E64E /* DCVC+datasource.swift */; };
 		CC1F106E1CF4DE6F0001E64E /* DiceChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F106D1CF4DE6F0001E64E /* DiceChoiceViewController.swift */; };
+		CC35DA291CFF866A00FAD85E /* DiceCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC35DA281CFF866A00FAD85E /* DiceCollectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC0BEC651CF5E4370020FD8A /* DieBag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DieBag-Bridging-Header.h"; sourceTree = "<group>"; };
+		CC0BEC661CF5E4370020FD8A /* DiceyCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiceyCollectionVC.h; path = ../DiceyCollectionVC.h; sourceTree = "<group>"; };
+		CC0BEC671CF5E4370020FD8A /* DiceyCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiceyCollectionVC.m; path = ../DiceyCollectionVC.m; sourceTree = "<group>"; };
 		CC1F10461CF4B45B0001E64E /* DieBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DieBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1F10491CF4B45B0001E64E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC1F104E1CF4B45B0001E64E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +35,7 @@
 		CC1F105F1CF4B8210001E64E /* DCVC+delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DCVC+delegate.swift"; sourceTree = "<group>"; };
 		CC1F10611CF4B8430001E64E /* DCVC+datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DCVC+datasource.swift"; sourceTree = "<group>"; };
 		CC1F106D1CF4DE6F0001E64E /* DiceChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiceChoiceViewController.swift; path = ../DiceChoiceViewController.swift; sourceTree = "<group>"; };
+		CC35DA281CFF866A00FAD85E /* DiceCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceCollectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +54,7 @@
 			children = (
 				CC1F10481CF4B45B0001E64E /* DieBag */,
 				CC1F10471CF4B45B0001E64E /* Products */,
+				CC0BEC651CF5E4370020FD8A /* DieBag-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +72,9 @@
 				CC1F10491CF4B45B0001E64E /* AppDelegate.swift */,
 				CC1F106D1CF4DE6F0001E64E /* DiceChoiceViewController.swift */,
 				CC1F105B1CF4B5020001E64E /* DiceCollectionViewController.swift */,
+				CC35DA281CFF866A00FAD85E /* DiceCollectionHeaderView.swift */,
+				CC0BEC661CF5E4370020FD8A /* DiceyCollectionVC.h */,
+				CC0BEC671CF5E4370020FD8A /* DiceyCollectionVC.m */,
 				CC1F105D1CF4B5380001E64E /* Dice.swift */,
 				CC1F105F1CF4B8210001E64E /* DCVC+delegate.swift */,
 				CC1F10611CF4B8430001E64E /* DCVC+datasource.swift */,
@@ -150,9 +160,11 @@
 			files = (
 				CC1F106E1CF4DE6F0001E64E /* DiceChoiceViewController.swift in Sources */,
 				CC1F10601CF4B8210001E64E /* DCVC+delegate.swift in Sources */,
+				CC0BEC681CF5E4370020FD8A /* DiceyCollectionVC.m in Sources */,
 				CC1F10621CF4B8430001E64E /* DCVC+datasource.swift in Sources */,
 				CC1F105C1CF4B5020001E64E /* DiceCollectionViewController.swift in Sources */,
 				CC1F105E1CF4B5380001E64E /* Dice.swift in Sources */,
+				CC35DA291CFF866A00FAD85E /* DiceCollectionHeaderView.swift in Sources */,
 				CC1F104A1CF4B45B0001E64E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,11 +280,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DieBag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.DieBag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DieBag-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -280,11 +295,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DieBag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.DieBag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DieBag-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -13,7 +13,7 @@
 
 @property NSMutableArray *friends;
 
--(IBAction)GoToNewItemViewController:(id)sender;
+-(IBAction)AskUserForUserName:(id)sender;
 
 
 @end
@@ -28,7 +28,7 @@
     self.friends = [[NSMutableArray alloc]init];
     
     // Changed the button to call our method GoToNewItemViewController
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(GoToNewItemViewController:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(AskUserForUserName:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
@@ -69,7 +69,7 @@
 // GoToNewItemViewController - Added during lecture
 // Also available as a gist here:
 // https://gist.github.com/jtligon/a4d01b9e6b406f8f9c50ded5eb13dd13
--(IBAction)GoToNewItemViewController:(id)sender {
+-(IBAction)AskUserForUserName:(id)sender {
     UIAlertController * alertController =
     [UIAlertController alertControllerWithTitle:@"Add a friend"
                                         message:@"Enter a valid github username"

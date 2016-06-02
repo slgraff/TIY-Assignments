@@ -9,7 +9,8 @@
 import UIKit
 
 // diceHolder contains a name for the die, and the die itself
-var diceHolder:Dictionary<String,Die> = Dictionary()
+// var diceHolderArray = [count:Int, faces:Int, faceValues:Array<Int>, currentValue:Int]
+// var diceHolder:Dictionary<String,Die> = Dictionary()
 
 
 class DiceCollectionViewController: UICollectionViewController {
@@ -19,7 +20,7 @@ class DiceCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         
-//        let plusButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(DiceCollectionViewController.plusButtonTapped))
+
         
         let swapButton = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: #selector(swapButtonTapped))
         
@@ -33,22 +34,10 @@ class DiceCollectionViewController: UICollectionViewController {
         
         self.collectionView?.collectionViewLayout = newFlowLayout
         
-        // self.navigationItem.leftBarButtonItem = plusButton
         self.navigationItem.rightBarButtonItem = swapButton
     }
     
-    
-    // Do we even need this in our collection view? It will display the rolled dice only
-    // Dice are not created here
-    // Should instead have button to go back to DiceChoiceViewController
-    func plusButtonTapped() {
-        
-        let newDie = Die()
-        // newDie.name = "Die\(self.diceHolder.count)"
-        newDie.rollIt()
-        diceHolder[newDie.name!] = newDie
-        self.collectionView?.reloadData()
-    }
+
     
     func swapButtonTapped() {
         if self.collectionView?.collectionViewLayout == oldLayout {
@@ -56,6 +45,28 @@ class DiceCollectionViewController: UICollectionViewController {
         } else {
             self.collectionView!.collectionViewLayout = oldLayout!
         }
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            print("I'm shaking in my boots!")
+            
+            rollTheDice()
+            
+        }
+    }
+    
+    func rollTheDice() {
+        for (key, value) in diceHolder {
+            for die in diceHolder[key]! {
+                die.rollIt()
+            }
+        }
+        self.collectionView?.reloadData()
     }
     
 }

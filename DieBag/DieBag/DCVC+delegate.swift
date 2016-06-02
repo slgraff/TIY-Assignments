@@ -11,12 +11,13 @@ import UIKit
 extension DiceCollectionViewController {
     //MARK: Delegate Stuff
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-        let keyArray = Array(self.diceHolder.keys)
-        let selectedDie = self.diceHolder[keyArray[indexPath.row]]
-        selectedDie?.rollIt()
-    }
+//    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//        
+//        let keyArray = Array(diceHolder.keys)
+//        let selectedSection = diceHolder[keyArray[indexPath.section]] // Gets to the array of dice for a given dieType
+//        // Need to then grab the Die object in the array
+//        return selectedSection[indexPath.row]
+//    }
     
     
 }

@@ -25,13 +25,13 @@ extension Range : ArrayRepresentable {
 // 5d4 6d6 3d10 5d20
 
 // Die class
-class Die:AnyObject {
+@objc class Die:NSObject {
     var faces:Int = 0
     var faceValues:Array<Int> { return (1...faces).toArray() }
     var currentValue = 0
     var name: String?
     
-    init(){
+    override init(){
         name = ""
     }
     

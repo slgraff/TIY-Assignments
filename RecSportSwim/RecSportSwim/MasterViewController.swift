@@ -25,8 +25,7 @@ class MasterViewController: UITableViewController {
         // MARK: Firebase code
         self.ref = FIRDatabase.database().reference()
         
-        // Sets location for where to data stored in Firebase
-        _ = self.ref!.child("RecSportSwim").observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+        _ = self.ref!.child("meets").observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
             if let postDict = snapshot.value as? [String : String] {
                 self.objects = Array<String>(postDict.values)
                 print(self.objects)
@@ -73,7 +72,7 @@ class MasterViewController: UITableViewController {
         objects.insert(uniqueString, atIndex: 0)
         
         // Store the string into the Firebase database
-        let newUniqueWordLocation = self.ref?.child("RecSportSwim").childByAutoId()
+        let newUniqueWordLocation = self.ref?.child("meets/event").childByAutoId()
         newUniqueWordLocation?.setValue(uniqueString)
         
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
