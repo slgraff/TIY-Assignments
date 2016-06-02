@@ -27,10 +27,11 @@ class MasterViewController: UITableViewController {
         self.title = "Upcoming Meets"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(createNewMeet(_:)))
         
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        
         
         // MARK: Initilize Firebase Database
         database = FIRDatabase.database()
-        
         
         let ref = database.reference().child("meets")
         ref.observeEventType(.Value, withBlock: { (snapshot) -> Void in
@@ -44,7 +45,9 @@ class MasterViewController: UITableViewController {
             self.tableView.reloadData()
             })
             
-    
+
+// TODO: Do I need to also setup an observeEventType to check for changes to data and update as needed?
+        
 //        _ = self.ref!.child("recsportswim").observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
 //            if let postDict = snapshot.value as? [String : String] {
 //                self.objects = Array<String>(postDict.values)
@@ -55,14 +58,8 @@ class MasterViewController: UITableViewController {
 //        })
 
         
-//        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-//
-//        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(insertNewObject(_:)))
-//        self.navigationItem.rightBarButtonItem = addButton
-//        if let split = self.splitViewController {
-//            let controllers = split.viewControllers
-//            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-//        }
+        
+        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -75,6 +72,7 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: Create New Meet
     func createNewMeet(sender: AnyObject) {
 
 //        // Make a unique string
@@ -99,6 +97,7 @@ class MasterViewController: UITableViewController {
 //        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         
     }
+    
 
     // MARK: - Segues
 
@@ -139,13 +138,9 @@ class MasterViewController: UITableViewController {
         let opposingTeamTitle = meetData[meetKeysArray[indexPath.row]]!["opposing_team"]!
         cell.detailTextLabel!.text = "Meet against the \(opposingTeamTitle)"
         
-        
-        
-//        let meet = meetData[indexPath.row]
-//        cell.textLabel!.text = object
         return cell
-        
     }
+    
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
