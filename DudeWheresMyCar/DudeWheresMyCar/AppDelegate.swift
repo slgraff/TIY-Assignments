@@ -16,24 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        // let defaults = NSUserDefaults.standardUserDefaults()
-        
-//        let lastCarName = defaults.stringForKey("name")
-//        let lastCarLat = defaults.doubleForKey("lat")
-//        let lastCarLon = defaults.doubleForKey("long")
-        
         
         //TODO: This code isn't running and I have no idea why not
         // Grab last saved car location from NSUserDefaults
-        if let lastCarData = NSUserDefaults.standardUserDefaults().objectForKey("CarLocation") as? NSData {
-            let lastCarLocation = NSKeyedUnarchiver.unarchiveObjectWithData(lastCarData)
-            
-            if lastCarLocation!.name != "" {
-                print("I know where you parked!")
-            } else {
-                print("I have no idea what I'm doing!")
-            }
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let dict = defaults.objectForKey("CarLocation") as! [String:String] {
+            print("Last car location: \(name)")
+        } else {
+            print("Can't read NSUserDefaults")
         }
+    
+        
+//        if let lastCarData = defaults.objectForKey("CarLocation") as? NSData {
+//            let lastCarLocation = NSKeyedUnarchiver.unarchiveObjectWithData(lastCarData)
+//            
+//            if lastCarLocation!.name != "" {
+//                print("I know where you parked!")
+//            } else {
+//                print("I have no idea what I'm doing!")
+//            }
+//        } else {
+//            print("Error retrieving previous location in NSUserDefaults")
+//        }
         
         return true
         

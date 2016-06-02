@@ -12,37 +12,57 @@ import Firebase
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [String]()
     
-    var ref:FIRDatabaseReference? = nil
+    // Declare dictionary to hold swim meet data
+    var meetData:[String:[String:String]] = Dictionary()
+    
+    // Firebase services
+    var database: FIRDatabase!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Initialize navigation bar
+        self.title = "Upcoming Meets"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(createNewMeet(_:)))
         
         
-        // MARK: Firebase code
-        self.ref = FIRDatabase.database().reference()
+        // MARK: Initilize Firebase Database
+        database = FIRDatabase.database()
         
-        _ = self.ref!.child("meets").observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
-            if let postDict = snapshot.value as? [String : String] {
-                self.objects = Array<String>(postDict.values)
-                print(self.objects)
-                // Reload the tableView after making above changes
-                self.tableView.reloadData()
+        
+        let ref = database.reference().child("meets")
+        ref.observeEventType(.Value, withBlock: { (snapshot) -> Void in
+            // Get the meets from the snapshot and add to the UI
+            if let data = snapshot.value as? [String:[String:String]] {
+                print(data)
+                self.meetData = data
+            } else {
+                print("Someone set us up the bomb")
             }
-        })
+            self.tableView.reloadData()
+            })
+            
+    
+//        _ = self.ref!.child("recsportswim").observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+//            if let postDict = snapshot.value as? [String : String] {
+//                self.objects = Array<String>(postDict.values)
+//                print(self.objects)
+//                // Reload the tableView after making above changes
+//                self.tableView.reloadData()
+//            }
+//        })
 
         
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(insertNewObject(_:)))
-        self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-        }
+//        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+//
+//        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(insertNewObject(_:)))
+//        self.navigationItem.rightBarButtonItem = addButton
+//        if let split = self.splitViewController {
+//            let controllers = split.viewControllers
+//            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+//        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -55,44 +75,47 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(sender: AnyObject) {
+    func createNewMeet(sender: AnyObject) {
 
-        // Make a unique string
-        let rangeOfInts = [Int](65...91)
-        let rangeOfChars:Array<Character> = rangeOfInts.map { value in
-            return Character(UnicodeScalar(value))
-        }
-        
-        var uniqueString = ""
-        for _ in 1...10 {
-            let random = arc4random_uniform(UInt32(rangeOfChars.count))
-            uniqueString.append(rangeOfChars[Int(random)])
-        }
-        
-        objects.insert(uniqueString, atIndex: 0)
+//        // Make a unique string
+//        let rangeOfInts = [Int](65...91)
+//        let rangeOfChars:Array<Character> = rangeOfInts.map { value in
+//            return Character(UnicodeScalar(value))
+//        }
+//        
+//        var uniqueString = ""
+//        for _ in 1...10 {
+//            let random = arc4random_uniform(UInt32(rangeOfChars.count))
+//            uniqueString.append(rangeOfChars[Int(random)])
+//        }
+//        
+//        objects.insert(uniqueString, atIndex: 0)
         
         // Store the string into the Firebase database
-        let newUniqueWordLocation = self.ref?.child("meets/event").childByAutoId()
-        newUniqueWordLocation?.setValue(uniqueString)
-        
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+//        let newUniqueWordLocation = self.ref?.child("meets").childByAutoId()
+//        newUniqueWordLocation?.setValue(uniqueString)
+//        
+//        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+//        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         
     }
 
     // MARK: - Segues
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row]
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
-            }
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "showDetail" {
+//            if let indexPath = self.tableView.indexPathForSelectedRow {
+//                let object = objects[indexPath.row]
+//                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
+//                controller.detailItem = object
+//                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+//                controller.navigationItem.leftItemsSupplementBackButton = true
+//            }
+//        }
+//    }
+    
+    
+    
 
     // MARK: - Table View
 
@@ -101,15 +124,25 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return meetData.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
-        let object = objects[indexPath.row]
-        cell.textLabel!.text = object
+        // Parse out swim meet from meetData, populate fields
+        var meetKeysArray = Array(meetData.keys)
+        meetKeysArray.sortInPlace()
+        
+        cell.textLabel!.text = meetData[meetKeysArray[indexPath.row]]!["date"]
+        cell.detailTextLabel!.text = "Meet against the \(meetData[meetKeysArray[indexPath.row]]?["opposing_team"])"
+        
+        
+        
+//        let meet = meetData[indexPath.row]
+//        cell.textLabel!.text = object
         return cell
+        
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -117,14 +150,14 @@ class MasterViewController: UITableViewController {
         return true
     }
 
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            objects.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
-    }
+//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if editingStyle == .Delete {
+//            objects.removeAtIndex(indexPath.row)
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//        } else if editingStyle == .Insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+//        }
+//    }
 
 
 }
