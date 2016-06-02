@@ -133,7 +133,7 @@ class MasterViewController: UITableViewController {
         var meetKeysArray = Array(meetData.keys)
         meetKeysArray.sortInPlace()
         
-        cell.textLabel!.text = meetData[meetKeysArray[indexPath.row]]!["date"]
+        cell.textLabel!.text = meetData[meetKeysArray[indexPath.row]]!["date"]! + " - " + meetData[meetKeysArray[indexPath.row]]!["time"]!
         
         let opposingTeamTitle = meetData[meetKeysArray[indexPath.row]]!["opposing_team"]!
         cell.detailTextLabel!.text = "Meet against the \(opposingTeamTitle)"
