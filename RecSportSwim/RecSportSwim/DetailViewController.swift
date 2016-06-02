@@ -10,8 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
+    @IBOutlet weak var meetDateLabel: UILabel!
+    @IBOutlet weak var meetLocationLabel: UILabel!
 
     var detailItem: AnyObject? {
         didSet {
@@ -21,10 +21,14 @@ class DetailViewController: UIViewController {
     }
 
     func configureView() {
-        // Update the user interface for the detail item.
+        // Update the user interface for the detail item
         if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+            
+            if let dateLabel = self.meetDateLabel {
+                dateLabel.text = String(detailItem!["date"])
+            }
+            if let locationLabel = self.meetLocationLabel {
+                locationLabel.text = String(detailItem!["location"])
             }
         }
     }

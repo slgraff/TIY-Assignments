@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -32,25 +34,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="292" width="560" height="17"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="olympicpool" translatesAutoresizingMaskIntoConstraints="NO" id="usb-zQ-8YD">
+                                <rect key="frame" x="0.0" y="64" width="600" height="120"/>
+                            </imageView>
+                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKb-XG-tfK">
+                                <rect key="frame" x="0.0" y="130" width="600" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-uI-Lip" userLabel="Date Label">
+                                        <rect key="frame" x="173" y="1" width="165" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="165" id="caJ-Ha-kiy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hw2-Sl-2ha" userLabel="Location Label">
+                                        <rect key="frame" x="173" y="23" width="165" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstItem="XeK-uI-Lip" firstAttribute="top" secondItem="VKb-XG-tfK" secondAttribute="top" constant="1" id="7bF-Fv-LEQ"/>
+                                    <constraint firstItem="XeK-uI-Lip" firstAttribute="trailing" secondItem="Hw2-Sl-2ha" secondAttribute="trailing" id="8Rz-DG-QCe"/>
+                                    <constraint firstItem="Hw2-Sl-2ha" firstAttribute="height" secondItem="XeK-uI-Lip" secondAttribute="height" id="RPp-sB-j4A"/>
+                                    <constraint firstItem="XeK-uI-Lip" firstAttribute="leading" secondItem="Hw2-Sl-2ha" secondAttribute="leading" id="jGe-YO-yGK"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hw2-Sl-2ha" secondAttribute="bottom" constant="2" id="phd-0s-Ea8"/>
+                                    <constraint firstItem="Hw2-Sl-2ha" firstAttribute="top" secondItem="XeK-uI-Lip" secondAttribute="bottom" constant="1" id="soQ-Yr-6Ez"/>
+                                    <constraint firstItem="XeK-uI-Lip" firstAttribute="leading" secondItem="VKb-XG-tfK" secondAttribute="leading" constant="173" id="zYM-4i-JuW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
-                            <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
+                            <constraint firstItem="usb-zQ-8YD" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-20" id="0W5-dk-pIZ"/>
+                            <constraint firstItem="VKb-XG-tfK" firstAttribute="height" secondItem="usb-zQ-8YD" secondAttribute="height" multiplier="0.3" id="7jk-CX-lJD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="usb-zQ-8YD" secondAttribute="trailing" constant="-20" id="BKV-QD-YF2"/>
+                            <constraint firstItem="XeK-uI-Lip" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="67" id="EV4-0f-RQ0"/>
+                            <constraint firstItem="VKb-XG-tfK" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-20" id="QGp-kJ-2g2"/>
+                            <constraint firstItem="VKb-XG-tfK" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="RDU-3l-xsk"/>
+                            <constraint firstItem="VKb-XG-tfK" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="66" id="TOe-Lu-6Em"/>
+                            <constraint firstItem="usb-zQ-8YD" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="Vcv-Qx-lSo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VKb-XG-tfK" secondAttribute="trailing" constant="-20" id="a7g-Sh-JVQ"/>
+                            <constraint firstItem="usb-zQ-8YD" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-189.5" id="bFt-Pp-KCR"/>
+                            <constraint firstItem="usb-zQ-8YD" firstAttribute="height" secondItem="svH-Pt-448" secondAttribute="height" multiplier="0.2" id="mC6-YX-TKH"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="meetDateLabel" destination="XeK-uI-Lip" id="ggC-i8-LIz"/>
+                        <outlet property="meetLocationLabel" destination="Hw2-Sl-2ha" id="GX5-LS-206"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -137,6 +174,9 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="olympicpool" width="950" height="300"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>

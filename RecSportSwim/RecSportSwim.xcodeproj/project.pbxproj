@@ -101,12 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC35D9EF1CFE0A1000FAD85E /* Build configuration list for PBXNativeTarget "RecSportSwim" */;
 			buildPhases = (
-				0B498A104097E937AAFAA6DC /* 📦 Check Pods Manifest.lock */,
+				0B498A104097E937AAFAA6DC /* [CP] Check Pods Manifest.lock */,
 				CC35D9D71CFE0A1000FAD85E /* Sources */,
 				CC35D9D81CFE0A1000FAD85E /* Frameworks */,
 				CC35D9D91CFE0A1000FAD85E /* Resources */,
-				E88846A2591823B9977C8E79 /* 📦 Embed Pods Frameworks */,
-				49E844709718C03772E92E6C /* 📦 Copy Pods Resources */,
+				E88846A2591823B9977C8E79 /* [CP] Embed Pods Frameworks */,
+				49E844709718C03772E92E6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,14 +166,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0B498A104097E937AAFAA6DC /* 📦 Check Pods Manifest.lock */ = {
+		0B498A104097E937AAFAA6DC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,14 +181,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		49E844709718C03772E92E6C /* 📦 Copy Pods Resources */ = {
+		49E844709718C03772E92E6C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,14 +196,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecSportSwim/Pods-RecSportSwim-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E88846A2591823B9977C8E79 /* 📦 Embed Pods Frameworks */ = {
+		E88846A2591823B9977C8E79 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +336,7 @@
 			baseConfigurationReference = ADB5C248D32B2C036CAF9593 /* Pods-RecSportSwim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = RecSportSwim/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.RecSportSwim";
@@ -348,6 +349,7 @@
 			baseConfigurationReference = A17254D0575A633DFBD23C74 /* Pods-RecSportSwim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = RecSportSwim/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.RecSportSwim";
