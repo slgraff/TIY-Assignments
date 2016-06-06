@@ -13,6 +13,7 @@
 		CC6D0BFF1D060784001FD938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC6D0BFD1D060784001FD938 /* Main.storyboard */; };
 		CC6D0C011D060784001FD938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC6D0C001D060784001FD938 /* Assets.xcassets */; };
 		CC6D0C041D060784001FD938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC6D0C021D060784001FD938 /* LaunchScreen.storyboard */; };
+		CC6D0C121D060D75001FD938 /* ElectricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D0C111D060D75001FD938 /* ElectricCalc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		CC6D0C001D060784001FD938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC6D0C031D060784001FD938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC6D0C051D060784001FD938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC6D0C101D060D75001FD938 /* ElectricCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectricCalc.h; sourceTree = "<group>"; };
+		CC6D0C111D060D75001FD938 /* ElectricCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectricCalc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				CC6D0BFA1D060784001FD938 /* ViewController.h */,
 				CC6D0BFB1D060784001FD938 /* ViewController.m */,
 				CC6D0BFD1D060784001FD938 /* Main.storyboard */,
+				CC6D0C101D060D75001FD938 /* ElectricCalc.h */,
+				CC6D0C111D060D75001FD938 /* ElectricCalc.m */,
 				CC6D0C001D060784001FD938 /* Assets.xcassets */,
 				CC6D0C021D060784001FD938 /* LaunchScreen.storyboard */,
 				CC6D0C051D060784001FD938 /* Info.plist */,
@@ -153,6 +158,7 @@
 				CC6D0BFC1D060784001FD938 /* ViewController.m in Sources */,
 				CC6D0BF91D060784001FD938 /* AppDelegate.m in Sources */,
 				CC6D0BF61D060784001FD938 /* main.m in Sources */,
+				CC6D0C121D060D75001FD938 /* ElectricCalc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
