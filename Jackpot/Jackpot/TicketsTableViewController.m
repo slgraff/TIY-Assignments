@@ -7,12 +7,11 @@
 //
 
 #import "TicketsTableViewController.h"
+#import "PickerViewController.h"
 #import "Ticket.h"
 
 @interface TicketsTableViewController () {
 
-    // Need to declare instance variable, need to wrap in curly braces
-    // pointer to NSMutableArray
     NSMutableArray *tickets;
     
     // Delcare counters for tracking money spent and won
@@ -24,7 +23,7 @@
 
 @end
 
-@implementation TicketsTableViewController
+@implementation PickerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -129,7 +128,7 @@
 
 -(IBAction)createTicket:(id)sender{
     Ticket * aTicket = [Ticket ticketUsingQuickPick];
-    [tickets addObject:aTicket];
+    [Ticket addObject:aTicket];
     
     moneySpent += aTicket.ticketPrice;
     

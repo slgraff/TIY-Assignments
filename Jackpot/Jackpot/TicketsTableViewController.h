@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Ticket.h"
 
-@interface TicketsTableViewController : UITableViewController
+@protocol PickerViewControllerDelegate
+
+-(void)winningTicketWasAdded:(Ticket *)ticket;
+
+@end
+
+@interface TicketsTableViewController : UITableViewController <PickerViewControllerDelegate>
 
 @end

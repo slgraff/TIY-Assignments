@@ -79,7 +79,10 @@ extension DiceCollectionViewController {
             default:
                 assert(false, "Unexpected element kind")
         }
+        fatalError("Unexpected element kind")
+
     }
+
     
     
 }

@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TicketsTableViewController.h"
 
 @interface PickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UIPickerView *numberPicker;
+// @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+// @property (strong, nonatomic) IBOutlet UIPickerView *numberPicker;
 
-@property (strong, nonatomic) IBOutlet UILabel *color;
-@property (strong, nonatomic) IBOutlet UIPickerView *picker;
-@property (strong, nonatomic) NSArray *colorArray;
+@property (weak, nonatomic) IBOutlet Ticket *pickerView;
+
+@property (strong, nonatomic) id<UIPickerViewDelegate> delegate;
 
 
 

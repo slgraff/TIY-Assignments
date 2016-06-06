@@ -8,6 +8,14 @@
 
 #import "Ticket.h"
 
+
+typedef enum {
+    Win1Dollar = 3,
+    Win5Dollars = 4,
+    Win20Dollars = 5,
+    Win100Dollars = 6
+} WinnerType;
+
 // Redefine interface by adding opening and closing parens, curly braces
 @interface Ticket() {
     
@@ -49,21 +57,19 @@
     return aTicket;
 }
 
-+(instancetype)ticketUsingArray:(NSArray *)picks{  // generates a ticket using chosen numbers
++(instancetype)ticketUsingArray:(NSArray *)specificPicks{  // generates a ticket using chosen numbers
     Ticket* ticket = [[Ticket alloc]init];
-    
-    
+    [ticket insertPicksUsingArray: specificPicks];
     return ticket;
     
 }
 
 -(void)storeTheArrayIntoPicks:(NSArray*)array{
     picks = [array mutableCopy];
-    
-    
-    
-    
-    
+}
+
+-(NSArray*)picks {
+    return [picks copy]; // Sending a copy of picks that is immutable
 }
 
 -(void)createPick{
@@ -93,17 +99,23 @@
         [picks addObject:pickNumber];
     }
     
+    NSSortDescriptor *lowestToHighest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
+    [picks sortUsingDescriptors:@[lowestToHighest]];
+    
 
 }
 
--(NSArray*)picks {
-    return [picks copy]; // Sending a copy of picks that is immutable
-}
+
 
 // Sort picks from lowest to highest
 -(void)sortPicks {
     
     picks = [[picks sortedArrayUsingSelector:@selector(compare:)] mutableCopy];
+}
+
+
+- (void)insertPicksUsingArray:(NSArray *)specificPicks {
+    picks = [specificPicks mutableCopy];
 }
 
 -(void)compareWithTicket:(Ticket *)anotherTicket{
