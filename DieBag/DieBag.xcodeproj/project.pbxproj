@@ -18,6 +18,8 @@
 		CC1F10621CF4B8430001E64E /* DCVC+datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F10611CF4B8430001E64E /* DCVC+datasource.swift */; };
 		CC1F106E1CF4DE6F0001E64E /* DiceChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F106D1CF4DE6F0001E64E /* DiceChoiceViewController.swift */; };
 		CC35DA291CFF866A00FAD85E /* DiceCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC35DA281CFF866A00FAD85E /* DiceCollectionHeaderView.swift */; };
+		CC6D0BE61D05DC20001FD938 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6D0BE31D05DC20001FD938 /* HockeySDK.framework */; };
+		CC6D0BE71D05DC20001FD938 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC6D0BE51D05DC20001FD938 /* HockeySDKResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		CC1F10611CF4B8430001E64E /* DCVC+datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DCVC+datasource.swift"; sourceTree = "<group>"; };
 		CC1F106D1CF4DE6F0001E64E /* DiceChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiceChoiceViewController.swift; path = ../DiceChoiceViewController.swift; sourceTree = "<group>"; };
 		CC35DA281CFF866A00FAD85E /* DiceCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceCollectionHeaderView.swift; sourceTree = "<group>"; };
+		CC6D0BE31D05DC20001FD938 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		CC6D0BE51D05DC20001FD938 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC6D0BE61D05DC20001FD938 /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				CC1F10481CF4B45B0001E64E /* DieBag */,
+				CC6D0BE11D05DBDF001FD938 /* Vendor */,
 				CC1F10471CF4B45B0001E64E /* Products */,
 				CC0BEC651CF5E4370020FD8A /* DieBag-Bridging-Header.h */,
 			);
@@ -86,6 +92,32 @@
 			path = DieBag;
 			sourceTree = "<group>";
 		};
+		CC6D0BE11D05DBDF001FD938 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				CC6D0BE21D05DC20001FD938 /* HockeySDK.embeddedframework */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		CC6D0BE21D05DC20001FD938 /* HockeySDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				CC6D0BE31D05DC20001FD938 /* HockeySDK.framework */,
+				CC6D0BE41D05DC20001FD938 /* Resources */,
+			);
+			name = HockeySDK.embeddedframework;
+			path = "Vendor/HockeySDK-iOS/HockeySDK.embeddedframework";
+			sourceTree = "<group>";
+		};
+		CC6D0BE41D05DC20001FD938 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC6D0BE51D05DC20001FD938 /* HockeySDKResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,6 +128,7 @@
 				CC1F10421CF4B45B0001E64E /* Sources */,
 				CC1F10431CF4B45B0001E64E /* Frameworks */,
 				CC1F10441CF4B45B0001E64E /* Resources */,
+				CC6D0BDA1D05D8EF001FD938 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -146,12 +179,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC1F10541CF4B45B0001E64E /* LaunchScreen.storyboard in Resources */,
+				CC6D0BE71D05DC20001FD938 /* HockeySDKResources.bundle in Resources */,
 				CC1F10511CF4B45B0001E64E /* Assets.xcassets in Resources */,
 				CC1F104F1CF4B45B0001E64E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CC6D0BDA1D05D8EF001FD938 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CC1F10421CF4B45B0001E64E /* Sources */ = {
@@ -282,6 +332,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+					"$(PROJECT_DIR)/Vendor/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = DieBag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.DieBag";
@@ -297,6 +352,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+					"$(PROJECT_DIR)/Vendor/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = DieBag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.DieBag";

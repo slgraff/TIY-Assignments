@@ -24,11 +24,9 @@ class DetailViewController: UIViewController {
         // Update the user interface for the detail item
         if let detail = self.detailItem {
             
-            if let dateLabel = self.meetDateLabel {
-                dateLabel.text = String(detailItem!["date"])
-            }
-            if let locationLabel = self.meetLocationLabel {
-                locationLabel.text = String(detailItem!["location"])
+            if let dateLabel = self.meetDateLabel, locationLabel = self.meetLocationLabel {
+                dateLabel.text! = String(detailItem!["date"]!)
+                locationLabel.text! = String(detailItem!["location"]!)
             }
         }
     }
