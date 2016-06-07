@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var lastLocation = [String:String]()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -20,10 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //TODO: This code isn't running and I have no idea why not
         // Grab last saved car location from NSUserDefaults
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let dict = defaults.objectForKey("CarLocation") as! [String:String] {
-            print("Last car location: \(name)")
+        
+        //  if let lastLocation = defaults.objectForKey("CarLocation")
+        if let lastLocation = defaults.dictionaryForKey("CarLocation") {
+            
+            print("I loaded last location")
+            print(lastLocation["name"]!)
         } else {
-            print("Can't read NSUserDefaults")
+            print("I can't do shit")
         }
     
         

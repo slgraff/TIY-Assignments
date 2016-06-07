@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		CC6D0BF61D060784001FD938 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D0BF51D060784001FD938 /* main.m */; };
 		CC6D0BF91D060784001FD938 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D0BF81D060784001FD938 /* AppDelegate.m */; };
-		CC6D0BFC1D060784001FD938 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D0BFB1D060784001FD938 /* ViewController.m */; };
 		CC6D0BFF1D060784001FD938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC6D0BFD1D060784001FD938 /* Main.storyboard */; };
 		CC6D0C011D060784001FD938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC6D0C001D060784001FD938 /* Assets.xcassets */; };
 		CC6D0C041D060784001FD938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC6D0C021D060784001FD938 /* LaunchScreen.storyboard */; };
 		CC6D0C121D060D75001FD938 /* ElectricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D0C111D060D75001FD938 /* ElectricCalc.m */; };
+		CC6D0C151D060DF8001FD938 /* HighVoltageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D0C141D060DF8001FD938 /* HighVoltageTableViewController.m */; };
+		CC6D0C181D061351001FD938 /* CalcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D0C171D061351001FD938 /* CalcViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +22,16 @@
 		CC6D0BF51D060784001FD938 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC6D0BF71D060784001FD938 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC6D0BF81D060784001FD938 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CC6D0BFA1D060784001FD938 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CC6D0BFB1D060784001FD938 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CC6D0BFE1D060784001FD938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC6D0C001D060784001FD938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC6D0C031D060784001FD938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC6D0C051D060784001FD938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC6D0C101D060D75001FD938 /* ElectricCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectricCalc.h; sourceTree = "<group>"; };
 		CC6D0C111D060D75001FD938 /* ElectricCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectricCalc.m; sourceTree = "<group>"; };
+		CC6D0C131D060DF8001FD938 /* HighVoltageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighVoltageTableViewController.h; sourceTree = "<group>"; };
+		CC6D0C141D060DF8001FD938 /* HighVoltageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighVoltageTableViewController.m; sourceTree = "<group>"; };
+		CC6D0C161D061351001FD938 /* CalcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalcViewController.h; sourceTree = "<group>"; };
+		CC6D0C171D061351001FD938 /* CalcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalcViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +66,10 @@
 			children = (
 				CC6D0BF71D060784001FD938 /* AppDelegate.h */,
 				CC6D0BF81D060784001FD938 /* AppDelegate.m */,
-				CC6D0BFA1D060784001FD938 /* ViewController.h */,
-				CC6D0BFB1D060784001FD938 /* ViewController.m */,
+				CC6D0C131D060DF8001FD938 /* HighVoltageTableViewController.h */,
+				CC6D0C141D060DF8001FD938 /* HighVoltageTableViewController.m */,
+				CC6D0C161D061351001FD938 /* CalcViewController.h */,
+				CC6D0C171D061351001FD938 /* CalcViewController.m */,
 				CC6D0BFD1D060784001FD938 /* Main.storyboard */,
 				CC6D0C101D060D75001FD938 /* ElectricCalc.h */,
 				CC6D0C111D060D75001FD938 /* ElectricCalc.m */,
@@ -155,7 +160,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC6D0BFC1D060784001FD938 /* ViewController.m in Sources */,
+				CC6D0C151D060DF8001FD938 /* HighVoltageTableViewController.m in Sources */,
+				CC6D0C181D061351001FD938 /* CalcViewController.m in Sources */,
 				CC6D0BF91D060784001FD938 /* AppDelegate.m in Sources */,
 				CC6D0BF61D060784001FD938 /* main.m in Sources */,
 				CC6D0C121D060D75001FD938 /* ElectricCalc.m in Sources */,
