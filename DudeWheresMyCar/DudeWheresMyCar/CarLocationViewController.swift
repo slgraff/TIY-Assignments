@@ -10,7 +10,9 @@ import UIKit
 import CoreLocation // Added to allow use of CoreLocation in app
 import MapKit // Added to allow use of MapKit in app
 
+let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
+var carLocData = appDelegate.getCarLocData()
 
 class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate,UIPopoverPresentationControllerDelegate, PopoverLocationViewControllerDelegate {  // Make VC conform to delegates for CoreLocation, MapView, UIPopoverPresentationControllerDelegate
 
@@ -45,7 +47,36 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         
         self.mapView.delegate = self
         
-        // centerMapOnLocation(CLLocation(coder: mapView.userLocation.location))
+        // Grab last saved car location from NSUserDefaults
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let lastLocation = defaults.dictionaryForKey("CarLocation") {
+        
+        // let lastLocDict = defaults.objectForKey("CarLocation") as? [String:String] ?? [String:String]() {
+        
+            print("I loaded last location named:\(lastLocation["title"]!)")
+            
+            for (key, value) in lastLocation {
+                print("key \(key), value \(value)")
+            }
+            
+            let carLat = lastLocation["lat"] as! Double
+            let carLong = lastLocation["long"] as! Double
+            let carTitle = lastLocation["title"] as! String
+            
+            let annotation = MKPointAnnotation()
+            
+            annotation.coordinate = CLLocationCoordinate2DMake(carLat, carLong)
+            annotation.title = carTitle
+            
+            self.mapView.addAnnotation(annotation)
+            
+        } else {
+            print("I can't find shit")
+        }
+
+        
+         // centerMapOnLocation(CLLocation(coder: mapView.userLocation.location))
         
     }
 
@@ -139,6 +170,8 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
     }
     
     
+    // MARK: Drop in for location, save to NSUserDefaults
+    
     func setCarLocationName(carLocationName: String) {
         
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -159,7 +192,7 @@ class CarLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         let carLon = NSNumber(double: annotation.coordinate.longitude)
         
         // Need to add a 'name' key/value pair to hold data passed back from popup view controller
-        let locationDict = ["name": locationName, "lat": carLat, "long": carLon]
+        let locationDict = ["title": locationName, "lat": carLat, "long": carLon]
         // let locationDict = ["lat": carLat, "long": carLon]
         NSUserDefaults.standardUserDefaults().setObject(locationDict, forKey: "CarLocation")
     }

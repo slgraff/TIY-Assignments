@@ -8,45 +8,42 @@
 
 import UIKit
 
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     var lastLocation = [String:String]()
+
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         
-        //TODO: This code isn't running and I have no idea why not
-        // Grab last saved car location from NSUserDefaults
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        //  if let lastLocation = defaults.objectForKey("CarLocation")
-        if let lastLocation = defaults.dictionaryForKey("CarLocation") {
-            
-            print("I loaded last location")
-            print(lastLocation["name"]!)
-        } else {
-            print("I can't do shit")
-        }
-    
-        
-//        if let lastCarData = defaults.objectForKey("CarLocation") as? NSData {
-//            let lastCarLocation = NSKeyedUnarchiver.unarchiveObjectWithData(lastCarData)
+//        // Grab last saved car location from NSUserDefaults
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        
+//        //  if let lastLocation = defaults.objectForKey("CarLocation")
+//        if let lastLocation = defaults.dictionaryForKey("CarLocation") {
 //            
-//            if lastCarLocation!.name != "" {
-//                print("I know where you parked!")
-//            } else {
-//                print("I have no idea what I'm doing!")
+//            print("I loaded last location named:\(lastLocation["name"]!)")
+//            
+//            for (key, value) in lastLocation {
+//                print("key \(key), value \(value)")
 //            }
+//            
 //        } else {
-//            print("Error retrieving previous location in NSUserDefaults")
+//            print("I can't find shit")
 //        }
         
+        
         return true
-        
-        
+    }
+    
+    
+    func getCarLocData() -> [String:String] {
+        return lastLocation
     }
 
     func applicationWillResignActive(application: UIApplication) {
