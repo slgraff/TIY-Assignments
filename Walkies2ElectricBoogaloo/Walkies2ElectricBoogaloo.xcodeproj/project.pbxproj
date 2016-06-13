@@ -14,6 +14,7 @@
 		CC2EEA651D0EE94A00BDE1E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC2EEA631D0EE94A00BDE1E7 /* LaunchScreen.storyboard */; };
 		CC2EEA6D1D0EEAF100BDE1E7 /* DogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA6C1D0EEAF100BDE1E7 /* DogsViewController.swift */; };
 		CC2EEA6F1D0EEFC500BDE1E7 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC2EEA6E1D0EEFC500BDE1E7 /* Media.xcassets */; };
+		CC2EEA751D0EF2C300BDE1E7 /* Walkies.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA741D0EF2C300BDE1E7 /* Walkies.xcdatamodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CC2EEA661D0EE94A00BDE1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC2EEA6C1D0EEAF100BDE1E7 /* DogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsViewController.swift; sourceTree = "<group>"; };
 		CC2EEA6E1D0EEFC500BDE1E7 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
+		CC2EEA741D0EF2C300BDE1E7 /* Walkies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Walkies.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				CC2EEA6C1D0EEAF100BDE1E7 /* DogsViewController.swift */,
 				CC2EEA5E1D0EE94A00BDE1E7 /* Main.storyboard */,
 				CC2EEA631D0EE94A00BDE1E7 /* LaunchScreen.storyboard */,
+				CC2EEA741D0EF2C300BDE1E7 /* Walkies.xcdatamodel */,
 				CC2EEA6E1D0EEFC500BDE1E7 /* Media.xcassets */,
 				CC2EEA661D0EE94A00BDE1E7 /* Info.plist */,
 			);
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC2EEA5D1D0EE94A00BDE1E7 /* ClientsViewController.swift in Sources */,
+				CC2EEA751D0EF2C300BDE1E7 /* Walkies.xcdatamodel in Sources */,
 				CC2EEA591D0EE94A00BDE1E7 /* AppDelegate.swift in Sources */,
 				CC2EEA5B1D0EE94A00BDE1E7 /* WalksViewController.swift in Sources */,
 				CC2EEA6D1D0EEAF100BDE1E7 /* DogsViewController.swift in Sources */,
