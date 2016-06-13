@@ -1,17 +1,22 @@
 //
 //  DetailViewController.swift
-//  RecSportSwim
+//  Walkies
 //
-//  Created by Steve Graff on 5/31/16.
+//  Created by Steve Graff on 6/8/16.
 //  Copyright © 2016 Steve Graff. All rights reserved.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class ApptDetailViewController: UIViewController {
+    
+    var appointment: Appointment?
+    var managedObjectContext: NSManagedObjectContext!
 
-    @IBOutlet weak var meetDateLabel: UILabel!
-    @IBOutlet weak var meetLocationLabel: UILabel!
+    @IBOutlet weak var apptClientLabel: UILabel!
+    @IBOutlet weak var apptAddressLabel: UILabel!
+    @IBOutlet weak var apptDogLabel: UILabel!
+
 
     var detailItem: AnyObject? {
         didSet {
@@ -21,12 +26,10 @@ class DetailViewController: UIViewController {
     }
 
     func configureView() {
-        // Update the user interface for the detail item
+        // Update the user interface for the detail item.
         if let detail = self.detailItem {
-            
-            if let dateLabel = self.meetDateLabel, locationLabel = self.meetLocationLabel {
-                dateLabel.text = detailItem!["date"] as? String
-                locationLabel.text = detailItem!["location"] as? String
+            if let label = self.apptClientLabel {
+                label.text = detail.valueForKey("client")!.description
             }
         }
     }
