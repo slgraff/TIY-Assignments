@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		CC2EEA591D0EE94A00BDE1E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA581D0EE94A00BDE1E7 /* AppDelegate.swift */; };
-		CC2EEA5B1D0EE94A00BDE1E7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA5A1D0EE94A00BDE1E7 /* FirstViewController.swift */; };
-		CC2EEA5D1D0EE94A00BDE1E7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA5C1D0EE94A00BDE1E7 /* SecondViewController.swift */; };
+		CC2EEA5B1D0EE94A00BDE1E7 /* WalksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA5A1D0EE94A00BDE1E7 /* WalksViewController.swift */; };
+		CC2EEA5D1D0EE94A00BDE1E7 /* ClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA5C1D0EE94A00BDE1E7 /* ClientsViewController.swift */; };
 		CC2EEA601D0EE94A00BDE1E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC2EEA5E1D0EE94A00BDE1E7 /* Main.storyboard */; };
-		CC2EEA621D0EE94A00BDE1E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC2EEA611D0EE94A00BDE1E7 /* Assets.xcassets */; };
 		CC2EEA651D0EE94A00BDE1E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC2EEA631D0EE94A00BDE1E7 /* LaunchScreen.storyboard */; };
+		CC2EEA6D1D0EEAF100BDE1E7 /* DogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA6C1D0EEAF100BDE1E7 /* DogsViewController.swift */; };
+		CC2EEA6F1D0EEFC500BDE1E7 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC2EEA6E1D0EEFC500BDE1E7 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC2EEA551D0EE94A00BDE1E7 /* Walkies2ElectricBoogaloo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walkies2ElectricBoogaloo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2EEA581D0EE94A00BDE1E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CC2EEA5A1D0EE94A00BDE1E7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		CC2EEA5C1D0EE94A00BDE1E7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		CC2EEA5A1D0EE94A00BDE1E7 /* WalksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalksViewController.swift; sourceTree = "<group>"; };
+		CC2EEA5C1D0EE94A00BDE1E7 /* ClientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsViewController.swift; sourceTree = "<group>"; };
 		CC2EEA5F1D0EE94A00BDE1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CC2EEA611D0EE94A00BDE1E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC2EEA641D0EE94A00BDE1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC2EEA661D0EE94A00BDE1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC2EEA6C1D0EEAF100BDE1E7 /* DogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsViewController.swift; sourceTree = "<group>"; };
+		CC2EEA6E1D0EEFC500BDE1E7 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				CC2EEA581D0EE94A00BDE1E7 /* AppDelegate.swift */,
-				CC2EEA5A1D0EE94A00BDE1E7 /* FirstViewController.swift */,
-				CC2EEA5C1D0EE94A00BDE1E7 /* SecondViewController.swift */,
+				CC2EEA5A1D0EE94A00BDE1E7 /* WalksViewController.swift */,
+				CC2EEA5C1D0EE94A00BDE1E7 /* ClientsViewController.swift */,
+				CC2EEA6C1D0EEAF100BDE1E7 /* DogsViewController.swift */,
 				CC2EEA5E1D0EE94A00BDE1E7 /* Main.storyboard */,
-				CC2EEA611D0EE94A00BDE1E7 /* Assets.xcassets */,
 				CC2EEA631D0EE94A00BDE1E7 /* LaunchScreen.storyboard */,
+				CC2EEA6E1D0EEFC500BDE1E7 /* Media.xcassets */,
 				CC2EEA661D0EE94A00BDE1E7 /* Info.plist */,
 			);
 			path = Walkies2ElectricBoogaloo;
@@ -127,7 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC2EEA651D0EE94A00BDE1E7 /* LaunchScreen.storyboard in Resources */,
-				CC2EEA621D0EE94A00BDE1E7 /* Assets.xcassets in Resources */,
+				CC2EEA6F1D0EEFC500BDE1E7 /* Media.xcassets in Resources */,
 				CC2EEA601D0EE94A00BDE1E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,9 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC2EEA5D1D0EE94A00BDE1E7 /* SecondViewController.swift in Sources */,
+				CC2EEA5D1D0EE94A00BDE1E7 /* ClientsViewController.swift in Sources */,
 				CC2EEA591D0EE94A00BDE1E7 /* AppDelegate.swift in Sources */,
-				CC2EEA5B1D0EE94A00BDE1E7 /* FirstViewController.swift in Sources */,
+				CC2EEA5B1D0EE94A00BDE1E7 /* WalksViewController.swift in Sources */,
+				CC2EEA6D1D0EEAF100BDE1E7 /* DogsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +259,7 @@
 		CC2EEA6A1D0EE94A00BDE1E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = Walkies2ElectricBoogaloo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.Walkies2ElectricBoogaloo";
@@ -266,7 +270,7 @@
 		CC2EEA6B1D0EE94A00BDE1E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = Walkies2ElectricBoogaloo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Steve-Graff.Walkies2ElectricBoogaloo";
@@ -293,6 +297,7 @@
 				CC2EEA6B1D0EE94A00BDE1E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
