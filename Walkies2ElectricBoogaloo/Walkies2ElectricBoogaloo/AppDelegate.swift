@@ -7,15 +7,36 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let fetchRequest = NSFetchRequest(entityName: "Upcoming Walks")
+        do {
+            let results = try NSManagedObjectContext.executeFetchRequest(fetchRequest)
+            if results.count == 0 {
+                // Do nothing for now
+            }
+        } catch {
+            print("Error fetching data!")
+        }
+        
+        if let tab = window?.rootViewController as? UITabBarController {
+            for child in tab.viewControllers ?? [] {
+                if let child = child as? UINavigationController, top = child.topViewController {
+                    if top.respondsToSelector("setManagedObjectContext:") {
+                        top.respondsToSelector("setManagedObjectContext:", withObject: managedObjectContext)
+                    }
+                }
+            }
+        }
+        
         return true
     }
 
