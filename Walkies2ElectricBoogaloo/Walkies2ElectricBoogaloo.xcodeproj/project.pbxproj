@@ -15,6 +15,12 @@
 		CC2EEA6D1D0EEAF100BDE1E7 /* DogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA6C1D0EEAF100BDE1E7 /* DogsViewController.swift */; };
 		CC2EEA6F1D0EEFC500BDE1E7 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC2EEA6E1D0EEFC500BDE1E7 /* Media.xcassets */; };
 		CC2EEA751D0EF2C300BDE1E7 /* Walkies.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA741D0EF2C300BDE1E7 /* Walkies.xcdatamodel */; };
+		CC2EEA7C1D0EF31900BDE1E7 /* Appointment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA761D0EF31900BDE1E7 /* Appointment+CoreDataProperties.swift */; };
+		CC2EEA7D1D0EF31900BDE1E7 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA771D0EF31900BDE1E7 /* Appointment.swift */; };
+		CC2EEA7E1D0EF31900BDE1E7 /* Client+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA781D0EF31900BDE1E7 /* Client+CoreDataProperties.swift */; };
+		CC2EEA7F1D0EF31900BDE1E7 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA791D0EF31900BDE1E7 /* Client.swift */; };
+		CC2EEA801D0EF31900BDE1E7 /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA7A1D0EF31900BDE1E7 /* Dog+CoreDataProperties.swift */; };
+		CC2EEA811D0EF31900BDE1E7 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA7B1D0EF31900BDE1E7 /* Dog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		CC2EEA6C1D0EEAF100BDE1E7 /* DogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsViewController.swift; sourceTree = "<group>"; };
 		CC2EEA6E1D0EEFC500BDE1E7 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 		CC2EEA741D0EF2C300BDE1E7 /* Walkies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Walkies.xcdatamodel; sourceTree = "<group>"; };
+		CC2EEA761D0EF31900BDE1E7 /* Appointment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Appointment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CC2EEA771D0EF31900BDE1E7 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		CC2EEA781D0EF31900BDE1E7 /* Client+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CC2EEA791D0EF31900BDE1E7 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		CC2EEA7A1D0EF31900BDE1E7 /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dog+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CC2EEA7B1D0EF31900BDE1E7 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,12 @@
 		CC2EEA571D0EE94A00BDE1E7 /* Walkies2ElectricBoogaloo */ = {
 			isa = PBXGroup;
 			children = (
+				CC2EEA761D0EF31900BDE1E7 /* Appointment+CoreDataProperties.swift */,
+				CC2EEA771D0EF31900BDE1E7 /* Appointment.swift */,
+				CC2EEA781D0EF31900BDE1E7 /* Client+CoreDataProperties.swift */,
+				CC2EEA791D0EF31900BDE1E7 /* Client.swift */,
+				CC2EEA7A1D0EF31900BDE1E7 /* Dog+CoreDataProperties.swift */,
+				CC2EEA7B1D0EF31900BDE1E7 /* Dog.swift */,
 				CC2EEA581D0EE94A00BDE1E7 /* AppDelegate.swift */,
 				CC2EEA5A1D0EE94A00BDE1E7 /* WalksViewController.swift */,
 				CC2EEA5C1D0EE94A00BDE1E7 /* ClientsViewController.swift */,
@@ -149,7 +167,13 @@
 				CC2EEA751D0EF2C300BDE1E7 /* Walkies.xcdatamodel in Sources */,
 				CC2EEA591D0EE94A00BDE1E7 /* AppDelegate.swift in Sources */,
 				CC2EEA5B1D0EE94A00BDE1E7 /* WalksViewController.swift in Sources */,
+				CC2EEA7E1D0EF31900BDE1E7 /* Client+CoreDataProperties.swift in Sources */,
+				CC2EEA811D0EF31900BDE1E7 /* Dog.swift in Sources */,
 				CC2EEA6D1D0EEAF100BDE1E7 /* DogsViewController.swift in Sources */,
+				CC2EEA801D0EF31900BDE1E7 /* Dog+CoreDataProperties.swift in Sources */,
+				CC2EEA7D1D0EF31900BDE1E7 /* Appointment.swift in Sources */,
+				CC2EEA7C1D0EF31900BDE1E7 /* Appointment+CoreDataProperties.swift in Sources */,
+				CC2EEA7F1D0EF31900BDE1E7 /* Client.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
