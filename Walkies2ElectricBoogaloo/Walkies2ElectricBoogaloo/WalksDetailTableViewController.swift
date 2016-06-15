@@ -14,10 +14,10 @@ class WalksDetailTableViewController: UITableViewController {
     var walk: Walks?
     var managedObjectContext: NSManagedObjectContext!
     
+
     @IBOutlet weak var walkClientLabel: UILabel!
     @IBOutlet weak var walkTimeTextField: UITextField!
     @IBOutlet weak var walkNotesTextField: UITextField!
-    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
