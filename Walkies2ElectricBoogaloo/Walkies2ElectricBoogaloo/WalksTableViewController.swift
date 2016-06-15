@@ -65,7 +65,7 @@ class WalksTableViewController: UITableViewController {
         
         let walk = walks[indexPath.row]
         
-        cell.textLabel?.text = String(walk.walkTime)
+        cell.textLabel?.text = walk.walkDescription
         cell.detailTextLabel?.text = walk.notes
         
         return cell

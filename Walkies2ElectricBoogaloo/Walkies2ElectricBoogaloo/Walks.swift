@@ -12,6 +12,7 @@ import CoreData
 
 class Walks: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
-
+    var walkDescription: String {
+        return "\(client) walk \(walkTime)"
+    }
 }
