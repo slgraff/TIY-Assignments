@@ -147,7 +147,7 @@
         <!--Clients Table View Controller-->
         <scene sceneID="MRt-hK-5nN">
             <objects>
-                <tableViewController storyboardIdentifier="Clients" id="EFG-yr-1wf" customClass="ClientsTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Clients" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EFG-yr-1wf" customClass="ClientsTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pRJ-9U-P0F">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

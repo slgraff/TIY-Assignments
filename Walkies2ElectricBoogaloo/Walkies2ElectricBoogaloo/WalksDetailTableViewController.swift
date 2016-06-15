@@ -61,7 +61,7 @@ class WalksDetailTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 1 && indexPath.row == 0 {
+        if indexPath.section == 0 && indexPath.row == 0 {
             if let clientPicker = storyboard?.instantiateViewControllerWithIdentifier("Clients") as? ClientsTableViewController {
                 clientPicker.managedObjectContext = managedObjectContext
                 
