@@ -1,8 +1,8 @@
 //
-//  Appointment.swift
+//  Clients.swift
 //  Walkies2ElectricBoogaloo
 //
-//  Created by Steve Graff on 6/13/16.
+//  Created by Steve Graff on 6/15/16.
 //  Copyright © 2016 Steve Graff. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Appointment: NSManagedObject {
+class Clients: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 

@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  ClientsTableViewController.swift
 //  Walkies2ElectricBoogaloo
 //
 //  Created by Steve Graff on 6/13/16.
@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class FirstViewController: UIViewController {
+class ClientsTableViewController: UITableViewController {
+    
+    var managedObjectContext: NSManagedObjectContext!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

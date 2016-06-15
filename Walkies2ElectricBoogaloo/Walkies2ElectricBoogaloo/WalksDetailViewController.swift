@@ -1,14 +1,14 @@
 //
-//  DogsViewController.swift
+//  WalksDetailViewController.swift
 //  Walkies2ElectricBoogaloo
 //
-//  Created by Steve Graff on 6/13/16.
+//  Created by Steve Graff on 6/15/16.
 //  Copyright © 2016 Steve Graff. All rights reserved.
 //
 
 import UIKit
 
-class DogsViewController: UIViewController {
+class WalksDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

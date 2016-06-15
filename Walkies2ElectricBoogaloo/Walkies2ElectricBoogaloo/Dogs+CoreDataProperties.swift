@@ -1,8 +1,8 @@
 //
-//  Dog+CoreDataProperties.swift
+//  Dogs+CoreDataProperties.swift
 //  Walkies2ElectricBoogaloo
 //
-//  Created by Steve Graff on 6/13/16.
+//  Created by Steve Graff on 6/15/16.
 //  Copyright © 2016 Steve Graff. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -12,7 +12,7 @@
 import Foundation
 import CoreData
 
-extension Dog {
+extension Dogs {
 
     @NSManaged var age: String?
     @NSManaged var breed: String?
@@ -20,7 +20,7 @@ extension Dog {
     @NSManaged var notes: String?
     @NSManaged var sex: String?
     @NSManaged var size: String?
-    @NSManaged var appointment: Appointment?
-    @NSManaged var owner: Client?
+    @NSManaged var owner: Clients?
+    @NSManaged var walks: Walks?
 
 }

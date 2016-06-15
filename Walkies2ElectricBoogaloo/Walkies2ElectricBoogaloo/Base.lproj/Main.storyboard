@@ -5,33 +5,74 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Walks View Controller-->
+        <!--Walks Detail View Controller-->
+        <scene sceneID="ChP-xh-S4k">
+            <objects>
+                <viewController id="hcg-FO-Odc" customClass="WalksDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vTR-HN-et0"/>
+                        <viewControllerLayoutGuide type="bottom" id="mjs-w9-2EM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nkz-8q-hzg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPx-J1-405" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2306" y="-690"/>
+        </scene>
+        <!--Walks Table View Controller-->
         <scene sceneID="sAV-Yf-RPt">
             <objects>
-                <tableViewController id="eXl-W8-zLd" customClass="WalksViewController" sceneMemberID="viewController">
+                <tableViewController id="eXl-W8-zLd" customClass="WalksTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="edo-Cv-BdM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WalkCell" id="ofN-u1-EOA">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ofN-u1-EOA" id="Cqo-p1-ajd">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="eXl-W8-zLd" id="zVB-5C-G8J"/>
                             <outlet property="delegate" destination="eXl-W8-zLd" id="ZbD-oE-Ggg"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="hz7-hu-sa8"/>
+                    <connections>
+                        <segue destination="hcg-FO-Odc" kind="show" identifier="walkDetailSegue" id="69F-su-fMe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uls-Ld-GUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1605" y="-690"/>
         </scene>
-        <!--Clients View Controllers-->
+        <!--Clients Table View Controller-->
         <scene sceneID="MRt-hK-5nN">
             <objects>
-                <tableViewController id="EFG-yr-1wf" customClass="ClientsViewControllers" sceneMemberID="viewController">
+                <tableViewController id="EFG-yr-1wf" customClass="ClientsTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pRJ-9U-P0F">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClientCell" id="v1a-Gk-DYV">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v1a-Gk-DYV" id="OEj-Vf-TWp">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="EFG-yr-1wf" id="suQ-KW-NxK"/>
                             <outlet property="delegate" destination="EFG-yr-1wf" id="CBJ-xj-Q2w"/>
@@ -43,14 +84,24 @@
             </objects>
             <point key="canvasLocation" x="1605" y="0.0"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Dogs Table View Controller-->
         <scene sceneID="ZU8-Hl-DDu">
             <objects>
-                <tableViewController id="Am2-rk-rcN" sceneMemberID="viewController">
+                <tableViewController id="Am2-rk-rcN" customClass="DogsTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pEl-0G-Ejv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DogCell" id="2GZ-YH-kun">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2GZ-YH-kun" id="qM2-9b-91O">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Am2-rk-rcN" id="q3u-JB-HGS"/>
                             <outlet property="delegate" destination="Am2-rk-rcN" id="Xdk-nt-iym"/>
@@ -60,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAG-a1-BE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1499" y="785"/>
+            <point key="canvasLocation" x="1605" y="726"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -86,7 +137,7 @@
         <scene sceneID="5d6-ZN-cv3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aYf-uc-rlD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="ITx-LX-ewW"/>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="ITx-LX-ewW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="19A-Lv-bya">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -94,7 +145,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="eXl-W8-zLd" kind="relationship" relationship="rootViewController" id="9Mf-aQ-I7w"/>
+                        <segue destination="eXl-W8-zLd" kind="relationship" relationship="rootViewController" id="cmj-Nu-5tn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZY-wU-vzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -124,7 +175,7 @@
         <scene sceneID="d0x-z9-F7L">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Cf-gE-PTK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="buU-3Q-dCI"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="buU-3Q-dCI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MQo-Ya-Kil">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -137,7 +188,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paQ-Ax-kAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="785"/>
+            <point key="canvasLocation" x="793" y="726"/>
         </scene>
     </scenes>
 </document>

@@ -1,8 +1,8 @@
 //
-//  Client+CoreDataProperties.swift
+//  Clients+CoreDataProperties.swift
 //  Walkies2ElectricBoogaloo
 //
-//  Created by Steve Graff on 6/13/16.
+//  Created by Steve Graff on 6/15/16.
 //  Copyright © 2016 Steve Graff. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -12,15 +12,14 @@
 import Foundation
 import CoreData
 
-extension Client {
+extension Clients {
 
     @NSManaged var address: String?
-    @NSManaged var dogs: String?
     @NSManaged var email: String?
     @NSManaged var name: String?
     @NSManaged var phone: String?
     @NSManaged var securityInfo: String?
-    @NSManaged var appointment: Appointment?
-    @NSManaged var dog: Dog?
+    @NSManaged var dogs: NSManagedObject?
+    @NSManaged var walks: Walks?
 
 }

@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  ApptTableViewController.swift
 //  Walkies
 //
 //  Created by Steve Graff on 6/8/16.
@@ -11,7 +11,7 @@ import CoreData
 
 class ApptTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-    var detailViewController: DetailViewController? = nil
+    var ApptDetailViewController: UIViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
         
     var appointments = [Appointment]()
@@ -22,7 +22,7 @@ class ApptTableViewController: UITableViewController, NSFetchedResultsController
         super.viewDidLoad()
         
             title = "Today's Walks"
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addAppt:")
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(ApptTableViewController.addAppt(_:)))
         
         
 //        if let selectedAppointment = selectedAppointment {
