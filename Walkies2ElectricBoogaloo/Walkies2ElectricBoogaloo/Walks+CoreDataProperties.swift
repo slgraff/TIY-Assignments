@@ -22,6 +22,6 @@ extension Walks {
     @NSManaged var walkMap: NSData?
     @NSManaged var walkTime: NSDate
     @NSManaged var client: Clients?
-    @NSManaged var dogs: Dogs?
+    @NSManaged var dogs: NSSet?
 
 }

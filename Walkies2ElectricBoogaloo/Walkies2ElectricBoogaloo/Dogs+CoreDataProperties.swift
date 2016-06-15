@@ -16,11 +16,12 @@ extension Dogs {
 
     @NSManaged var age: String?
     @NSManaged var breed: String?
-    @NSManaged var name: String?
+    @NSManaged var name: String
     @NSManaged var notes: String?
-    @NSManaged var sex: String?
-    @NSManaged var size: String?
+    @NSManaged var sex: String
+    @NSManaged var size: String
+    @NSManaged var dogPicture: NSData?
     @NSManaged var owner: Clients?
-    @NSManaged var walks: Walks?
+    @NSManaged var walks: NSSet?
 
 }

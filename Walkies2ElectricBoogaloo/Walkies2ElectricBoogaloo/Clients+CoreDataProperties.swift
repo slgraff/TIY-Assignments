@@ -19,7 +19,7 @@ extension Clients {
     @NSManaged var name: String
     @NSManaged var phone: String
     @NSManaged var securityInfo: String?
-    @NSManaged var dogs: Dogs?
+    @NSManaged var dogs: NSSet?
     @NSManaged var walks: Walks?
 
 }
