@@ -20,13 +20,11 @@ class WalksTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: (#selector(WalksTableViewController.addWalk(_:))))
-        
-        
         if let selectedWalk = selectedWalk {
-            title = "Walk: \(selectedWalk)"
-
+            title = "Walk: \(selectedWalk.walkTime)"
+        } else {
+            title = "Walks"
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: (#selector(WalksTableViewController.addWalk(_:))))
         }
     }
     
@@ -67,8 +65,8 @@ class WalksTableViewController: UITableViewController {
         
         let walk = walks[indexPath.row]
         
-        // cell.textLabel?.text = walk.walkDescription
-        cell.detailTextLabel?.text = "(owner name goes here)"
+        cell.textLabel?.text = String(walk.walkTime)
+        cell.detailTextLabel?.text = walk.notes
         
         return cell
     }
@@ -77,7 +75,6 @@ class WalksTableViewController: UITableViewController {
     // MARK: - Actions & Segues
     
     
-    // TODO: Create WalkDetailViewController (as a UIViewController)
     func addWalk(sender: AnyObject?) {
         performSegueWithIdentifier("walkDetailSegue", sender: self)
     }
@@ -91,21 +88,15 @@ class WalksTableViewController: UITableViewController {
     }
     
     
-    // TODO: Create WalkDetailViewController (as a TableViewController?)
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if let dest = segue.destinationViewController as? WalksTableViewController {
-//            dest.managedObjectContext = managedObjectContext
-//            
-//            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-//                let walk = walks[selectedIndexPath.row]
-//                dest.walk = walk
-//            }
-//        }
-//    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let dest = segue.destinationViewController as? WalksDetailTableViewController {
+            dest.managedObjectContext = managedObjectContext
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                let walk = walks[selectedIndexPath.row]
+                dest.walk = walk
+            }
+        }
     }
 
 

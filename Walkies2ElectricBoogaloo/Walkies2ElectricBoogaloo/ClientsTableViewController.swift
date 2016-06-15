@@ -9,14 +9,38 @@
 import UIKit
 import CoreData
 
+protocol ClientPickerDelegate: class {
+    func didSelectClient(client: Clients)
+}
+
 class ClientsTableViewController: UITableViewController {
     
     var managedObjectContext: NSManagedObjectContext!
+    var clients = [Clients]()
+    
+    weak var pickerDelegate: ClientPickerDelegate?
+    var selectedClient: Clients?
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        title = "Clients"
+        reloadData()
+    }
+    
+    func reloadData() {
+        let fetchRequest = NSFetchRequest(entityName: "Clients")
+        
+        do {
+            if let results = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Clients] {
+                clients = results
+                tableView.reloadData()
+            }
+        } catch {
+            fatalError("Error fetching list of clients!")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

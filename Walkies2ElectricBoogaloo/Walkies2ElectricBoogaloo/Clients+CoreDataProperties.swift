@@ -14,12 +14,12 @@ import CoreData
 
 extension Clients {
 
-    @NSManaged var address: String?
+    @NSManaged var address: String
     @NSManaged var email: String?
-    @NSManaged var name: String?
-    @NSManaged var phone: String?
+    @NSManaged var name: String
+    @NSManaged var phone: String
     @NSManaged var securityInfo: String?
-    @NSManaged var dogs: NSManagedObject?
+    @NSManaged var dogs: Dogs?
     @NSManaged var walks: Walks?
 
 }

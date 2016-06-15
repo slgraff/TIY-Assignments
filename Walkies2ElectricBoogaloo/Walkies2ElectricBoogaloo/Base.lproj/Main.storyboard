@@ -5,24 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Walks Detail View Controller-->
-        <scene sceneID="ChP-xh-S4k">
-            <objects>
-                <viewController id="hcg-FO-Odc" customClass="WalksDetailViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vTR-HN-et0"/>
-                        <viewControllerLayoutGuide type="bottom" id="mjs-w9-2EM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Nkz-8q-hzg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bPx-J1-405" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2306" y="-690"/>
-        </scene>
         <!--Walks Table View Controller-->
         <scene sceneID="sAV-Yf-RPt">
             <objects>
@@ -32,13 +14,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WalkCell" id="ofN-u1-EOA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WalkCell" textLabel="AVr-Mv-CuL" detailTextLabel="9RS-9S-f7S" style="IBUITableViewCellStyleSubtitle" id="ofN-u1-EOA">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ofN-u1-EOA" id="Cqo-p1-ajd">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AVr-Mv-CuL">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9RS-9S-f7S">
+                                            <rect key="frame" x="15" y="25" width="31" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="7J3-HA-6Po" kind="show" identifier="walkDetailSegue" id="1RE-26-x2b"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -47,18 +48,102 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="hz7-hu-sa8"/>
-                    <connections>
-                        <segue destination="hcg-FO-Odc" kind="show" identifier="walkDetailSegue" id="69F-su-fMe"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uls-Ld-GUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1605" y="-690"/>
         </scene>
+        <!--Walks Detail Table View Controller-->
+        <scene sceneID="JZ9-YC-VjY">
+            <objects>
+                <tableViewController id="7J3-HA-6Po" customClass="WalksDetailTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8HO-jX-jrz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="Lgk-5d-OPi">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="walkClientCell" id="ULJ-a1-QQ5">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ULJ-a1-QQ5" id="Paq-uD-OfF">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Client: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWU-wD-UO0">
+                                                    <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="walkTimeCell" id="bZb-uB-Lu0">
+                                        <rect key="frame" x="0.0" y="108" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bZb-uB-Lu0" id="OTG-9G-NCo">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Walk Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szz-mF-KGb">
+                                                    <rect key="frame" x="8" y="11" width="80" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rW2-KJ-Jzr">
+                                                    <rect key="frame" x="107" y="5" width="485" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="walkNotesCell" id="AMG-P1-RgS">
+                                        <rect key="frame" x="0.0" y="152" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AMG-P1-RgS" id="lwv-lD-B2t">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWR-BD-PGA">
+                                                    <rect key="frame" x="8" y="11" width="46" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUg-UO-efX">
+                                                    <rect key="frame" x="107" y="2" width="485" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="7J3-HA-6Po" id="wRt-9d-Qvd"/>
+                            <outlet property="delegate" destination="7J3-HA-6Po" id="2Bh-6J-b9t"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="walkClientLabel" destination="SWU-wD-UO0" id="ov1-jf-A6f"/>
+                        <outlet property="walkNotesTextField" destination="ZUg-UO-efX" id="ERL-8c-NIe"/>
+                        <outlet property="walkTimeTextField" destination="rW2-KJ-Jzr" id="9NW-dm-Sod"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="smR-ZA-NRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2283" y="-690"/>
+        </scene>
         <!--Clients Table View Controller-->
         <scene sceneID="MRt-hK-5nN">
             <objects>
-                <tableViewController id="EFG-yr-1wf" customClass="ClientsTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Clients" id="EFG-yr-1wf" customClass="ClientsTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pRJ-9U-P0F">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,11 +218,11 @@
             </objects>
             <point key="canvasLocation" x="10" y="0.0"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Walks-->
         <scene sceneID="5d6-ZN-cv3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aYf-uc-rlD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="ITx-LX-ewW"/>
+                    <tabBarItem key="tabBarItem" title="Walks" id="ITx-LX-ewW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="19A-Lv-bya">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -152,11 +237,11 @@
             </objects>
             <point key="canvasLocation" x="793" y="-690"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Clients-->
         <scene sceneID="bKx-v3-ycp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TFc-gk-tb0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="cf2-Pt-gjG"/>
+                    <tabBarItem key="tabBarItem" title="Clients" id="cf2-Pt-gjG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ca1-cQ-Y59">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -171,11 +256,11 @@
             </objects>
             <point key="canvasLocation" x="793" y="0.0"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Dogs-->
         <scene sceneID="d0x-z9-F7L">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Cf-gE-PTK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="buU-3Q-dCI"/>
+                    <tabBarItem key="tabBarItem" title="Dogs" id="buU-3Q-dCI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MQo-Ya-Kil">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

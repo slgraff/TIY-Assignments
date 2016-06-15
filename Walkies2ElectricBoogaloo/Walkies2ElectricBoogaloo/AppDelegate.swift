@@ -17,14 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        
         let fetchRequest = NSFetchRequest(entityName: "Walks")
         do {
             let results = try managedObjectContext.executeFetchRequest(fetchRequest)
             if results.count == 0 {
-                // Do nothing for now
+                addTestData()
             }
         } catch {
-            print("Error fetching data!")
+            print("Error fetching Walks data!")
         }
         
         if let tab = window?.rootViewController as? UITabBarController {
@@ -38,6 +39,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    
+    // MARK: Add Test Data
+    func addTestData() {
+        guard let entity = NSEntityDescription.entityForName("Walks", inManagedObjectContext: managedObjectContext) else {
+            fatalError("Could not find entity description!")
+        }
+        
+        for i in 1...10 {
+            let walks = Walks(entity: entity, insertIntoManagedObjectContext: self.managedObjectContext)
+            let currentDate = NSDate()
+            
+            walks.walkTime = currentDate
+            walks.notes = i % 3 == 0 ? "Super friendly dog":"Dog is very vocal"
+        }
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

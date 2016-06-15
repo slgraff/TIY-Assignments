@@ -20,8 +20,8 @@ extension Walks {
     @NSManaged var picture: NSData?
     @NSManaged var taskList: String?
     @NSManaged var walkMap: NSData?
-    @NSManaged var walkTime: NSDate?
-    @NSManaged var client: NSManagedObject?
-    @NSManaged var dogs: NSManagedObject?
+    @NSManaged var walkTime: NSDate
+    @NSManaged var client: Clients?
+    @NSManaged var dogs: Dogs?
 
 }

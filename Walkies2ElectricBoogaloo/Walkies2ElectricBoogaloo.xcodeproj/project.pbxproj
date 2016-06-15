@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC1F666D1D1189C80062A4EA /* WalksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F666C1D1189C80062A4EA /* WalksDetailViewController.swift */; };
 		CC1F66741D118D850062A4EA /* Walks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F666E1D118D850062A4EA /* Walks+CoreDataProperties.swift */; };
 		CC1F66751D118D850062A4EA /* Walks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F666F1D118D850062A4EA /* Walks.swift */; };
 		CC1F66761D118D850062A4EA /* Clients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F66701D118D850062A4EA /* Clients+CoreDataProperties.swift */; };
 		CC1F66771D118D850062A4EA /* Clients.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F66711D118D850062A4EA /* Clients.swift */; };
 		CC1F66781D118D850062A4EA /* Dogs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F66721D118D850062A4EA /* Dogs+CoreDataProperties.swift */; };
 		CC1F66791D118D850062A4EA /* Dogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F66731D118D850062A4EA /* Dogs.swift */; };
+		CC1F667B1D11A8340062A4EA /* WalksDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F667A1D11A8340062A4EA /* WalksDetailTableViewController.swift */; };
 		CC2EEA591D0EE94A00BDE1E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA581D0EE94A00BDE1E7 /* AppDelegate.swift */; };
 		CC2EEA5B1D0EE94A00BDE1E7 /* WalksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA5A1D0EE94A00BDE1E7 /* WalksTableViewController.swift */; };
 		CC2EEA5D1D0EE94A00BDE1E7 /* ClientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA5C1D0EE94A00BDE1E7 /* ClientsTableViewController.swift */; };
@@ -26,13 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CC1F666C1D1189C80062A4EA /* WalksDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalksDetailViewController.swift; sourceTree = "<group>"; };
 		CC1F666E1D118D850062A4EA /* Walks+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Walks+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CC1F666F1D118D850062A4EA /* Walks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walks.swift; sourceTree = "<group>"; };
 		CC1F66701D118D850062A4EA /* Clients+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Clients+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CC1F66711D118D850062A4EA /* Clients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clients.swift; sourceTree = "<group>"; };
 		CC1F66721D118D850062A4EA /* Dogs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dogs+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CC1F66731D118D850062A4EA /* Dogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dogs.swift; sourceTree = "<group>"; };
+		CC1F667A1D11A8340062A4EA /* WalksDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalksDetailTableViewController.swift; sourceTree = "<group>"; };
 		CC2EEA551D0EE94A00BDE1E7 /* Walkies2ElectricBoogaloo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walkies2ElectricBoogaloo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2EEA581D0EE94A00BDE1E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC2EEA5A1D0EE94A00BDE1E7 /* WalksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalksTableViewController.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 				CC1F66731D118D850062A4EA /* Dogs.swift */,
 				CC2EEA581D0EE94A00BDE1E7 /* AppDelegate.swift */,
 				CC2EEA5A1D0EE94A00BDE1E7 /* WalksTableViewController.swift */,
-				CC1F666C1D1189C80062A4EA /* WalksDetailViewController.swift */,
+				CC1F667A1D11A8340062A4EA /* WalksDetailTableViewController.swift */,
 				CC2EEA5C1D0EE94A00BDE1E7 /* ClientsTableViewController.swift */,
 				CC2EEA6C1D0EEAF100BDE1E7 /* DogsTableViewController.swift */,
 				CC2EEA5E1D0EE94A00BDE1E7 /* Main.storyboard */,
@@ -173,6 +173,7 @@
 				CC2EEA5D1D0EE94A00BDE1E7 /* ClientsTableViewController.swift in Sources */,
 				CC2EEA591D0EE94A00BDE1E7 /* AppDelegate.swift in Sources */,
 				CC2EEA5B1D0EE94A00BDE1E7 /* WalksTableViewController.swift in Sources */,
+				CC1F667B1D11A8340062A4EA /* WalksDetailTableViewController.swift in Sources */,
 				CC1F66741D118D850062A4EA /* Walks+CoreDataProperties.swift in Sources */,
 				CC1F66791D118D850062A4EA /* Dogs.swift in Sources */,
 				CC2EEAA71D0F160900BDE1E7 /* Walkies.xcdatamodeld in Sources */,
@@ -180,7 +181,6 @@
 				CC2EEA6D1D0EEAF100BDE1E7 /* DogsTableViewController.swift in Sources */,
 				CC1F66781D118D850062A4EA /* Dogs+CoreDataProperties.swift in Sources */,
 				CC1F66771D118D850062A4EA /* Clients.swift in Sources */,
-				CC1F666D1D1189C80062A4EA /* WalksDetailViewController.swift in Sources */,
 				CC1F66761D118D850062A4EA /* Clients+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
