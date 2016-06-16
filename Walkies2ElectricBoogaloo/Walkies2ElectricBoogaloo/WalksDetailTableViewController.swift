@@ -23,7 +23,7 @@ class WalksDetailTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         if let walk = walk {
-            walkTimeTextField.text = String(walk.walkDate)
+            walkTimeTextField.text = String(walk.walkDate!)
             walkNotesTextField.text = walk.notes
             
             if let client = walk.client {

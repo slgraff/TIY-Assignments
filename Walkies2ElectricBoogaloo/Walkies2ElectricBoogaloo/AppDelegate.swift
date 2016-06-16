@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let suzy = Clients(entity: clientsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
         suzy.name = "Suzy Chapstick"
-        suzy.name = "330 E. Trinity Ave., Durham, NC 27701"
+        suzy.address = "330 E. Trinity Ave., Durham, NC 27701"
         
         
         // Add sample Dogs data        
