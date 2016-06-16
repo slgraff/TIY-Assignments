@@ -13,6 +13,8 @@ import CoreData
 class Walks: NSManagedObject {
 
     var walkDescription: String {
-        return "\(client) walk \(walkDate)"
+        
+        // TODO: Add client name to this
+        return "Dog Walk on \(walkDate!)"
     }
 }

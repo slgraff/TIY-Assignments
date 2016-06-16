@@ -44,17 +44,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Add Test Data
     func addTestData() {
-        guard let entity = NSEntityDescription.entityForName("Walks", inManagedObjectContext: managedObjectContext) else {
+        guard let walksEntity = NSEntityDescription.entityForName("Walks", inManagedObjectContext: managedObjectContext), clientsEntity = NSEntityDescription.entityForName("Clients", inManagedObjectContext: managedObjectContext), dogsEntity = NSEntityDescription.entityForName("Dogs", inManagedObjectContext: managedObjectContext)
+        else {
             fatalError("Could not find entity description!")
         }
         
+        // Add sample Walks data
         for i in 1...10 {
-            let walks = Walks(entity: entity, insertIntoManagedObjectContext: self.managedObjectContext)
-            let currentDate = NSDate()
+            let walks = Walks(entity: walksEntity, insertIntoManagedObjectContext: self.managedObjectContext)
             
-            walks.walkDate = currentDate
-            walks.notes = i % 3 == 0 ? "Super friendly dog":"Dog is very vocal"
+            walks.walkDate = i % 3 == 0 ? "Thursday, June 30th" : "Friday, July 1st"
+            walks.walkETABegin = i % 3 == 0 ? "11:00am" : "12:00pm"
+            walks.walkETAEnd = i % 3 == 0 ? "1:00pm" : "2:00pm"
         }
+        
+        
+        // Add sample Clients data
+        let johnsmith = Clients(entity: clientsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
+        johnsmith.name = "John Smith"
+        johnsmith.address = "100 E. Main St., Durham, NC 27701"
+        
+        let suzy = Clients(entity: clientsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
+        suzy.name = "Suzy Chapstick"
+        suzy.name = "330 E. Trinity Ave., Durham, NC 27701"
+        
+        
+        // Add sample Dogs data        
+        let snickers = Dogs(entity: dogsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
+        snickers.name = "Snickers"
+        snickers.age = "12"
+        snickers.size = "small"
+        snickers.breed = "poodle/dacshund mix"
+        
+        let calvin = Dogs(entity: dogsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
+        calvin.name = "Calvin"
+        calvin.age = "10"
+        calvin.size = "small"
+        calvin.breed = "maltese"
+        
+        let barney = Dogs(entity: dogsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
+        barney.name = "Barney"
+        barney.age = "10"
+        barney.size = "medium"
+        barney.breed = "beagle/basset hound mix"
+        
+        saveContext()
         
     }
     

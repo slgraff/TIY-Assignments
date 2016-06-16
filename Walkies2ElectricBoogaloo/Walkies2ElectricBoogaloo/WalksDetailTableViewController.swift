@@ -47,7 +47,7 @@ class WalksDetailTableViewController: UITableViewController {
 //                let currentDateString = dateFormatter.stringFromDate(currentDate)
                 
                 walk = Walks(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
-                walk?.walkDate = (currentDate)
+                walk?.walkDate = String(currentDate)
                 walk?.notes = "Enter any notes"
             }
         }
