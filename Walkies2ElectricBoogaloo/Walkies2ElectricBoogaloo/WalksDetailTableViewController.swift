@@ -27,7 +27,7 @@ class WalksDetailTableViewController: UITableViewController {
             walkNotesTextField.text = walk.notes
             
             if let client = walk.client {
-                walkClientLabel.text = "Client: \(client.name)"
+                walkClientLabel.text = "Client: \(client.name!)"
             } else {
                 walkClientLabel.text = "Choose client"
             }
