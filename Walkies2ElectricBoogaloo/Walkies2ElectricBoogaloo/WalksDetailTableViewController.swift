@@ -12,10 +12,12 @@ import CoreData
 class WalksDetailTableViewController: UITableViewController {
 
     var walk: Walks?
+    var dog: Dogs?
     var managedObjectContext: NSManagedObjectContext!
     
 
     @IBOutlet weak var walkClientLabel: UILabel!
+    @IBOutlet weak var walkDogLabel: UILabel!
     @IBOutlet weak var walkTimeTextField: UITextField!
     @IBOutlet weak var walkNotesTextField: UITextField!
     
@@ -30,6 +32,13 @@ class WalksDetailTableViewController: UITableViewController {
                 walkClientLabel.text = "Client: \(client.name!)"
             } else {
                 walkClientLabel.text = "Choose client"
+            }
+        
+        
+            if let dog = walk.dogs {
+                walkDogLabel.text = "Dog: \(walk.dogs!.name!)"
+            } else {
+                walkDogLabel.text = "Select dog"
             }
         }
     }
@@ -61,18 +70,28 @@ class WalksDetailTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && indexPath.row == 0 {
-            if let clientPicker = storyboard?.instantiateViewControllerWithIdentifier("Clients") as? ClientsTableViewController {
-                clientPicker.managedObjectContext = managedObjectContext
-                clientPicker.pickerDelegate = self
-                clientPicker.selectedClient = walk?.client
-                
-                navigationController?.pushViewController(clientPicker, animated: true)
+            if indexPath.section == 0 && indexPath.row == 0 {
+                if let clientPicker = storyboard?.instantiateViewControllerWithIdentifier("Clients") as? ClientsTableViewController {
+                    clientPicker.managedObjectContext = managedObjectContext
+                    clientPicker.pickerDelegate = self
+                    clientPicker.selectedClient = walk?.client
+                    
+                    navigationController?.pushViewController(clientPicker, animated: true)
+                }
             }
-        }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
+            if indexPath.section == 0 && indexPath.row == 1 {
+                if let dogPicker = storyboard?.instantiateViewControllerWithIdentifier("Dogs") as? DogsTableViewController {
+                    dogPicker.managedObjectContext = managedObjectContext
+                    dogPicker.pickerDelegate = self
+                    dogPicker.selectedDog = walk?.dogs
+                    
+                    navigationController?.pushViewController(dogPicker, animated: true)
+                }
+            }
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+        }
 
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 //        // #warning Incomplete implementation, return the number of sections
@@ -146,8 +165,20 @@ extension WalksDetailTableViewController: ClientPickerDelegate {
     func didSelectClient(client: Clients) {
     walk?.client = client
     
-    do {
-        try managedObjectContext.save()
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("Error saving the managed object context!")
+        }
+    }
+}
+
+extension WalksDetailTableViewController: DogPickerDelegate {
+    func didSelectDog(dog: Dogs) {
+    walk?.dogs = dog
+        
+        do {
+            try managedObjectContext.save()
         } catch {
             print("Error saving the managed object context!")
         }

@@ -152,6 +152,7 @@
                     </tableView>
                     <connections>
                         <outlet property="walkClientLabel" destination="6PG-86-cga" id="2ev-u9-7ke"/>
+                        <outlet property="walkDogLabel" destination="oed-zf-Qlu" id="KNy-oY-a6R"/>
                         <outlet property="walkNotesTextField" destination="ZUg-UO-efX" id="Pfv-lh-ywv"/>
                         <outlet property="walkTimeTextField" destination="rW2-KJ-Jzr" id="Bnb-eB-DOw"/>
                     </connections>
@@ -192,7 +193,7 @@
         <!--Dogs Table View Controller-->
         <scene sceneID="ZU8-Hl-DDu">
             <objects>
-                <tableViewController id="Am2-rk-rcN" customClass="DogsTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Dogs" id="Am2-rk-rcN" customClass="DogsTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pEl-0G-Ejv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

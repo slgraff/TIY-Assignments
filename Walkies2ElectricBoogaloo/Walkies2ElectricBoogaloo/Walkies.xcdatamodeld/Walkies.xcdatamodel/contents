@@ -31,7 +31,7 @@
         <attribute name="walkETAEnd" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="walkMap" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Clients" inverseName="walks" inverseEntity="Clients" syncable="YES"/>
-        <relationship name="dogs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dogs" inverseName="walks" inverseEntity="Dogs" syncable="YES"/>
+        <relationship name="dogs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dogs" inverseName="walks" inverseEntity="Dogs" syncable="YES"/>
     </entity>
     <elements>
         <element name="Clients" positionX="-54" positionY="-9" width="128" height="150"/>

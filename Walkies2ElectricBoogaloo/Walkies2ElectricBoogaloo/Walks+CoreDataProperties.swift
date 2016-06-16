@@ -24,6 +24,6 @@ extension Walks {
     @NSManaged var walkDate: String?
     @NSManaged var walkETAEnd: String?
     @NSManaged var client: Clients?
-    @NSManaged var dogs: NSSet?
+    @NSManaged var dogs: Dogs?
 
 }
