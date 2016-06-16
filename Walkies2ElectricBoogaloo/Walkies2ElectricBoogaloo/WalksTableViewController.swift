@@ -21,7 +21,7 @@ class WalksTableViewController: UITableViewController {
         super.viewDidLoad()
         
         if let selectedWalk = selectedWalk {
-            title = "Walk: \(selectedWalk.walkTime)"
+            title = "Walk: \(selectedWalk.walkDate)"
         } else {
             title = "Walks"
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: (#selector(WalksTableViewController.addWalk(_:))))

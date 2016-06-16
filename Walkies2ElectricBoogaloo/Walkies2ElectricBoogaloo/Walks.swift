@@ -13,6 +13,6 @@ import CoreData
 class Walks: NSManagedObject {
 
     var walkDescription: String {
-        return "\(client) walk \(walkTime)"
+        return "\(client) walk \(walkDate)"
     }
 }

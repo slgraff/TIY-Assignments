@@ -23,7 +23,7 @@ class WalksDetailTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         if let walk = walk {
-            walkTimeTextField.text = String(walk.walkTime)
+            walkTimeTextField.text = String(walk.walkDate)
             walkNotesTextField.text = walk.notes
             
             if let client = walk.client {
@@ -47,7 +47,7 @@ class WalksDetailTableViewController: UITableViewController {
 //                let currentDateString = dateFormatter.stringFromDate(currentDate)
                 
                 walk = Walks(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
-                walk?.walkTime = (currentDate)
+                walk?.walkDate = (currentDate)
                 walk?.notes = "Enter any notes"
             }
         }
@@ -64,7 +64,6 @@ class WalksDetailTableViewController: UITableViewController {
         if indexPath.section == 0 && indexPath.row == 0 {
             if let clientPicker = storyboard?.instantiateViewControllerWithIdentifier("Clients") as? ClientsTableViewController {
                 clientPicker.managedObjectContext = managedObjectContext
-                
                 clientPicker.pickerDelegate = self
                 clientPicker.selectedClient = walk?.client
                 

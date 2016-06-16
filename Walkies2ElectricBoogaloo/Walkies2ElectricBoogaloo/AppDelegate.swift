@@ -52,11 +52,81 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let walks = Walks(entity: entity, insertIntoManagedObjectContext: self.managedObjectContext)
             let currentDate = NSDate()
             
-            walks.walkTime = currentDate
+            walks.walkDate = currentDate
             walks.notes = i % 3 == 0 ? "Super friendly dog":"Dog is very vocal"
         }
         
     }
+    
+    // TODO: Change Add Test Data to populate walks, clients, dogs with info from dictionaries
+    // MARK: Add Test Data
+//    func addTestData() {
+//        guard let entity = NSEntityDescription.entityForName("Walks", inManagedObjectContext: managedObjectContext) else {
+//            fatalError("Could not find entity description!")
+//        }
+//        
+//        
+//        // Dictionary of walks
+//        var walks: [String: [String:String]] = [
+//            "0001": ["client":"Charlie Brown", "dogs":"Snoopy", "walkDate":"June 30, 2016", "walkETABegin":"11:00am", "walkETAEnd":"2:00pm"],
+//            "0002": ["client":"Charlie Brown", "dogs":"Snoopy", "walkDate":"June 30, 2016", "walkETABegin":"1:00pm", "walkETAEnd":"2:00pm"],
+//            "0003": ["client":"Charlie Brown", "dogs":"Snoopy", "walkDate":"June 30, 2016", "walkETABegin":"12:00pm", "walkETAEnd":"2:00pm"],
+//            "0004": ["client":"Charlie Brown", "dogs":"Snoopy", "walkDate":"June 30, 2016", "walkETABegin":"4:00pm", "walkETAEnd":"6:00pm"],
+//            "0005": ["client":"Charlie Brown", "dogs":"Snoopy", "walkDate":"June 30, 2016", "walkETABegin":"5:00pm", "walkETAEnd":"7:00pm"]
+//        ]
+//        
+//        // Populate Core Data with walks dictionary
+////        for (walkKey, walkValue) in walks {
+////            let walk = Walks(entity: entity, insertIntoManagedObjectContext: self.managedObjectContext)
+////            
+////            walk.client = walks[walkKey].["client"]
+////            
+////            
+////            ["client"]! as String
+////            walk.dogs = theWalk["dogs"]! as String
+////            walk.walkDate = walk["walkDate"]! as String
+////            walk.walkETABegin = walk["walkETABegin"]! as String
+////            walk.walkETAEnd = walk["walkETAEnd"]! as String
+////            
+////            saveContext()
+////        }
+//        
+//        
+//        
+//        // Dictionary of dogs; Snoopy and his seven siblings
+//        var dogs: [String: [String: String]] = [
+//            "Snoopy":["breed":"beagle", "age":"6", "sex":"male", "size":"small", "notes":"Likes to lick Lucy, try to prevent him from doing so. Can walk him down to James Street Elementary School."],
+//            "Spike":["breed":"beagle", "age":"6", "sex":"male", "size":"small", "notes":"Likes to wear a fedora."],
+//            "Andy":["breed":"beagle", "age":"6", "sex":"male", "size":"small", "notes":"Plays the jug."],
+//            "Marbles":["breed":"beagle", "age":"6", "sex":"male", "size":"small", "notes":"Be sure to put on his jogging shoes before walk. Likes to play the banjo."],
+//            "Olaf":["breed":"beagle", "age":"6", "sex":"male", "size":"small", "notes":"Likes to wear a hunting cap. Plays the drums."],
+//            "Belle":["breed":"beagle", "age":"6", "sex":"male", "size":"small", "notes":"Has a lace collar."],
+//            "Molly":["breed":"beagle", "age":"6", "sex":"female", "size":"small", "notes":"Plays the dobro."],
+//            "Rover":["breed":"beagle", "age":"6", "sex":"male", "size":"small", "notes":"Plays the mandolin."]
+//        ]
+//        
+//        // Populate Core Data with dogs dictionary
+//            
+//        // Dictionary of clients
+//        var clients: [String: [String: String]] = [
+//            "Charlie Brown":["address":"1502 James St., Hennepin County, MN", "phone":"612-555-1212", "email":"chuck@thepeanuts.net", "securityInfo":""],
+//            
+//            ]
+//        
+//        // Populate Core Date with clients dictionary
+//        
+//        
+//        
+//        
+//        
+////        let jim = Person(entity: personEntity, insertIntoManagedObjectContext: managedObjectContext)
+////        bob.name = "Jim Black"
+////        let susie = Person(entity: personEntity, insertIntoManagedObjectContext: managedObjectContext)
+////        jane.name = "Susie Chapstick"
+//        
+//        saveContext()
+//        
+//    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
