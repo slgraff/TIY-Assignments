@@ -66,7 +66,7 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         if walkButton.titleLabel!.text == "Start Walk" {
             locationManager.startUpdatingLocation()
             startWalkTimer()
-            walkButton.setTitle("End Walk", forState: .Normal)
+            walkButton.setTitle("Stop Walk", forState: .Normal)
         } else if walkButton.titleLabel!.text == "Stop Walk" {
             locationManager.stopUpdatingLocation()
             stopWalkTimer()
