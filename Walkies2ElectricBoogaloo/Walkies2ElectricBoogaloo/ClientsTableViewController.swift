@@ -83,7 +83,7 @@ class ClientsTableViewController: UITableViewController {
             pickerDelegate.didSelectClient(client)
             
             tableView.reloadData()
-        } else {
+        } else {  // TODO: Not getting dogs associated with client(owner) here
             if let dogsTableViewController = storyboard?.instantiateViewControllerWithIdentifier("Dogs") as? DogsTableViewController {
                 let client = clients[indexPath.row]
                 

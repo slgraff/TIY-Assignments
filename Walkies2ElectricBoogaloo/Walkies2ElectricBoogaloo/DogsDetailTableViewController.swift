@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class DogsDetailTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var dog: Dogs?
+    var managedObjectContext: NSManagedObjectContext!
+    let dogPicPicker = UIImagePickerController()
 
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var chooseDogPictureButton: UIButton!
@@ -18,9 +23,6 @@ class DogsDetailTableViewController: UITableViewController, UIImagePickerControl
     @IBOutlet weak var dogOwnerNameLabel: UILabel!
     @IBOutlet weak var dogAgeLabel: UILabel!
     @IBOutlet weak var dogSexLabel: UILabel!
-    
-    // Declare image picker
-    let dogPicPicker = UIImagePickerController()
     
     
     override func viewDidLoad() {
@@ -33,6 +35,26 @@ class DogsDetailTableViewController: UITableViewController, UIImagePickerControl
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if let dog = dog {
+            dogNameLabel.text = dog.name!
+            dogAgeLabel.text = dog.age!
+            dogSexLabel.text = dog.sex!
+            // dogImageView.image = dog.dogPicture?  // TODO: dogImageView no workie
+            
+            if let owner = dog.owner {
+                dogOwnerNameLabel.text = "Owner: \(dog.owner)"  // TODO: Don't know how to access dog's owner
+            } else {
+                dogOwnerNameLabel.text = "Choose Owner"
+            }
+            
+            
+            
+
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -132,7 +154,6 @@ class DogsDetailTableViewController: UITableViewController, UIImagePickerControl
     
     // MARK: UIImagePicker Delegate Methods
     
-    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let edited = info[UIImagePickerControllerEditedImage] as? UIImage {
             dogImageView.image = edited
@@ -146,5 +167,20 @@ class DogsDetailTableViewController: UITableViewController, UIImagePickerControl
         // Close the picker
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+}
 
+
+// MARK: Client Picker Extension
+
+extension DogsDetailTableViewController: ClientPickerDelegate {
+    func didSelectClient(client: Clients) {
+        dog?.owner = client
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("Error saving the managed object context!")
+        }
+    }
 }
