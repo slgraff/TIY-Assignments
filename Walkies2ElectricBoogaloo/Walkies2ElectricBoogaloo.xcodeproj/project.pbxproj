@@ -140,6 +140,11 @@
 					CC2EEA541D0EE94A00BDE1E7 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = U974956332;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
