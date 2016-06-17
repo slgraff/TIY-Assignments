@@ -161,6 +161,61 @@
             </objects>
             <point key="canvasLocation" x="2283" y="-690"/>
         </scene>
+        <!--Walk Map View Controller-->
+        <scene sceneID="UkI-AV-PEg">
+            <objects>
+                <viewController id="rh8-xd-FFx" customClass="WalkMapViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ppp-2C-Cnb"/>
+                        <viewControllerLayoutGuide type="bottom" id="H0G-81-kcJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FFM-IB-ymQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FOu-jL-nGv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="543"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0B6-rW-Dtw">
+                                <rect key="frame" x="20" y="551" width="71" height="29"/>
+                                <state key="normal" title="Start Walk"/>
+                                <connections>
+                                    <action selector="walkButtonTapped:" destination="rh8-xd-FFx" eventType="touchUpInside" id="RRM-8p-zma"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Walk Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HB7-g8-QAZ">
+                                <rect key="frame" x="99" y="555" width="179" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0B6-rW-Dtw" firstAttribute="leading" secondItem="FFM-IB-ymQ" secondAttribute="leading" constant="20" id="4el-4g-AUJ"/>
+                            <constraint firstItem="FOu-jL-nGv" firstAttribute="leading" secondItem="FFM-IB-ymQ" secondAttribute="leading" id="6kp-KW-D8J"/>
+                            <constraint firstItem="FOu-jL-nGv" firstAttribute="top" secondItem="FFM-IB-ymQ" secondAttribute="top" id="EPr-S7-s59"/>
+                            <constraint firstItem="FOu-jL-nGv" firstAttribute="centerX" secondItem="FFM-IB-ymQ" secondAttribute="centerX" id="O2h-q3-GZA"/>
+                            <constraint firstItem="0B6-rW-Dtw" firstAttribute="top" secondItem="FOu-jL-nGv" secondAttribute="bottom" constant="8" id="Vin-9t-vFK"/>
+                            <constraint firstItem="HB7-g8-QAZ" firstAttribute="leading" secondItem="0B6-rW-Dtw" secondAttribute="trailing" constant="8" id="YBb-rb-8FL"/>
+                            <constraint firstItem="H0G-81-kcJ" firstAttribute="top" secondItem="HB7-g8-QAZ" secondAttribute="bottom" constant="24" id="hD1-2o-T8r"/>
+                            <constraint firstAttribute="trailing" secondItem="FOu-jL-nGv" secondAttribute="trailing" id="lG6-YA-jaK"/>
+                            <constraint firstItem="H0G-81-kcJ" firstAttribute="top" secondItem="0B6-rW-Dtw" secondAttribute="bottom" constant="20" id="lOc-ox-wTF"/>
+                            <constraint firstItem="0B6-rW-Dtw" firstAttribute="top" secondItem="FOu-jL-nGv" secondAttribute="bottom" constant="8" id="m6D-wE-B56"/>
+                            <constraint firstItem="HB7-g8-QAZ" firstAttribute="top" secondItem="FOu-jL-nGv" secondAttribute="bottom" constant="12" id="oqE-bR-d23"/>
+                            <constraint firstItem="HB7-g8-QAZ" firstAttribute="leading" secondItem="0B6-rW-Dtw" secondAttribute="trailing" constant="8" id="wb5-MP-wuh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="walkButton" destination="0B6-rW-Dtw" id="fqq-gZ-QO5"/>
+                        <outlet property="walkMapView" destination="FOu-jL-nGv" id="89r-Qr-RAb"/>
+                        <outlet property="walkTimeLabel" destination="HB7-g8-QAZ" id="0TC-jS-K52"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8J3-aS-wPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2950" y="-690"/>
+        </scene>
         <!--Clients Table View Controller-->
         <scene sceneID="MRt-hK-5nN">
             <objects>

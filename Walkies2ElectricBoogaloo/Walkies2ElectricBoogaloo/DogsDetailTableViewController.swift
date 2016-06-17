@@ -14,6 +14,10 @@ class DogsDetailTableViewController: UITableViewController, UIImagePickerControl
     var dog: Dogs?
     var managedObjectContext: NSManagedObjectContext!
     let dogPicPicker = UIImagePickerController()
+    
+    // var imageData = UIImagePNGRepresentation(UIImage)  
+    // TODO: Figure out how to declare var to hold image
+    // Do I want to store image in Core Data, or just a referece to it where it lives in the Photos library?
 
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var chooseDogPictureButton: UIButton!
