@@ -51,7 +51,7 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     override func viewWillDisappear(animated: Bool) {
         // TODO: What do I need to do when this view controller disappears?
-        // - Pass value of walkDurationInSeconds
+        // - Pass value of walkDurationInSeconds, or just write to database (setup attribute for this)
         // - Pass a snapshot of the map with overlay, or just save this to database
     }
 
@@ -147,7 +147,7 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             // TODO: Always track user location, or at set duration?
             // every minute, 5 minutes, etc.
             locationManager.stopUpdatingLocation()
-            updateLocationTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(locationManager.startUpdatingLocation), userInfo: nil, repeats: false)
+            updateLocationTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: locationManager, selector: #selector(locationManager.startUpdatingLocation), userInfo: nil, repeats: false)
         }
     }
     
