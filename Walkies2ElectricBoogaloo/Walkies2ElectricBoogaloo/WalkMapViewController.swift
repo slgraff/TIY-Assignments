@@ -20,7 +20,9 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     var locationManager: CLLocationManager!
     var locations = [CLLocation]()
     
+    var walkDurationTimer = NSTimer()
     var updateLocationTimer = NSTimer()
+    var walkDurationInSeconds = 0
     
     
     override func viewDidLoad() {
@@ -57,13 +59,34 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         
         if walkButton.titleLabel!.text == "Start Walk" {
             locationManager.startUpdatingLocation()
+            startWalkTimer()
             walkButton.setTitle("End Walk", forState: .Normal)
         } else if walkButton.titleLabel!.text == "Stop Walk" {
             locationManager.stopUpdatingLocation()
+            stopWalkTimer()
             walkButton.setTitle("Start Walk", forState: .Normal)
         }
     }
+    
+    func startWalkTimer() {
+        walkDurationTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(WalkMapViewController.incrementTimer), userInfo: nil, repeats: true)
+    }
+    
+    func stopWalkTimer() {
+        walkDurationTimer.invalidate()
+    }
+    
+    func incrementTimer() {
+        walkDurationInSeconds += 1
+        let (walkMins, walkSecs) = secondsToMinutesSeconds(walkDurationInSeconds)
+        walkTimeLabel.text = "\(walkMins):\(walkSecs)"
+    }
+    
+    func secondsToMinutesSeconds (seconds: Int) -> (Int, Int) {
+        return (seconds / 60, seconds % 60)
+    }
 
+    
     // MARK: Location Manager Delegate Methods
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
