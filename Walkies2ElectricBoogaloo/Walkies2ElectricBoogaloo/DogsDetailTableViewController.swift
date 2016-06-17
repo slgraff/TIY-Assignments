@@ -8,10 +8,25 @@
 
 import UIKit
 
-class DogsDetailTableViewController: UITableViewController {
+class DogsDetailTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var dogImageView: UIImageView!
+    @IBOutlet weak var chooseDogPictureButton: UIButton!
+    @IBOutlet weak var takeDogPictureButton: UIButton!
+    
+    @IBOutlet weak var dogNameLabel: UILabel!
+    @IBOutlet weak var dogOwnerNameLabel: UILabel!
+    @IBOutlet weak var dogAgeLabel: UILabel!
+    @IBOutlet weak var dogSexLabel: UILabel!
+    
+    // Declare image picker
+    let dogPicPicker = UIImagePickerController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dogPicPicker.delegate = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -91,5 +106,45 @@ class DogsDetailTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    // MARK: Button Actions
+    
+    @IBAction func chooseDogPictureButtonPressed(sender: AnyObject) {
+        dogPicPicker.sourceType = .PhotoLibrary
+        dogPicPicker.allowsEditing = false
+        presentViewController(dogPicPicker, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func takeDogPictureButtonPressed(sender: AnyObject) {
+        if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+            dogPicPicker.sourceType = .Camera
+            dogPicPicker.allowsEditing = true
+            presentViewController(dogPicPicker, animated: true, completion: nil)
+        } else {
+            // Disable the take picture button if no rear camera
+            // Useful for running in simulator
+            self.takeDogPictureButton.enabled = false
+        }
+    }
+    
+    
+    // MARK: UIImagePicker Delegate Methods
+    
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let edited = info[UIImagePickerControllerEditedImage] as? UIImage {
+            dogImageView.image = edited
+        } else if let photo = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            dogImageView.image = photo
+        }
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        // Close the picker
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }

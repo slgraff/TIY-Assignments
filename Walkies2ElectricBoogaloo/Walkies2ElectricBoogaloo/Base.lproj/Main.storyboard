@@ -225,25 +225,82 @@
         <scene sceneID="SaY-E5-q5k">
             <objects>
                 <tableViewController id="Jp4-CL-Cna" customClass="DogsDetailTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zf9-Qf-uAh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="182" sectionHeaderHeight="28" sectionFooterHeight="28" id="zf9-Qf-uAh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CdW-zN-mhJ">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CdW-zN-mhJ" id="eeE-Ee-hyN">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="sZS-Io-lqH">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="182" id="CdW-zN-mhJ">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="182"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CdW-zN-mhJ" id="eeE-Ee-hyN">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="181"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t8G-F9-BKN">
+                                                    <rect key="frame" x="8" y="8" width="128" height="128"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI7-ga-yzc">
+                                                    <rect key="frame" x="144" y="8" width="187" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSI-Wn-oRi">
+                                                    <rect key="frame" x="144" y="37" width="187" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-iq-qhr">
+                                                    <rect key="frame" x="144" y="66" width="187" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-Ys-1A3">
+                                                    <rect key="frame" x="144" y="95" width="187" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdV-F1-sj4">
+                                                    <rect key="frame" x="8" y="144" width="53" height="30"/>
+                                                    <state key="normal" title="Choose"/>
+                                                    <connections>
+                                                        <action selector="chooseDogPictureButtonPressed:" destination="Jp4-CL-Cna" eventType="touchUpInside" id="dJY-Bk-Vwb"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdJ-2Z-9at">
+                                                    <rect key="frame" x="103" y="144" width="33" height="30"/>
+                                                    <state key="normal" title="Take"/>
+                                                    <connections>
+                                                        <action selector="takeDogPictureButtonPressed:" destination="Jp4-CL-Cna" eventType="touchUpInside" id="aTq-IK-YQh"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="Jp4-CL-Cna" id="zbM-0C-r5s"/>
                             <outlet property="delegate" destination="Jp4-CL-Cna" id="5i8-G7-nQo"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="chooseDogPictureButton" destination="jdV-F1-sj4" id="tth-nc-ZWc"/>
+                        <outlet property="dogAgeLabel" destination="Dhh-iq-qhr" id="IzF-11-2Ii"/>
+                        <outlet property="dogImageView" destination="t8G-F9-BKN" id="Khn-Pf-032"/>
+                        <outlet property="dogNameLabel" destination="tI7-ga-yzc" id="V4c-cy-LXN"/>
+                        <outlet property="dogOwnerNameLabel" destination="FSI-Wn-oRi" id="BOV-g3-7Ss"/>
+                        <outlet property="dogSexLabel" destination="hQ0-Ys-1A3" id="22E-ox-UVQ"/>
+                        <outlet property="takeDogPictureButton" destination="RdJ-2Z-9at" id="6fc-s4-xcY"/>
+                        <outlet property="takeDogPictureButtonPressed" destination="RdJ-2Z-9at" id="sRu-yJ-J4e"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cmu-VV-Hmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
