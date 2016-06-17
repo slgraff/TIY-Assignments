@@ -15,6 +15,7 @@
 		CC1F66791D118D850062A4EA /* Dogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F66731D118D850062A4EA /* Dogs.swift */; };
 		CC1F667B1D11A8340062A4EA /* WalksDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F667A1D11A8340062A4EA /* WalksDetailTableViewController.swift */; };
 		CC1F667D1D11D6900062A4EA /* ClientsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F667C1D11D6900062A4EA /* ClientsDetailTableViewController.swift */; };
+		CC1F66811D142C760062A4EA /* DogsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1F66801D142C760062A4EA /* DogsDetailTableViewController.swift */; };
 		CC2EEA591D0EE94A00BDE1E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA581D0EE94A00BDE1E7 /* AppDelegate.swift */; };
 		CC2EEA5B1D0EE94A00BDE1E7 /* WalksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA5A1D0EE94A00BDE1E7 /* WalksTableViewController.swift */; };
 		CC2EEA5D1D0EE94A00BDE1E7 /* ClientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEA5C1D0EE94A00BDE1E7 /* ClientsTableViewController.swift */; };
@@ -35,6 +36,7 @@
 		CC1F66731D118D850062A4EA /* Dogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dogs.swift; sourceTree = "<group>"; };
 		CC1F667A1D11A8340062A4EA /* WalksDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalksDetailTableViewController.swift; sourceTree = "<group>"; };
 		CC1F667C1D11D6900062A4EA /* ClientsDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientsDetailTableViewController.swift; sourceTree = "<group>"; };
+		CC1F66801D142C760062A4EA /* DogsDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsDetailTableViewController.swift; sourceTree = "<group>"; };
 		CC2EEA551D0EE94A00BDE1E7 /* Walkies2ElectricBoogaloo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walkies2ElectricBoogaloo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2EEA581D0EE94A00BDE1E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC2EEA5A1D0EE94A00BDE1E7 /* WalksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalksTableViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				CC2EEA5C1D0EE94A00BDE1E7 /* ClientsTableViewController.swift */,
 				CC1F667C1D11D6900062A4EA /* ClientsDetailTableViewController.swift */,
 				CC2EEA6C1D0EEAF100BDE1E7 /* DogsTableViewController.swift */,
+				CC1F66801D142C760062A4EA /* DogsDetailTableViewController.swift */,
 				CC2EEA5E1D0EE94A00BDE1E7 /* Main.storyboard */,
 				CC2EEA631D0EE94A00BDE1E7 /* LaunchScreen.storyboard */,
 				CC2EEAA51D0F160900BDE1E7 /* Walkies.xcdatamodeld */,
@@ -186,6 +189,7 @@
 				CC1F66781D118D850062A4EA /* Dogs+CoreDataProperties.swift in Sources */,
 				CC1F66771D118D850062A4EA /* Clients.swift in Sources */,
 				CC1F66761D118D850062A4EA /* Clients+CoreDataProperties.swift in Sources */,
+				CC1F66811D142C760062A4EA /* DogsDetailTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

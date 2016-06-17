@@ -75,21 +75,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         snickers.age = "12"
         snickers.size = "small"
         snickers.breed = "poodle/dacshund mix"
+        suzy.setValue(suzy, forKey: "owner")
+
         
         let calvin = Dogs(entity: dogsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
         calvin.name = "Calvin"
         calvin.age = "10"
         calvin.size = "small"
         calvin.breed = "maltese"
+        suzy.setValue(suzy, forKey: "owner")
+
         
         let barney = Dogs(entity: dogsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
         barney.name = "Barney"
         barney.age = "10"
         barney.size = "medium"
         barney.breed = "beagle/basset hound mix"
+        barney.setValue(johnsmith, forKey: "owner")
+        
+        johnsmith.dogs = NSSet(array: [barney])
+        suzy.dogs = NSSet(array:[calvin, snickers])
         
         saveContext()
-        
     }
     
     // TODO: Change Add Test Data to populate walks, clients, dogs with info from dictionaries

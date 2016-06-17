@@ -20,25 +20,38 @@ class DogsTableViewController: UITableViewController {
     
     weak var pickerDelegate: DogPickerDelegate?
     var selectedDog: Dogs?
+    var selectedClient: Clients?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Dogs"
+        if let selectedDog = selectedDog {
+            title = "Dog: \(selectedDog.name)"
+        } else {
+            title = "Dogs"
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: (#selector(DogsTableViewController.addDog(_:))))
+        }
         
         reloadData()
     }
     
     func reloadData() {
-        let fetchRequest = NSFetchRequest(entityName: "Dogs")
         
-        do {
-            if let results = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Dogs] {
-                dogs = results
-                tableView.reloadData()
+        if let selectedClient = selectedClient {
+            if let clientDogs = selectedClient.dogs!.allObjects as? [Dogs] {
+                dogs = clientDogs
             }
-        } catch {
-            fatalError("Error fetching list of dogs!")
+        } else {
+            let fetchRequest = NSFetchRequest(entityName: "Dogs")
+                
+            do {
+                if let results = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Dogs] {
+                    dogs = results
+                    // tableView.reloadData()
+                }
+            } catch {
+                fatalError("Error fetching list of dogs!")
+            }
         }
     }
     
@@ -77,6 +90,13 @@ class DogsTableViewController: UITableViewController {
             tableView.reloadData()
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    
+    // MARK: Actions & Segues
+    
+    func addDog(sender: AnyObject?) {
+        performSegueWithIdentifier("dogDetailSegue", sender: self)
     }
     
     

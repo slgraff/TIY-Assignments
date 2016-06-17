@@ -25,8 +25,13 @@ class ClientsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Clients"
-        
+        if let selectedClient = selectedClient {
+            title = "Client: \(selectedClient.name)"
+        } else {
+            title = "Clients"
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: (#selector(ClientsTableViewController.addClient(_:))))
+        }
+                
         reloadData()
     }
     
@@ -78,9 +83,24 @@ class ClientsTableViewController: UITableViewController {
             pickerDelegate.didSelectClient(client)
             
             tableView.reloadData()
+        } else {
+            if let dogsTableViewController = storyboard?.instantiateViewControllerWithIdentifier("Dogs") as? DogsTableViewController {
+                let client = clients[indexPath.row]
+                
+                dogsTableViewController.managedObjectContext = managedObjectContext
+                dogsTableViewController.selectedClient = client
+                navigationController?.pushViewController(dogsTableViewController, animated: true)
+            }
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    
+    // MARK: Actions & Segues
+    
+    func addClient(sender: AnyObject?) {
+        performSegueWithIdentifier("clientDetailSegue", sender: self)
     }
     
     
