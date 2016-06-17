@@ -48,6 +48,12 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         walkMapView.userTrackingMode = MKUserTrackingMode.Follow
     
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        // TODO: What do I need to do when this view controller disappears?
+        // - Pass value of walkDurationInSeconds
+        // - Pass a snapshot of the map with overlay, or just save this to database
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -85,7 +91,33 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     func secondsToMinutesSeconds (seconds: Int) -> (Int, Int) {
         return (seconds / 60, seconds % 60)
     }
+    
+    
+    func createMapSnapshot() {
+        let options = MKMapSnapshotOptions()
+        options.region = walkMapView.region
+        options.size = walkMapView.frame.size
+        options.scale = UIScreen.mainScreen().scale
+        
+        let fileURL = NSURL(fileURLWithPath: "\(getPathToDocumentsDirectory())")  // TODO: Set path to save file
+        
+        let snapshotter = MKMapSnapshotter(options: options)
+        snapshotter.startWithCompletionHandler { snapshot, error in
+            guard let snapshot = snapshot else {
+                print("Snapshot error: \(error)")
+                return
+            }
+            
+            let data = UIImagePNGRepresentation(snapshot.image)
+            data?.writeToURL(fileURL, atomically: true)
+        }
+    }
 
+    func getPathToDocumentsDirectory() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
     
     // MARK: Location Manager Delegate Methods
     
@@ -112,8 +144,8 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             
             walkMapView.addOverlay(walkRoutePolyline)
             
-            // TODO: Determine if we want to always track user location
-            // or only at certain intervals (every minute, 5 minutes, etc.)
+            // TODO: Always track user location, or at set duration?
+            // every minute, 5 minutes, etc.
             locationManager.stopUpdatingLocation()
             updateLocationTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(locationManager.startUpdatingLocation), userInfo: nil, repeats: false)
         }
