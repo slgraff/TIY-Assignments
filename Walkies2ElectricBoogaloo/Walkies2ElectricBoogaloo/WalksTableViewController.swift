@@ -71,7 +71,7 @@ class WalksTableViewController: UITableViewController {
         return cell
     }
     
-    
+
     // MARK: - Actions & Segues
     
     

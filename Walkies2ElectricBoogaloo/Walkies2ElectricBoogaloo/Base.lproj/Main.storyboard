@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rh8-xd-FFx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -232,9 +232,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="p3Q-Hz-hAi" kind="show" identifier="clientDetailSegue" id="MoC-yd-36K"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -258,7 +255,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ugK-rY-2dn">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ugK-rY-2dn" id="0eO-rJ-OQf">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -354,7 +351,6 @@
                         <outlet property="dogOwnerNameLabel" destination="FSI-Wn-oRi" id="BOV-g3-7Ss"/>
                         <outlet property="dogSexLabel" destination="hQ0-Ys-1A3" id="22E-ox-UVQ"/>
                         <outlet property="takeDogPictureButton" destination="RdJ-2Z-9at" id="6fc-s4-xcY"/>
-                        <outlet property="takeDogPictureButtonPressed" destination="RdJ-2Z-9at" id="sRu-yJ-J4e"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cmu-VV-Hmx" userLabel="First Responder" sceneMemberID="firstResponder"/>

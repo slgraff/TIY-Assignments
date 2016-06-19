@@ -88,13 +88,24 @@ class DogsTableViewController: UITableViewController {
             pickerDelegate.didSelectDog(dog)
             
             tableView.reloadData()
+        } else {
+            
+            if let clientsTableViewController = storyboard?.instantiateViewControllerWithIdentifier("Clients") as? ClientsTableViewController {
+                
+                let dog = dogs[indexPath.row]
+                clientsTableViewController.managedObjectContext = managedObjectContext
+                clientsTableViewController.selectedDog = dog
+                navigationController?.pushViewController(clientsTableViewController, animated: true)
+                
+            }
+            
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    
+
     // MARK: Actions & Segues
-    
+
     func addDog(sender: AnyObject?) {
         performSegueWithIdentifier("dogDetailSegue", sender: self)
     }

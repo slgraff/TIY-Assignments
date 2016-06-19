@@ -20,6 +20,7 @@ class ClientsTableViewController: UITableViewController {
     
     weak var pickerDelegate: ClientPickerDelegate?
     var selectedClient: Clients?
+    var selectedDog: Dogs?
 
 
     override func viewDidLoad() {
@@ -84,7 +85,8 @@ class ClientsTableViewController: UITableViewController {
             
             tableView.reloadData()
             
-        } else {  // TODO: Not getting dogs associated with client(owner) here
+        } else {
+            // TODO: This isn't populating list of dogs associated with client
             if let dogsTableViewController = storyboard?.instantiateViewControllerWithIdentifier("Dogs") as? DogsTableViewController {
                 let client = clients[indexPath.row]
                 
@@ -99,6 +101,8 @@ class ClientsTableViewController: UITableViewController {
     
     
     // MARK: Actions & Segues
+    
+    // TODO: Do I need to implement prepareForSegue ??
     
     func addClient(sender: AnyObject?) {
         performSegueWithIdentifier("clientDetailSegue", sender: self)

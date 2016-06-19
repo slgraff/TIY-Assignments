@@ -135,7 +135,8 @@ class DogsDetailTableViewController: UITableViewController, UIImagePickerControl
     
     
     // MARK: Button Actions
-    
+   
+// TODO: Why are these crashing the app?
     @IBAction func chooseDogPictureButtonPressed(sender: AnyObject) {
         dogPicPicker.sourceType = .PhotoLibrary
         dogPicPicker.allowsEditing = false
