@@ -85,7 +85,7 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     func incrementTimer() {
         walkDurationInSeconds += 1
         let (walkMins, walkSecs) = secondsToMinutesSeconds(walkDurationInSeconds)
-        walkTimeLabel.text = "\(walkMins):\(walkSecs)"
+        walkTimeLabel.text = String(format:"%02d:%02d", walkMins, walkSecs)
     }
     
     func secondsToMinutesSeconds (seconds: Int) -> (Int, Int) {
