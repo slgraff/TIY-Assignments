@@ -49,7 +49,7 @@ class DogsDetailTableViewController: UITableViewController, UIImagePickerControl
             // dogImageView.image = dog.dogPicture?  // TODO: dogImageView no workie
             
             if let owner = dog.owner {
-                dogOwnerNameLabel.text = "Owner: \(dog.owner)"  // TODO: Don't know how to access dog's owner
+                dogOwnerNameLabel.text = "Owner: \(dog.owner)"  // TODO: This no workie. Don't know how to access dog's owner
             } else {
                 dogOwnerNameLabel.text = "Choose Owner"
             }
@@ -68,15 +68,15 @@ class DogsDetailTableViewController: UITableViewController, UIImagePickerControl
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

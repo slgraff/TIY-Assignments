@@ -374,7 +374,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Jp4-CL-Cna" kind="show" identifier="dogDetailSegue" id="uHt-4Y-qkD"/>
+                                    <segue destination="Jp4-CL-Cna" kind="show" id="mgF-s1-ZAR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
