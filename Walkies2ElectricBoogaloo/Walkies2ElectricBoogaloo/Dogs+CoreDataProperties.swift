@@ -29,6 +29,9 @@ extension Dogs {
     
     // See also:
     // http://stackoverflow.com/questions/25127090/saving-coredata-to-many-relationships-in-swift
-    @NSManaged func addOwner(value:Set<Dogs>)
-    @NSManaged func removeOwner(value:Set<Dogs>)
+    @NSManaged func addOwner(value:Set<Clients>)
+    @NSManaged func removeOwner(value:Set<Clients>)
+    
+    @NSManaged func addWalk(value:Set<Walks>)
+    @NSManaged func removeWalk(value:Set<Walks>)
 }

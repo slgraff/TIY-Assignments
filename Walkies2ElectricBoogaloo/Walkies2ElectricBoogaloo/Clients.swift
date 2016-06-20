@@ -12,6 +12,11 @@ import CoreData
 
 class Clients: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
-
+    var clientDescription: String {
+        if (name != nil) {
+            return "\(name!), \(address)"
+        } else {
+            return "Incomplete client info"
+        }
+    }
 }

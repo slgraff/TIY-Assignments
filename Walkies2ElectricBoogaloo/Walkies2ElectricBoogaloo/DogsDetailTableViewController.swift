@@ -32,6 +32,7 @@ class DogsDetailTableViewController: UITableViewController, UIImagePickerControl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 
         dogPicPicker.delegate = self
 
         // Uncomment the following line to preserve selection between presentations
@@ -49,7 +50,7 @@ class DogsDetailTableViewController: UITableViewController, UIImagePickerControl
             // dogImageView.image = dog.dogPicture?  // TODO: dogImageView no workie
             
             if let owner = dog.owner {
-                dogOwnerNameLabel.text = "Owner: \(dog.owner)"  // TODO: This no workie. Don't know how to access dog's owner
+                dogOwnerNameLabel.text = "Owner: \(dog.owner!)"
             } else {
                 dogOwnerNameLabel.text = "Choose Owner"
             }
@@ -178,14 +179,14 @@ class DogsDetailTableViewController: UITableViewController, UIImagePickerControl
 
 // MARK: Client Picker Extension
 
-extension DogsDetailTableViewController: ClientPickerDelegate {
-    func didSelectClient(client: Clients) {
-        dog?.owner = client
-        
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print("Error saving the managed object context!")
-        }
-    }
-}
+//extension DogsDetailTableViewController: ClientPickerDelegate {
+//    func didSelectClient(client: Clients) {
+//        dog?.owner = client
+//        
+//        do {
+//            try managedObjectContext.save()
+//        } catch {
+//            print("Error saving the managed object context!")
+//        }
+//    }
+//}

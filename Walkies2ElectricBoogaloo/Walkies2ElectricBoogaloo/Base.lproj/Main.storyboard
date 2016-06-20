@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Walks Table View Controller-->
@@ -38,7 +39,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="7J3-HA-6Po" kind="show" identifier="walkDetailSegue" id="kjf-Hg-zFC"/>
+                                    <segue destination="yLV-o2-FYx" kind="show" identifier="showWalkDetailSegue" id="czZ-3Y-oc8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -53,113 +54,155 @@
             </objects>
             <point key="canvasLocation" x="1605" y="-690"/>
         </scene>
-        <!--Walks Detail Table View Controller-->
-        <scene sceneID="JZ9-YC-VjY">
+        <!--Walks Detail View Controller-->
+        <scene sceneID="WSX-it-Q2G">
             <objects>
-                <tableViewController id="7J3-HA-6Po" customClass="WalksDetailTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="8HO-jX-jrz">
+                <viewController storyboardIdentifier="WalksDetail" id="yLV-o2-FYx" customClass="WalksDetailViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HMh-h9-dVj"/>
+                        <viewControllerLayoutGuide type="bottom" id="zne-1X-zDr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rTx-Ei-iq9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="Lgk-5d-OPi">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Client name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEz-kb-0no">
+                                <rect key="frame" x="20" y="20" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Walk date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gx4-cj-ZNx">
+                                <rect key="frame" x="20" y="49" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Walk arrival ETA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yi-IV-dSo">
+                                <rect key="frame" x="20" y="78" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Client address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aay-1k-f24">
+                                <rect key="frame" x="20" y="107" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dogs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0o-p4-zI0">
+                                <rect key="frame" x="20" y="144" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pid-s8-N6m">
+                                <rect key="frame" x="20" y="173" width="560" height="198"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gfR-dc-vzb">
+                                    <size key="itemSize" width="200" height="164"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="walkClientCell" id="sEU-LK-j9n">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sEU-LK-j9n" id="524-Nc-hUL">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dogCell" id="dN6-m8-zl7" customClass="DogsCollectionViewCell" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="17" width="200" height="164"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Client: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PG-86-cga">
-                                                    <rect key="frame" x="8" y="11" width="584" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PvY-oY-OYP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="dog name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mat-yW-aMP">
+                                                    <rect key="frame" x="0.0" y="105" width="100" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="dog sex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6A-9l-Av1">
+                                                    <rect key="frame" x="0.0" y="129" width="100" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="walkDogsCell" id="LJt-tC-AlE">
-                                        <rect key="frame" x="0.0" y="143" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LJt-tC-AlE" id="pUS-Gi-CF3">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dogs: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oed-zf-Qlu">
-                                                    <rect key="frame" x="8" y="11" width="584" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="I6A-9l-Av1" firstAttribute="top" secondItem="Mat-yW-aMP" secondAttribute="bottom" constant="5" id="5H2-Su-UVR"/>
+                                            <constraint firstItem="PvY-oY-OYP" firstAttribute="top" secondItem="dN6-m8-zl7" secondAttribute="top" id="6Xo-az-77m"/>
+                                            <constraint firstAttribute="bottom" secondItem="Mat-yW-aMP" secondAttribute="bottom" id="8A5-qy-qa3"/>
+                                            <constraint firstItem="Mat-yW-aMP" firstAttribute="top" secondItem="PvY-oY-OYP" secondAttribute="bottom" constant="5" id="Dmk-pH-Q74"/>
+                                            <constraint firstItem="Mat-yW-aMP" firstAttribute="top" secondItem="PvY-oY-OYP" secondAttribute="bottom" constant="5" id="EvR-5e-gYj"/>
+                                            <constraint firstItem="PvY-oY-OYP" firstAttribute="leading" secondItem="dN6-m8-zl7" secondAttribute="leading" id="J2o-9W-7tl"/>
+                                            <constraint firstItem="Mat-yW-aMP" firstAttribute="leading" secondItem="dN6-m8-zl7" secondAttribute="leading" id="Phd-CY-e0G"/>
+                                            <constraint firstItem="PvY-oY-OYP" firstAttribute="centerX" secondItem="dN6-m8-zl7" secondAttribute="centerX" id="aVI-Pt-Zjf"/>
+                                            <constraint firstItem="Mat-yW-aMP" firstAttribute="centerX" secondItem="dN6-m8-zl7" secondAttribute="centerX" id="gEK-Q7-eL4"/>
+                                            <constraint firstAttribute="trailing" secondItem="PvY-oY-OYP" secondAttribute="trailing" id="klx-8v-33s"/>
+                                            <constraint firstAttribute="bottom" secondItem="I6A-9l-Av1" secondAttribute="bottom" id="ljI-zm-naY"/>
+                                            <constraint firstItem="I6A-9l-Av1" firstAttribute="leading" secondItem="dN6-m8-zl7" secondAttribute="leading" id="mu9-Tu-rrH"/>
+                                            <constraint firstItem="I6A-9l-Av1" firstAttribute="centerX" secondItem="dN6-m8-zl7" secondAttribute="centerX" id="rrt-BJ-iLM"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mat-yW-aMP" secondAttribute="trailing" id="wwK-mS-N5T"/>
+                                            <constraint firstAttribute="trailing" secondItem="I6A-9l-Av1" secondAttribute="trailing" id="yax-Q7-1WE"/>
+                                        </constraints>
+                                        <size key="customSize" width="200" height="164"/>
+                                        <connections>
+                                            <outlet property="dogImage" destination="PvY-oY-OYP" id="BmO-mA-zCr"/>
+                                            <outlet property="dogName" destination="Mat-yW-aMP" id="Prb-9J-WiM"/>
+                                            <outlet property="dogSex" destination="I6A-9l-Av1" id="KLh-QO-J4c"/>
+                                        </connections>
+                                    </collectionViewCell>
                                 </cells>
-                            </tableViewSection>
-                            <tableViewSection id="24c-bV-qWi">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="walkTimeCell" id="bZb-uB-Lu0">
-                                        <rect key="frame" x="0.0" y="223" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bZb-uB-Lu0" id="OTG-9G-NCo">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Walk Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szz-mF-KGb">
-                                                    <rect key="frame" x="8" y="11" width="80" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rW2-KJ-Jzr">
-                                                    <rect key="frame" x="107" y="5" width="485" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="walkNotesCell" id="AMG-P1-RgS">
-                                        <rect key="frame" x="0.0" y="267" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AMG-P1-RgS" id="lwv-lD-B2t">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWR-BD-PGA">
-                                                    <rect key="frame" x="8" y="11" width="46" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUg-UO-efX">
-                                                    <rect key="frame" x="107" y="2" width="485" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="7J3-HA-6Po" id="wRt-9d-Qvd"/>
-                            <outlet property="delegate" destination="7J3-HA-6Po" id="2Bh-6J-b9t"/>
-                        </connections>
-                    </tableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="yLV-o2-FYx" id="dZI-gR-xDg"/>
+                                    <outlet property="delegate" destination="yLV-o2-FYx" id="KO5-Td-HOn"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DEz-kb-0no" firstAttribute="top" secondItem="HMh-h9-dVj" secondAttribute="bottom" id="048-hb-Nwo"/>
+                            <constraint firstItem="Aay-1k-f24" firstAttribute="leading" secondItem="rTx-Ei-iq9" secondAttribute="leadingMargin" id="0Tz-rC-NqR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z0o-p4-zI0" secondAttribute="trailing" id="3lq-27-BVq"/>
+                            <constraint firstItem="pid-s8-N6m" firstAttribute="top" secondItem="z0o-p4-zI0" secondAttribute="bottom" constant="8" id="555-Bx-a3k"/>
+                            <constraint firstItem="5yi-IV-dSo" firstAttribute="trailing" secondItem="rTx-Ei-iq9" secondAttribute="trailingMargin" id="5yg-gM-RLj"/>
+                            <constraint firstItem="DEz-kb-0no" firstAttribute="centerX" secondItem="rTx-Ei-iq9" secondAttribute="centerX" id="6WW-vR-F7S"/>
+                            <constraint firstItem="z0o-p4-zI0" firstAttribute="centerX" secondItem="rTx-Ei-iq9" secondAttribute="centerX" id="Dyg-yw-ZSc"/>
+                            <constraint firstItem="5yi-IV-dSo" firstAttribute="top" secondItem="gx4-cj-ZNx" secondAttribute="bottom" constant="8" id="Gfw-FA-9cA"/>
+                            <constraint firstItem="gx4-cj-ZNx" firstAttribute="centerX" secondItem="rTx-Ei-iq9" secondAttribute="centerX" id="HhM-wa-hlH"/>
+                            <constraint firstItem="gx4-cj-ZNx" firstAttribute="leading" secondItem="rTx-Ei-iq9" secondAttribute="leadingMargin" id="Kym-RM-bsY"/>
+                            <constraint firstItem="gx4-cj-ZNx" firstAttribute="trailing" secondItem="rTx-Ei-iq9" secondAttribute="trailingMargin" id="NVT-kh-qmb"/>
+                            <constraint firstItem="5yi-IV-dSo" firstAttribute="top" secondItem="gx4-cj-ZNx" secondAttribute="bottom" constant="8" id="NmU-Wo-0PS"/>
+                            <constraint firstItem="DEz-kb-0no" firstAttribute="trailing" secondItem="rTx-Ei-iq9" secondAttribute="trailingMargin" id="TTD-AH-h8O"/>
+                            <constraint firstItem="DEz-kb-0no" firstAttribute="leading" secondItem="rTx-Ei-iq9" secondAttribute="leadingMargin" id="TdX-A5-wnE"/>
+                            <constraint firstItem="z0o-p4-zI0" firstAttribute="top" secondItem="Aay-1k-f24" secondAttribute="bottom" constant="16" id="VQa-ws-ui8"/>
+                            <constraint firstItem="pid-s8-N6m" firstAttribute="leading" secondItem="rTx-Ei-iq9" secondAttribute="leadingMargin" id="YQQ-O9-A7Y"/>
+                            <constraint firstItem="Aay-1k-f24" firstAttribute="trailing" secondItem="rTx-Ei-iq9" secondAttribute="trailingMargin" id="bLg-zU-4ZB"/>
+                            <constraint firstItem="Aay-1k-f24" firstAttribute="top" secondItem="5yi-IV-dSo" secondAttribute="bottom" constant="8" id="jHC-Ua-C22"/>
+                            <constraint firstItem="Aay-1k-f24" firstAttribute="centerX" secondItem="rTx-Ei-iq9" secondAttribute="centerX" id="kuW-Ur-odg"/>
+                            <constraint firstItem="5yi-IV-dSo" firstAttribute="leading" secondItem="rTx-Ei-iq9" secondAttribute="leadingMargin" id="kyR-WJ-ccV"/>
+                            <constraint firstItem="z0o-p4-zI0" firstAttribute="top" secondItem="Aay-1k-f24" secondAttribute="bottom" constant="16" id="mO6-Pf-e3K"/>
+                            <constraint firstItem="Aay-1k-f24" firstAttribute="top" secondItem="5yi-IV-dSo" secondAttribute="bottom" constant="8" id="mzv-TO-w9i"/>
+                            <constraint firstItem="5yi-IV-dSo" firstAttribute="centerX" secondItem="rTx-Ei-iq9" secondAttribute="centerX" id="ozn-UQ-1Mw"/>
+                            <constraint firstItem="pid-s8-N6m" firstAttribute="centerX" secondItem="rTx-Ei-iq9" secondAttribute="centerX" id="prR-OE-guu"/>
+                            <constraint firstItem="gx4-cj-ZNx" firstAttribute="top" secondItem="DEz-kb-0no" secondAttribute="bottom" constant="8" id="qre-hM-kik"/>
+                            <constraint firstItem="z0o-p4-zI0" firstAttribute="leading" secondItem="rTx-Ei-iq9" secondAttribute="leadingMargin" id="xNo-0z-iCR"/>
+                            <constraint firstItem="pid-s8-N6m" firstAttribute="trailing" secondItem="rTx-Ei-iq9" secondAttribute="trailingMargin" id="zCO-sL-pVX"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="walkClientLabel" destination="6PG-86-cga" id="2ev-u9-7ke"/>
-                        <outlet property="walkDogLabel" destination="oed-zf-Qlu" id="KNy-oY-a6R"/>
-                        <outlet property="walkNotesTextField" destination="ZUg-UO-efX" id="Pfv-lh-ywv"/>
-                        <outlet property="walkTimeTextField" destination="rW2-KJ-Jzr" id="Bnb-eB-DOw"/>
+                        <outlet property="clientAddressLabel" destination="Aay-1k-f24" id="c0o-XO-e1M"/>
+                        <outlet property="clientNameLabel" destination="DEz-kb-0no" id="TfZ-yg-4Y2"/>
+                        <outlet property="walkArrivalETALabel" destination="5yi-IV-dSo" id="vqb-yM-eQ7"/>
+                        <outlet property="walkDateLabel" destination="gx4-cj-ZNx" id="g9b-sq-cQF"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="smR-ZA-NRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H4y-Ig-GZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2283" y="-690"/>
+            <point key="canvasLocation" x="2271" y="-690"/>
         </scene>
         <!--Walk Map View Controller-->
         <scene sceneID="UkI-AV-PEg">
@@ -245,38 +288,10 @@
             </objects>
             <point key="canvasLocation" x="1605" y="0.0"/>
         </scene>
-        <!--Clients Detail Table View Controller-->
-        <scene sceneID="KAX-kL-3ED">
-            <objects>
-                <tableViewController id="p3Q-Hz-hAi" customClass="ClientsDetailTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="M2q-Ad-L3N">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ugK-rY-2dn">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ugK-rY-2dn" id="0eO-rJ-OQf">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="p3Q-Hz-hAi" id="jvi-Wj-iWs"/>
-                            <outlet property="delegate" destination="p3Q-Hz-hAi" id="Y7J-nU-ExL"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZcE-xx-IrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2283" y="0.0"/>
-        </scene>
         <!--Dogs Detail Table View Controller-->
         <scene sceneID="SaY-E5-q5k">
             <objects>
-                <tableViewController id="Jp4-CL-Cna" customClass="DogsDetailTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DogsDetail" id="Jp4-CL-Cna" customClass="DogsDetailTableViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="182" sectionHeaderHeight="28" sectionFooterHeight="28" id="zf9-Qf-uAh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

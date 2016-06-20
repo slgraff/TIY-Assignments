@@ -9,16 +9,16 @@
 import UIKit
 import CoreData
 
-protocol DogPickerDelegate: class {
-    func didSelectDog(dog: Dogs)
-}
+//protocol DogPickerDelegate: class {
+//    func didSelectDog(dog: Dogs)
+//}
 
 class DogsTableViewController: UITableViewController {
     
     var managedObjectContext: NSManagedObjectContext!
     var dogs = [Dogs]()
     
-    weak var pickerDelegate: DogPickerDelegate?
+    // weak var pickerDelegate: DogPickerDelegate?
     var selectedDog: Dogs?
     var selectedClient: Clients?
 
@@ -82,24 +82,23 @@ class DogsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let pickerDelegate = pickerDelegate {
-            let dog = dogs[indexPath.row]
-            selectedDog = dog
-            pickerDelegate.didSelectDog(dog)
-            
-            tableView.reloadData()
-        } else {
-            
-            if let clientsTableViewController = storyboard?.instantiateViewControllerWithIdentifier("Clients") as? ClientsTableViewController {
+        // if let pickerDelegate = pickerDelegate {
+//            let dog = dogs[indexPath.row]
+//            selectedDog = dog
+//            pickerDelegate.didSelectDog(dog)
+//            
+//            // tableView.reloadData()
+//        } else {
+        
+            if let dogsDetailTableViewController = storyboard?.instantiateViewControllerWithIdentifier("DogsDetail") as? DogsDetailTableViewController {
                 
                 let dog = dogs[indexPath.row]
-                clientsTableViewController.managedObjectContext = managedObjectContext
-                clientsTableViewController.selectedDog = dog
-                navigationController?.pushViewController(clientsTableViewController, animated: true)
+                dogsDetailTableViewController.managedObjectContext = managedObjectContext
+                dogsDetailTableViewController.dog = dog
+                navigationController?.pushViewController(dogsDetailTableViewController, animated: true)
                 
             }
             
-        }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     

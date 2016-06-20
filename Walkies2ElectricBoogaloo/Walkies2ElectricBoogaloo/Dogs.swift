@@ -12,6 +12,11 @@ import CoreData
 
 class Dogs: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
-
+    var dogDescription: String {
+        if (name != nil) {
+            return "\(name!), \(sex), \(age) years old"
+        } else {
+            return "Incomplete dog info"
+        }
+    }
 }

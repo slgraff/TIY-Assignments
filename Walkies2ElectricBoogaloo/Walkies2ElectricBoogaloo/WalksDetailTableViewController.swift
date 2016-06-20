@@ -83,7 +83,7 @@ class WalksDetailTableViewController: UITableViewController {
             if indexPath.section == 0 && indexPath.row == 1 {
                 if let dogPicker = storyboard?.instantiateViewControllerWithIdentifier("Dogs") as? DogsTableViewController {
                     dogPicker.managedObjectContext = managedObjectContext
-                    dogPicker.pickerDelegate = self
+                    // dogPicker.pickerDelegate = self
                     dogPicker.selectedDog = walk?.dogs
                     
                     navigationController?.pushViewController(dogPicker, animated: true)
@@ -173,14 +173,14 @@ extension WalksDetailTableViewController: ClientPickerDelegate {
     }
 }
 
-extension WalksDetailTableViewController: DogPickerDelegate {
-    func didSelectDog(dog: Dogs) {
-    walk?.dogs = dog
-        
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print("Error saving the managed object context!")
-        }
-    }
-}
+//extension WalksDetailTableViewController: DogPickerDelegate {
+//    func didSelectDog(dog: Dogs) {
+//    walk?.dogs = dog
+//        
+//        do {
+//            try managedObjectContext.save()
+//        } catch {
+//            print("Error saving the managed object context!")
+//        }
+//    }
+//}

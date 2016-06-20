@@ -21,5 +21,17 @@ extension Clients {
     @NSManaged var securityInfo: String?
     @NSManaged var dogs: NSSet?
     @NSManaged var walks: Walks?
+    
+    
+    // Added below per:
+    // http://stackoverflow.com/questions/24146524/setting-an-nsmanagedobject-relationship-in-swift
+    
+    // See also:
+    // http://stackoverflow.com/questions/25127090/saving-coredata-to-many-relationships-in-swift
+    @NSManaged func addDog(value:Set<Dogs>)
+    @NSManaged func removeDog(value:Set<Dogs>)
+    
+    @NSManaged func addWalk(value:Set<Walks>)
+    @NSManaged func removeWalk(value:Set<Walks>)
 
 }

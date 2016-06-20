@@ -76,11 +76,11 @@ class WalksTableViewController: UITableViewController {
     
     
     func addWalk(sender: AnyObject?) {
-        performSegueWithIdentifier("walkDetailSegue", sender: self)
+        performSegueWithIdentifier("showWalkDetailSegue", sender: self)
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if selectedWalk != nil && identifier == "walkDetailSegue" {
+        if selectedWalk != nil && identifier == "showWalkDetailSegue" {
             return false
         }
         
@@ -89,7 +89,7 @@ class WalksTableViewController: UITableViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let dest = segue.destinationViewController as? WalksDetailTableViewController {
+        if let dest = segue.destinationViewController as? WalksDetailViewController {
             dest.managedObjectContext = managedObjectContext
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
