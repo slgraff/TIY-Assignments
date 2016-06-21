@@ -17,7 +17,7 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     
     let dogPicPicker = UIImagePickerController()
 
-    
+    var dogPictureURL: String!
     
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var chooseDogPictureButton: UIButton!
@@ -75,7 +75,7 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func takeDogPictureButtonPressed(sender: AnyObject) {
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
             dogPicPicker.sourceType = .Camera
-            dogPicPicker.allowsEditing = true
+            dogPicPicker.allowsEditing = false
             presentViewController(dogPicPicker, animated: true, completion: nil)
         } else {
             // Disable the take picture button if no rear camera
@@ -97,10 +97,36 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     // MARK: UIImagePicker Delegate Methods
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let edited = info[UIImagePickerControllerEditedImage] as? UIImage {
-            dogImageView.image = edited
-        } else if let photo = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            dogImageView.image = photo
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            // Scale image size for display on this device
+            var scaledImage: UIImage = scaledImageFromImage(image,
+                                size: (UIScreen.mainScreen().bounds.size))
+            
+            self.dogImageView.image = scaledImage
+            
+            // Get path to users Documents folder on device
+            let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+            let documentsDirectory: NSString = paths.objectAtIndex(0) as! NSString
+            
+            // Create a date string to use as unique file name for image
+            var dateFormat = NSDateFormatter()
+            dateFormat.dateFormat = "yyyy-MM-dd-HH-mm-ss"
+            let now: NSDate = NSDate(timeIntervalSinceNow: 0)
+            let theDate: NSString = dateFormat.stringFromDate(now)
+            
+            // Save data to documents directory
+            self.dogPictureURL = NSString(format: "/%@.png", theDate) as String
+            let fullPath:NSString = documentsDirectory.stringByAppendingString(self.dogPictureURL)
+            let pngData: NSData = UIImagePNGRepresentation(scaledImage)!
+            pngData.writeToFile(fullPath as String, atomically: true)
+
+            
+            // Save picture URL to core data
+            dog?.dogPictureURL = self.dogPictureURL
+            saveContext()
+
+            self.dogImageView.image = scaledImage
         }
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -108,6 +134,40 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         // Close the picker
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    // MARK: ScaleImageFromImage method
+    func scaledImageFromImage (image: UIImage, size: CGSize) -> UIImage {
+        
+        let scale: CGFloat = max(size.width/image.size.width, size.height/image.size.height)
+        let width: CGFloat = image.size.width * scale
+        let height: CGFloat = image.size.height * scale
+        let imageRect: CGRect = CGRectMake((size.width - width)/2.0, (size.height - height)/2.0, width, height)
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        image.drawInRect(imageRect)
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    
+    // MARK: - Core Data Saving support
+    
+    func saveContext () {
+        if managedObjectContext.hasChanges {
+            do {
+                try managedObjectContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+        }
     }
     
 }
