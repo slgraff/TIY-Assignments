@@ -13,7 +13,7 @@
     <entity name="Dogs" representedClassName=".Dogs" syncable="YES">
         <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="breed" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="dogPicture" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="dogPictureURL" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,7 +36,7 @@
     </entity>
     <elements>
         <element name="Clients" positionX="-326" positionY="-150" width="128" height="163"/>
-        <element name="Dogs" positionX="-101" positionY="-153" width="128" height="178"/>
+        <element name="Dogs" positionX="-101" positionY="-153" width="128" height="180"/>
         <element name="Walks" positionX="-542" positionY="-183" width="128" height="208"/>
     </elements>
 </model>

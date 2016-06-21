@@ -80,7 +80,16 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
         } else {
             // Disable the take picture button if no rear camera
             // Useful for running in simulator
+            
+            let alert = UIAlertController(title: "Error", message: "There is no camera available!", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default,
+                handler: {(alertAction) in
+                    alert.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            self.presentViewController(alert, animated: true, completion:nil)
+            
             self.takeDogPictureButton.enabled = false
+        
         }
     }
     
