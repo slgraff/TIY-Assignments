@@ -71,6 +71,7 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             locationManager.stopUpdatingLocation()
             stopWalkTimer()
             walkButton.setTitle("Start Walk", forState: .Normal)
+            createScreenShot()
         }
     }
     
@@ -164,6 +165,22 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         }
         return MKPolylineRenderer()
     }
+    
+    
+    // MARK: CreateScreenShot Method
+    // Relies on access to user's photo library
+    func createScreenShot() {
+        let layer = UIApplication.sharedApplication().keyWindow!.layer
+        let scale = UIScreen.mainScreen().scale
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+        
+        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil)
+    }
+    
     
     /*
     // MARK: - Navigation

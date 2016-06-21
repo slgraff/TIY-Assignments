@@ -4,6 +4,7 @@
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="securityInfo" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="dogs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dogs" inverseName="owner" inverseEntity="Dogs" syncable="YES"/>
@@ -31,11 +32,11 @@
         <attribute name="walkETAEnd" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="walkMap" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Clients" inverseName="walks" inverseEntity="Clients" syncable="YES"/>
-        <relationship name="dogs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dogs" inverseName="walks" inverseEntity="Dogs" syncable="YES"/>
+        <relationship name="dogs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dogs" inverseName="walks" inverseEntity="Dogs" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Clients" positionX="-326" positionY="-150" width="128" height="150"/>
+        <element name="Clients" positionX="-326" positionY="-150" width="128" height="163"/>
         <element name="Dogs" positionX="-101" positionY="-153" width="128" height="178"/>
-        <element name="Walks" positionX="-542" positionY="-183" width="128" height="210"/>
+        <element name="Walks" positionX="-542" positionY="-183" width="128" height="208"/>
     </elements>
 </model>

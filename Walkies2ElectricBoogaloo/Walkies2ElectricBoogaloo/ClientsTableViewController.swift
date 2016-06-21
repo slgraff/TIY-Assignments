@@ -9,16 +9,12 @@
 import UIKit
 import CoreData
 
-protocol ClientPickerDelegate: class {
-    func didSelectClient(client: Clients)
-}
 
 class ClientsTableViewController: UITableViewController {
     
     var managedObjectContext: NSManagedObjectContext!
     var clients = [Clients]()
     
-    weak var pickerDelegate: ClientPickerDelegate?
     var selectedClient: Clients?
     var selectedDog: Dogs?
 
@@ -78,24 +74,20 @@ class ClientsTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let pickerDelegate = pickerDelegate {
+        
             let client = clients[indexPath.row]
             selectedClient = client
-            pickerDelegate.didSelectClient(client)
-            
-            tableView.reloadData()
-            
-        } else {
+        
+//            tableView.reloadData()
+        
             // TODO: This isn't populating list of dogs associated with client
-            if let dogsTableViewController = storyboard?.instantiateViewControllerWithIdentifier("Dogs") as? DogsTableViewController {
+            if let clientDetailViewController = storyboard?.instantiateViewControllerWithIdentifier("ClientDetail") as? ClientDetailViewController {
                 let client = clients[indexPath.row]
                 
-                dogsTableViewController.managedObjectContext = managedObjectContext
-                dogsTableViewController.selectedClient = client
-                navigationController?.pushViewController(dogsTableViewController, animated: true)
-            }
+                clientDetailViewController.managedObjectContext = managedObjectContext
+                // clientDetailViewController.selectedClient = client
+                navigationController?.pushViewController(clientDetailViewController, animated: true)
         }
-        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
@@ -105,7 +97,7 @@ class ClientsTableViewController: UITableViewController {
     // TODO: Do I need to implement prepareForSegue ??
     
     func addClient(sender: AnyObject?) {
-        performSegueWithIdentifier("clientDetailSegue", sender: self)
+        performSegueWithIdentifier("showClientDetailSegue", sender: self)
     }
     
     

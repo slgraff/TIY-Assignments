@@ -82,20 +82,13 @@ class DogsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // if let pickerDelegate = pickerDelegate {
-//            let dog = dogs[indexPath.row]
-//            selectedDog = dog
-//            pickerDelegate.didSelectDog(dog)
-//            
-//            // tableView.reloadData()
-//        } else {
-        
-            if let dogsDetailTableViewController = storyboard?.instantiateViewControllerWithIdentifier("DogsDetail") as? DogsDetailTableViewController {
+
+            if let dogDetailViewController = storyboard?.instantiateViewControllerWithIdentifier("DogDetail") as? DogDetailViewController {
                 
                 let dog = dogs[indexPath.row]
-                dogsDetailTableViewController.managedObjectContext = managedObjectContext
-                dogsDetailTableViewController.dog = dog
-                navigationController?.pushViewController(dogsDetailTableViewController, animated: true)
+                dogDetailViewController.managedObjectContext = managedObjectContext
+                dogDetailViewController.dog = dog
+                navigationController?.pushViewController(dogDetailViewController, animated: true)
                 
             }
             

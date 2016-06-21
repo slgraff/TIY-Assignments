@@ -15,7 +15,8 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
     let reuseIdentifier = "dogCell"
     
     var walk: Walks?
-    // var dog: Dogs?
+    var walkDogsArray: Array<AnyObject> = []
+    
     var managedObjectContext: NSManagedObjectContext!
 
     @IBOutlet weak var clientNameLabel: UILabel!
@@ -34,6 +35,9 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        let dogDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        walkDogsArray = walk!.dogs!.sortedArrayUsingDescriptors([dogDescriptor])
+        
         // Populate information about walk
         if let walk = walk {
             if let client = walk.client {
@@ -46,14 +50,6 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
             walkDateLabel.text = "\(walk.walkDate!)"
             walkArrivalETALabel.text = "\(walk.walkETABegin!) - \(walk.walkETAEnd!)"
         }
-        
-        // Populate information about dogs for this walk
-        // Crashing here when creating a new walk
-        if let dog = walk?.dogs {
-            // Populate dog info (CollectionView?)
-        } else {
-            // Prompt to select dog(s) for this walk
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,8 +61,8 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
     // MARK: UICollectionViewDataSource Protocol
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // TODO: Return count of dogs associated with this walk
-        return 1
+        // Return count of dogs associated with this walk
+        return walkDogsArray.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -74,16 +70,25 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
         // Set contents of items in cell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("dogCell", forIndexPath: indexPath) as? DogsCollectionViewCell
         
-        
-        // Display dog picture in imageView
+        // TODO: Display dog picture in imageView
         // cell!.dogImage.image =
-        cell!.dogName.text = "\(walk?.dogs?.name)"
-        cell!.dogSex.text = "\(walk?.dogs?.sex)"
+        
+        if let theDog = walkDogsArray[indexPath.row] as? Dogs {
+            cell!.dogNameLabel.text = "\(theDog.name!)"
+            cell!.dogSexLabel.text = "\(theDog.sex!)"
+
+        } else {
+            cell!.dogNameLabel.text = "No name"
+            cell!.dogSexLabel.text = "Unknown"
+
+        }
+
         
         // Set attirbutes for the cell
         cell!.backgroundColor = UIColor.whiteColor()
         cell!.layer.borderColor = UIColor.redColor().CGColor
-        cell!.layer.cornerRadius = 10
+        cell!.layer.borderWidth = 2
+        cell!.layer.cornerRadius = 90
 
         
         return cell!

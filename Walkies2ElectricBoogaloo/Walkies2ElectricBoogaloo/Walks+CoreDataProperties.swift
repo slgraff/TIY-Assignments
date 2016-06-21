@@ -2,7 +2,7 @@
 //  Walks+CoreDataProperties.swift
 //  Walkies2ElectricBoogaloo
 //
-//  Created by Steve Graff on 6/16/16.
+//  Created by Steve Graff on 6/20/16.
 //  Copyright © 2016 Steve Graff. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -24,17 +24,6 @@ extension Walks {
     @NSManaged var walkDate: String?
     @NSManaged var walkETAEnd: String?
     @NSManaged var client: Clients?
-    @NSManaged var dogs: Dogs?
+    @NSManaged var dogs: NSSet?
 
-    
-    // Added below per:
-    // http://stackoverflow.com/questions/24146524/setting-an-nsmanagedobject-relationship-in-swift
-    
-    // See also:
-    // http://stackoverflow.com/questions/25127090/saving-coredata-to-many-relationships-in-swift
-    @NSManaged func addClient(value:Set<Clients>)
-    @NSManaged func removeClient(value:Set<Clients>)
-    
-    @NSManaged func addDog(value:Set<Dogs>)
-    @NSManaged func removeDog(value:Set<Dogs>)
 }

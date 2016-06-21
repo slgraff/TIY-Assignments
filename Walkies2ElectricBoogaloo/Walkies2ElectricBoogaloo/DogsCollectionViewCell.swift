@@ -11,8 +11,8 @@ import UIKit
 class DogsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dogImage: UIImageView!
-    @IBOutlet weak var dogName: UILabel!
-    @IBOutlet weak var dogSex: UILabel!
+    @IBOutlet weak var dogNameLabel: UILabel!
+    @IBOutlet weak var dogSexLabel: UILabel!
     
     
     

@@ -66,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         snickers.size = "small"
         snickers.breed = "poodle/dacshund mix"
         snickers.sex = "male"
+        // snickers.dogPicture =
 //        suzy.setValue(suzy, forKey: "owner")
 
         
@@ -96,7 +97,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             walks.walkDate = i % 3 == 0 ? "Thursday, June 30th" : "Friday, July 1st"
             walks.walkETABegin = i % 3 == 0 ? "11:00am" : "12:00pm"
             walks.walkETAEnd = i % 3 == 0 ? "1:00pm" : "2:00pm"
+            // walks.addDog([barney, snickers, calvin])
             walks.client = johnsmith
+            
+            walks.dogs = NSSet(array: [calvin, barney, snickers])
+//            walks.dogs = NSSet(array:[calvin, barney, snickers])
 
         }
         
