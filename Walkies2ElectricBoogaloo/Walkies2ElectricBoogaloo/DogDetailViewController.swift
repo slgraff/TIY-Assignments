@@ -18,6 +18,7 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     let dogPicPicker = UIImagePickerController()
 
     var dogPictureURL: String!
+    let noDogPhotoPNG = "no_dog_photo.png"
     
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var chooseDogPictureButton: UIButton!
@@ -42,6 +43,25 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
         dogNameLabel.text = dog!.name!
         dogAgeLabel.text = dog!.age!
         dogSexLabel.text = dog!.sex!
+        
+        let noDogPhotoURL = NSURL(fileURLWithPath: noDogPhotoPNG).absoluteString
+        if (dogPictureURL != nil) {
+            if (self.dogPictureURL != noDogPhotoURL) {
+                // Get path to users Documents folder on device
+                let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+                let documentsDirectory: NSString = paths.objectAtIndex(0) as! NSString
+                
+                let path:NSString = documentsDirectory.stringByAppendingString(self.dogPictureURL)
+                self.dogImageView.image = UIImage(contentsOfFile: path as String)
+                
+            } else {
+                self.dogImageView.image = UIImage(named: noDogPhotoPNG)
+            }
+        } else {
+            // If no dog picture exists, set to noDogPhotoPNG
+            self.dogImageView.image = UIImage(named: noDogPhotoPNG)
+        }
+        
         
     }
     
@@ -100,7 +120,7 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
             // Scale image size for display on this device
-            var scaledImage: UIImage = scaledImageFromImage(image,
+            let scaledImage: UIImage = scaledImageFromImage(image,
                                 size: (UIScreen.mainScreen().bounds.size))
             
             self.dogImageView.image = scaledImage
@@ -110,7 +130,7 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
             let documentsDirectory: NSString = paths.objectAtIndex(0) as! NSString
             
             // Create a date string to use as unique file name for image
-            var dateFormat = NSDateFormatter()
+            let dateFormat = NSDateFormatter()
             dateFormat.dateFormat = "yyyy-MM-dd-HH-mm-ss"
             let now: NSDate = NSDate(timeIntervalSinceNow: 0)
             let theDate: NSString = dateFormat.stringFromDate(now)
@@ -137,7 +157,7 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     
-    // MARK: ScaleImageFromImage method
+    // MARK: scaleImageFromImage method
     func scaledImageFromImage (image: UIImage, size: CGSize) -> UIImage {
         
         let scale: CGFloat = max(size.width/image.size.width, size.height/image.size.height)
@@ -154,7 +174,7 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     
-    // MARK: - Core Data Saving support
+    // MARK: - Core Data Save support
     
     func saveContext () {
         if managedObjectContext.hasChanges {

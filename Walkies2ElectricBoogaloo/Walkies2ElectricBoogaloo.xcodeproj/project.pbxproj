@@ -28,7 +28,7 @@
 		CC2EEA831D0F007100BDE1E7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2EEA821D0F007100BDE1E7 /* CoreData.framework */; };
 		CC2EEAA71D0F160900BDE1E7 /* Walkies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC2EEAA51D0F160900BDE1E7 /* Walkies.xcdatamodeld */; };
 		CCB483011D188D0700C13F5D /* DogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB483001D188D0700C13F5D /* DogDetailViewController.swift */; };
-		CCB483051D19A99600C13F5D /* dog_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CCB483041D19A99600C13F5D /* dog_placeholder.png */; };
+		CCB483051D19A99600C13F5D /* no_dog_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = CCB483041D19A99600C13F5D /* no_dog_photo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +55,7 @@
 		CC2EEA821D0F007100BDE1E7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CC2EEAA61D0F160900BDE1E7 /* Walkies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Walkies.xcdatamodel; sourceTree = "<group>"; };
 		CCB483001D188D0700C13F5D /* DogDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogDetailViewController.swift; sourceTree = "<group>"; };
-		CCB483041D19A99600C13F5D /* dog_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog_placeholder.png; sourceTree = "<group>"; };
+		CCB483041D19A99600C13F5D /* no_dog_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_dog_photo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 		CC2EEA4C1D0EE94A00BDE1E7 = {
 			isa = PBXGroup;
 			children = (
-				CCB483041D19A99600C13F5D /* dog_placeholder.png */,
+				CCB483041D19A99600C13F5D /* no_dog_photo.png */,
 				CC1F66841D1492740062A4EA /* MapKit.framework */,
 				CC2EEA821D0F007100BDE1E7 /* CoreData.framework */,
 				CC2EEA571D0EE94A00BDE1E7 /* Walkies2ElectricBoogaloo */,
@@ -186,7 +186,7 @@
 			files = (
 				CC2EEA651D0EE94A00BDE1E7 /* LaunchScreen.storyboard in Resources */,
 				CC2EEA6F1D0EEFC500BDE1E7 /* Media.xcassets in Resources */,
-				CCB483051D19A99600C13F5D /* dog_placeholder.png in Resources */,
+				CCB483051D19A99600C13F5D /* no_dog_photo.png in Resources */,
 				CC2EEA601D0EE94A00BDE1E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
