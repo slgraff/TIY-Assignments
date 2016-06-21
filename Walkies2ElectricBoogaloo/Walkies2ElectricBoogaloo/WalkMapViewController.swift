@@ -127,7 +127,7 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("Some one set up us the bomb: \(error)")
+        print("Oh 💩! Some one set up us the bomb: \(error)")
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -147,8 +147,8 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             
             // TODO: Always track user location, or at set duration?
             // every minute, 5 minutes, etc.
-            locationManager.stopUpdatingLocation()
-            updateLocationTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: locationManager, selector: #selector(locationManager.startUpdatingLocation), userInfo: nil, repeats: false)
+//            locationManager.stopUpdatingLocation()
+//            updateLocationTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: locationManager, selector: #selector(locationManager.startUpdatingLocation), userInfo: nil, repeats: false)
         }
     }
     

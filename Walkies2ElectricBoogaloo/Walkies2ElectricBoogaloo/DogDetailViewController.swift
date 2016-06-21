@@ -16,6 +16,8 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     var managedObjectContext: NSManagedObjectContext!
     
     let dogPicPicker = UIImagePickerController()
+
+    
     
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var chooseDogPictureButton: UIButton!
@@ -30,6 +32,8 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        dogPicPicker.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
