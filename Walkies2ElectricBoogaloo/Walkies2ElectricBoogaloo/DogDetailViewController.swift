@@ -49,21 +49,44 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
         if let dog = dog {
             if (dog.name != nil) {
                 dogNameLabel.text = "\(dog.name!)"
+            } else {
+                dogNameLabel.text = ""
             }
+            
+            if (dog.owner!.name != nil) {
+                dogOwnerNameLabel.text = "\(dog.owner!.name!)"
+            } else {
+                dogOwnerNameLabel.text = ""
+            }
+            
             if (dog.age != nil) {
                 dogAgeLabel.text = "\(dog.age!)"
+            } else {
+                dogAgeLabel.text = ""
             }
+            
             if (dog.sex != nil) {
                 dogSexLabel.text = "\(dog.sex!)"
+            } else {
+                dogSexLabel.text = ""
             }
+            
             if (dog.breed != nil) {
                 dogBreedLabel.text = "\(dog.breed!)"
+            } else {
+                dogBreedLabel.text = ""
             }
+            
             if (dog.size != nil) {
                 dogSizeLabel.text = "\(dog.size!)"
+            }  else {
+                dogSizeLabel.text = ""
             }
+            
             if (dog.notes != nil) {
                 dogNotesTextView.text = "\(dog.notes!)"
+            } else {
+                dogNotesTextView.text = ""
             }
         }
         
