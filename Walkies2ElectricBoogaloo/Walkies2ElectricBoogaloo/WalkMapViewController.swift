@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import CoreData
 import MapKit
 import CoreLocation
 
 
 class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    
+    var managedObjectContext: NSManagedObjectContext!
+    
+    var walk: Walks?
+    var walkMapSnapshotURL: String?
 
     @IBOutlet weak var walkMapView: MKMapView!
     @IBOutlet weak var walkButton: UIButton!
@@ -71,7 +77,10 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             locationManager.stopUpdatingLocation()
             stopWalkTimer()
             walkButton.setTitle("Start Walk", forState: .Normal)
-            createScreenShot()
+            createVCScreenShot() // Save screen shot of view to Documents, save URL to store
+            createScreenShot()  // Saves to photo library
+            createMapSnapshot() // Saves to Documents on device file system
+
         }
     }
     
@@ -181,6 +190,57 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil)
     }
     
+    
+    // MARK: CreateVCScreenShot method
+    func createVCScreenShot() {
+        let layer = UIApplication.sharedApplication().keyWindow!.layer
+        let scale = UIScreen.mainScreen().scale
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+        
+        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // Get path to device Documents folder
+        let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory: NSString = paths.objectAtIndex(0) as! NSString
+        
+        // Create a date string to use as unique file name for image
+        let dateFormat = NSDateFormatter()
+        dateFormat.dateFormat = "yyyy-MM-dd-HH-mm-ss"
+        let now: NSDate = NSDate(timeIntervalSinceNow: 0)
+        let theDate: NSString = dateFormat.stringFromDate(now)
+        
+        // Append walk client info to string
+        theDate.stringByAppendingString(walk!.client!.name!)
+        
+        // Save data to documents directory
+        self.walkMapSnapshotURL = NSString(format: "/%@.png", theDate) as String
+        let fullPath:NSString = documentsDirectory.stringByAppendingString(self.walkMapSnapshotURL!)
+        let pngData: NSData = UIImagePNGRepresentation(screenshot)!
+        pngData.writeToFile(fullPath as String, atomically: true)
+        
+        // Save picture URL to core data
+        walk?.walkMapSnapshotURL = self.walkMapSnapshotURL
+        
+        saveContext()
+    }
+    
+    
+    // MARK: - Core Data Save support
+    func saveContext () {
+        if managedObjectContext.hasChanges {
+            do {
+                try managedObjectContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+        }
+    }
     
     /*
     // MARK: - Navigation

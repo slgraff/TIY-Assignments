@@ -129,7 +129,6 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
             let scaledImage: UIImage = scaledImageFromImage(image,
                                 size: (UIScreen.mainScreen().bounds.size))
             
-            // self.dogImageView.image = scaledImage
             
             // Get path to users Documents folder on device
             let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)

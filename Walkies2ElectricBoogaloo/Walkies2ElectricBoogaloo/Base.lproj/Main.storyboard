@@ -171,7 +171,7 @@
                                 <rect key="frame" x="513" y="431" width="67" height="30"/>
                                 <state key="normal" title="Map Walk"/>
                                 <connections>
-                                    <segue destination="rh8-xd-FFx" kind="show" id="DZI-LF-NSk"/>
+                                    <segue destination="rh8-xd-FFx" kind="show" identifier="showWalkMapSegue" id="WZ6-0v-uJM"/>
                                 </connections>
                             </button>
                         </subviews>
