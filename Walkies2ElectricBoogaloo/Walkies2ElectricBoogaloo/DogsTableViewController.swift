@@ -9,9 +9,6 @@
 import UIKit
 import CoreData
 
-//protocol DogPickerDelegate: class {
-//    func didSelectDog(dog: Dogs)
-//}
 
 class DogsTableViewController: UITableViewController {
     
@@ -33,6 +30,10 @@ class DogsTableViewController: UITableViewController {
         }
         
         reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     func reloadData() {
@@ -68,30 +69,24 @@ class DogsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DogCell", forIndexPath: indexPath)
-        
         let dog = dogs[indexPath.row]
         cell.textLabel?.text = dog.name
-        
         if let selectedDog = selectedDog where selectedDog == dog {
             cell.accessoryType = .Checkmark
         } else {
             cell.accessoryType = .None
         }
-        
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
             if let dogDetailViewController = storyboard?.instantiateViewControllerWithIdentifier("DogDetail") as? DogDetailViewController {
                 
                 let dog = dogs[indexPath.row]
                 dogDetailViewController.managedObjectContext = managedObjectContext
                 dogDetailViewController.dog = dog
                 navigationController?.pushViewController(dogDetailViewController, animated: true)
-                
             }
-            
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     

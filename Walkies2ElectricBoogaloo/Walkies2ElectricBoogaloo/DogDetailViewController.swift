@@ -40,18 +40,21 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        print("Running DogDetailVC -> viewWillAppear")
+
+        
         dogNameLabel.text = dog!.name!
         dogAgeLabel.text = dog!.age!
         dogSexLabel.text = dog!.sex!
         
         let noDogPhotoURL = NSURL(fileURLWithPath: noDogPhotoPNG).absoluteString
-        if (dogPictureURL != nil) {
-            if (self.dogPictureURL != noDogPhotoURL) {
+        if (dog!.dogPictureURL != nil) {
+            if (dog!.dogPictureURL != noDogPhotoURL) {
                 // Get path to users Documents folder on device
                 let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
                 let documentsDirectory: NSString = paths.objectAtIndex(0) as! NSString
                 
-                let path:NSString = documentsDirectory.stringByAppendingString(self.dogPictureURL)
+                let path:NSString = documentsDirectory.stringByAppendingString(dog!.dogPictureURL!)
                 self.dogImageView.image = UIImage(contentsOfFile: path as String)
                 
             } else {
@@ -61,8 +64,12 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
             // If no dog picture exists, set to noDogPhotoPNG
             self.dogImageView.image = UIImage(named: noDogPhotoPNG)
         }
-        
-        
+    }
+    
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        // Tried moving code from viewWillAppear into this, dogImage is still not being retrieved or drawin
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,7 +91,6 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     
     // MARK: Button Actions
     
-    // TODO: Why are these crashing the app?
     @IBAction func chooseDogPictureButtonPressed(sender: AnyObject) {
         dogPicPicker.sourceType = .PhotoLibrary
         dogPicPicker.allowsEditing = false
@@ -123,7 +129,7 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
             let scaledImage: UIImage = scaledImageFromImage(image,
                                 size: (UIScreen.mainScreen().bounds.size))
             
-            self.dogImageView.image = scaledImage
+            // self.dogImageView.image = scaledImage
             
             // Get path to users Documents folder on device
             let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
@@ -144,7 +150,10 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
             
             // Save picture URL to core data
             dog?.dogPictureURL = self.dogPictureURL
+            
+            // TODO: Unclear if dogPicturURL is being written to store or not
             saveContext()
+            
 
             self.dogImageView.image = scaledImage
         }
@@ -158,6 +167,7 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     
     
     // MARK: scaleImageFromImage method
+    
     func scaledImageFromImage (image: UIImage, size: CGSize) -> UIImage {
         
         let scale: CGFloat = max(size.width/image.size.width, size.height/image.size.height)
