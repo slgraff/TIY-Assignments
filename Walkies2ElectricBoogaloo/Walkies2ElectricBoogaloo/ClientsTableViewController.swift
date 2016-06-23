@@ -85,7 +85,7 @@ class ClientsTableViewController: UITableViewController {
                 let client = clients[indexPath.row]
                 
                 clientDetailViewController.managedObjectContext = managedObjectContext
-                // clientDetailViewController.selectedClient = client
+                clientDetailViewController.client = client
                 navigationController?.pushViewController(clientDetailViewController, animated: true)
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

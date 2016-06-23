@@ -36,13 +36,30 @@ class ClientDetailViewController: UIViewController {
         
         // Populate info about client
         if let client = client {
-            clientNameLabel.text = "\(client.name)"
-            clientAddressLabel.text = "\(client.address)"
-            clientPhoneLabel.text = "\(client.phone)"
-            clientEmailLabel.text = "\(client.email)"
             
-            clientSecurityInfoLabel.text = "\(client.securityInfo)"
-            clientNotesTextView.text = "\(client.notes)"
+            if (client.name != nil) {
+                clientNameLabel.text = "\(client.name!)"
+            }
+            
+            if (client.address != nil) {
+                clientAddressLabel.text = "\(client.address!)"
+            }
+            
+            if (client.phone != nil) {
+                clientPhoneLabel.text = "\(client.phone!)"
+            }
+            
+            if (client.email != nil) {
+                clientEmailLabel.text = "\(client.email!)"
+            }
+            
+            if (client.securityInfo != nil) {
+                clientSecurityInfoLabel.text = "\(client.securityInfo!)"
+            }
+            
+            if (client.notes != nil) {
+                clientNotesTextView.text = "\(client.notes!)"
+            }
             
         }
         
