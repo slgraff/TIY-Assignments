@@ -100,20 +100,41 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
     }
 
     
+    // TODO: In Progress
     // MARK: Action methods
     @IBAction func mapWalkButtonTapped(sender: AnyObject) {
-        performSegueWithIdentifier("showWalkMapSegue", sender: self)
+        if let walkMapViewController = storyboard?.instantiateViewControllerWithIdentifier("WalkMapVC") as? WalkMapViewController {
+            
+            walkMapViewController.managedObjectContext = managedObjectContext
+            walkMapViewController.walk = walk
+            navigationController?.pushViewController(walkMapViewController, animated: true)
+        }
+        
+        
+        
+        // performSegueWithIdentifier("showWalkMapSegue", sender: self)
 
     }
     
+    
+    
+//    if let dogDetailViewController = storyboard?.instantiateViewControllerWithIdentifier("DogDetail") as? DogDetailViewController {
+//        
+//        let dog = dogs[indexPath.row]
+//        dogDetailViewController.managedObjectContext = managedObjectContext
+//        dogDetailViewController.dog = dog
+//        navigationController?.pushViewController(dogDetailViewController, animated: true)
+//    }
+    
     // MARK: Segue methods
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showWalkMapSegue" {
-            if let destination = segue.destinationViewController as? WalkMapViewController {
-                destination.walk = walk // Pass walk object over to WalkMapVC
-            }
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "showWalkMapSegue" {
+//            if let destination = segue.destinationViewController as? WalkMapViewController {
+//                destination.walk = walk // Pass walk object over to WalkMapVC
+//                
+//            }
+//        }
+//    }
     
     
     

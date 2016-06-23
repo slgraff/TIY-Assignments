@@ -78,8 +78,8 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             stopWalkTimer()
             walkButton.setTitle("Start Walk", forState: .Normal)
             createVCScreenShot() // Save screen shot of view to Documents, save URL to store
-            createScreenShot()  // Saves to photo library
-            createMapSnapshot() // Saves to Documents on device file system
+//            createScreenShot()  // Saves to photo library
+//            createMapSnapshot() // Saves to Documents on device file system
 
         }
     }
@@ -103,25 +103,25 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     }
     
     
-    func createMapSnapshot() {
-        let options = MKMapSnapshotOptions()
-        options.region = walkMapView.region
-        options.size = walkMapView.frame.size
-        options.scale = UIScreen.mainScreen().scale
-        
-        let fileURL = NSURL(fileURLWithPath: "\(getPathToDocumentsDirectory())")  // TODO: Set path to save file
-        
-        let snapshotter = MKMapSnapshotter(options: options)
-        snapshotter.startWithCompletionHandler { snapshot, error in
-            guard let snapshot = snapshot else {
-                print("Snapshot error: \(error)")
-                return
-            }
-            
-            let data = UIImagePNGRepresentation(snapshot.image)
-            data?.writeToURL(fileURL, atomically: true)
-        }
-    }
+//    func createMapSnapshot() {
+//        let options = MKMapSnapshotOptions()
+//        options.region = walkMapView.region
+//        options.size = walkMapView.frame.size
+//        options.scale = UIScreen.mainScreen().scale
+//        
+//        let fileURL = NSURL(fileURLWithPath: "\(getPathToDocumentsDirectory())")  // TODO: Set path to save file
+//        
+//        let snapshotter = MKMapSnapshotter(options: options)
+//        snapshotter.startWithCompletionHandler { snapshot, error in
+//            guard let snapshot = snapshot else {
+//                print("Snapshot error: \(error)")
+//                return
+//            }
+//            
+//            let data = UIImagePNGRepresentation(snapshot.image)
+//            data?.writeToURL(fileURL, atomically: true)
+//        }
+//    }
 
     func getPathToDocumentsDirectory() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
@@ -178,17 +178,17 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     // MARK: CreateScreenShot Method
     // Relies on access to user's photo library
-    func createScreenShot() {
-        let layer = UIApplication.sharedApplication().keyWindow!.layer
-        let scale = UIScreen.mainScreen().scale
-        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
-        
-        layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil)
-    }
+//    func createScreenShot() {
+//        let layer = UIApplication.sharedApplication().keyWindow!.layer
+//        let scale = UIScreen.mainScreen().scale
+//        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+//        
+//        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+//        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        
+//        UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil)
+//    }
     
     
     // MARK: CreateVCScreenShot method
@@ -229,15 +229,17 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     // MARK: - Core Data Save support
     func saveContext () {
-        if managedObjectContext.hasChanges {
-            do {
-                try managedObjectContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-                abort()
+        if managedObjectContext != nil {
+            if managedObjectContext.hasChanges {
+                do {
+                    try managedObjectContext.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                    abort()
+                }
             }
         }
     }

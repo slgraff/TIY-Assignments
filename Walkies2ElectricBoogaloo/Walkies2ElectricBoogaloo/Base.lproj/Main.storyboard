@@ -171,7 +171,7 @@
                                 <rect key="frame" x="513" y="431" width="67" height="30"/>
                                 <state key="normal" title="Map Walk"/>
                                 <connections>
-                                    <segue destination="rh8-xd-FFx" kind="show" identifier="showWalkMapSegue" id="WZ6-0v-uJM"/>
+                                    <action selector="mapWalkButtonTapped:" destination="yLV-o2-FYx" eventType="touchUpInside" id="NgA-dy-jTe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -223,7 +223,7 @@
         <!--Walk Map View Controller-->
         <scene sceneID="UkI-AV-PEg">
             <objects>
-                <viewController id="rh8-xd-FFx" customClass="WalkMapViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkMapVC" id="rh8-xd-FFx" customClass="WalkMapViewController" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ppp-2C-Cnb"/>
                         <viewControllerLayoutGuide type="bottom" id="H0G-81-kcJ"/>
