@@ -28,6 +28,10 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var dogOwnerNameLabel: UILabel!
     @IBOutlet weak var dogAgeLabel: UILabel!
     @IBOutlet weak var dogSexLabel: UILabel!
+    @IBOutlet weak var dogBreedLabel: UILabel!
+    @IBOutlet weak var dogSizeLabel: UILabel!
+    @IBOutlet weak var dogNotesTextView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +46,26 @@ class DogDetailViewController: UIViewController, UIImagePickerControllerDelegate
         
         print("Running DogDetailVC -> viewWillAppear")
 
-        
-        dogNameLabel.text = dog!.name!
-        dogAgeLabel.text = dog!.age!
-        dogSexLabel.text = dog!.sex!
+        if let dog = dog {
+            if (dog.name != nil) {
+                dogNameLabel.text = "\(dog.name!)"
+            }
+            if (dog.age != nil) {
+                dogAgeLabel.text = "\(dog.age!)"
+            }
+            if (dog.sex != nil) {
+                dogSexLabel.text = "\(dog.sex!)"
+            }
+            if (dog.breed != nil) {
+                dogBreedLabel.text = "\(dog.breed!)"
+            }
+            if (dog.size != nil) {
+                dogSizeLabel.text = "\(dog.size!)"
+            }
+            if (dog.notes != nil) {
+                dogNotesTextView.text = "\(dog.notes!)"
+            }
+        }
         
         let noDogPhotoURL = NSURL(fileURLWithPath: noDogPhotoPNG).absoluteString
         if (dog!.dogPictureURL != nil) {
