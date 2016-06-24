@@ -163,7 +163,7 @@ class ClientDetailViewController: UIViewController, UICollectionViewDataSource, 
         cell!.backgroundColor = UIColor.whiteColor()
         cell!.layer.borderColor = UIColor.redColor().CGColor
         cell!.layer.borderWidth = 2
-        cell!.layer.cornerRadius = 90
+        // cell!.layer.cornerRadius = 90
         
         return cell!
     }

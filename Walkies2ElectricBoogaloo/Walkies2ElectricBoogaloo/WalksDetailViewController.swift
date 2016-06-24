@@ -108,9 +108,12 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
         
         // Set attirbutes for the cell
         cell!.backgroundColor = UIColor.whiteColor()
-        cell!.layer.borderColor = UIColor.redColor().CGColor
-        cell!.layer.borderWidth = 2
-        cell!.layer.cornerRadius = 90  // This should be set to half of image width (assuming square image)
+        
+        cell!.dogImage.layer.cornerRadius = 10
+        cell!.dogImage.layer.borderWidth = 2
+        cell!.dogImage.layer.borderColor = UIColor.redColor().CGColor
+
+        cell!.dogImage.clipsToBounds = true
 
         
         return cell!
