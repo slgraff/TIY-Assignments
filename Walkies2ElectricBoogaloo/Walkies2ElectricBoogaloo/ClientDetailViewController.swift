@@ -1,3 +1,4 @@
+
 //
 //  ClientDetailViewController.swift
 //  Walkies2ElectricBoogaloo
@@ -11,15 +12,17 @@ import CoreData
 
 class ClientDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    // @IBOutlet weak var clientDogCollectionView: UICollectionView!
     
-    var client: Clients?
-    var clientDogsArray = [AnyObject]()
+    let reuseIdentifier = "ClientDogCell"
     
     var dogPictureURL: String!
     let noDogPhotoPNG = "no_dog_photo.png"
     
+    var client: Clients?
+    var clientDogsArray = [AnyObject]()
+    
     var managedObjectContext: NSManagedObjectContext!
-
 
     @IBOutlet weak var clientNameLabel: UILabel!
     @IBOutlet weak var clientAddressLabel: UILabel!
@@ -33,12 +36,17 @@ class ClientDetailViewController: UIViewController, UICollectionViewDataSource, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+// TODO: Do I need to do this?
+//        self.ClientDetailViewController.delegate = self
+//        self.ClientDetailViewController.datasource = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Get clients dogs
+        let clientDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        clientDogsArray = client!.dogs!.sortedArrayUsingDescriptors([clientDescriptor])
         
         // Populate info about client
         if let client = client {
@@ -80,14 +88,22 @@ class ClientDetailViewController: UIViewController, UICollectionViewDataSource, 
             }
         }
         
-        // MARK: Get clients dogs
-        let clientDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        clientDogsArray = client!.dogs!.sortedArrayUsingDescriptors([clientDescriptor])
+
     }
     
     
     // MARK: UICollectionViewDataSource Protocol
     
+    func collectionView(collectionView:UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSizeMake(100, 100)
+    }
+
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Return count of dogs associated with this walk
         return clientDogsArray.count
@@ -98,6 +114,15 @@ class ClientDetailViewController: UIViewController, UICollectionViewDataSource, 
         // Set contents of items in cell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ClientDogCell", forIndexPath: indexPath) as? DogsCollectionViewCell
         
+//        // Configure the cell
+//        cell!.contentView.backgroundColor = UIColor.grayColor()
+//        
+//        let clientDogNameLabel: UILabel = UILabel()
+//        clientDogNameLabel.frame = CGRect(x: 10, y: 10, width: (cell!.contentView.frame.width - 20), height: ((cell?.contentView.frame.height)! - 30) / 4)
+//        clientDogNameLabel.backgroundColor = UIColor.whiteColor()
+//        clientDogNameLabel.textColor = UIColor.blackColor()
+        
+        
         if let theDog = clientDogsArray[indexPath.row] as? Dogs {
             
             if theDog.name != nil {
@@ -107,7 +132,7 @@ class ClientDetailViewController: UIViewController, UICollectionViewDataSource, 
             }
             
             if theDog.sex != nil {
-                cell!.dogSexLabel.text = "\(theDog.sex!)"
+                cell!.dogSexLabel.text = "\(theDog.sex)"
             } else {
                 cell!.dogSexLabel.text = ""
             }

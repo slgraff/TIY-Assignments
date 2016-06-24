@@ -11,14 +11,14 @@ import CoreData
 
 
 class WalksDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    let reuseIdentifier = "dogCell"
+
+    let reuseIdentifier = "walkDogCell"
     
     var dogPictureURL: String!
     let noDogPhotoPNG = "no_dog_photo.png"
     
     var walk: Walks?
-    var walkDogsArray: Array<AnyObject> = []
+    var walkDogsArray = [AnyObject]()
     
     var managedObjectContext: NSManagedObjectContext!
 
@@ -71,10 +71,7 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         // Set contents of items in cell
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("dogCell", forIndexPath: indexPath) as? DogsCollectionViewCell
-        
-        // TODO: Display dog picture in imageView
-        // cell!.dogImage.image =
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("walkDogCell", forIndexPath: indexPath) as? DogsCollectionViewCell
         
         if let theDog = walkDogsArray[indexPath.row] as? Dogs {
             if theDog.name != nil {
@@ -108,12 +105,6 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
             }
 
         }
-
-        
-
-
-        
-
         
         // Set attirbutes for the cell
         cell!.backgroundColor = UIColor.whiteColor()

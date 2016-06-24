@@ -108,13 +108,29 @@
 				CC2EEA6C1D0EEAF100BDE1E7 /* DogsTableViewController.swift */,
 				CCB483001D188D0700C13F5D /* DogDetailViewController.swift */,
 				CC1F66821D146D540062A4EA /* WalkMapViewController.swift */,
+				CCB483061D1D808000C13F5D /* Storyboards */,
+				CC2EEAA51D0F160900BDE1E7 /* Walkies.xcdatamodeld */,
+				CCB483071D1D809F00C13F5D /* Resources */,
+			);
+			path = Walkies2ElectricBoogaloo;
+			sourceTree = "<group>";
+		};
+		CCB483061D1D808000C13F5D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				CC2EEA5E1D0EE94A00BDE1E7 /* Main.storyboard */,
 				CC2EEA631D0EE94A00BDE1E7 /* LaunchScreen.storyboard */,
-				CC2EEAA51D0F160900BDE1E7 /* Walkies.xcdatamodeld */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		CCB483071D1D809F00C13F5D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				CC2EEA6E1D0EEFC500BDE1E7 /* Media.xcassets */,
 				CC2EEA661D0EE94A00BDE1E7 /* Info.plist */,
 			);
-			path = Walkies2ElectricBoogaloo;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
