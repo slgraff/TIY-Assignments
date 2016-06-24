@@ -103,7 +103,7 @@
                                     <constraint firstAttribute="height" constant="160" id="TL6-dE-NEH"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gfR-dc-vzb">
-                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="itemSize" width="100" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -116,7 +116,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PvY-oY-OYP">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PvY-oY-OYP">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dog name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mat-yW-aMP">
@@ -137,6 +137,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="I6A-9l-Av1" firstAttribute="top" secondItem="Mat-yW-aMP" secondAttribute="bottom" constant="3" id="5H2-Su-UVR"/>
                                             <constraint firstItem="PvY-oY-OYP" firstAttribute="top" secondItem="dN6-m8-zl7" secondAttribute="top" id="6Xo-az-77m"/>
@@ -212,6 +213,7 @@
                     <connections>
                         <outlet property="clientAddressLabel" destination="Aay-1k-f24" id="c0o-XO-e1M"/>
                         <outlet property="clientNameLabel" destination="DEz-kb-0no" id="TfZ-yg-4Y2"/>
+                        <outlet property="dogCollectionView" destination="pid-s8-N6m" id="ac3-eU-uOo"/>
                         <outlet property="walkArrivalETALabel" destination="5yi-IV-dSo" id="vqb-yM-eQ7"/>
                         <outlet property="walkDateLabel" destination="gx4-cj-ZNx" id="g9b-sq-cQF"/>
                     </connections>
@@ -354,13 +356,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Security info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Are-lV-Yi9">
-                                <rect key="frame" x="20" y="372" width="560" height="21"/>
+                                <rect key="frame" x="20" y="417" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pRP-Qw-ZW2">
-                                <rect key="frame" x="20" y="401" width="560" height="57"/>
+                                <rect key="frame" x="20" y="446" width="560" height="57"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="E4l-SX-HHv"/>
@@ -370,13 +372,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isO-GR-0Ux">
-                                <rect key="frame" x="20" y="466" width="560" height="21"/>
+                                <rect key="frame" x="20" y="511" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nq6-04-xzy">
-                                <rect key="frame" x="20" y="495" width="560" height="57"/>
+                                <rect key="frame" x="20" y="540" width="560" height="57"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="sO5-aw-TIH"/>
@@ -392,33 +394,33 @@
                                     <constraint firstAttribute="height" constant="200" id="zeS-a1-8NE"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ita-kT-Zpa">
-                                    <size key="itemSize" width="120" height="160"/>
+                                    <size key="itemSize" width="170" height="216"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ClientDogCell" id="9mm-Ao-k6c" customClass="DogsCollectionViewCell" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="140"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ClientDogCell" id="9mm-Ao-k6c" customClass="DogsCollectionViewCell" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="216"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="216"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="clientDogNameLabel" text="Dog Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYP-mO-IyJ">
-                                                    <rect key="frame" x="8" y="90" width="81" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="ClientDogImageView" translatesAutoresizingMaskIntoConstraints="NO" id="dsm-eG-3Id">
+                                                    <rect key="frame" x="10" y="0.0" width="150" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="131" id="w0a-9k-2NT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dog Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbj-3H-O11">
+                                                    <rect key="frame" x="53" y="177" width="64" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ClientDogImageView" translatesAutoresizingMaskIntoConstraints="NO" id="dsm-eG-3Id">
-                                                    <rect key="frame" x="16" y="32" width="61" height="51"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="97" id="w0a-9k-2NT"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dog Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbj-3H-O11">
-                                                    <rect key="frame" x="18" y="119" width="64" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="clientDogNameLabel" text="Dog Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYP-mO-IyJ">
+                                                    <rect key="frame" x="45" y="153" width="81" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -428,15 +430,15 @@
                                         </view>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="dsm-eG-3Id" secondAttribute="trailing" constant="15" id="1hj-m3-STm"/>
-                                            <constraint firstItem="ZYP-mO-IyJ" firstAttribute="top" secondItem="dsm-eG-3Id" secondAttribute="bottom" constant="7" id="2V9-CT-mdu"/>
-                                            <constraint firstItem="ZYP-mO-IyJ" firstAttribute="leading" secondItem="9mm-Ao-k6c" secondAttribute="leadingMargin" id="8nR-q2-7QF"/>
-                                            <constraint firstItem="dsm-eG-3Id" firstAttribute="top" secondItem="9mm-Ao-k6c" secondAttribute="topMargin" constant="24" id="d5A-WK-W4i"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="ZYP-mO-IyJ" secondAttribute="bottom" constant="21" id="gBO-ZA-Wgf"/>
-                                            <constraint firstItem="dsm-eG-3Id" firstAttribute="leading" secondItem="9mm-Ao-k6c" secondAttribute="leadingMargin" constant="8" id="lEH-V3-f0h"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="dsm-eG-3Id" secondAttribute="trailing" id="1hj-m3-STm"/>
+                                            <constraint firstItem="ZYP-mO-IyJ" firstAttribute="top" secondItem="dsm-eG-3Id" secondAttribute="bottom" constant="3" id="2V9-CT-mdu"/>
+                                            <constraint firstItem="ZYP-mO-IyJ" firstAttribute="leading" secondItem="9mm-Ao-k6c" secondAttribute="leadingMargin" constant="37" id="8nR-q2-7QF"/>
+                                            <constraint firstItem="dsm-eG-3Id" firstAttribute="top" secondItem="9mm-Ao-k6c" secondAttribute="topMargin" id="d5A-WK-W4i"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="ZYP-mO-IyJ" secondAttribute="bottom" constant="34" id="gBO-ZA-Wgf"/>
+                                            <constraint firstItem="dsm-eG-3Id" firstAttribute="leading" secondItem="9mm-Ao-k6c" secondAttribute="leadingMargin" id="lEH-V3-f0h"/>
                                             <constraint firstItem="ZYP-mO-IyJ" firstAttribute="centerX" secondItem="dsm-eG-3Id" secondAttribute="centerX" id="lOt-lp-IUY"/>
                                         </constraints>
-                                        <size key="customSize" width="100" height="140"/>
+                                        <size key="customSize" width="170" height="216"/>
                                         <connections>
                                             <outlet property="dogImage" destination="dsm-eG-3Id" id="ah4-pR-rdw"/>
                                             <outlet property="dogNameLabel" destination="ZYP-mO-IyJ" id="hFm-q5-pKu"/>
@@ -517,7 +519,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_dog_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="L6q-Gr-0wk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_dog_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="L6q-Gr-0wk">
                                 <rect key="frame" x="20" y="80" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="4fX-pC-KFc"/>

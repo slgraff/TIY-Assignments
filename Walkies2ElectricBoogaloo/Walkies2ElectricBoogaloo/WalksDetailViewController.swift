@@ -27,12 +27,13 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet weak var walkArrivalETALabel: UILabel!
     @IBOutlet weak var clientAddressLabel: UILabel!
     
+    @IBOutlet weak var dogCollectionView: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        dogCollectionView.dataSource = self
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -159,11 +159,17 @@ class ClientDetailViewController: UIViewController, UICollectionViewDataSource, 
             }
         }
         
+        
         // Set attirbutes for the cell
         cell!.backgroundColor = UIColor.whiteColor()
-        cell!.layer.borderColor = UIColor.redColor().CGColor
-        cell!.layer.borderWidth = 2
-        // cell!.layer.cornerRadius = 90
+        cell!.sizeToFit()
+        
+        // Set attributes for the ImageView
+        cell!.dogImage.layer.cornerRadius = 10
+        cell!.dogImage.layer.borderWidth = 2
+        cell!.dogImage.layer.borderColor = UIColor.redColor().CGColor
+        
+        cell!.dogImage.clipsToBounds = true
         
         return cell!
     }
