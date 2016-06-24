@@ -14,6 +14,9 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
     
     let reuseIdentifier = "dogCell"
     
+    var dogPictureURL: String!
+    let noDogPhotoPNG = "no_dog_photo.png"
+    
     var walk: Walks?
     var walkDogsArray: Array<AnyObject> = []
     
@@ -74,21 +77,49 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
         // cell!.dogImage.image =
         
         if let theDog = walkDogsArray[indexPath.row] as? Dogs {
-            cell!.dogNameLabel.text = "\(theDog.name!)"
-            cell!.dogSexLabel.text = "\(theDog.sex!)"
-
-        } else {
-            cell!.dogNameLabel.text = "No name"
-            cell!.dogSexLabel.text = "Unknown"
+            if theDog.name != nil {
+                cell!.dogNameLabel.text = "\(theDog.name!)"
+            } else {
+                cell!.dogNameLabel.text = ""
+            }
+            
+            if theDog.sex != nil {
+                cell!.dogSexLabel.text = "\(theDog.sex!)"
+            } else {
+                cell!.dogSexLabel.text = ""
+            }
+            
+            let noDogPhotoURL = NSURL(fileURLWithPath: noDogPhotoPNG).absoluteString
+            if (theDog.dogPictureURL != nil) {
+                if (theDog.dogPictureURL != noDogPhotoURL) {
+                    // Get path to users Documents folder on device
+                    let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+                    let documentsDirectory: NSString = paths.objectAtIndex(0) as! NSString
+                    
+                    let path:NSString = documentsDirectory.stringByAppendingString(theDog.dogPictureURL!)
+                    cell?.dogImage.image = UIImage(contentsOfFile: path as String)
+                    
+                } else {
+                    cell!.dogImage.image = UIImage(named: noDogPhotoPNG)
+                }
+            } else {
+                // If no dog picture exists, set to noDogPhotoPNG
+                cell?.dogImage.image = UIImage(named: noDogPhotoPNG)
+            }
 
         }
+
+        
+
+
+        
 
         
         // Set attirbutes for the cell
         cell!.backgroundColor = UIColor.whiteColor()
         cell!.layer.borderColor = UIColor.redColor().CGColor
         cell!.layer.borderWidth = 2
-        cell!.layer.cornerRadius = 90
+        cell!.layer.cornerRadius = 90  // This should be set to half of image width (assuming square image)
 
         
         return cell!
@@ -100,7 +131,6 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
     }
 
     
-    // TODO: In Progress
     // MARK: Action methods
     @IBAction func mapWalkButtonTapped(sender: AnyObject) {
         if let walkMapViewController = storyboard?.instantiateViewControllerWithIdentifier("WalkMapVC") as? WalkMapViewController {

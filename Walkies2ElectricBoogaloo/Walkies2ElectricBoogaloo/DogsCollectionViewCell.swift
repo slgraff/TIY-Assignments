@@ -9,7 +9,7 @@
 import UIKit
 
 class DogsCollectionViewCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var dogImage: UIImageView!
     @IBOutlet weak var dogNameLabel: UILabel!
     @IBOutlet weak var dogSexLabel: UILabel!
