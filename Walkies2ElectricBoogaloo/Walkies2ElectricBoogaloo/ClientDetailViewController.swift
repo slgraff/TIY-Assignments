@@ -33,12 +33,12 @@ class ClientDetailViewController: UIViewController, UICollectionViewDataSource, 
     
     @IBOutlet weak var clientNotesTextView: UITextView!
     
+    @IBOutlet weak var clientDogsCollectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-// TODO: Do I need to do this?
-//        self.ClientDetailViewController.delegate = self
-//        self.ClientDetailViewController.datasource = self
+
+            // clientDogsCollectionView.datasource = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -139,7 +139,6 @@ class ClientDetailViewController: UIViewController, UICollectionViewDataSource, 
             
             
             // Display image of the dog
-            // TODO: Fix this, no image being displayed
             let noDogPhotoURL = NSURL(fileURLWithPath: noDogPhotoPNG).absoluteString
             if (theDog.dogPictureURL != nil) {
                 if (theDog.dogPictureURL != noDogPhotoURL) {

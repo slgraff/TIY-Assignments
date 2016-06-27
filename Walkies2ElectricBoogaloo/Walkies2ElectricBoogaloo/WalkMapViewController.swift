@@ -73,6 +73,7 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             locationManager.startUpdatingLocation()
             startWalkTimer()
             walkButton.setTitle("Stop Walk", forState: .Normal)
+            navigationItem.hidesBackButton = true
         } else if walkButton.titleLabel!.text == "Stop Walk" {
             locationManager.stopUpdatingLocation()
             stopWalkTimer()
@@ -80,6 +81,8 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             createVCScreenShot() // Save screen shot of view to Documents, save URL to store
 //            createScreenShot()  // Saves to photo library
 //            createMapSnapshot() // Saves to Documents on device file system
+            
+            navigationItem.hidesBackButton = false
 
         }
     }
@@ -102,26 +105,6 @@ class WalkMapViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         return (seconds / 60, seconds % 60)
     }
     
-    
-//    func createMapSnapshot() {
-//        let options = MKMapSnapshotOptions()
-//        options.region = walkMapView.region
-//        options.size = walkMapView.frame.size
-//        options.scale = UIScreen.mainScreen().scale
-//        
-//        let fileURL = NSURL(fileURLWithPath: "\(getPathToDocumentsDirectory())")  // TODO: Set path to save file
-//        
-//        let snapshotter = MKMapSnapshotter(options: options)
-//        snapshotter.startWithCompletionHandler { snapshot, error in
-//            guard let snapshot = snapshot else {
-//                print("Snapshot error: \(error)")
-//                return
-//            }
-//            
-//            let data = UIImagePNGRepresentation(snapshot.image)
-//            data?.writeToURL(fileURL, atomically: true)
-//        }
-//    }
 
     func getPathToDocumentsDirectory() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)

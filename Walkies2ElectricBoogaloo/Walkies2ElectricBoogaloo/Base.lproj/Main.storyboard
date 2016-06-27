@@ -401,10 +401,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ClientDogCell" id="9mm-Ao-k6c" customClass="DogsCollectionViewCell" customModule="Walkies2ElectricBoogaloo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="216"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="216"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="ClientDogImageView" translatesAutoresizingMaskIntoConstraints="NO" id="dsm-eG-3Id">
@@ -438,7 +438,7 @@
                                             <constraint firstItem="dsm-eG-3Id" firstAttribute="leading" secondItem="9mm-Ao-k6c" secondAttribute="leadingMargin" id="lEH-V3-f0h"/>
                                             <constraint firstItem="ZYP-mO-IyJ" firstAttribute="centerX" secondItem="dsm-eG-3Id" secondAttribute="centerX" id="lOt-lp-IUY"/>
                                         </constraints>
-                                        <size key="customSize" width="170" height="216"/>
+                                        <size key="customSize" width="200" height="200"/>
                                         <connections>
                                             <outlet property="dogImage" destination="dsm-eG-3Id" id="ah4-pR-rdw"/>
                                             <outlet property="dogNameLabel" destination="ZYP-mO-IyJ" id="hFm-q5-pKu"/>
@@ -496,6 +496,7 @@
                     </view>
                     <connections>
                         <outlet property="clientAddressLabel" destination="dfi-wY-VyV" id="laB-yA-aXP"/>
+                        <outlet property="clientDogsCollectionView" destination="k6i-eM-aPQ" id="60D-9k-fz3"/>
                         <outlet property="clientEmailLabel" destination="Xey-Px-LGq" id="oxl-5D-5Oa"/>
                         <outlet property="clientNameLabel" destination="V9Q-YC-ajO" id="6qR-dV-Ms9"/>
                         <outlet property="clientNotesTextView" destination="Nq6-04-xzy" id="cm4-Hu-aPe"/>
