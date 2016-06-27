@@ -11,8 +11,6 @@ import CoreData
 
 
 class WalksDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
-    let reuseIdentifier = "walkDogCell"
     
     var dogPictureURL: String!
     let noDogPhotoPNG = "no_dog_photo.png"
@@ -34,25 +32,32 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
         super.viewDidLoad()
 
         dogCollectionView.dataSource = self
+        dogCollectionView.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         let dogDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        walkDogsArray = walk!.dogs!.sortedArrayUsingDescriptors([dogDescriptor])
         
-        // Populate information about walk
-        if let walk = walk {
-            if let client = walk.client {
-                clientNameLabel.text = "\(client.name!)"
-                clientAddressLabel.text = "\(client.address!)"
-            } else {
-                clientNameLabel.text = "Select client"
+        // TODO: Once wrapping below in 'if let' now dogs are not being displayed in CollectionViewCells. Apparently occurs if cell is too large to display in collectionView?
+        if let walkDogsArray = walk?.dogs?.sortedArrayUsingDescriptors([dogDescriptor]) {
+            self.walkDogsArray = walkDogsArray
+            self.dogCollectionView.reloadData()
+
+        
+            // Populate information about walk
+            if let walk = walk {
+                if let client = walk.client {
+                    clientNameLabel.text = "\(client.name!)"
+                    clientAddressLabel.text = "\(client.address!)"
+                } else {
+                    clientNameLabel.text = "Select client"
+                }
+                
+                walkDateLabel.text = "\(walk.walkDate!)"
+                walkArrivalETALabel.text = "\(walk.walkETABegin!) - \(walk.walkETAEnd!)"
             }
-            
-            walkDateLabel.text = "\(walk.walkDate!)"
-            walkArrivalETALabel.text = "\(walk.walkETABegin!) - \(walk.walkETAEnd!)"
         }
     }
 
@@ -108,7 +113,25 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
         }
         
         // Set attirbutes for the cell
-        cell!.backgroundColor = UIColor.whiteColor()
+        // cell!.backgroundColor = UIColor.whiteColor()
+        
+
+        
+        
+        // TODO: Review these, think about transitioning to setting contraints in storyboard instead
+        
+//        cell!.frame.size.width = 100
+//        cell!.frame.size.height = 100
+        
+        cell!.dogImage.frame.size.width = 50
+        cell!.dogImage.frame.size.height = 50
+        
+        cell?.dogNameLabel.frame.size.width = 50
+        cell?.dogNameLabel.frame.size.height = 20
+        
+        cell?.dogSexLabel.frame.size.width = 50
+        cell?.dogSexLabel.frame.size.height = 20
+
         
         cell!.dogImage.layer.cornerRadius = 10
         cell!.dogImage.layer.borderWidth = 2
@@ -116,7 +139,6 @@ class WalksDetailViewController: UIViewController, UICollectionViewDataSource, U
 
         cell!.dogImage.clipsToBounds = true
 
-        
         return cell!
     }
     

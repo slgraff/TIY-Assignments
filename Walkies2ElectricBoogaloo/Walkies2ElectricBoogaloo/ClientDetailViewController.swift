@@ -160,7 +160,7 @@ class ClientDetailViewController: UIViewController, UICollectionViewDataSource, 
         
         
         // Set attirbutes for the cell
-        cell!.backgroundColor = UIColor.whiteColor()
+        // cell!.backgroundColor = UIColor.whiteColor()
         cell!.sizeToFit()
         
         // Set attributes for the ImageView
