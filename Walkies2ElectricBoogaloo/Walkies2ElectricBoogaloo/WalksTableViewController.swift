@@ -63,6 +63,12 @@ class WalksTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("WalkCell", forIndexPath: indexPath)
         
+        if (indexPath.row % 2 == 0) {
+            cell.backgroundColor = UIColor.whiteColor()
+        } else {
+            cell.backgroundColor = UIColor.lightGrayColor()
+        }
+        
         let walk = walks[indexPath.row]
         
         cell.textLabel?.text = walk.walkDescription
