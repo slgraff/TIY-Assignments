@@ -50,13 +50,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // Add sample Clients data
-        let johnsmith = Clients(entity: clientsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
-        johnsmith.name = "John Smith"
-        johnsmith.address = "100 E. Main St., Durham, NC 27701"
+        let susan = Clients(entity: clientsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
+        susan.name = "Susan Graff"
+        susan.address = "326 E. Trinity Ave., Durham, NC 27701"
         
-        let suzy = Clients(entity: clientsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
-        suzy.name = "Suzy Chapstick"
-        suzy.address = "330 E. Trinity Ave., Durham, NC 27701"
+        let john = Clients(entity: clientsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
+        john.name = "John Smith"
+        john.address = "100 E. Main St., Durham, NC 27701"
         
         
         // Add sample Dogs data        
@@ -87,24 +87,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         barney.sex = "male"
 //        barney.setValue(johnsmith, forKey: "owner")
         
-        johnsmith.dogs = NSSet(array: [barney])
-        suzy.dogs = NSSet(array:[calvin, snickers])
+        let patches = Dogs(entity: dogsEntity, insertIntoManagedObjectContext: self.managedObjectContext)
+        patches.name = "Patches"
+        patches.age = "2"
+        patches.size = "large"
+        patches.breed = "Springer Spaniel"
+        patches.sex = "female"
+        
+        
+        
+        john.dogs = NSSet(array: [patches])
+        susan.dogs = NSSet(array:[calvin, snickers, barney])
         
         // Add sample Walks data
-        for i in 1...5 {
-            let walks = Walks(entity: walksEntity, insertIntoManagedObjectContext: self.managedObjectContext)
-            
-            walks.walkDate = i % 3 == 0 ? "Thursday, June 30th" : "Friday, July 1st"
-            walks.walkETABegin = i % 3 == 0 ? "11:00am" : "12:00pm"
-            walks.walkETAEnd = i % 3 == 0 ? "1:00pm" : "2:00pm"
-            // walks.addDog([barney, snickers, calvin])
-            walks.client = johnsmith
-            
-            walks.dogs = NSSet(array: [calvin, barney, snickers])
-//            walks.dogs = NSSet(array:[calvin, barney, snickers])
-
-        }
+        let walk1 = Walks(entity: walksEntity, insertIntoManagedObjectContext: self.managedObjectContext)
         
+        walk1.walkDate = "Friday, July 1st"
+        walk1.walkETABegin = "11:00am"
+        walk1.walkETAEnd = "1:00pm"
+        walk1.client = john
+        walk1.dogs = NSSet(array: [patches])
+
+        
+        let walk2 = Walks(entity: walksEntity, insertIntoManagedObjectContext: self.managedObjectContext)
+        
+        walk2.walkDate = "Friday, July 1st"
+        walk2.walkETABegin = "1:00pm"
+        walk2.walkETAEnd = "3:00pm"
+        walk2.client = susan
+        walk2.dogs = NSSet(array: [snickers, barney, calvin])
+
         
         
         saveContext()

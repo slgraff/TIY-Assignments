@@ -63,10 +63,13 @@ class WalksTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("WalkCell", forIndexPath: indexPath)
         
+        
+        // Set background color for alternate rows
         if (indexPath.row % 2 == 0) {
-            cell.backgroundColor = UIColor.whiteColor()
+            cell.backgroundColor = UIColorFromRGB(0xAAFFAF)  // 0xAAFFAF is a lovely pastelle green
+
         } else {
-            cell.backgroundColor = UIColor.lightGrayColor()
+            cell.backgroundColor = UIColor.whiteColor()
         }
         
         let walk = walks[indexPath.row]
@@ -104,6 +107,19 @@ class WalksTableViewController: UITableViewController {
             }
         }
     }
+    
+    
+    // MARK: UIColor from RGB method
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+    
 
 
 }
